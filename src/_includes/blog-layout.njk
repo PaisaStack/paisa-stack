@@ -111,7 +111,7 @@
   <div class="breadcrumb"><a href="../index.html">Home</a> / <a href="blogs.html">Blogs</a> / {{ category }}</div>
   <div class="kicker">{{ category }}</div>
   <h1 class="title">{{ title }}</h1>
-  <p class="meta">{{ content | readingTime }} · Updated for 2026 · Practical guide, no jargon</p>
+  <p class="meta">{{ (body or content) | readingTime }} · Updated for 2026 · Practical guide, no jargon</p>
 
   {% if toc and toc.length %}
   <div class="toc">
@@ -124,7 +124,7 @@
   {% endif %}
 
   <article>
-    {{ content | safe }}
+    {{ (body or content) | safe }}
 
     {% if faqs and faqs.length %}
     <h2 id="faq">Frequently asked questions</h2>
