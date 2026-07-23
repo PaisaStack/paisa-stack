@@ -1,6 +1,7 @@
 ---
 layout: blog-layout.njk
 draft: false
+permalink: blogs/10-common-mistakes-people-make-while-e-filing-their-itr-ay-2026-27-1.html
 title: 10 Common Mistakes People Make While E-Filing Their ITR (AY 2026-27)
 description: The staggered new ITR deadlines, the 30-day e-verification rule,
   Form 10-IEA, and the other mistakes that turn a simple filing into a notice —
