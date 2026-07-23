@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NPS vs PPF vs EPF: Where Should Your Retirement Money Go? (2026) | Paisa Stack</title>
+<meta name="description" content="A complete comparison of NPS, PPF, and EPF — contribution limits, lock-in, returns, tax treatment, and a practical framework for splitting your retirement savings across them.">
+<meta name="keywords" content="nps vs ppf vs epf, retirement planning india, best retirement account india, nps tax benefit 80ccd, ppf vs nps returns, epf transfer">
+<link rel="canonical" href="https://paisastack.com/blogs/nps-vs-ppf-vs-epf.html">
+<meta property="og:title" content="NPS vs PPF vs EPF: Where Should Your Retirement Money Go?">
+<meta property="og:description" content="A side-by-side on lock-in, returns, and tax treatment.">
+<meta property="og:type" content="article">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%2312203D'/%3E%3Ctext x='50' y='68' font-family='monospace' font-size='58' font-weight='700' text-anchor='middle' fill='%23D4AF5A'%3E%E2%82%B9%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type": "Question", "name": "Can I have both EPF and PPF at the same time?",
+     "acceptedAnswer": {"@type": "Answer", "text": "Yes. EPF is automatic for most salaried employees, and PPF is entirely voluntary and open to anyone, including EPF subscribers. Many people hold both, using EPF as the automatic base and PPF as a deliberate top-up."}},
+    {"@type": "Question", "name": "Is NPS better than PPF for tax saving?",
+     "acceptedAnswer": {"@type": "Answer", "text": "NPS offers an extra Rs. 50,000 deduction under Section 80CCD(1B), separate from the Rs. 1.5 lakh Section 80C limit that PPF uses. If you've already maxed out 80C elsewhere, NPS gives you additional deduction room that PPF cannot, making it a useful complement rather than a straight replacement."}},
+    {"@type": "Question", "name": "What happens to my EPF if I don't transfer it when switching jobs?",
+     "acceptedAnswer": {"@type": "Answer", "text": "It stays in your old employer's trust or the EPFO, continuing to earn interest for a period, but becomes harder to track and consolidate over time. Transferring it to your new employer using the same UAN keeps your full retirement corpus in one place and preserves continuity of service for tax purposes."}},
+    {"@type": "Question", "name": "Can self-employed people invest in NPS and PPF?",
+     "acceptedAnswer": {"@type": "Answer", "text": "Yes, both are open to self-employed individuals. EPF is the only one of the three that's specifically tied to salaried employment through an employer."}},
+    {"@type": "Question", "name": "Can I withdraw from PPF before 15 years if I need the money urgently?",
+     "acceptedAnswer": {"@type": "Answer", "text": "Partial withdrawals are allowed from the seventh year onward, and loans against the balance from the third year, both subject to specific limits. Full premature closure is only permitted in narrow circumstances like serious illness or higher education."}},
+    {"@type": "Question", "name": "What's the difference between NPS Tier I and Tier II?",
+     "acceptedAnswer": {"@type": "Answer", "text": "Tier I is the primary retirement account with tax benefits and lock-in. Tier II is a voluntary, more liquid add-on with no lock-in and no tax deduction."}}
+  ]
+}
+</script>
+<style>
+  :root{
+    --bg:#FFFFFF; --bg-soft:#FBFAF7; --surface:#F5F4EF;
+    --border: rgba(18,32,61,0.12); --border-2: rgba(18,32,61,0.22);
+    --ink:#12203D; --text-dim:#5B6472; --text-dimmer:#8891A0;
+    --gold:#A8781E; --gold-soft: rgba(168,120,30,0.10);
+    --teal:#1F8F73; --teal-soft: rgba(31,143,115,0.10);
+    --mono: 'JetBrains Mono', monospace; --sans:'Inter',sans-serif; --display:'Fraunces',serif;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0; background:var(--bg); color:var(--ink); font-family:var(--sans); line-height:1.75;}
+  h1,h2,h3{font-family:var(--display); font-weight:600; color:var(--ink);}
+  a{color:var(--teal);}
+  .wrap{max-width:720px; margin:0 auto; padding:0 22px;}
+  header{border-bottom:1px solid var(--border); padding:16px 0;}
+  .nav{display:flex; align-items:center; justify-content:space-between; max-width:720px; margin:0 auto; padding:0 22px;}
+  .brand{font-family:var(--display); font-weight:700; font-size:1.05rem; display:flex; align-items:center; gap:8px; text-decoration:none; color:var(--ink);}
+  .brand .mark{width:26px;height:26px;border-radius:7px;background:var(--ink);color:#fff;display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:0.82rem;font-weight:700;}
+  .back{font-size:0.86rem; color:var(--text-dim); text-decoration:none;}
+  .breadcrumb{font-family:var(--mono); font-size:0.76rem; color:var(--text-dimmer); margin:24px 0 6px;}
+  .breadcrumb a{color:var(--text-dimmer);}
+  .kicker{font-family:var(--mono); font-size:0.78rem; color:var(--teal); margin:0 0 12px;}
+  h1.title{font-size:clamp(1.7rem,4.5vw,2.35rem); line-height:1.2; margin:0 0 14px;}
+  .meta{font-size:0.84rem; color:var(--text-dimmer); margin-bottom:16px;}
+  .toc{background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:18px 22px; margin-bottom:34px;}
+  .toc h2{font-size:0.82rem; text-transform:uppercase; letter-spacing:0.04em; margin:0 0 10px; font-family:var(--sans); color:var(--text-dimmer);}
+  .toc ol{margin:0; padding-left:20px; columns:2; column-gap:20px;}
+  .toc li{font-size:0.86rem; margin-bottom:7px; break-inside:avoid;}
+  .toc a{color:var(--ink); text-decoration:none;}
+  .toc a:hover{color:var(--teal);}
+  article p{font-size:1.03rem; color:var(--ink); margin:0 0 18px;}
+  article h2{font-size:1.35rem; margin:44px 0 14px; scroll-margin-top:90px;}
+  article h3{font-size:1.08rem; margin:26px 0 10px;}
+  article ul, article ol{margin:0 0 18px; padding-left:22px;}
+  article li{font-size:1.02rem; color:var(--ink); margin-bottom:9px;}
+  .callout{background:var(--surface); border-left:3px solid var(--gold); border-radius:0 8px 8px 0; padding:16px 18px; font-size:0.96rem; color:var(--ink); margin:26px 0;}
+  .callout b{color:var(--gold);}
+  table{width:100%; border-collapse:collapse; margin:20px 0 26px; font-size:0.88rem;}
+  th{background:var(--ink); color:#fff; text-align:left; padding:10px 11px; font-weight:600;}
+  td{padding:10px 11px; border-bottom:1px solid var(--border); color:var(--text-dim);}
+  td:first-child, th:first-child{color:var(--ink); font-weight:600;}
+  .inline-tool-card{display:flex; align-items:center; gap:16px; background:var(--teal-soft); border:1px solid rgba(31,143,115,0.25); border-radius:12px; padding:18px 20px; margin:28px 0; text-decoration:none;}
+  .inline-tool-card .icon{width:40px; height:40px; border-radius:10px; background:#fff; display:flex; align-items:center; justify-content:center; flex:0 0 auto;}
+  .inline-tool-card .icon svg{width:20px; height:20px; color:var(--teal);}
+  .inline-tool-card .txt h4{margin:0 0 3px; font-size:0.96rem; color:var(--ink); font-family:var(--sans); font-weight:600;}
+  .inline-tool-card .txt p{margin:0; font-size:0.84rem; color:var(--text-dim);}
+  .tool-row{display:grid; grid-template-columns:1fr 1fr 1fr; gap:10px; margin:26px 0;}
+  @media (max-width:640px){ .tool-row{grid-template-columns:1fr;} }
+  .tool-mini{border:1px solid rgba(31,143,115,0.25); background:var(--teal-soft); border-radius:10px; padding:14px; text-decoration:none; text-align:center;}
+  .tool-mini h4{margin:0; font-size:0.86rem; color:var(--ink); font-family:var(--sans); font-weight:600;}
+  .related-grid{display:grid; grid-template-columns:1fr 1fr; gap:14px; margin:20px 0 30px;}
+  @media (max-width:600px){ .related-grid{grid-template-columns:1fr;} }
+  .related-card{border:1px solid var(--border); border-radius:10px; padding:16px; text-decoration:none; display:block;}
+  .related-card .tag{font-family:var(--mono); font-size:0.7rem; color:var(--gold); text-transform:uppercase; letter-spacing:0.03em;}
+  .related-card h4{margin:6px 0 0; font-size:0.92rem; color:var(--ink); font-family:var(--sans); font-weight:600; line-height:1.4;}
+  .faq-item{border-bottom:1px solid var(--border); padding:18px 0;}
+  .faq-item h3{margin:0 0 8px; font-size:1rem;}
+  .faq-item p{margin:0; font-size:0.96rem; color:var(--text-dim);}
+  .cta-box{margin:44px 0 20px; background:var(--ink); color:#fff; border-radius:14px; padding:28px; display:flex; align-items:center; justify-content:space-between; gap:18px; flex-wrap:wrap;}
+  .cta-box h3{color:#fff; font-size:1.15rem; margin:0 0 6px;}
+  .cta-box p{color:#B7BECB; margin:0; font-size:0.9rem;}
+  .cta-btn{background:var(--gold); color:#1A1204; padding:12px 22px; border-radius:8px; font-weight:600; font-size:0.9rem; text-decoration:none; white-space:nowrap;}
+  footer{border-top:1px solid var(--border); padding:26px 0 50px; font-size:0.8rem; color:var(--text-dimmer); margin-top:20px;}
+  .disclaimer{background:var(--bg-soft); border:1px solid var(--border); border-radius:10px; padding:16px 18px; font-size:0.84rem; color:var(--text-dim); margin:36px 0;}
+  .author-box{display:flex; gap:16px; flex-wrap:wrap; margin:30px 0; padding:20px; background:var(--bg-soft); border:1px solid var(--border); border-radius:12px;}
+  .author-card{display:flex; align-items:center; gap:12px; flex:1; min-width:220px;}
+  .author-avatar{width:44px; height:44px; border-radius:50%; background:var(--ink); color:#fff; display:flex; align-items:center; justify-content:center; font-family:var(--mono); font-weight:700; font-size:0.85rem; flex:0 0 auto; overflow:hidden;}
+  .author-avatar img{width:100%; height:100%; object-fit:cover; display:block;}
+  .author-name{font-weight:600; font-size:0.92rem; color:var(--ink);}
+  .author-role{font-size:0.78rem; color:var(--text-dim); margin-top:2px;}
+  .updated-line{font-family:var(--mono); font-size:0.76rem; color:var(--text-dimmer); margin:-16px 0 30px;}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <a href="../index.html" class="brand"><span class="mark">₹</span>Paisa Stack</a>
+    <a href="blogs.html" class="back">← Back to all blogs</a>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="breadcrumb"><a href="../index.html">Home</a> / <a href="blogs.html">Blogs</a> / Retirement</div>
+  <div class="kicker">Retirement</div>
+  <h1 class="title">NPS vs PPF vs EPF: Where Should Your Retirement Money Go?</h1>
+  <p class="meta">16 min read · Updated for 2026 · Practical guide, no jargon</p>
+
+  <div class="toc">
+    <h2>In this guide</h2>
+    <ol>
+      <li><a href="#side-by-side">Side by side: the core comparison</a></li>
+      <li><a href="#epf">EPF: the one you're probably already in</a></li>
+      <li><a href="#ppf">PPF: the slow, steady, tax-free option</a></li>
+      <li><a href="#nps">NPS: the one with the extra tax break</a></li>
+      <li><a href="#how-to-split">A practical framework for splitting your savings</a></li>
+      <li><a href="#worked-example">A worked example across all three</a></li>
+      <li><a href="#nps-withdrawal">How NPS withdrawal actually works at 60</a></li>
+      <li><a href="#job-switch">EPF and job switches</a></li>
+      <li><a href="#tax-on-exit">Tax treatment: contribution, growth, withdrawal</a></li>
+      <li><a href="#where-to-start">Which one should you actually start with?</a></li>
+      <li><a href="#by-age">How the right mix shifts as you age</a></li>
+      <li><a href="#mistakes">Mistakes people make</a></li>
+      <li><a href="#closing">The bottom line</a></li>
+      <li><a href="#faq">Frequently asked questions</a></li>
+    </ol>
+  </div>
+
+  <article>
+    <p>Three acronyms, three different rulebooks, and most people contribute to at least one without really choosing to. This guide covers what each one actually is, how they typically work together rather than being an either-or choice, and a practical framework for deciding how to split new retirement savings across them.</p>
+
+    <h2 id="side-by-side">Side by side: the core comparison</h2>
+    <table>
+      <tr><th></th><th>EPF</th><th>PPF</th><th>NPS</th></tr>
+      <tr><td>Who it's for</td><td>Salaried employees (automatic)</td><td>Anyone, including self-employed</td><td>Anyone, often used as a voluntary add-on</td></tr>
+      <tr><td>Contribution</td><td>12% of basic, matched by employer</td><td>Up to Rs. 1.5 lakh/year, self-directed</td><td>Flexible, self-directed</td></tr>
+      <tr><td>Lock-in</td><td>Until retirement or job-linked withdrawal rules</td><td>15 years, partial withdrawal allowed later</td><td>Until age 60, with partial exceptions</td></tr>
+      <tr><td>Returns</td><td>Government-declared rate, revised periodically</td><td>Government-declared rate, revised quarterly</td><td>Market-linked (equity + debt mix you choose)</td></tr>
+      <tr><td>Key tax benefit</td><td>Deduction under 80C</td><td>Deduction under 80C</td><td>Extra Rs. 50,000 deduction under 80CCD(1B), over and above 80C</td></tr>
+      <tr><td>Risk level</td><td>Very low (government-backed)</td><td>Very low (government-backed)</td><td>Low to moderate, depending on your equity allocation</td></tr>
+    </table>
+
+    <div class="tool-row">
+      <a class="tool-mini" href="../index.html#t-epf"><h4>Try the EPF Calculator →</h4></a>
+      <a class="tool-mini" href="../index.html#t-ppf"><h4>Try the PPF Calculator →</h4></a>
+      <a class="tool-mini" href="../index.html#t-nps"><h4>Try the NPS Calculator →</h4></a>
+    </div>
+
+    <h2 id="epf">EPF: the one you're probably already in</h2>
+    <p>If you're salaried, this is largely automatic — 12% of your basic salary, matched by your employer, goes in every month. It's low-risk, government-backed, and one of the few places where your employer is contributing real money on your behalf, not just processing a deduction from your own pay. The main thing to actively manage is <b>not withdrawing it early</b> and transferring it properly on every job switch, since both of those are entirely within your control and both are commonly mishandled.</p>
+    <p>A detail worth knowing: not all of the employer's 12% actually goes into your interest-bearing EPF account. A portion (currently 8.33% of basic, subject to a wage ceiling) routes instead to the Employee Pension Scheme (EPS), which funds a separate pension benefit rather than compounding in your withdrawable EPF balance. This is why EPF projections sometimes run a little higher than what actually accumulates — our <a href="../index.html#t-epf">EPF calculator</a> flags this simplification directly rather than hiding it.</p>
+    <p>EPF interest is also credited annually, calculated on the running monthly balance rather than a simple year-end figure, and the rate itself is reviewed and declared by the EPFO each year — it has stayed relatively stable over time compared to more volatile instruments, but it isn't fixed permanently and is worth checking rather than assuming it never changes.</p>
+
+    <h2 id="ppf">PPF: the slow, steady, tax-free option</h2>
+    <p>Open one voluntarily at a bank or post office. The 15-year lock-in feels long, but the returns are tax-free at maturity — not just tax-deferred, genuinely tax-free — and it's available to self-employed people who don't have access to EPF at all. It works well as the "guaranteed" portion of a retirement plan, alongside more growth-oriented options.</p>
+    <p>PPF also allows partial withdrawals from the seventh year onward, and loans against the balance from the third year, which gives it more flexibility than the 15-year headline lock-in suggests. The account can also be extended in blocks of five years after maturity, with or without further contributions, making it a genuinely long-horizon tool rather than a strict one-time 15-year commitment.</p>
+
+    <h2 id="nps">NPS: the one with the extra tax break</h2>
+    <p>NPS lets you choose your own mix of equity, corporate debt, and government bonds, so returns vary with the market — historically higher potential than EPF or PPF, but with more volatility, and no guaranteed floor. The standout feature is the additional Rs. 50,000 deduction under Section 80CCD(1B), available only in the old tax regime and separate from your 80C limit — meaning it's genuinely additive deduction room, not a re-labelled version of something you might already be claiming.</p>
+    <p>NPS also has a distinct structure with two tiers: <b>Tier I</b> is the primary retirement account with the tax benefits and lock-in described here; <b>Tier II</b> is a more flexible, voluntary savings account with no lock-in and no tax benefit, essentially functioning as an optional add-on for people who want to keep money in the same NPS ecosystem without the withdrawal restrictions.</p>
+    <p>Fund management in NPS is also handled by a choice of registered pension fund managers, and you can select between "Active Choice" (where you set your own equity-debt split, subject to age-based caps on equity exposure) and "Auto Choice" (where the allocation shifts automatically toward debt as you age, on a predetermined schedule). Auto Choice is a reasonable default for anyone who doesn't want to actively manage this allocation themselves, while Active Choice suits those comfortable making that call directly.</p>
+
+    <div class="callout">A common approach: let EPF run as-is (it's automatic anyway), keep PPF or NPS as the deliberate voluntary top-up depending on whether you want guaranteed returns (PPF) or market-linked growth with an extra tax break (NPS).</div>
+
+    <h2 id="how-to-split">A practical framework for splitting your savings</h2>
+    <p>Rather than treating this as an all-or-nothing choice, most people benefit from a layered approach:</p>
+    <ol>
+      <li><b>EPF continues automatically</b> — no action needed beyond not withdrawing early and transferring on job switches.</li>
+      <li><b>Fill your 80C limit first</b>, choosing between PPF, ELSS, or other 80C instruments based on your risk appetite — PPF for the guaranteed portion, ELSS-style equity funds if you want more growth within the same deduction limit.</li>
+      <li><b>Use NPS specifically for the extra Rs. 50,000 under 80CCD(1B)</b> once 80C is already accounted for elsewhere — this is close to "free" additional deduction room that many people simply forget exists.</li>
+      <li><b>Reassess the split periodically</b>, particularly as retirement gets closer and a higher allocation to guaranteed-return instruments (PPF, EPF) may become more appropriate than NPS's market-linked exposure.</li>
+    </ol>
+
+    <h2 id="worked-example">A worked example across all three</h2>
+    <p>Consider someone earning Rs. 15,00,000 CTC with Rs. 45,000 monthly basic salary, aiming to maximise retirement tax benefits under the old regime:</p>
+    <table>
+      <tr><th>Instrument</th><th>Annual contribution</th><th>Deduction claimed under</th></tr>
+      <tr><td>EPF (automatic)</td><td>Rs. 64,800 (12% of basic)</td><td>Part of Section 80C</td></tr>
+      <tr><td>PPF (voluntary top-up)</td><td>Rs. 85,200</td><td>Remaining Section 80C room (total 80C = Rs. 1,50,000)</td></tr>
+      <tr><td>NPS (voluntary)</td><td>Rs. 50,000</td><td>Section 80CCD(1B), separate from 80C</td></tr>
+    </table>
+    <p>This combination uses the full Rs. 1,50,000 under 80C (split between automatic EPF and voluntary PPF) and adds another Rs. 50,000 of deduction through NPS — a total of Rs. 2,00,000 in tax-deductible retirement contributions, entirely legitimate and often achievable well within a typical salary structure once someone actually plans for it deliberately instead of defaulting to whatever their employer withholds automatically.</p>
+
+    <a class="inline-tool-card" href="../index.html#t-tax">
+      <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/><path d="M15 7h6v6"/><rect x="3" y="3" width="18" height="18" rx="2"/></svg></div>
+      <div class="txt"><h4>See the actual tax saved</h4><p>Run these deductions through the free Income Tax calculator to see the real impact on your bill.</p></div>
+    </a>
+
+    <h2 id="nps-withdrawal">How NPS withdrawal actually works at 60</h2>
+    <p>Unlike EPF and PPF, NPS doesn't pay out as a simple lump sum at maturity. At retirement, you can withdraw up to <b>60% of the corpus tax-free as a lump sum</b>, but the remaining <b>at least 40% must be used to purchase an annuity</b> — a financial product that pays you a regular monthly pension for the rest of your life. This annuity income is taxable at your slab rate when received, unlike the tax-free lump sum portion. This structure is a genuine tradeoff: NPS offers strong accumulation-phase tax benefits, but locks a meaningful portion of the final corpus into a pension product rather than leaving it fully liquid, which is worth factoring into how much you rely on NPS versus PPF or other more flexible instruments for your overall retirement plan.</p>
+
+    <h2 id="job-switch">EPF and job switches</h2>
+    <p>Every job change is a moment where EPF handling commonly goes wrong. The right move is always to <b>transfer</b> your EPF balance to your new employer using your existing UAN (Universal Account Number), not withdraw it. Withdrawing before completing 5 years of combined service can make the amount taxable, and it also resets the compounding that would otherwise continue uninterrupted. See our guide on <a href="form-16-explained.html">Form 16</a> for the related paperwork that shows up around the same time as a job switch, and our <a href="../index.html#guides">job-switch checklist</a> for the fuller picture beyond just EPF.</p>
+
+    <h2 id="tax-on-exit">Tax treatment: contribution, growth, and withdrawal</h2>
+    <p>All three instruments give a deduction on the way in, but they don't behave identically on the way out, which matters as much as the entry-point tax break:</p>
+    <table>
+      <tr><th>Stage</th><th>EPF</th><th>PPF</th><th>NPS</th></tr>
+      <tr><td>Contribution</td><td>Deductible under 80C</td><td>Deductible under 80C</td><td>Deductible under 80C and/or 80CCD(1B)</td></tr>
+      <tr><td>Growth (interest/returns)</td><td>Tax-free while accumulating</td><td>Tax-free while accumulating</td><td>Tax-free while accumulating</td></tr>
+      <tr><td>Withdrawal/maturity</td><td>Tax-free if withdrawn after 5 years of service</td><td>Fully tax-free at maturity</td><td>Lump-sum portion tax-free (up to 60%); annuity payouts taxed at slab rate as received</td></tr>
+    </table>
+    <p>EPF and PPF are often described as "EEE" instruments — exempt on contribution, exempt on growth, exempt on withdrawal — which is a genuinely rare combination in Indian tax law. NPS is EEE for the lump-sum portion but not for the annuity income stream, which is the trade-off for its stronger accumulation-phase tax benefit through 80CCD(1B).</p>
+
+    <h2 id="where-to-start">Which one should you actually start with?</h2>
+    <p>For most salaried beginners, the practical order looks like this: EPF is already happening automatically, so there's nothing to actively start there beyond making sure job switches are handled correctly. The next real decision is whether to direct fresh 80C room toward PPF (guaranteed, tax-free, simple) or equity-oriented options like ELSS (higher potential return, more volatility, shorter lock-in). Only after 80C is genuinely full — not just "mostly used" — does NPS's separate 80CCD(1B) deduction become the next lever worth pulling, since it's the only one of the three offering deduction room beyond the Rs. 1.5 lakh 80C ceiling.</p>
+    <p>A common mistake is starting an NPS contribution before fully using 80C elsewhere, which leaves standard 80C deduction room unused while chasing NPS's extra bracket — the extra Rs. 50,000 is valuable specifically because it's additive, not because NPS is inherently a better first step than PPF or EPF.</p>
+
+    <h2 id="mistakes">Mistakes people make</h2>
+    <ul>
+      <li><b>Treating EPF as the whole retirement plan.</b> It's a solid, low-risk base, but usually not enough alone to fund retirement at your current lifestyle without meaningful voluntary top-ups elsewhere.</li>
+      <li><b>Ignoring NPS's extra 80CCD(1B) deduction</b> because 80C is already maxed out elsewhere — this is a separate limit, not shared with 80C, and skipping it leaves real deduction room unused.</li>
+      <li><b>Forgetting NPS returns aren't guaranteed.</b> The equity portion moves with the market, unlike EPF and PPF's declared rates — this is a feature for long-horizon growth, not a flaw, but it should be a deliberate choice, not a surprise.</li>
+      <li><b>Not checking NPS's annuity requirement</b> before assuming the full corpus is available as a lump sum at retirement — a portion is structurally locked into a pension product by design.</li>
+      <li><b>Withdrawing EPF at every job switch</b> instead of transferring, often to fund a short-term expense — this quietly resets a genuinely valuable long-term compounding asset for a comparatively small short-term gain.</li>
+      <li><b>Never revisiting the equity-debt mix in NPS</b> as retirement approaches — a mix appropriate at 30 is often too aggressive at 55, and NPS allows this allocation to be adjusted over time.</li>
+    </ul>
+
+    <h2 id="by-age">How the right mix shifts as you age</h2>
+    <p>The ideal split between these three isn't static — it should shift as your time horizon to retirement shrinks and your capacity to absorb market volatility changes:</p>
+    <table>
+      <tr><th>Life stage</th><th>Reasonable emphasis</th><th>Why</th></tr>
+      <tr><td>20s</td><td>Let EPF run; lean toward NPS's equity-heavy allocation for the 80CCD(1B) benefit</td><td>Longest horizon to absorb NPS market volatility; tax benefit compounds over decades</td></tr>
+      <tr><td>30s–40s</td><td>Balance PPF and NPS roughly evenly alongside EPF</td><td>Building both a guaranteed base and growth exposure simultaneously</td></tr>
+      <tr><td>50s</td><td>Shift NPS allocation toward debt; rely more on PPF/EPF's guaranteed returns</td><td>Shorter horizon means less capacity to recover from a market downturn before retirement</td></tr>
+    </table>
+    <p>NPS specifically allows you to actively adjust your equity-debt allocation as you age — this isn't a "set once and forget" instrument the way EPF and PPF largely are, and not adjusting it is a genuine missed opportunity to manage risk deliberately as retirement approaches.</p>
+
+    <h2 id="faq">Frequently asked questions</h2>
+    <div class="faq-item">
+      <h3>Can I have both EPF and PPF at the same time?</h3>
+      <p>Yes. EPF is automatic for most salaried employees, and PPF is entirely voluntary and open to anyone, including EPF subscribers. Many people hold both, using EPF as the automatic base and PPF as a deliberate top-up.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Is NPS better than PPF for tax saving?</h3>
+      <p>NPS offers an extra Rs. 50,000 deduction under Section 80CCD(1B), separate from the Rs. 1.5 lakh Section 80C limit that PPF uses. If you've already maxed out 80C elsewhere, NPS gives you additional deduction room that PPF cannot, making it a useful complement rather than a straight replacement.</p>
+    </div>
+    <div class="faq-item">
+      <h3>What happens to my EPF if I don't transfer it when switching jobs?</h3>
+      <p>It stays in your old employer's trust or the EPFO, continuing to earn interest for a period, but becomes harder to track and consolidate over time. Transferring it to your new employer using the same UAN keeps your full retirement corpus in one place.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Can self-employed people invest in NPS and PPF?</h3>
+      <p>Yes, both are open to self-employed individuals. EPF is the only one of the three that's specifically tied to salaried employment through an employer.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Can I withdraw from PPF before 15 years if I need the money urgently?</h3>
+      <p>Partial withdrawals are allowed from the seventh year onward, and loans against the balance are available from the third year, both subject to specific limits. A full premature closure before 15 years is only permitted in narrow circumstances like serious illness or higher education, and typically comes with a reduced interest rate as a penalty.</p>
+    </div>
+    <div class="faq-item">
+      <h3>What's the difference between NPS Tier I and Tier II?</h3>
+      <p>Tier I is the primary retirement account with the tax benefits and lock-in described in this guide. Tier II is a voluntary, more liquid add-on account within the same NPS structure, with no lock-in and no tax deduction — useful for keeping money in the same ecosystem without NPS's withdrawal restrictions, but it doesn't carry the tax advantages that make Tier I worthwhile in the first place.</p>
+    </div>
+
+    <h2 id="closing">The bottom line</h2>
+    <p>None of these three instruments is objectively "best" in isolation — they solve different problems. EPF is the automatic, low-effort base almost every salaried person already has. PPF is the guaranteed, tax-free instrument worth using to fill out your 80C limit if you want certainty over market exposure. NPS is the one genuinely additive tax lever once 80C is full, with the tradeoff of partial market risk and a mandatory annuity on exit. Most people end up using some combination of all three rather than picking a single winner — the real skill is being deliberate about the split instead of defaulting to whatever your employer withholds and calling it a retirement plan.</p>
+
+    <div class="disclaimer">This article is educational, not investment advice. Contribution limits, rates, and tax rules for EPF, PPF, and NPS are revised periodically by the government — confirm current figures on the official EPFO, PPF, and NPS (NSDL/PFRDA) portals.</div>
+
+    <div class="author-box">
+      <div class="author-card">
+        <div class="author-avatar"><img src="../assets/pankaj-chhabra.jpg" alt="CA Pankaj Chhabra" loading="lazy"></div>
+        <div>
+          <div class="author-name">CA Pankaj Chhabra</div>
+          <div class="author-role">Chartered Accountant &middot; Wealth Management &amp; Taxation</div>
+        </div>
+      </div>
+      <div class="author-card">
+        <div class="author-avatar"><img src="../assets/tripti-saini.jpg" alt="CA Tripti Saini" loading="lazy"></div>
+        <div>
+          <div class="author-name">CA Tripti Saini</div>
+          <div class="author-role">Chartered Accountant &middot; Taxation &amp; Finance Operations</div>
+        </div>
+      </div>
+    </div>
+    <div class="updated-line">Reviewed by CA Pankaj Chhabra &amp; CA Tripti Saini &middot; Last updated 22 July 2026</div>
+
+    <h2 style="margin-top:40px;">Related reading</h2>
+    <div class="related-grid">
+      <a class="related-card" href="hra-exemption-explained.html"><span class="tag">Taxation</span><h4>HRA Exemption Explained: How to Save Tax on Rent</h4></a>
+      <a class="related-card" href="form-16-explained.html"><span class="tag">Taxation</span><h4>Form 16 Explained: How to Read Your Salary TDS Certificate</h4></a>
+    </div>
+
+    <div class="cta-box">
+      <div>
+        <h3>Not sure how to split your retirement savings?</h3>
+        <p>Book a 40-minute call with a Chartered Accountant for Rs. 500.</p>
+      </div>
+      <a class="cta-btn" href="../index.html#book-expert">Book a Finance Expert →</a>
+    </div>
+  </article>
+</div>
+
+<footer>
+  <div class="wrap">© Paisa Stack — plain-language money help for everyday people</div>
+</footer>
+
+</body>
+</html>

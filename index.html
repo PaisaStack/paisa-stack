@@ -1,0 +1,2965 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Paisa Stack — personal finance, explained without the jargon</title>
+<meta name="description" content="Free calculators for TDS on property, income tax, loan EMI, and investment returns — plus practical ebooks, expert consultations, and filing services for people who've never had finance explained simply.">
+<meta name="theme-color" content="#0E1B33">
+<link rel="canonical" href="https://paisastack.com/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%2312203D'/%3E%3Ctext x='50' y='68' font-family='monospace' font-size='58' font-weight='700' text-anchor='middle' fill='%23D4AF5A'%3E%E2%82%B9%3C/text%3E%3C/svg%3E">
+<meta property="og:title" content="Paisa Stack — personal finance, explained without the jargon">
+<meta property="og:description" content="Free calculators, ebooks, expert calls, and filing help for people who've never had finance explained simply.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://paisastack.com/">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Paisa Stack",
+  "url": "https://paisastack.com/",
+  "description": "Free personal finance calculators, ebooks, and filing services for salaried employees, freelancers, and business owners in India.",
+  "founder": [
+    {
+      "@type": "Person",
+      "name": "CA Pankaj Chhabra",
+      "jobTitle": "Chartered Accountant, Quant Trader, Family Office"
+    },
+    {
+      "@type": "Person",
+      "name": "CA Tripti Saini",
+      "jobTitle": "Chartered Accountant, Taxation & Finance Operations, Family Office"
+    }
+  ],
+  "sameAs": []
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#FFFFFF;
+    --bg-soft:#FBFAF7;
+    --surface:#F5F4EF;
+    --surface-2:#ECEAE1;
+    --border: rgba(18,32,61,0.12);
+    --border-2: rgba(18,32,61,0.22);
+    --ink:#12203D;
+    --text-dim:#5B6472;
+    --text-dimmer:#8891A0;
+    --amber:#A8781E;
+    --amber-soft: rgba(168,120,30,0.10);
+    --teal:#1F8F73;
+    --teal-soft: rgba(31,143,115,0.10);
+    --rose:#C6432F;
+    --rose-soft: rgba(198,67,47,0.10);
+    --mono: 'JetBrains Mono', monospace;
+    --sans: 'Inter', sans-serif;
+    --display: 'Fraunces', serif;
+    --navy-deep:#0E1B33;
+    --navy-mid:#152645;
+    --gold:#D4AF5A;
+    --gold-dim:#9FB0CC;
+    --radius: 12px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  [id]{scroll-margin-top: 90px;}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--ink);
+    font-family:var(--sans);
+    line-height:1.6;
+  }
+  h1,h2,h3{font-family:var(--display); margin:0; font-weight:600; color:var(--ink);}
+  a{color:inherit; text-decoration:none;}
+  .mono{font-family:var(--mono);}
+  ::selection{background:var(--amber-soft); color:var(--amber);}
+
+  .wrap{max-width:1040px; margin:0 auto; padding:0 22px;}
+
+  /* ---------------- NAV ---------------- */
+  header{
+    position:sticky; top:0; z-index:20;
+    background:rgba(255,255,255,0.9);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--border);
+  }
+  .nav{display:flex; align-items:center; justify-content:space-between; padding:16px 0;}
+  .brand{font-family:var(--display); font-size:1.15rem; font-weight:700; color:var(--ink); display:flex; align-items:center; gap:8px;}
+  .brand .mark{
+    width:28px; height:28px; border-radius:8px; background:var(--ink);
+    color:#fff; display:flex; align-items:center; justify-content:center;
+    font-family:var(--mono); font-size:0.9rem; font-weight:700;
+  }
+  .navlinks{display:flex; gap:2px; align-items:center; font-size:0.92rem;}
+  .navlinks::-webkit-scrollbar{display:none;}
+  .navlinks a{color:var(--text-dim); padding:8px 12px; border-radius:7px; font-weight:500; white-space:nowrap;}
+  .navlinks a:hover{color:var(--ink); background:var(--surface);}
+
+  /* ---- hamburger (mobile only) ---- */
+  .hamburger{
+    display:none; background:none; border:1px solid var(--border-2); border-radius:8px;
+    padding:8px; cursor:pointer; color:var(--ink); align-items:center; justify-content:center;
+  }
+  .hamburger svg{width:20px; height:20px;}
+
+  @media (max-width: 980px){
+    .nav{flex-wrap:wrap; row-gap:10px;}
+    .brand{order:1;}
+    .hamburger{display:flex; order:2;}
+    .nav-cta{order:3;}
+    .navlinks{
+      order:4; flex-basis:100%; width:100%;
+      display:none; flex-direction:column; align-items:stretch;
+      gap:2px; padding-top:12px; border-top:1px solid var(--border);
+      overflow-x:visible; max-height:70vh; overflow-y:auto;
+    }
+    .navlinks.mobile-open{display:flex;}
+    .navlinks a{width:100%; padding:11px 12px;}
+    .nav-item{width:100%;}
+    .nav-trigger{width:100%; justify-content:space-between;}
+  }
+
+  /* ---- dropdown nav items ---- */
+  .nav-item{position:relative;}
+  .nav-trigger{
+    display:flex; align-items:center; gap:5px;
+    background:none; border:none; cursor:pointer;
+    color:var(--text-dim); padding:8px 10px; border-radius:7px; font-weight:500;
+    font-size:0.92rem; font-family:var(--sans); white-space:nowrap;
+  }
+  .nav-trigger:hover, .nav-item.open .nav-trigger{color:var(--ink); background:var(--surface);}
+  .nav-trigger svg{width:13px; height:13px; transition:transform 0.15s ease; flex:0 0 auto;}
+  .nav-item.open .nav-trigger svg, .nav-item:hover .nav-trigger svg{transform:rotate(180deg);}
+
+  .dropdown-panel{
+    position:absolute; top:calc(100% + 8px); left:0; z-index:40;
+    background:#fff; border:1px solid var(--border); border-radius:12px;
+    box-shadow:0 16px 40px rgba(27,35,51,0.14);
+    min-width:250px; padding:8px;
+    opacity:0; visibility:hidden; transform:translateY(6px);
+    transition:opacity .15s ease, transform .15s ease, visibility .15s;
+  }
+  .dropdown-panel.wide{min-width:300px;}
+  .nav-item:hover .dropdown-panel, .nav-item.open .dropdown-panel{
+    opacity:1; visibility:visible; transform:translateY(0);
+  }
+  .dd-link{
+    display:block; padding:9px 12px; border-radius:8px; font-size:0.85rem;
+    color:var(--ink); font-weight:400; white-space:normal; line-height:1.35;
+  }
+  .dd-link:hover{background:var(--teal-soft); color:var(--teal);}
+  .dd-viewall{
+    margin-top:4px; padding-top:10px; border-top:1px solid var(--border);
+    color:var(--amber); font-weight:600; font-size:0.83rem;
+  }
+  .dd-viewall:hover{background:var(--amber-soft); color:var(--amber);}
+  @media (max-width: 980px){
+    .dropdown-panel{position:static; opacity:1; visibility:visible; transform:none; box-shadow:none; border:none; display:none; margin:4px 0 4px 10px;}
+    .nav-item.open .dropdown-panel{display:block;}
+    .nav-item:hover .dropdown-panel{display:none;}
+    .nav-item.open:hover .dropdown-panel{display:block;}
+  }
+  .nav-cta{
+    background:var(--ink); color:#fff; font-weight:600;
+    padding:9px 16px; border-radius:7px; font-size:0.86rem;
+  }
+  .nav-cta:hover{background:#323d54;}
+
+  /* ---------------- HERO ---------------- */
+  .hero-band{
+    background: linear-gradient(180deg, var(--navy-deep), var(--navy-mid));
+    border-radius: 0 0 28px 28px;
+    margin-bottom: 8px;
+  }
+  .hero{
+    padding:64px 0 56px;
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    gap:44px;
+    align-items:center;
+  }
+  @media (max-width: 860px){ .hero{grid-template-columns:1fr; padding-top:44px;} .hero .art{order:-1;} }
+
+  .eyebrow{
+    font-family:var(--mono); font-size:0.76rem; letter-spacing:0.05em; text-transform:uppercase;
+    color:var(--gold); margin-bottom:18px; display:inline-block;
+    background:rgba(212,175,90,0.14); padding:7px 14px; border-radius:999px;
+  }
+  .hero h1{
+    font-size:clamp(2.1rem, 4.4vw, 3rem);
+    line-height:1.15;
+    max-width:15ch;
+    color:#fff;
+    font-weight:600;
+  }
+  .hero h1 .hl{color:var(--gold); font-style:italic;}
+  .hero p.lede{
+    color:var(--gold-dim); margin-top:18px; max-width:46ch; font-size:1.05rem;
+  }
+  .hero-ctas{display:flex; gap:12px; margin-top:26px; flex-wrap:wrap;}
+  .btn{
+    font-size:0.92rem; font-weight:600;
+    padding:12px 22px; border-radius:9px; border:1px solid var(--border-2);
+    display:inline-flex; align-items:center; gap:8px;
+    transition:transform 0.12s ease, border-color 0.12s ease, background 0.12s ease;
+  }
+  .btn:hover{transform:translateY(-1px); border-color:var(--ink);}
+  .btn.primary{background:var(--ink); color:#fff; border-color:var(--ink);}
+  .btn.primary:hover{background:#1c3260;}
+  .hero .btn.primary{background:var(--gold); color:#1A1204; border-color:var(--gold);}
+  .hero .btn.primary:hover{background:#e2c179;}
+  .hero .btn.ghost{border-color:rgba(255,255,255,0.28); color:#fff;}
+  .hero .btn.ghost:hover{border-color:#fff; background:rgba(255,255,255,0.06);}
+
+  .hero .art svg{width:100%; height:auto; display:block;}
+
+  /* ---- trust strip ---- */
+  .trust-strip{
+    display:flex; flex-wrap:wrap; gap:22px; justify-content:center;
+    padding:18px 0 6px; border-top:1px solid rgba(255,255,255,0.1);
+  }
+  .trust-item{
+    display:flex; align-items:center; gap:8px; font-size:0.86rem; color:var(--gold-dim); font-weight:500;
+  }
+  .trust-item svg{width:16px; height:16px; color:var(--gold); flex:0 0 auto;}
+  .trust-item .editme{color:var(--gold); font-weight:700; font-family:var(--mono); font-size:0.8rem;}
+
+  /* ---- start here ---- */
+  .start-here{padding:26px 0 40px; text-align:center;}
+  .start-here-label{
+    font-family:var(--mono); font-size:0.74rem; letter-spacing:0.08em; text-transform:uppercase;
+    color:var(--gold-dim); display:block; margin-bottom:14px;
+  }
+  .start-here-steps{display:flex; align-items:center; justify-content:center; gap:14px; flex-wrap:wrap;}
+  .start-step{
+    display:flex; align-items:center; gap:10px; background:rgba(255,255,255,0.06);
+    border:1px solid rgba(255,255,255,0.14); border-radius:999px; padding:10px 20px 10px 12px;
+    color:#fff; font-size:0.88rem; font-weight:600; transition:background .15s ease, transform .15s ease;
+  }
+  .start-step:hover{background:rgba(255,255,255,0.12); transform:translateY(-1px);}
+  .step-num{
+    width:22px; height:22px; border-radius:50%; background:var(--gold); color:#1A1204;
+    font-family:var(--mono); font-size:0.78rem; font-weight:700;
+    display:flex; align-items:center; justify-content:center; flex:0 0 auto;
+  }
+  .step-arrow{color:var(--gold-dim); font-size:1rem;}
+  @media (max-width:700px){ .step-arrow{display:none;} .start-here-steps{flex-direction:column; align-items:stretch;} .start-step{justify-content:center;} }
+
+  /* ---------------- SECTION SHELL ---------------- */
+  section.block{padding:64px 0; position:relative;}
+  section.block.alt{background:var(--bg-soft); border-top:1px solid var(--border); border-bottom:1px solid var(--border);}
+  .kicker{
+    font-family:var(--mono); font-size:0.8rem; color:var(--text-dimmer);
+    margin-bottom:10px; font-weight:600;
+  }
+  .kicker .seg{color:var(--teal); font-weight:700; letter-spacing:0.03em; text-transform:uppercase;}
+  .block-head h2{font-size:1.65rem;}
+  .block-head p{color:var(--text-dim); margin-top:10px; max-width:60ch;}
+  .block-head{margin-bottom:36px;}
+
+  /* ---------------- CHECKLIST ---------------- */
+  .checklist{display:grid; grid-template-columns:repeat(2,1fr); gap:14px;}
+  @media (max-width:700px){.checklist{grid-template-columns:1fr;}}
+  .check-item{
+    display:flex; gap:12px; align-items:flex-start;
+    background:#fff; border:1px solid var(--border); border-radius:10px;
+    padding:16px 16px;
+  }
+  .check-item .box{
+    flex:0 0 auto; width:22px; height:22px; border-radius:6px;
+    background:var(--teal); color:#fff;
+    display:flex; align-items:center; justify-content:center;
+    font-size:0.78rem; margin-top:1px;
+  }
+  .check-item p{margin:0; font-size:0.94rem; color:var(--ink);}
+  .check-item p span{color:var(--text-dim);}
+
+  /* ---------------- TOOLS ---------------- */
+  .tool-tabs{display:flex; gap:8px; margin-bottom:22px; flex-wrap:wrap;}
+  .tool-tab{
+    padding:10px 16px; border-radius:8px; border:1px solid var(--border);
+    background:#fff; color:var(--text-dim); cursor:pointer; font-weight:500; font-size:0.9rem;
+  }
+  .tool-tab[aria-selected="true"]{
+    background:var(--ink); color:#fff; border-color:var(--ink);
+  }
+  .tool-panel{display:none;}
+  .tool-panel.active{display:block;}
+  @media (prefers-reduced-motion: no-preference){
+    .tool-panel.active{animation:fadein .3s ease both;}
+    @keyframes fadein{from{opacity:0; transform:translateY(6px);} to{opacity:1; transform:translateY(0);}}
+  }
+
+  .tool-window{background:#fff; border:1px solid var(--border); border-radius:var(--radius); overflow:hidden; box-shadow:0 2px 18px rgba(27,35,51,0.05);}
+  .tool-titlebar{display:flex; align-items:center; gap:8px; padding:12px 18px; background:var(--surface); border-bottom:1px solid var(--border);}
+  .tool-titlebar .dots{display:flex; gap:6px;}
+  .tool-titlebar .dot{width:9px; height:9px; border-radius:50%;}
+  .tool-titlebar .name{margin-left:6px; font-size:0.86rem; font-weight:600; color:var(--ink);}
+  .tool-grid{display:grid; grid-template-columns:1.05fr 0.95fr; gap:0;}
+  @media (max-width:820px){.tool-grid{grid-template-columns:1fr;}}
+  .tool-form{padding:26px; border-right:1px solid var(--border);}
+  @media (max-width:820px){.tool-form{border-right:none; border-bottom:1px solid var(--border);}}
+  .tool-out{padding:26px;}
+
+  .field{margin-bottom:20px;}
+  .field:last-child{margin-bottom:0;}
+  .field-label{display:flex; justify-content:space-between; align-items:baseline; font-size:0.86rem; font-weight:500; color:var(--ink); margin-bottom:8px;}
+  .field-label .val{font-family:var(--mono); color:var(--amber); font-size:0.88rem; font-weight:600;}
+  .field-hint{font-size:0.78rem; color:var(--text-dimmer); margin-top:6px;}
+
+  input[type="number"]{
+    width:100%; padding:10px 12px; border-radius:7px;
+    border:1px solid var(--border-2); background:var(--bg-soft); color:var(--ink);
+    font-family:var(--mono); font-size:0.94rem;
+  }
+  input[type="number"]:focus, input[type="range"]:focus-visible{outline:2px solid var(--teal); outline-offset:1px;}
+  input[type="range"]{width:100%; margin-top:10px; accent-color:var(--teal);}
+
+  .seg{display:flex; border:1px solid var(--border-2); border-radius:7px; overflow:hidden;}
+  .seg button{flex:1; border:none; background:var(--bg-soft); color:var(--text-dim); padding:10px 10px; font-size:0.86rem; font-weight:500; cursor:pointer; border-right:1px solid var(--border-2);}
+  .seg button:last-child{border-right:none;}
+  .seg button[aria-pressed="true"]{background:var(--teal); color:#fff; font-weight:600;}
+
+  .toggle-row{display:flex; align-items:center; justify-content:space-between; gap:10px;}
+  .switch{position:relative; width:42px; height:24px; flex:0 0 auto;}
+  .switch input{position:absolute; opacity:0; width:100%; height:100%; margin:0; cursor:pointer;}
+  .switch .track{position:absolute; inset:0; background:var(--border-2); border-radius:999px; transition:background .15s;}
+  .switch .thumb{position:absolute; top:3px; left:3px; width:18px; height:18px; background:#fff; border-radius:50%; box-shadow:0 1px 3px rgba(0,0,0,0.2); transition:transform .15s;}
+  .switch input:checked + .track{background:var(--teal);}
+  .switch input:checked + .track + .thumb{transform:translateX(18px);}
+
+  .console{background:var(--bg-soft); border:1px solid var(--border); border-radius:9px; padding:16px;}
+  .console .l{margin-bottom:9px; display:flex; justify-content:space-between; gap:10px; font-size:0.87rem;}
+  .console .l .k{color:var(--text-dim);}
+  .console .l .v{font-family:var(--mono); color:var(--ink); font-weight:600; text-align:right;}
+  .console .l.hl .v{color:var(--amber); font-weight:700;}
+  .console .l.good .v{color:var(--teal); font-weight:700;}
+
+  .result-hero{margin-bottom:18px;}
+  .result-hero .rl{font-size:0.82rem; color:var(--text-dim); font-weight:500;}
+  .result-hero .rv{font-family:var(--mono); font-size:2.1rem; font-weight:700; color:var(--amber); margin-top:4px;}
+  .result-hero.calm .rv{color:var(--teal);}
+  .result-hero .rn{font-size:0.88rem; color:var(--text-dim); margin-top:6px;}
+
+  .bar-wrap{margin:18px 0;}
+  .bar-item{margin-bottom:12px;}
+  .bar-top{display:flex; justify-content:space-between; font-size:0.84rem; margin-bottom:6px;}
+  .bar-top .nm{color:var(--text-dim);}
+  .bar-top .amt{font-family:var(--mono); color:var(--ink);}
+  .bar-track{height:8px; background:var(--surface-2); border-radius:999px; overflow:hidden;}
+  .bar-fill{height:100%; background:var(--text-dimmer); border-radius:999px; transition:width .5s cubic-bezier(.2,.7,.3,1);}
+  .bar-fill.win{background:var(--teal);}
+  .bar-fill.warn{background:var(--amber);}
+
+  .note-flag{margin-top:16px; background:var(--teal-soft); border-left:3px solid var(--teal); padding:10px 12px; border-radius:0 7px 7px 0; font-size:0.82rem; color:var(--ink);}
+
+  /* ---------------- GUIDES ---------------- */
+  .guide-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:14px;}
+  @media (max-width:760px){.guide-grid{grid-template-columns:1fr;}}
+  .guide{background:#fff; border:1px solid var(--border); border-radius:10px; overflow:hidden;}
+  .guide-head{
+    width:100%; text-align:left; background:none; border:none; color:var(--ink);
+    padding:16px 18px; cursor:pointer; display:flex; align-items:center; gap:14px;
+    font-family:var(--sans);
+  }
+  .guide-icon{
+    flex:0 0 auto; width:38px; height:38px; border-radius:9px; background:var(--teal-soft);
+    display:flex; align-items:center; justify-content:center; color:var(--teal);
+  }
+  .guide-icon svg{width:19px; height:19px;}
+  .guide-head .titles{flex:1;}
+  .guide-head .titles .t{font-size:0.96rem; font-weight:600;}
+  .guide-head .titles .tag{font-family:var(--mono); font-size:0.72rem; color:var(--text-dimmer); display:block; margin-top:3px;}
+  .guide-head .chev{color:var(--text-dimmer); transition:transform .2s ease; flex:0 0 auto; font-size:1.1rem;}
+  .guide[data-open="true"] .chev{transform:rotate(45deg); color:var(--amber);}
+  .guide-body{max-height:0; overflow:hidden; transition:max-height .3s ease;}
+  .guide[data-open="true"] .guide-body{max-height:600px;}
+  .guide-body-inner{padding:0 18px 18px 70px; color:var(--text-dim); font-size:0.89rem;}
+  .guide-body-inner ul{margin:0; padding-left:18px;}
+  .guide-body-inner li{margin-bottom:8px;}
+  .guide-body-inner li:last-child{margin-bottom:0;}
+  .guide-body-inner b{color:var(--ink);}
+
+  /* ---------------- ABOUT ---------------- */
+  .about-grid{display:grid; grid-template-columns:1fr 1fr; gap:40px; align-items:center;}
+  @media (max-width:760px){.about-grid{grid-template-columns:1fr;}}
+  .about-grid p{color:var(--text-dim); font-size:0.98rem;}
+  .about-art{background:var(--surface); border:1px solid var(--border); border-radius:16px; padding:14px;}
+  .about-art svg{width:100%; height:auto; display:block;}
+  .review-invite{
+    max-width:520px; margin:0 auto; text-align:center; background:#fff; border:1px solid var(--border);
+    border-radius:16px; padding:38px 32px;
+  }
+  .review-invite-icon{
+    width:52px; height:52px; border-radius:14px; background:var(--amber-soft); color:var(--amber);
+    display:flex; align-items:center; justify-content:center; margin:0 auto 18px;
+  }
+  .review-invite-icon svg{width:26px; height:26px;}
+  .review-invite h3{font-size:1.1rem; margin:0 0 10px;}
+  .review-invite p{font-size:0.92rem; color:var(--text-dim); margin:0 0 22px; line-height:1.6;}
+
+  .testimonial-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-bottom:26px;}
+  @media (max-width:860px){ .testimonial-grid{grid-template-columns:1fr;} }
+  .testimonial-card{
+    background:#fff; border:1px solid var(--border); border-radius:14px; padding:22px;
+    display:flex; flex-direction:column; gap:14px;
+  }
+  .testimonial-stars{color:var(--gold); font-size:0.9rem; letter-spacing:2px;}
+  .testimonial-quote{font-size:0.9rem; color:var(--ink); line-height:1.65; margin:0; flex:1;}
+  .testimonial-person{border-top:1px solid var(--border); padding-top:12px;}
+  .testimonial-name{font-weight:600; font-size:0.9rem; color:var(--ink);}
+  .testimonial-role{font-size:0.8rem; color:var(--text-dim); margin-top:1px;}
+
+  .disclaimer{
+    margin-top:20px;
+    background:var(--bg-soft); border:1px solid var(--border); border-radius:10px; padding:16px 18px;
+    font-size:0.82rem; color:var(--text-dim); line-height:1.7;
+  }
+  .disclaimer b{color:var(--ink);}
+
+  footer.site{border-top:1px solid var(--border); padding:44px 0 22px; font-size:0.82rem; color:var(--text-dimmer);}
+  .footer-grid{display:grid; grid-template-columns:1.6fr 1fr 1fr 1fr; gap:28px; padding-bottom:30px;}
+  @media (max-width:700px){ .footer-grid{grid-template-columns:1fr 1fr;} }
+  .footer-brand{display:flex; align-items:center; gap:8px; font-family:var(--display); font-weight:700; font-size:1.05rem; color:var(--ink); margin-bottom:10px;}
+  .footer-brand .mark{width:26px; height:26px; border-radius:7px; background:var(--ink); color:#fff; display:flex; align-items:center; justify-content:center; font-family:var(--mono); font-size:0.82rem; font-weight:700;}
+  .footer-blurb{font-size:0.84rem; color:var(--text-dim); line-height:1.6; max-width:38ch; margin:0;}
+  .footer-col h4{font-family:var(--sans); font-size:0.78rem; text-transform:uppercase; letter-spacing:0.05em; color:var(--text-dimmer); margin:0 0 12px;}
+  .footer-col{display:flex; flex-direction:column; gap:9px;}
+  .footer-col a{color:var(--text-dim); font-size:0.86rem;}
+  .footer-col a:hover{color:var(--teal);}
+  .footer-bottom{border-top:1px solid var(--border); padding-top:18px; display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px;}
+
+  /* ---------------- EBOOKS ---------------- */
+  .ebook-grid{display:grid; grid-template-columns:repeat(auto-fill, minmax(230px,1fr)); gap:16px;}
+  .ebook-card{
+    background:#fff; border:1px solid var(--border); border-radius:12px; overflow:hidden;
+    display:flex; flex-direction:column;
+  }
+  .ebook-cover{
+    position:relative; height:110px; display:flex; align-items:flex-end; padding:14px;
+  }
+  .ebook-cover .num{font-family:var(--display); font-size:2.1rem; font-weight:700; color:rgba(255,255,255,0.85);}
+  .ebook-cover .cat{
+    position:absolute; top:12px; left:14px; font-size:0.68rem; font-weight:600; letter-spacing:0.03em;
+    text-transform:uppercase; color:rgba(255,255,255,0.9);
+  }
+  .ebook-cover .price{
+    position:absolute; top:10px; right:10px; background:rgba(255,255,255,0.92); color:var(--ink);
+    font-family:var(--mono); font-weight:700; font-size:0.8rem; padding:4px 9px; border-radius:999px;
+  }
+  .ebook-cover.c-amber{background:linear-gradient(135deg,#A8781E,#D4AF5A);}
+  .ebook-cover.c-teal{background:linear-gradient(135deg,#1F8F73,#38B296);}
+  .ebook-cover.c-rose{background:linear-gradient(135deg,#C6432F,#DE6A54);}
+  .ebook-cover.c-ink{background:linear-gradient(135deg,#12203D,#26385C);}
+  .ebook-body{padding:16px; display:flex; flex-direction:column; gap:8px; flex:1;}
+  .ebook-body h3{font-size:0.96rem; font-weight:600; font-family:var(--sans); line-height:1.3;}
+  .ebook-body p{font-size:0.82rem; color:var(--text-dim); margin:0; flex:1;}
+  .ebook-buy{
+    margin-top:6px; text-align:center; padding:9px 10px; border-radius:8px;
+    background:var(--ink); color:#fff; font-size:0.84rem; font-weight:600;
+  }
+  .ebook-buy:hover{background:#323d54;}
+  .ebook-note{font-size:0.82rem; color:var(--text-dim); margin-top:18px;}
+
+  /* ---------------- TRACKERS (free) ---------------- */
+  .tracker-grid{display:grid; grid-template-columns:repeat(auto-fill, minmax(230px,1fr)); gap:16px;}
+  .tracker-card{
+    background:#fff; border:1px solid var(--border); border-radius:12px; overflow:hidden;
+    display:flex; flex-direction:column;
+  }
+  .tracker-cover{
+    position:relative; height:96px; display:flex; align-items:flex-end; padding:14px;
+    background:linear-gradient(135deg, var(--ink), #26385C);
+  }
+  .tracker-cover .free-badge{
+    position:absolute; top:10px; right:10px; background:rgba(255,255,255,0.95); color:var(--teal);
+    font-family:var(--mono); font-weight:700; font-size:0.72rem; padding:4px 10px; border-radius:999px;
+  }
+  .tracker-cover svg{width:34px; height:34px; color:var(--gold);}
+  .tracker-body{padding:16px; display:flex; flex-direction:column; gap:8px; flex:1;}
+  .tracker-body h3{font-size:0.96rem; font-weight:600; font-family:var(--sans); line-height:1.3;}
+  .tracker-body p{font-size:0.82rem; color:var(--text-dim); margin:0; flex:1;}
+  .tracker-dl{
+    margin-top:6px; text-align:center; padding:9px 10px; border-radius:8px;
+    background:var(--teal); color:#fff; font-size:0.84rem; font-weight:600;
+  }
+  .tracker-dl:hover{background:#187e63;}
+
+  /* ---------------- BOOK EXPERT ---------------- */
+  .expert-card{
+    background:#fff; border:1px solid var(--border); border-radius:16px; padding:32px;
+    display:grid; grid-template-columns:1fr 1fr; gap:36px; align-items:start;
+  }
+  @media (max-width:760px){.expert-card{grid-template-columns:1fr; padding:22px;}}
+  .expert-price{
+    display:inline-flex; align-items:baseline; gap:8px; background:var(--amber-soft);
+    color:var(--amber); padding:8px 14px; border-radius:999px; font-weight:700; font-size:0.95rem; margin-bottom:16px;
+  }
+  .expert-price .small{font-weight:500; font-size:0.78rem; color:var(--text-dim);}
+  .expert-list{list-style:none; padding:0; margin:0 0 22px;}
+  .expert-list li{
+    display:flex; gap:10px; align-items:flex-start; font-size:0.9rem; color:var(--ink); margin-bottom:10px;
+  }
+  .expert-list li::before{content:'✓'; color:var(--teal); font-weight:700; flex:0 0 auto;}
+  .steps{list-style:none; padding:0; margin:0; counter-reset:step;}
+  .steps li{
+    counter-increment:step; display:flex; gap:14px; padding:14px 0; border-bottom:1px solid var(--border);
+    font-size:0.88rem; color:var(--text-dim);
+  }
+  .steps li:last-child{border-bottom:none;}
+  .steps li::before{
+    content:counter(step); flex:0 0 auto; width:26px; height:26px; border-radius:50%;
+    background:var(--surface); color:var(--ink); font-family:var(--mono); font-weight:700; font-size:0.8rem;
+    display:flex; align-items:center; justify-content:center;
+  }
+  .steps li b{color:var(--ink);}
+
+  /* ---------------- SERVICES ---------------- */
+  .service-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:16px;}
+  @media (max-width:700px){.service-grid{grid-template-columns:1fr;}}
+  .service-card{
+    background:#fff; border:1px solid var(--border); border-radius:12px; padding:22px;
+    display:flex; flex-direction:column; gap:12px;
+  }
+  .service-icon{
+    width:42px; height:42px; border-radius:10px; background:var(--amber-soft); color:var(--amber);
+    display:flex; align-items:center; justify-content:center;
+  }
+  .service-icon svg{width:21px; height:21px;}
+  .service-card h3{font-size:1.05rem;}
+  .service-card p{font-size:0.88rem; color:var(--text-dim); margin:0; flex:1;}
+  .service-note{font-size:0.76rem; color:var(--text-dimmer);}
+
+  /* WhatsApp CTA, reused across ebooks / expert / services */
+  .wa-btn{
+    display:inline-flex; align-items:center; justify-content:center; gap:8px;
+    background:#25D366; color:#fff; font-weight:600; font-size:0.88rem;
+    padding:11px 18px; border-radius:9px; width:100%;
+  }
+  .wa-btn:hover{background:#1fb956;}
+  .wa-btn svg{width:16px; height:16px; flex:0 0 auto;}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <div class="brand"><span class="mark">₹</span>Paisa Stack</div>
+    <button class="hamburger" id="hamburgerBtn" aria-label="Toggle menu" aria-expanded="false">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path id="hamburgerIcon" d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
+    <nav class="navlinks" id="mainNav">
+      <a href="#home">Home</a>
+
+      <div class="nav-item">
+        <button class="nav-trigger" type="button">Tools<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg></button>
+        <div class="dropdown-panel wide" style="columns:2; column-gap:4px;">
+          <a class="dd-link" href="#t-tds" data-tool-panel="t-tds">TDS on Property</a>
+          <a class="dd-link" href="#t-tax" data-tool-panel="t-tax">Income Tax</a>
+          <a class="dd-link" href="#t-hra" data-tool-panel="t-hra">HRA Exemption</a>
+          <a class="dd-link" href="#t-capgains" data-tool-panel="t-capgains">Capital Gains</a>
+          <a class="dd-link" href="#t-rentbuy" data-tool-panel="t-rentbuy">Rent vs Buy</a>
+          <a class="dd-link" href="#t-salary" data-tool-panel="t-salary">Salary / In-Hand</a>
+          <a class="dd-link" href="#t-gratuity" data-tool-panel="t-gratuity">Gratuity</a>
+          <a class="dd-link" href="#t-freelance" data-tool-panel="t-freelance">Freelance Tax (44ADA)</a>
+          <a class="dd-link" href="#t-emi" data-tool-panel="t-emi">Loan EMI</a>
+          <a class="dd-link" href="#t-prepay" data-tool-panel="t-prepay">Loan Prepayment</a>
+          <a class="dd-link" href="#t-inv" data-tool-panel="t-inv">Investment Returns</a>
+          <a class="dd-link" href="#t-goal" data-tool-panel="t-goal">Goal Planner</a>
+          <a class="dd-link" href="#t-ppf" data-tool-panel="t-ppf">PPF</a>
+          <a class="dd-link" href="#t-epf" data-tool-panel="t-epf">EPF</a>
+          <a class="dd-link" href="#t-nps" data-tool-panel="t-nps">NPS</a>
+        </div>
+      </div>
+
+      <div class="nav-item">
+        <button class="nav-trigger" type="button">Ebooks<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg></button>
+        <div class="dropdown-panel wide">
+          <a class="dd-link" href="#ebooks">01. The First Payslip Playbook</a>
+          <a class="dd-link" href="#ebooks">02. Old vs New Regime, Decided</a>
+          <a class="dd-link" href="#ebooks">03. Where Every Rupee Should Go</a>
+          <a class="dd-link" href="#ebooks">04. 10 Businesses Under ₹50,000</a>
+          <a class="dd-link" href="#ebooks">05. Emails That Get Replies</a>
+          <a class="dd-link" href="#ebooks">06. 50 Excel Shortcuts</a>
+          <a class="dd-link" href="#ebooks">07. Legal Ways to Pay Less Tax</a>
+          <a class="dd-link" href="#ebooks">08. Your First Month at a New Job</a>
+          <a class="dd-link" href="#ebooks">09. Salary Negotiation, Script Included</a>
+          <a class="dd-link" href="#ebooks">10. Buying Your First Property</a>
+        </div>
+      </div>
+
+      <div class="nav-item">
+        <button class="nav-trigger" type="button">Trackers<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg></button>
+        <div class="dropdown-panel">
+          <a class="dd-link" href="#trackers">Monthly Budget Tracker <span style="color:var(--teal); font-weight:600;">· Free</span></a>
+          <a class="dd-link" href="#trackers">Wedding Planner Tracker <span style="color:var(--teal); font-weight:600;">· Free</span></a>
+          <a class="dd-link" href="#trackers">Travel &amp; Vacation Tracker <span style="color:var(--teal); font-weight:600;">· Free</span></a>
+          <a class="dd-link" href="#trackers">Debt &amp; EMI Payoff Tracker <span style="color:var(--teal); font-weight:600;">· Free</span></a>
+          <a class="dd-link" href="#trackers">Festival &amp; Gifting Tracker <span style="color:var(--teal); font-weight:600;">· Free</span></a>
+        </div>
+      </div>
+
+      <div class="nav-item">
+        <button class="nav-trigger" type="button">Blogs<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg></button>
+        <div class="dropdown-panel wide">
+          <a class="dd-link" href="blogs/how-to-check-improve-cibil-score.html">How to Check &amp; Improve Your CIBIL Score</a>
+          <a class="dd-link" href="blogs/term-vs-life-insurance.html">Term Insurance vs Life Insurance</a>
+          <a class="dd-link" href="blogs/company-health-insurance-gaps.html">What Company Health Insurance Doesn't Cover</a>
+          <a class="dd-link" href="blogs/hra-exemption-explained.html">HRA Exemption Explained</a>
+          <a class="dd-link" href="blogs/form-16-explained.html">Form 16 Explained</a>
+          <a class="dd-link" href="blogs/nps-vs-ppf-vs-epf.html">NPS vs PPF vs EPF</a>
+          <a class="dd-link" href="blogs/sip-taxation-explained.html">How Mutual Fund SIPs Are Taxed</a>
+          <a class="dd-link" href="blogs/credit-card-minimum-due-trap.html">The Credit Card Minimum-Due Trap</a>
+          <a class="dd-link" href="blogs/freelancing-gst-invoicing.html">Freelancing? How GST &amp; Invoicing Work</a>
+          <a class="dd-link" href="blogs/crypto-tax-india.html">How Crypto Gains Are Taxed in India</a>
+          <a class="dd-link dd-viewall" href="blogs/blogs.html">View all 20 blogs →</a>
+        </div>
+      </div>
+
+      <div class="nav-item">
+        <button class="nav-trigger" type="button">Guides<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg></button>
+        <div class="dropdown-panel">
+          <a class="dd-link" href="#guides">New vs Old Tax Regime</a>
+          <a class="dd-link" href="#guides">RSUs &amp; ESOPs</a>
+          <a class="dd-link" href="#guides">Notice Period &amp; Settlement</a>
+          <a class="dd-link" href="#guides">PF &amp; Switching Jobs</a>
+          <a class="dd-link" href="#guides">Building an Emergency Fund</a>
+          <a class="dd-link" href="#guides">TDS at Property Registration</a>
+        </div>
+      </div>
+
+      <a href="#book-expert">Book a Finance Expert</a>
+
+      <div class="nav-item">
+        <button class="nav-trigger" type="button">Services<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg></button>
+        <div class="dropdown-panel">
+          <a class="dd-link" href="#services">ITR Filing</a>
+          <a class="dd-link" href="#services">Apply New PAN / Update PAN</a>
+          <a class="dd-link" href="#services">TDS Return Filing</a>
+          <a class="dd-link" href="#services">TDS on Property Consultancy</a>
+        </div>
+      </div>
+
+      <a href="about.html">About</a>
+    </nav>
+    <a href="#tools" class="nav-cta">Try the tools</a>
+  </div>
+</header>
+
+<div class="hero-band">
+<div class="wrap">
+  <section class="hero" id="home">
+    <div>
+      <span class="eyebrow">For people who've never really learned this</span>
+      <h1>Master your money with <span class="hl">free calculators, guides, and real tax help.</span></h1>
+      <p class="lede">Everything you need to handle tax, salary, loans, property, and investing — in one place, explained without the jargon.</p>
+      <div class="hero-ctas">
+        <a href="#tools" class="btn primary">Try the calculators</a>
+        <a href="#guides" class="btn ghost">Read the guides</a>
+      </div>
+    </div>
+    <div class="art" aria-hidden="true">
+      <svg viewBox="0 0 480 340" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="240" cy="176" r="118" fill="none" stroke="#D4AF5A" stroke-width="1" opacity="0.28"/>
+        <circle cx="240" cy="176" r="150" fill="none" stroke="#D4AF5A" stroke-width="1" opacity="0.14"/>
+        <rect x="120" y="176" width="20" height="104" rx="3" fill="#D4AF5A"/>
+        <rect x="152" y="140" width="20" height="140" rx="3" fill="#D4AF5A" opacity="0.85"/>
+        <rect x="184" y="102" width="20" height="178" rx="3" fill="#D4AF5A" opacity="0.7"/>
+        <rect x="216" y="152" width="20" height="128" rx="3" fill="#D4AF5A" opacity="0.85"/>
+        <rect x="248" y="118" width="20" height="162" rx="3" fill="#D4AF5A" opacity="0.7"/>
+        <rect x="280" y="86" width="20" height="194" rx="3" fill="#D4AF5A"/>
+        <rect x="312" y="130" width="20" height="150" rx="3" fill="#D4AF5A" opacity="0.85"/>
+        <path d="M130 176 L162 140 L194 102 L226 152 L258 118 L290 86" stroke="#FFFFFF" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity="0.9"/>
+        <circle cx="290" cy="86" r="7" fill="#FFFFFF"/>
+        <circle cx="290" cy="86" r="12" fill="none" stroke="#FFFFFF" stroke-width="1.5" opacity="0.5"/>
+        <text x="240" y="316" font-family="'Fraunces', serif" font-size="15" text-anchor="middle" fill="#9FB0CC" font-style="italic">steady, deliberate growth</text>
+        <circle cx="70" cy="70" r="26" fill="rgba(212,175,90,0.12)" stroke="#D4AF5A" stroke-width="1.5"/>
+        <text x="70" y="79" font-family="'JetBrains Mono', monospace" font-size="22" text-anchor="middle" fill="#D4AF5A" font-weight="700">₹</text>
+      </svg>
+    </div>
+  </section>
+
+  <!-- TRUST STRIP — EDIT: replace bracketed text with your real details -->
+  <div class="trust-strip">
+    <div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg> Built by CA Pankaj Chhabra &amp; CA Tripti Saini</div>
+    <div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg> 17+ years combined in finance &amp; wealth management</div>
+    <div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg> No logins, no data sold</div>
+  </div>
+
+  <!-- START HERE -->
+  <div class="start-here">
+    <span class="start-here-label">Start here</span>
+    <div class="start-here-steps">
+      <a href="#tools" class="start-step">
+        <span class="step-num">1</span>
+        <span class="step-text">Free Tax Calculator</span>
+      </a>
+      <span class="step-arrow">→</span>
+      <a href="#ebooks" class="start-step">
+        <span class="step-num">2</span>
+        <span class="step-text">Download an Ebook</span>
+      </a>
+      <span class="step-arrow">→</span>
+      <a href="#book-expert" class="start-step">
+        <span class="step-num">3</span>
+        <span class="step-text">Book a Consultation</span>
+      </a>
+    </div>
+  </div>
+</div>
+</div>
+
+<section class="block alt">
+  <div class="wrap">
+    <div class="kicker"><span class="seg">Start here</span> — does this sound like you?</div>
+    <div class="block-head">
+      <h2>You're not bad with money. Nobody just explained it to you.</h2>
+      <p>If two or more of these are true, you're exactly who this is built for.</p>
+    </div>
+    <div class="checklist">
+      <div class="check-item"><span class="box">✓</span><p>You got your first payslip and still don't fully know what <span>every deduction line actually means.</span></p></div>
+      <div class="check-item"><span class="box">✓</span><p>You've switched jobs a couple of times and now have <span>provident fund sitting in accounts you've lost track of.</span></p></div>
+      <div class="check-item"><span class="box">✓</span><p>You have stock options or RSUs vesting and <span>genuinely don't know when or how they get taxed.</span></p></div>
+      <div class="check-item"><span class="box">✓</span><p>You started a SIP because a friend said to, <span>with no real number behind why or how much.</span></p></div>
+      <div class="check-item"><span class="box">✓</span><p>You're buying a home soon and someone mentioned <span>a tax deduction you need to handle at registration.</span></p></div>
+      <div class="check-item"><span class="box">✓</span><p>Every year you scramble in the last week for <span>tax-saving proofs you should've planned months earlier.</span></p></div>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="tools">
+  <div class="wrap">
+    <div class="kicker"><span class="seg">Tools</span> — no sign-up, nothing saved</div>
+    <div class="block-head">
+      <h2>15 calculators for the moments that actually confuse people</h2>
+      <p>Tax, salary, property, loans, and savings schemes — type in your own numbers and get a straight answer. Everything runs right here in your browser — nothing is sent anywhere.</p>
+    </div>
+
+    <div class="tool-tabs" role="tablist" aria-label="Calculators">
+      <button class="tool-tab" role="tab" data-panel="t-tds" aria-selected="true">TDS on property</button>
+      <button class="tool-tab" role="tab" data-panel="t-tax" aria-selected="false">Income tax</button>
+      <button class="tool-tab" role="tab" data-panel="t-hra" aria-selected="false">HRA exemption</button>
+      <button class="tool-tab" role="tab" data-panel="t-capgains" aria-selected="false">Capital gains</button>
+      <button class="tool-tab" role="tab" data-panel="t-rentbuy" aria-selected="false">Rent vs buy</button>
+      <button class="tool-tab" role="tab" data-panel="t-salary" aria-selected="false">Salary / in-hand</button>
+      <button class="tool-tab" role="tab" data-panel="t-gratuity" aria-selected="false">Gratuity</button>
+      <button class="tool-tab" role="tab" data-panel="t-freelance" aria-selected="false">Freelance tax (44ADA)</button>
+      <button class="tool-tab" role="tab" data-panel="t-emi" aria-selected="false">Loan EMI</button>
+      <button class="tool-tab" role="tab" data-panel="t-prepay" aria-selected="false">Loan prepayment</button>
+      <button class="tool-tab" role="tab" data-panel="t-inv" aria-selected="false">Investment returns</button>
+      <button class="tool-tab" role="tab" data-panel="t-goal" aria-selected="false">Goal planner</button>
+      <button class="tool-tab" role="tab" data-panel="t-ppf" aria-selected="false">PPF</button>
+      <button class="tool-tab" role="tab" data-panel="t-epf" aria-selected="false">EPF</button>
+      <button class="tool-tab" role="tab" data-panel="t-nps" aria-selected="false">NPS</button>
+    </div>
+
+    <!-- TDS -->
+    <div class="tool-panel active" id="t-tds">
+      <div class="tool-window">
+        <div class="tool-titlebar">
+          <div class="dots"><span class="dot" style="background:#C6432F"></span><span class="dot" style="background:#A8781E"></span><span class="dot" style="background:#1F8F73"></span></div>
+          <span class="name">TDS when buying property (Section 194-IA)</span>
+        </div>
+        <div class="tool-grid">
+          <div class="tool-form">
+            <div class="field">
+              <div class="field-label"><span>Agreed sale price</span><span class="val" id="tds-price-val">₹75,00,000</span></div>
+              <input type="number" id="tds-price" value="7500000" step="100000" min="0">
+              <input type="range" id="tds-price-range" value="7500000" step="50000" min="0" max="30000000">
+            </div>
+            <div class="field">
+              <div class="field-label"><span>Stamp duty value</span><span class="val" id="tds-stamp-val">₹75,00,000</span></div>
+              <input type="number" id="tds-stamp" value="7500000" step="100000" min="0">
+              <input type="range" id="tds-stamp-range" value="7500000" step="50000" min="0" max="30000000">
+              <div class="field-hint">TDS uses whichever of these two is higher. If unsure, keep them equal.</div>
+            </div>
+            <div class="field">
+              <div class="field-label"><span>Seller has PAN on record?</span></div>
+              <div class="seg" id="tds-pan">
+                <button data-val="yes" aria-pressed="true">Yes</button>
+                <button data-val="no" aria-pressed="false">No PAN</button>
+              </div>
+            </div>
+          </div>
+          <div class="tool-out">
+            <div class="result-hero" id="tds-hero">
+              <div class="rl">TDS to deduct</div>
+              <div class="rv" id="tds-rv">₹75,000</div>
+              <div class="rn" id="tds-rn">Deduct this before paying the seller.</div>
+            </div>
+            <div class="console">
+              <div class="l"><span class="k">Value used</span><span class="v" id="tds-base">₹75,00,000</span></div>
+              <div class="l"><span class="k">Rate applied</span><span class="v" id="tds-rate">1%</span></div>
+              <div class="l hl"><span class="k">TDS amount</span><span class="v" id="tds-amt">₹75,000</span></div>
+              <div class="l good"><span class="k">Net to seller</span><span class="v" id="tds-net">₹74,25,000</span></div>
+            </div>
+            <div class="note-flag">File via <b>Form 26QB</b> within 30 days of month-end, then hand the seller <b>Form 16B</b>.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAX -->
+    <div class="tool-panel" id="t-tax">
+      <div class="tool-window">
+        <div class="tool-titlebar">
+          <div class="dots"><span class="dot" style="background:#C6432F"></span><span class="dot" style="background:#A8781E"></span><span class="dot" style="background:#1F8F73"></span></div>
+          <span class="name">Income tax — FY 2026-27</span>
+        </div>
+        <div class="tool-grid">
+          <div class="tool-form">
+            <div class="field">
+              <div class="field-label"><span>Gross annual income</span><span class="val" id="tax-income-val">₹12,00,000</span></div>
+              <input type="number" id="tax-income" value="1200000" step="50000" min="0">
+              <input type="range" id="tax-income-range" value="1200000" step="10000" min="0" max="5000000">
+            </div>
+            <div class="field">
+              <div class="toggle-row">
+                <span class="field-label" style="margin:0;">I'm a salaried employee</span>
+                <label class="switch"><input type="checkbox" id="tax-salaried" checked><span class="track"></span><span class="thumb"></span></label>
+              </div>
+              <div class="field-hint">Standard deduction: ₹75,000 (new regime) or ₹50,000 (old regime).</div>
+            </div>
+            <div class="field">
+              <div class="field-label"><span>80C &amp; other old-regime deductions</span><span class="val" id="tax-ded-val">₹1,50,000</span></div>
+              <input type="number" id="tax-ded" value="150000" step="10000" min="0">
+              <input type="range" id="tax-ded-range" value="150000" step="5000" min="0" max="400000">
+              <div class="field-hint">PPF, ELSS, home loan interest, 80D — these only count under the old regime.</div>
+            </div>
+          </div>
+          <div class="tool-out">
+            <div class="result-hero calm" id="tax-hero">
+              <div class="rl">You save</div>
+              <div class="rv" id="tax-rv">₹0</div>
+              <div class="rn" id="tax-rn">by picking the cheaper regime.</div>
+            </div>
+            <div class="bar-wrap">
+              <div class="bar-item">
+                <div class="bar-top"><span class="nm">New regime</span><span class="amt" id="tax-new-amt">₹0</span></div>
+                <div class="bar-track"><div class="bar-fill" id="tax-new-bar" style="width:0%"></div></div>
+              </div>
+              <div class="bar-item">
+                <div class="bar-top"><span class="nm">Old regime</span><span class="amt" id="tax-old-amt">₹0</span></div>
+                <div class="bar-track"><div class="bar-fill" id="tax-old-bar" style="width:0%"></div></div>
+              </div>
+            </div>
+            <div class="console">
+              <div class="l"><span class="k">Taxable (new)</span><span class="v" id="tax-taxable-new">₹0</span></div>
+              <div class="l"><span class="k">Taxable (old)</span><span class="v" id="tax-taxable-old">₹0</span></div>
+              <div class="l hl"><span class="k">Tax payable</span><span class="v" id="tax-final">₹0/yr</span></div>
+            </div>
+            <div class="note-flag" id="tax-flag">Income up to ₹12,00,000 is effectively tax-free under the new regime via the Section 87A rebate.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- EMI -->
+    <div class="tool-panel" id="t-emi">
+      <div class="tool-window">
+        <div class="tool-titlebar">
+          <div class="dots"><span class="dot" style="background:#C6432F"></span><span class="dot" style="background:#A8781E"></span><span class="dot" style="background:#1F8F73"></span></div>
+          <span class="name">Loan EMI calculator</span>
+        </div>
+        <div class="tool-grid">
+          <div class="tool-form">
+            <div class="field">
+              <div class="field-label"><span>Loan amount</span><span class="val" id="emi-amt-val">₹40,00,000</span></div>
+              <input type="number" id="emi-amt" value="4000000" step="100000" min="0">
+              <input type="range" id="emi-amt-range" value="4000000" step="50000" min="0" max="20000000">
+            </div>
+            <div class="field">
+              <div class="field-label"><span>Interest rate / year</span><span class="val" id="emi-rate-val">8.5%</span></div>
+              <input type="number" id="emi-rate" value="8.5" step="0.05" min="0" max="30">
+              <input type="range" id="emi-rate-range" value="8.5" step="0.05" min="1" max="20">
+            </div>
+            <div class="field">
+              <div class="field-label"><span>Tenure</span><span class="val" id="emi-years-val">20 yrs</span></div>
+              <input type="number" id="emi-years" value="20" step="1" min="1" max="35">
+              <input type="range" id="emi-years-range" value="20" step="1" min="1" max="35">
+            </div>
+          </div>
+          <div class="tool-out">
+            <div class="result-hero" id="emi-hero">
+              <div class="rl">Monthly EMI</div>
+              <div class="rv" id="emi-rv">₹34,714</div>
+              <div class="rn">Same amount every month, for the whole tenure.</div>
+            </div>
+            <div class="bar-wrap">
+              <div class="bar-item">
+                <div class="bar-top"><span class="nm">Principal</span><span class="amt" id="emi-principal-amt">₹0</span></div>
+                <div class="bar-track"><div class="bar-fill win" id="emi-principal-bar" style="width:0%"></div></div>
+              </div>
+              <div class="bar-item">
+                <div class="bar-top"><span class="nm">Interest</span><span class="amt" id="emi-interest-amt">₹0</span></div>
+                <div class="bar-track"><div class="bar-fill warn" id="emi-interest-bar" style="width:0%"></div></div>
+              </div>
+            </div>
+            <div class="console">
+              <div class="l"><span class="k">Total interest</span><span class="v" id="emi-total-interest">₹0</span></div>
+              <div class="l hl"><span class="k">Total payback</span><span class="v" id="emi-total-payment">₹0</span></div>
+            </div>
+            <div class="note-flag">A 1% higher rate or 5 extra years can swing total interest by lakhs — worth shopping around.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- INVESTMENT -->
+    <div class="tool-panel" id="t-inv">
+      <div class="tool-window">
+        <div class="tool-titlebar">
+          <div class="dots"><span class="dot" style="background:#C6432F"></span><span class="dot" style="background:#A8781E"></span><span class="dot" style="background:#1F8F73"></span></div>
+          <span class="name">Investment return projector</span>
+        </div>
+        <div class="tool-grid">
+          <div class="tool-form">
+            <div class="field">
+              <div class="seg" id="inv-mode">
+                <button data-val="sip" aria-pressed="true">Monthly SIP</button>
+                <button data-val="lump" aria-pressed="false">Lump sum</button>
+              </div>
+            </div>
+            <div class="field">
+              <div class="field-label"><span id="inv-amt-label">Monthly investment</span><span class="val" id="inv-amt-val">₹10,000</span></div>
+              <input type="number" id="inv-amt" value="10000" step="500" min="0">
+              <input type="range" id="inv-amt-range" value="10000" step="500" min="0" max="200000">
+            </div>
+            <div class="field">
+              <div class="field-label"><span>Expected annual return</span><span class="val" id="inv-rate-val">12%</span></div>
+              <input type="number" id="inv-rate" value="12" step="0.5" min="0" max="30">
+              <input type="range" id="inv-rate-range" value="12" step="0.5" min="1" max="25">
+            </div>
+            <div class="field">
+              <div class="field-label"><span>Time horizon</span><span class="val" id="inv-years-val">15 yrs</span></div>
+              <input type="number" id="inv-years" value="15" step="1" min="1" max="40">
+              <input type="range" id="inv-years-range" value="15" step="1" min="1" max="40">
+            </div>
+          </div>
+          <div class="tool-out">
+            <div class="result-hero calm" id="inv-hero">
+              <div class="rl">Maturity value</div>
+              <div class="rv" id="inv-rv">₹0</div>
+              <div class="rn" id="inv-rn">projected value at the end of the term.</div>
+            </div>
+            <div class="bar-wrap">
+              <div class="bar-item">
+                <div class="bar-top"><span class="nm">Invested</span><span class="amt" id="inv-invested-amt">₹0</span></div>
+                <div class="bar-track"><div class="bar-fill" id="inv-invested-bar" style="width:0%"></div></div>
+              </div>
+              <div class="bar-item">
+                <div class="bar-top"><span class="nm">Growth</span><span class="amt" id="inv-growth-amt">₹0</span></div>
+                <div class="bar-track"><div class="bar-fill win" id="inv-growth-bar" style="width:0%"></div></div>
+              </div>
+            </div>
+            <div class="console">
+              <div class="l"><span class="k">Total invested</span><span class="v" id="inv-total-invested">₹0</span></div>
+              <div class="l hl"><span class="k">Estimated maturity</span><span class="v" id="inv-total-value">₹0</span></div>
+            </div>
+            <div class="note-flag">Ignores tax on gains and assumes a flat annual return — real markets are bumpier than this.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- HRA -->
+    <div class="tool-panel" id="t-hra">
+      <div class="tool-window">
+        <div class="tool-titlebar">
+          <div class="dots"><span class="dot" style="background:#C6432F"></span><span class="dot" style="background:#A8781E"></span><span class="dot" style="background:#1F8F73"></span></div>
+          <span class="name">HRA exemption calculator</span>
+        </div>
+        <div class="tool-grid">
+          <div class="tool-form">
+            <div class="field">
+              <div class="field-label"><span>Basic salary (monthly)</span><span class="val" id="hra-basic-val">₹40,000</span></div>
+              <input type="number" id="hra-basic" value="40000" step="1000" min="0">
+              <input type="range" id="hra-basic-range" value="40000" step="1000" min="0" max="300000">
+            </div>
+            <div class="field">
+              <div class="field-label"><span>HRA received (monthly)</span><span class="val" id="hra-received-val">₹20,000</span></div>
+              <input type="number" id="hra-received" value="20000" step="1000" min="0">
+              <input type="range" id="hra-received-range" value="20000" step="1000" min="0" max="150000">
+            </div>
+            <div class="field">
+              <div class="field-label"><span>Rent paid (monthly)</span><span class="val" id="hra-rent-val">₹22,000</span></div>
+              <input type="number" id="hra-rent" value="22000" step="1000" min="0">
+              <input type="range" id="hra-rent-range" value="22000" step="1000" min="0" max="150000">
+            </div>
+            <div class="field">
+              <div class="field-label"><span>City type</span></div>
+              <div class="seg" id="hra-city">
+                <button data-val="metro" aria-pressed="true">Metro</button>
+                <button data-val="nonmetro" aria-pressed="false">Non-metro</button>
+              </div>
+              <div class="field-hint">Metro = Delhi, Mumbai, Kolkata, Chennai (50% of basic). Others = 40% of basic.</div>
+            </div>
+          </div>
+          <div class="tool-out">
+            <div class="result-hero calm" id="hra-hero">
+              <div class="rl">Exempt HRA</div>
+              <div class="rv" id="hra-rv">₹0</div>
+              <div class="rn">per month — the tax-free portion of your HRA.</div>
+            </div>
+            <div class="console">
+              <div class="l"><span class="k">Actual HRA received</span><span class="v" id="hra-c1">₹0</span></div>
+              <div class="l"><span class="k">Rent − 10% of basic</span><span class="v" id="hra-c2">₹0</span></div>
+              <div class="l"><span class="k">% of basic (city limit)</span><span class="v" id="hra-c3">₹0</span></div>
+              <div class="l hl"><span class="k">Taxable HRA</span><span class="v" id="hra-taxable">₹0</span></div>
+            </div>
+            <div class="note-flag">HRA exemption only applies under the old tax regime, and only if you're actually paying rent with proof (receipts, rent agreement).</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CAPITAL GAINS -->
+    <div class="tool-panel" id="t-capgains">
+      <div class="tool-window">
+        <div class="tool-titlebar">
+          <div class="dots"><span class="dot" style="background:#C6432F"></span><span class="dot" style="background:#A8781E"></span><span class="dot" style="background:#1F8F73"></span></div>
+          <span class="name">Capital gains (LTCG / STCG) calculator</span>
+        </div>
+        <div class="tool-grid">
+          <div class="tool-form">
+            <div class="field">
+              <div class="field-label"><span>Asset type</span></div>
+              <div class="seg" id="cg-asset">
+                <button data-val="equity" aria-pressed="true">Equity / MF</button>
+                <button data-val="debt" aria-pressed="false">Debt MF</button>
+                <button data-val="other" aria-pressed="false">Property / Gold</button>
+              </div>
+            </div>
+            <div class="field">
+              <div class="field-label"><span>Purchase price</span><span class="val" id="cg-buy-val">₹5,00,000</span></div>
+              <input type="number" id="cg-buy" value="500000" step="10000" min="0">
+              <input type="range" id="cg-buy-range" value="500000" step="10000" min="0" max="10000000">
+            </div>
+            <div class="field">
+              <div class="field-label"><span>Sale price</span><span class="val" id="cg-sell-val">₹8,00,000</span></div>
+              <input type="number" id="cg-sell" value="800000" step="10000" min="0">
+              <input type="range" id="cg-sell-range" value="800000" step="10000" min="0" max="10000000">
+            </div>
+            <div class="field">
+              <div class="field-label"><span>Holding period (months)</span><span class="val" id="cg-months-val">18 mo</span></div>
+              <input type="number" id="cg-months" value="18" step="1" min="0" max="480">
+              <input type="range" id="cg-months-range" value="18" step="1" min="0" max="120">
+            </div>
+            <div class="field" id="cg-oldprop-field" style="display:none;">
+              <div class="field-label"><span>Bought before 23 Jul 2024?</span></div>
+              <div class="seg" id="cg-oldprop">
+                <button data-val="no" aria-pressed="true">No</button>
+                <button data-val="yes" aria-pressed="false">Yes</button>
+              </div>
+              <div class="field-hint">Pre-July 2024 property/gold purchases can choose 20% with indexation instead — check with a CA, since that needs the Cost Inflation Index.</div>
+            </div>
+          </div>
+          <div class="tool-out">
+            <div class="result-hero" id="cg-hero">
+              <div class="rl">Tax on this gain</div>
+              <div class="rv" id="cg-rv">₹0</div>
+              <div class="rn" id="cg-rn">estimated capital gains tax.</div>
+            </div>
+            <div class="console">
+              <div class="l"><span class="k">Capital gain</span><span class="v" id="cg-gain">₹0</span></div>
+              <div class="l"><span class="k">Classification</span><span class="v" id="cg-class">—</span></div>
+              <div class="l"><span class="k">Rate applied</span><span class="v" id="cg-rate">—</span></div>
+              <div class="l hl"><span class="k">Tax payable</span><span class="v" id="cg-tax">₹0</span></div>
+            </div>
+            <div class="note-flag" id="cg-flag">Equity: 12-month LT threshold, 12.5% above ₹1.25L exemption/year. Below 12 months: 20% flat.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- RENT VS BUY -->
+    <div class="tool-panel" id="t-rentbuy">
+      <div class="tool-window">
+        <div class="tool-titlebar">
+          <div class="dots"><span class="dot" style="background:#C6432F"></span><span class="dot" style="background:#A8781E"></span><span class="dot" style="background:#1F8F73"></span></div>
+          <span class="name">Rent vs buy calculator</span>
+        </div>
+        <div class="tool-grid">
+          <div class="tool-form">
+            <div class="field">
+              <div class="field-label"><span>Monthly rent (today)</span><span class="val" id="rb-rent-val">₹30,000</span></div>
+              <input type="number" id="rb-rent" value="30000" step="1000" min="0">
+              <input type="range" id="rb-rent-range" value="30000" step="1000" min="0" max="150000">
+            </div>
+            <div class="field">
+              <div class="field-label"><span>Property price</span><span class="val" id="rb-price-val">₹75,00,000</span></div>
+              <input type="number" id="rb-price" value="7500000" step="100000" min="0">
+              <input type="range" id="rb-price-range" value="7500000" step="100000" min="0" max="30000000">
+            </div>
+            <div class="field">
+              <div class="field-label"><span>Down payment</span><span class="val" id="rb-down-val">20%</span></div>
+              <input type="number" id="rb-down" value="20" step="1" min="0" max="100">
+              <input type="range" id="rb-down-range" value="20" step="1" min="0" max="100">
+            </div>
+            <div class="field">
+              <div class="field-label"><span>Home loan rate</span><span class="val" id="rb-rate-val">8.5%</span></div>
+              <input type="number" id="rb-rate" value="8.5" step="0.1" min="0" max="20">
+              <input type="range" id="rb-rate-range" value="8.5" step="0.1" min="1" max="15">
+            </div>
+            <div class="field">
+              <div class="field-label"><span>Time horizon</span><span class="val" id="rb-years-val">10 yrs</span></div>
+              <input type="number" id="rb-years" value="10" step="1" min="1" max="30">
+              <input type="range" id="rb-years-range" value="10" step="1" min="1" max="30">
+            </div>
+            <div class="field">
+              <div class="field-label"><span>Expected property growth / yr</span><span class="val" id="rb-appr-val">5%</span></div>
+              <input type="number" id="rb-appr" value="5" step="0.5" min="0" max="20">
+              <input type="range" id="rb-appr-range" value="5" step="0.5" min="0" max="15">
+            </div>
+            <div class="field">
+              <div class="field-label"><span>If renting, invest the difference at</span><span class="val" id="rb-inv-val">10%</span></div>
+              <input type="number" id="rb-inv" value="10" step="0.5" min="0" max="20">
+              <input type="range" id="rb-inv-range" value="10" step="0.5" min="0" max="18">
+            </div>
+          </div>
+          <div class="tool-out">
+            <div class="result-hero calm" id="rb-hero">
+              <div class="rl">Over this horizon</div>
+              <div class="rv" id="rb-rv">—</div>
+              <div class="rn" id="rb-rn">which option builds more wealth.</div>
+            </div>
+            <div class="bar-wrap">
+              <div class="bar-item">
+                <div class="bar-top"><span class="nm">Net position if you buy</span><span class="amt" id="rb-buy-amt">₹0</span></div>
+                <div class="bar-track"><div class="bar-fill" id="rb-buy-bar" style="width:0%"></div></div>
+              </div>
+              <div class="bar-item">
+                <div class="bar-top"><span class="nm">Net position if you rent + invest</span><span class="amt" id="rb-rent-amt">₹0</span></div>
+                <div class="bar-track"><div class="bar-fill win" id="rb-rent-bar" style="width:0%"></div></div>
+              </div>
+            </div>
+            <div class="note-flag">Buying's net position = property value − remaining loan − total interest paid. Renting's = investment corpus from investing the monthly savings. Ignores maintenance, taxes, and transaction costs on both sides.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SALARY / IN-HAND -->
+    <div class="tool-panel" id="t-salary">
+      <div class="tool-window">
+        <div class="tool-titlebar">
+          <div class="dots"><span class="dot" style="background:#C6432F"></span><span class="dot" style="background:#A8781E"></span><span class="dot" style="background:#1F8F73"></span></div>
+          <span class="name">Salary / in-hand calculator</span>
+        </div>
+        <div class="tool-grid">
+          <div class="tool-form">
+            <div class="field">
+              <div class="field-label"><span>Annual CTC</span><span class="val" id="sal-ctc-val">₹12,00,000</span></div>
+              <input type="number" id="sal-ctc" value="1200000" step="50000" min="0">
+              <input type="range" id="sal-ctc-range" value="1200000" step="10000" min="0" max="5000000">
+            </div>
+            <div class="field">
+              <div class="field-label"><span>Basic salary (% of CTC)</span><span class="val" id="sal-basic-val">40%</span></div>
+              <input type="number" id="sal-basicpct" value="40" step="1" min="20" max="60">
+              <input type="range" id="sal-basicpct-range" value="40" step="1" min="20" max="60">
+            </div>
+            <div class="field">
+              <div class="field-label"><span>Other annual deductions (80C etc.)</span><span class="val" id="sal-ded-val">₹0</span></div>
+              <input type="number" id="sal-ded" value="0" step="10000" min="0">
+              <input type="range" id="sal-ded-range" value="0" step="5000" min="0" max="300000">
+            </div>
+          </div>
+          <div class="tool-out">
+            <div class="result-hero calm" id="sal-hero">
+              <div class="rl">Monthly in-hand</div>
+              <div class="rv" id="sal-rv">₹0</div>
+              <div class="rn">estimated take-home, after PF and TDS.</div>
+            </div>
+            <div class="console">
+              <div class="l"><span class="k">Monthly gross (approx.)</span><span class="v" id="sal-gross">₹0</span></div>
+              <div class="l"><span class="k">Employee PF (12% of basic)</span><span class="v" id="sal-pf">₹0</span></div>
+              <div class="l"><span class="k">Estimated monthly TDS</span><span class="v" id="sal-tds">₹0</span></div>
+              <div class="l hl"><span class="k">Net monthly in-hand</span><span class="v" id="sal-net">₹0</span></div>
+            </div>
+            <div class="note-flag">Assumes new tax regime, a flat ₹200/month professional tax, and employer PF/gratuity carved out of CTC — actual payslip structures vary by company.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- GRATUITY -->
+    <div class="tool-panel" id="t-gratuity">
+      <div class="tool-window">
+        <div class="tool-titlebar">
+          <div class="dots"><span class="dot" style="background:#C6432F"></span><span class="dot" style="background:#A8781E"></span><span class="dot" style="background:#1F8F73"></span></div>
+          <span class="name">Gratuity calculator</span>
+        </div>
+        <div class="tool-grid">
+          <div class="tool-form">
+            <div class="field">
+              <div class="field-label"><span>Last drawn Basic + DA (monthly)</span><span class="val" id="gr-basic-val">₹50,000</span></div>
+              <input type="number" id="gr-basic" value="50000" step="1000" min="0">
+              <input type="range" id="gr-basic-range" value="50000" step="1000" min="0" max="300000">
+            </div>
+            <div class="field">
+              <div class="field-label"><span>Years of service</span><span class="val" id="gr-years-val">7 yrs</span></div>
+              <input type="number" id="gr-years" value="7" step="1" min="0" max="45">
+              <input type="range" id="gr-years-range" value="7" step="1" min="0" max="40">
+            </div>
+          </div>
+          <div class="tool-out">
+            <div class="result-hero calm" id="gr-hero">
+              <div class="rl">Gratuity payable</div>
+              <div class="rv" id="gr-rv">₹0</div>
+              <div class="rn" id="gr-rn">fully tax-exempt (under ₹20L ceiling).</div>
+            </div>
+            <div class="console">
+              <div class="l"><span class="k">Formula: (Basic+DA) × 15/26 × years</span><span class="v" id="gr-calc">₹0</span></div>
+              <div class="l"><span class="k">Statutory exemption ceiling</span><span class="v">₹20,00,000</span></div>
+              <div class="l hl"><span class="k">Taxable portion</span><span class="v" id="gr-taxable">₹0</span></div>
+            </div>
+            <div class="note-flag" id="gr-flag">Eligible after 5+ years of continuous service (private sector). Not eligible below 5 years, except in case of death or disability.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FREELANCE TAX -->
+    <div class="tool-panel" id="t-freelance">
+      <div class="tool-window">
+        <div class="tool-titlebar">
+          <div class="dots"><span class="dot" style="background:#C6432F"></span><span class="dot" style="background:#A8781E"></span><span class="dot" style="background:#1F8F73"></span></div>
+          <span class="name">Freelance tax — Section 44ADA</span>
+        </div>
+        <div class="tool-grid">
+          <div class="tool-form">
+            <div class="field">
+              <div class="field-label"><span>Annual gross receipts</span><span class="val" id="fl-gross-val">₹15,00,000</span></div>
+              <input type="number" id="fl-gross" value="1500000" step="50000" min="0">
+              <input type="range" id="fl-gross-range" value="1500000" step="10000" min="0" max="7500000">
+            </div>
+            <div class="field">
+              <div class="field-label"><span>≥95% receipts via digital/banking?</span></div>
+              <div class="seg" id="fl-digital">
+                <button data-val="yes" aria-pressed="true">Yes</button>
+                <button data-val="no" aria-pressed="false">No</button>
+              </div>
+              <div class="field-hint">Raises your 44ADA eligibility limit from ₹50L to ₹75L.</div>
+            </div>
+            <div class="field">
+              <div class="field-label"><span>Your actual expenses (optional)</span><span class="val" id="fl-exp-val">₹0</span></div>
+              <input type="number" id="fl-exp" value="0" step="10000" min="0">
+              <input type="range" id="fl-exp-range" value="0" step="10000" min="0" max="1000000">
+              <div class="field-hint">Fill this in to compare against declaring actual profit instead of the 50% presumptive rate.</div>
+            </div>
+          </div>
+          <div class="tool-out">
+            <div class="result-hero calm" id="fl-hero">
+              <div class="rl">Presumptive taxable income</div>
+              <div class="rv" id="fl-rv">₹0</div>
+              <div class="rn">50% of gross receipts under Section 44ADA.</div>
+            </div>
+            <div class="console">
+              <div class="l"><span class="k">44ADA eligibility limit</span><span class="v" id="fl-limit">₹50,00,000</span></div>
+              <div class="l"><span class="k">Eligible for 44ADA?</span><span class="v" id="fl-eligible">Yes</span></div>
+              <div class="l"><span class="k">Est. tax under 44ADA (new regime)</span><span class="v" id="fl-tax-44ada">₹0</span></div>
+              <div class="l hl" id="fl-compare-row"><span class="k">Est. tax on actual profit instead</span><span class="v" id="fl-tax-actual">₹0</span></div>
+            </div>
+            <div class="note-flag" id="fl-flag">If your real expenses are under 50% of receipts, 44ADA usually wins — you're taxed on less than you'd otherwise show as profit.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- LOAN PREPAYMENT -->
+    <div class="tool-panel" id="t-prepay">
+      <div class="tool-window">
+        <div class="tool-titlebar">
+          <div class="dots"><span class="dot" style="background:#C6432F"></span><span class="dot" style="background:#A8781E"></span><span class="dot" style="background:#1F8F73"></span></div>
+          <span class="name">Loan prepayment calculator</span>
+        </div>
+        <div class="tool-grid">
+          <div class="tool-form">
+            <div class="field">
+              <div class="field-label"><span>Loan amount</span><span class="val" id="pp-amt-val">₹40,00,000</span></div>
+              <input type="number" id="pp-amt" value="4000000" step="100000" min="0">
+              <input type="range" id="pp-amt-range" value="4000000" step="50000" min="0" max="20000000">
+            </div>
+            <div class="field">
+              <div class="field-label"><span>Interest rate / year</span><span class="val" id="pp-rate-val">8.5%</span></div>
+              <input type="number" id="pp-rate" value="8.5" step="0.05" min="0" max="30">
+              <input type="range" id="pp-rate-range" value="8.5" step="0.05" min="1" max="20">
+            </div>
+            <div class="field">
+              <div class="field-label"><span>Original tenure</span><span class="val" id="pp-years-val">20 yrs</span></div>
+              <input type="number" id="pp-years" value="20" step="1" min="1" max="35">
+              <input type="range" id="pp-years-range" value="20" step="1" min="1" max="35">
+            </div>
+            <div class="field">
+              <div class="field-label"><span>Extra payment every month</span><span class="val" id="pp-extra-val">₹5,000</span></div>
+              <input type="number" id="pp-extra" value="5000" step="500" min="0">
+              <input type="range" id="pp-extra-range" value="5000" step="500" min="0" max="100000">
+            </div>
+          </div>
+          <div class="tool-out">
+            <div class="result-hero calm" id="pp-hero">
+              <div class="rl">Interest saved</div>
+              <div class="rv" id="pp-rv">₹0</div>
+              <div class="rn" id="pp-rn">by paying extra every month.</div>
+            </div>
+            <div class="console">
+              <div class="l"><span class="k">Original EMI</span><span class="v" id="pp-emi">₹0</span></div>
+              <div class="l"><span class="k">New tenure</span><span class="v" id="pp-newtenure">—</span></div>
+              <div class="l"><span class="k">Time saved</span><span class="v" id="pp-timesaved">—</span></div>
+              <div class="l hl"><span class="k">Total interest (original vs new)</span><span class="v" id="pp-interestcompare">₹0</span></div>
+            </div>
+            <div class="note-flag">Extra payments go straight toward principal — even a modest amount saved consistently can cut years off a home loan.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- GOAL PLANNER -->
+    <div class="tool-panel" id="t-goal">
+      <div class="tool-window">
+        <div class="tool-titlebar">
+          <div class="dots"><span class="dot" style="background:#C6432F"></span><span class="dot" style="background:#A8781E"></span><span class="dot" style="background:#1F8F73"></span></div>
+          <span class="name">Goal planner (reverse SIP)</span>
+        </div>
+        <div class="tool-grid">
+          <div class="tool-form">
+            <div class="field">
+              <div class="field-label"><span>Goal (in today's value)</span><span class="val" id="gp-target-val">₹20,00,000</span></div>
+              <input type="number" id="gp-target" value="2000000" step="50000" min="0">
+              <input type="range" id="gp-target-range" value="2000000" step="50000" min="0" max="20000000">
+            </div>
+            <div class="field">
+              <div class="field-label"><span>Years to goal</span><span class="val" id="gp-years-val">5 yrs</span></div>
+              <input type="number" id="gp-years" value="5" step="1" min="1" max="40">
+              <input type="range" id="gp-years-range" value="5" step="1" min="1" max="40">
+            </div>
+            <div class="field">
+              <div class="field-label"><span>Expected inflation / year</span><span class="val" id="gp-infl-val">6%</span></div>
+              <input type="number" id="gp-infl" value="6" step="0.5" min="0" max="15">
+              <input type="range" id="gp-infl-range" value="6" step="0.5" min="0" max="12">
+            </div>
+            <div class="field">
+              <div class="field-label"><span>Expected annual return</span><span class="val" id="gp-return-val">12%</span></div>
+              <input type="number" id="gp-return" value="12" step="0.5" min="0" max="25">
+              <input type="range" id="gp-return-range" value="12" step="0.5" min="1" max="20">
+            </div>
+          </div>
+          <div class="tool-out">
+            <div class="result-hero calm" id="gp-hero">
+              <div class="rl">Monthly SIP needed</div>
+              <div class="rv" id="gp-rv">₹0</div>
+              <div class="rn">to reach your goal, adjusted for inflation.</div>
+            </div>
+            <div class="console">
+              <div class="l"><span class="k">Goal in today's value</span><span class="v" id="gp-today">₹0</span></div>
+              <div class="l hl"><span class="k">Goal in future value</span><span class="v" id="gp-future">₹0</span></div>
+              <div class="l"><span class="k">Total you'll invest</span><span class="v" id="gp-invested">₹0</span></div>
+            </div>
+            <div class="note-flag">Inflation grows your target; expected return determines how hard your monthly SIP has to work to get there.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PPF -->
+    <div class="tool-panel" id="t-ppf">
+      <div class="tool-window">
+        <div class="tool-titlebar">
+          <div class="dots"><span class="dot" style="background:#C6432F"></span><span class="dot" style="background:#A8781E"></span><span class="dot" style="background:#1F8F73"></span></div>
+          <span class="name">PPF calculator</span>
+        </div>
+        <div class="tool-grid">
+          <div class="tool-form">
+            <div class="field">
+              <div class="field-label"><span>Yearly investment</span><span class="val" id="ppf-amt-val">₹1,50,000</span></div>
+              <input type="number" id="ppf-amt" value="150000" step="5000" min="0" max="150000">
+              <input type="range" id="ppf-amt-range" value="150000" step="5000" min="0" max="150000">
+              <div class="field-hint">₹1,50,000/year is the current maximum allowed in a PPF account.</div>
+            </div>
+            <div class="field">
+              <div class="field-label"><span>Interest rate / year</span><span class="val" id="ppf-rate-val">7.1%</span></div>
+              <input type="number" id="ppf-rate" value="7.1" step="0.1" min="0" max="12">
+              <input type="range" id="ppf-rate-range" value="7.1" step="0.1" min="4" max="10">
+              <div class="field-hint">PPF rate is set quarterly by the government — check the current rate before relying on this.</div>
+            </div>
+            <div class="field">
+              <div class="field-label"><span>Tenure</span><span class="val" id="ppf-years-val">15 yrs</span></div>
+              <div class="seg" id="ppf-years-seg">
+                <button data-val="15" aria-pressed="true">15 yrs</button>
+                <button data-val="20" aria-pressed="false">20 yrs</button>
+                <button data-val="25" aria-pressed="false">25 yrs</button>
+              </div>
+              <div class="field-hint">PPF has a 15-year lock-in, extendable in blocks of 5 years.</div>
+            </div>
+          </div>
+          <div class="tool-out">
+            <div class="result-hero calm" id="ppf-hero">
+              <div class="rl">Maturity value</div>
+              <div class="rv" id="ppf-rv">₹0</div>
+              <div class="rn">tax-free at maturity.</div>
+            </div>
+            <div class="console">
+              <div class="l"><span class="k">Total invested</span><span class="v" id="ppf-invested">₹0</span></div>
+              <div class="l hl"><span class="k">Total interest earned</span><span class="v" id="ppf-interest">₹0</span></div>
+            </div>
+            <div class="note-flag">Assumes the full yearly amount is deposited at the start of each year, and interest compounds annually — the standard PPF calculation method.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- EPF -->
+    <div class="tool-panel" id="t-epf">
+      <div class="tool-window">
+        <div class="tool-titlebar">
+          <div class="dots"><span class="dot" style="background:#C6432F"></span><span class="dot" style="background:#A8781E"></span><span class="dot" style="background:#1F8F73"></span></div>
+          <span class="name">EPF calculator</span>
+        </div>
+        <div class="tool-grid">
+          <div class="tool-form">
+            <div class="field">
+              <div class="field-label"><span>Current age</span><span class="val" id="epf-age-val">28</span></div>
+              <input type="number" id="epf-age" value="28" step="1" min="18" max="59">
+              <input type="range" id="epf-age-range" value="28" step="1" min="18" max="59">
+            </div>
+            <div class="field">
+              <div class="field-label"><span>Current monthly basic + DA</span><span class="val" id="epf-basic-val">₹40,000</span></div>
+              <input type="number" id="epf-basic" value="40000" step="1000" min="0">
+              <input type="range" id="epf-basic-range" value="40000" step="1000" min="0" max="200000">
+            </div>
+            <div class="field">
+              <div class="field-label"><span>Expected annual salary growth</span><span class="val" id="epf-growth-val">8%</span></div>
+              <input type="number" id="epf-growth" value="8" step="0.5" min="0" max="20">
+              <input type="range" id="epf-growth-range" value="8" step="0.5" min="0" max="15">
+            </div>
+            <div class="field">
+              <div class="field-label"><span>EPF interest rate / year</span><span class="val" id="epf-rate-val">8.25%</span></div>
+              <input type="number" id="epf-rate" value="8.25" step="0.05" min="0" max="12">
+              <input type="range" id="epf-rate-range" value="8.25" step="0.05" min="5" max="10">
+            </div>
+          </div>
+          <div class="tool-out">
+            <div class="result-hero calm" id="epf-hero">
+              <div class="rl">Projected corpus at 58</div>
+              <div class="rv" id="epf-rv">₹0</div>
+              <div class="rn">combined employee + employer contributions, compounded.</div>
+            </div>
+            <div class="console">
+              <div class="l"><span class="k">Years to retirement</span><span class="v" id="epf-yrsleft">0</span></div>
+              <div class="l"><span class="k">Combined contribution rate</span><span class="v">24% of basic</span></div>
+              <div class="l hl"><span class="k">Total contributed</span><span class="v" id="epf-contributed">₹0</span></div>
+            </div>
+            <div class="note-flag">Simplified: assumes all 24% (12% employee + 12% employer) compounds at the EPF rate. In reality, part of the employer's share routes to the EPS pension scheme — actual EPF corpus may be somewhat lower.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- NPS -->
+    <div class="tool-panel" id="t-nps">
+      <div class="tool-window">
+        <div class="tool-titlebar">
+          <div class="dots"><span class="dot" style="background:#C6432F"></span><span class="dot" style="background:#A8781E"></span><span class="dot" style="background:#1F8F73"></span></div>
+          <span class="name">NPS calculator</span>
+        </div>
+        <div class="tool-grid">
+          <div class="tool-form">
+            <div class="field">
+              <div class="field-label"><span>Current age</span><span class="val" id="nps-age-val">28</span></div>
+              <input type="number" id="nps-age" value="28" step="1" min="18" max="59">
+              <input type="range" id="nps-age-range" value="28" step="1" min="18" max="59">
+            </div>
+            <div class="field">
+              <div class="field-label"><span>Monthly contribution</span><span class="val" id="nps-contrib-val">₹5,000</span></div>
+              <input type="number" id="nps-contrib" value="5000" step="500" min="0">
+              <input type="range" id="nps-contrib-range" value="5000" step="500" min="0" max="50000">
+            </div>
+            <div class="field">
+              <div class="field-label"><span>Expected annual return</span><span class="val" id="nps-return-val">10%</span></div>
+              <input type="number" id="nps-return" value="10" step="0.5" min="0" max="20">
+              <input type="range" id="nps-return-range" value="10" step="0.5" min="1" max="16">
+            </div>
+            <div class="field">
+              <div class="field-label"><span>Annuity purchase (min. 40%)</span><span class="val" id="nps-annpct-val">40%</span></div>
+              <input type="number" id="nps-annpct" value="40" step="5" min="40" max="100">
+              <input type="range" id="nps-annpct-range" value="40" step="5" min="40" max="100">
+            </div>
+            <div class="field">
+              <div class="field-label"><span>Expected annuity rate</span><span class="val" id="nps-annrate-val">6%</span></div>
+              <input type="number" id="nps-annrate" value="6" step="0.25" min="0" max="12">
+              <input type="range" id="nps-annrate-range" value="6" step="0.25" min="3" max="10">
+            </div>
+          </div>
+          <div class="tool-out">
+            <div class="result-hero calm" id="nps-hero">
+              <div class="rl">Corpus at 60</div>
+              <div class="rv" id="nps-rv">₹0</div>
+              <div class="rn">projected total NPS corpus.</div>
+            </div>
+            <div class="console">
+              <div class="l"><span class="k">Lump sum withdrawal</span><span class="v" id="nps-lumpsum">₹0</span></div>
+              <div class="l"><span class="k">Annuity corpus</span><span class="v" id="nps-anncorpus">₹0</span></div>
+              <div class="l hl"><span class="k">Est. monthly pension</span><span class="v" id="nps-pension">₹0</span></div>
+            </div>
+            <div class="note-flag">Returns are market-linked, not guaranteed. Up to 60% of the corpus can usually be withdrawn tax-free; the rest must buy an annuity for a monthly pension.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="block alt" id="trackers">
+  <div class="wrap">
+    <div class="kicker"><span class="seg">Trackers</span> — completely free, no WhatsApp needed</div>
+    <div class="block-head">
+      <h2>Five spreadsheets worth actually keeping</h2>
+      <p>Real Excel files with working formulas — not templates you have to fix yourself. Download, make a copy, and start filling it in.</p>
+    </div>
+    <div class="tracker-grid">
+
+      <div class="tracker-card">
+        <div class="tracker-cover">
+          <span class="free-badge">FREE</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M9 4v16"/></svg>
+        </div>
+        <div class="tracker-body">
+          <h3>Monthly Budget Tracker</h3>
+          <p>Budgeted vs. actual by category, with your savings rate calculated automatically.</p>
+          <a class="tracker-dl" href="trackers/01-monthly-budget-tracker.xlsx" download>Download .xlsx →</a>
+        </div>
+      </div>
+
+      <div class="tracker-card">
+        <div class="tracker-cover">
+          <span class="free-badge">FREE</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21c-4-3-8-6.5-8-11a5 5 0 0 1 9-3 5 5 0 0 1 9 3c0 4.5-4 8-8 11"/><path d="M12 7v7M9 10h6"/></svg>
+        </div>
+        <div class="tracker-body">
+          <h3>Wedding Planner Tracker</h3>
+          <p>Estimated vs. actual vs. paid-so-far, by vendor — keeps you inside one total budget.</p>
+          <a class="tracker-dl" href="trackers/02-wedding-planner-tracker.xlsx" download>Download .xlsx →</a>
+        </div>
+      </div>
+
+      <div class="tracker-card">
+        <div class="tracker-cover">
+          <span class="free-badge">FREE</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12h20M12 2c2.5 2.5 4 6 4 10s-1.5 7.5-4 10c-2.5-2.5-4-6-4-10s1.5-7.5 4-10Z"/></svg>
+        </div>
+        <div class="tracker-body">
+          <h3>Travel &amp; Vacation Tracker</h3>
+          <p>Budget a trip, track spend by category, and split the actual cost per traveler.</p>
+          <a class="tracker-dl" href="trackers/03-travel-budget-tracker.xlsx" download>Download .xlsx →</a>
+        </div>
+      </div>
+
+      <div class="tracker-card">
+        <div class="tracker-cover">
+          <span class="free-badge">FREE</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+        </div>
+        <div class="tracker-body">
+          <h3>Debt &amp; EMI Payoff Tracker</h3>
+          <p>Every loan and card in one place, auto-ranked by interest rate so you know what to attack first.</p>
+          <a class="tracker-dl" href="trackers/04-debt-emi-payoff-tracker.xlsx" download>Download .xlsx →</a>
+        </div>
+      </div>
+
+      <div class="tracker-card">
+        <div class="tracker-cover">
+          <span class="free-badge">FREE</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12v8a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-8M2 7h20v5H2zM12 7v14M12 7c-1.5-3-5-4-6-2s1 3.5 6 2ZM12 7c1.5-3 5-4 6-2s-1 3.5-6 2Z"/></svg>
+        </div>
+        <div class="tracker-body">
+          <h3>Festival &amp; Gifting Tracker</h3>
+          <p>Diwali, wedding season, birthdays — keep every gift and its cost inside one seasonal budget.</p>
+          <a class="tracker-dl" href="trackers/05-festival-gifting-tracker.xlsx" download>Download .xlsx →</a>
+        </div>
+      </div>
+
+    </div>
+    <p class="ebook-note">These are yours to keep — no email required, no WhatsApp message needed. Just click and download.</p>
+  </div>
+</section>
+
+<section class="block" id="guides">
+  <div class="wrap">
+    <div class="kicker"><span class="seg">Guides</span> — two minutes each, no fluff</div>
+    <div class="block-head">
+      <h2>Short answers to the questions you've been meaning to google</h2>
+      <p>Tap any card to expand it.</p>
+    </div>
+    <div class="guide-grid" id="guide-grid">
+
+      <div class="guide" data-open="false">
+        <button class="guide-head">
+          <span class="guide-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18M5 8l-3 6a4 4 0 0 0 8 0l-3-6M19 8l-3 6a4 4 0 0 0 8 0l-3-6M5 8h14"/></svg></span>
+          <span class="titles"><span class="t">New vs old tax regime</span><span class="tag">a 2-minute cheat sheet</span></span>
+          <span class="chev">+</span>
+        </button>
+        <div class="guide-body"><div class="guide-body-inner"><ul>
+          <li>The new regime is the <b>default</b> since FY 2023-24 — you have to actively opt into the old one.</li>
+          <li>New regime: lower rates, almost no exemptions, but income up to ₹12L is effectively tax-free via the Section 87A rebate.</li>
+          <li>Old regime wins if your deductions are large: home loan interest, full 80C (₹1.5L), HRA, 80D health insurance.</li>
+          <li>Rough rule: if total deductions cross about ₹4–4.5L, check the old regime. Below that, the new regime usually wins.</li>
+          <li>Don't guess — run both through the calculator above with your real numbers.</li>
+        </ul></div></div>
+      </div>
+
+      <div class="guide" data-open="false">
+        <button class="guide-head">
+          <span class="guide-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></svg></span>
+          <span class="titles"><span class="t">RSUs &amp; ESOPs, taxed twice</span><span class="tag">equity compensation basics</span></span>
+          <span class="chev">+</span>
+        </button>
+        <div class="guide-body"><div class="guide-body-inner"><ul>
+          <li>Two separate taxable events: <b>vesting</b> (taxed as salary at fair value on the vest date) and <b>sale</b> (taxed as capital gains on the gain since vesting).</li>
+          <li>Foreign stock from an MNC parent usually means <b>Schedule FA</b> reporting in your tax return, even if you never sell.</li>
+          <li>Employer TDS on vesting is often under-withheld — check Form 26AS instead of assuming it's fully covered.</li>
+          <li>The holding period for long-term gains on foreign listed shares differs from Indian shares — check before assuming it's one year.</li>
+        </ul></div></div>
+      </div>
+
+      <div class="guide" data-open="false">
+        <button class="guide-head">
+          <span class="guide-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/><path d="M3 13h18"/></svg></span>
+          <span class="titles"><span class="t">Notice period &amp; final settlement</span><span class="tag">what to check before you leave</span></span>
+          <span class="chev">+</span>
+        </button>
+        <div class="guide-body"><div class="guide-body-inner"><ul>
+          <li>Buying out your notice period is an out-of-pocket cost, usually not tax-deductible, unless your new employer reimburses it.</li>
+          <li>In your final settlement: leave encashment is taxable for private-sector employees; gratuity has exemption limits and needs 5+ years of service.</li>
+          <li>Recoveries — unreturned assets, notice-pay shortfall — get deducted straight from your last payout. Read the settlement statement line by line.</li>
+        </ul></div></div>
+      </div>
+
+      <div class="guide" data-open="false">
+        <button class="guide-head">
+          <span class="guide-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 1l4 4-4 4"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><path d="M7 23l-4-4 4-4"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></svg></span>
+          <span class="titles"><span class="t">Provident fund &amp; switching jobs</span><span class="tag">don't leave money behind</span></span>
+          <span class="chev">+</span>
+        </button>
+        <div class="guide-body"><div class="guide-body-inner"><ul>
+          <li>One UAN follows you for life — <b>transfer</b> your PF on every job switch, don't withdraw it.</li>
+          <li>Withdrawing before 5 years of combined service can make it taxable.</li>
+          <li>Transfers don't always happen automatically — check your EPFO passbook after each move.</li>
+          <li>Old, stranded PF accounts from earlier employers are common — they can be merged through EPFO's account-merger request.</li>
+        </ul></div></div>
+      </div>
+
+      <div class="guide" data-open="false">
+        <button class="guide-head">
+          <span class="guide-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6l8-4z"/></svg></span>
+          <span class="titles"><span class="t">Building an emergency fund</span><span class="tag">how much is actually enough</span></span>
+          <span class="chev">+</span>
+        </button>
+        <div class="guide-body"><div class="guide-body-inner"><ul>
+          <li>Layoff cycles in tech move faster than most other sectors — aim for <b>6–9 months</b> of expenses, not the generic "3–6 months" advice.</li>
+          <li>Keep it boring and liquid: a sweep-in fixed deposit or a liquid mutual fund, never equity.</li>
+          <li>Keep it fully separate from your investment portfolio — its job is to be there instantly, not to earn the best return.</li>
+        </ul></div></div>
+      </div>
+
+      <div class="guide" data-open="false">
+        <button class="guide-head">
+          <span class="guide-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h14V10"/></svg></span>
+          <span class="titles"><span class="t">TDS at property registration</span><span class="tag">how it plays out in practice</span></span>
+          <span class="chev">+</span>
+        </button>
+        <div class="guide-body"><div class="guide-body-inner"><ul>
+          <li>Covered in the calculator above — the part that trips people up is timing: if you're paying a builder in installments, TDS applies to <b>each payment</b>, not just once at registration.</li>
+          <li>You need the seller's PAN before you pay — no PAN pushes the rate from 1% to 20%.</li>
+          <li>Keep Form 16B safe. Buyers usually only remember it at resale, when it's needed to prove the seller got credit for the TDS.</li>
+        </ul></div></div>
+      </div>
+
+      <div class="guide" data-open="false">
+        <button class="guide-head">
+          <span class="guide-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 9h20M8 4v16"/></svg></span>
+          <span class="titles"><span class="t">Understanding your payslip</span><span class="tag">every deduction, decoded</span></span>
+          <span class="chev">+</span>
+        </button>
+        <div class="guide-body"><div class="guide-body-inner"><ul>
+          <li>Basic salary drives almost everything else — PF, gratuity, and HRA are all calculated as a percentage of it.</li>
+          <li>Gross salary is bigger than what actually lands in your account — PF, professional tax, and TDS all come out before that.</li>
+          <li>Take-home is typically 65–75% of (CTC ÷ 12) — use that as a sanity check before accepting an offer.</li>
+          <li>See the full guide in our <a href="blogs/form-16-explained.html">Form 16 blog</a> for how this ties into your annual tax certificate.</li>
+        </ul></div></div>
+      </div>
+
+      <div class="guide" data-open="false">
+        <button class="guide-head">
+          <span class="guide-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 15l4-4 4 4 5-6"/></svg></span>
+          <span class="titles"><span class="t">Home loan: prepay or invest?</span><span class="tag">the real math, not a guess</span></span>
+          <span class="chev">+</span>
+        </button>
+        <div class="guide-body"><div class="guide-body-inner"><ul>
+          <li>Rough rule: if your loan rate is above what you'd confidently earn investing instead, prepaying wins mathematically.</li>
+          <li>Prepaying early in the loan saves more interest than prepaying later — front-loaded interest means early extra payments do more work.</li>
+          <li>Don't drain your emergency fund to prepay — a paid-down loan doesn't help you if an emergency then forces you to borrow again at a worse rate.</li>
+          <li>Use the free Loan Prepayment calculator above to see the exact interest saved for your numbers.</li>
+        </ul></div></div>
+      </div>
+
+      <div class="guide" data-open="false">
+        <button class="guide-head">
+          <span class="guide-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg></span>
+          <span class="titles"><span class="t">Gratuity: what you're actually owed</span><span class="tag">the formula, and the catch</span></span>
+          <span class="chev">+</span>
+        </button>
+        <div class="guide-body"><div class="guide-body-inner"><ul>
+          <li>Formula: (Basic + DA) × 15/26 × years of service — eligible after 5+ years of continuous service.</li>
+          <li>Exempt up to ₹20,00,000 — the lowest of actual gratuity, this ceiling, or the formula amount.</li>
+          <li>Under 5 years? Not eligible under standard rules, except in cases of death or disability.</li>
+          <li>Use the free Gratuity calculator above to check your exact number before resigning.</li>
+        </ul></div></div>
+      </div>
+
+      <div class="guide" data-open="false">
+        <button class="guide-head">
+          <span class="guide-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l4 2"/></svg></span>
+          <span class="titles"><span class="t">Goal-based investing basics</span><span class="tag">matching money to a timeline</span></span>
+          <span class="chev">+</span>
+        </button>
+        <div class="guide-body"><div class="guide-body-inner"><ul>
+          <li>Under 1 year: savings account or liquid fund. 1–3 years: FD or short-term debt fund. 7+ years: equity.</li>
+          <li>Never put a short-term goal's money into equity — you may be forced to sell at a loss right when you need it.</li>
+          <li>Inflation grows your target over time — a ₹20L goal today needs more than ₹20L in 5 years.</li>
+          <li>Use the free Goal Planner calculator above to work out the monthly SIP a specific goal actually needs.</li>
+        </ul></div></div>
+      </div>
+
+      <div class="guide" data-open="false">
+        <button class="guide-head">
+          <span class="guide-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4M12 18v4M4.9 4.9l2.8 2.8M16.3 16.3l2.8 2.8M2 12h4M18 12h4M4.9 19.1l2.8-2.8M16.3 7.7l2.8-2.8"/></svg></span>
+          <span class="titles"><span class="t">GST basics for first-time freelancers</span><span class="tag">registration, invoicing, and 44ADA</span></span>
+          <span class="chev">+</span>
+        </button>
+        <div class="guide-body"><div class="guide-body-inner"><ul>
+          <li>GST registration is generally required past ₹20L turnover for services (₹10L in some states) — optional below that.</li>
+          <li>Section 44ADA lets eligible professionals declare 50% of receipts as taxable income, without maintaining full books.</li>
+          <li>You cannot legally charge GST unless you're actually registered — check before adding it to an invoice.</li>
+          <li>Full detail in our <a href="blogs/freelancing-gst-invoicing.html">Freelancing &amp; GST blog</a>.</li>
+        </ul></div></div>
+      </div>
+
+      <div class="guide" data-open="false">
+        <button class="guide-head">
+          <span class="guide-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-9.9 8.4A8.5 8.5 0 1 1 20.9 9.4a8.38 8.38 0 0 1 .1 2.1z"/></svg></span>
+          <span class="titles"><span class="t">Salary negotiation, quick version</span><span class="tag">scripts that actually work</span></span>
+          <span class="chev">+</span>
+        </button>
+        <div class="guide-body"><div class="guide-body-inner"><ul>
+          <li>Research market rate from 3+ sources before naming a number — anchoring too low costs you, anchoring with no basis costs you credibility.</li>
+          <li>Lead with value delivered, not personal need — "here's the impact I've had" lands better than "my expenses went up."</li>
+          <li>If base salary has no room, ask about joining bonus, an earlier review cycle, or additional equity instead.</li>
+          <li>Never accept on the spot — "let me review this and get back to you by [date]" is always reasonable.</li>
+        </ul></div></div>
+      </div>
+
+      <div class="guide" data-open="false">
+        <button class="guide-head">
+          <span class="guide-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6l8-4z"/><path d="M9 12l2 2 4-4"/></svg></span>
+          <span class="titles"><span class="t">How much term cover is enough?</span><span class="tag">a formula, not a guess</span></span>
+          <span class="chev">+</span>
+        </button>
+        <div class="guide-body"><div class="guide-body-inner"><ul>
+          <li>Starting point: 10–15 times your annual income.</li>
+          <li>Add outstanding loans and future goals (education, dependent care) you're funding alone.</li>
+          <li>Subtract existing savings and investments that could already cover part of it.</li>
+          <li>Full breakdown in our <a href="blogs/term-vs-life-insurance.html">Term vs Life Insurance blog</a>.</li>
+        </ul></div></div>
+      </div>
+
+      <div class="guide" data-open="false">
+        <button class="guide-head">
+          <span class="guide-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="8" height="8" rx="1"/><rect x="13" y="3" width="8" height="8" rx="1"/><rect x="3" y="13" width="8" height="8" rx="1"/><rect x="13" y="13" width="8" height="8" rx="1"/></svg></span>
+          <span class="titles"><span class="t">NPS Tier I vs Tier II</span><span class="tag">two accounts, very different rules</span></span>
+          <span class="chev">+</span>
+        </button>
+        <div class="guide-body"><div class="guide-body-inner"><ul>
+          <li>Tier I is the primary retirement account — locked until 60, with the tax benefits under 80CCD(1B).</li>
+          <li>Tier II is a voluntary add-on — no lock-in, but also no tax deduction.</li>
+          <li>Most people only need Tier I; Tier II mainly suits those wanting flexible access within the same NPS ecosystem.</li>
+          <li>Full comparison in our <a href="blogs/nps-vs-ppf-vs-epf.html">NPS vs PPF vs EPF blog</a>.</li>
+        </ul></div></div>
+      </div>
+
+      <div class="guide" data-open="false">
+        <button class="guide-head">
+          <span class="guide-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4z"/><path d="M4 9h16M9 4v16"/></svg></span>
+          <span class="titles"><span class="t">Common ITR filing mistakes</span><span class="tag">the ones that trigger notices</span></span>
+          <span class="chev">+</span>
+        </button>
+        <div class="guide-body"><div class="guide-body-inner"><ul>
+          <li>Mismatched TDS between what you declare and what Form 26AS/AIS shows — always reconcile before filing.</li>
+          <li>Choosing the wrong ITR form for your income type — salary plus freelance income needs a different form than salary alone.</li>
+          <li>Forgetting to report exempt income, foreign assets, or crypto gains — these still need disclosure even if the tax is zero.</li>
+          <li>Filing at the last minute with no time to fix an error before the deadline.</li>
+        </ul></div></div>
+      </div>
+
+      <div class="guide" data-open="false">
+        <button class="guide-head">
+          <span class="guide-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 9v4M12 17h.01"/><path d="M10.3 3.9L2.5 17a2 2 0 0 0 1.7 3h15.6a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/></svg></span>
+          <span class="titles"><span class="t">Got an income tax notice?</span><span class="tag">don't panic — check this first</span></span>
+          <span class="chev">+</span>
+        </button>
+        <div class="guide-body"><div class="guide-body-inner"><ul>
+          <li>Read the notice section number first — it tells you exactly what's being asked, not just "the department wants money."</li>
+          <li>Many notices are routine mismatches (a TDS gap, an unreported small income) that need clarification, not a dispute.</li>
+          <li>Respond within the given window — most notices have a specific deadline, and silence is worse than a late-but-honest response.</li>
+          <li>For anything beyond a simple mismatch, get a professional to review it before you respond.</li>
+        </ul></div></div>
+      </div>
+
+      <div class="guide" data-open="false">
+        <button class="guide-head">
+          <span class="guide-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V7l7-4 7 4v14M9 9h1M9 13h1M14 9h1M14 13h1"/></svg></span>
+          <span class="titles"><span class="t">Capital gains on property, simplified</span><span class="tag">the 24-month rule and indexation</span></span>
+          <span class="chev">+</span>
+        </button>
+        <div class="guide-body"><div class="guide-body-inner"><ul>
+          <li>24-month holding period splits short-term (taxed at slab rate) from long-term.</li>
+          <li>Property bought after 23 July 2024: 12.5% flat, no indexation. Bought before: choose 12.5% (no indexation) or 20% (with indexation), whichever is lower.</li>
+          <li>Sections 54 and 54F can defer this tax if you reinvest in another residential property — conditions apply.</li>
+          <li>Use the free Capital Gains calculator above for an estimate on your specific numbers.</li>
+        </ul></div></div>
+      </div>
+
+      <div class="guide" data-open="false">
+        <button class="guide-head">
+          <span class="guide-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></span>
+          <span class="titles"><span class="t">Retirement planning, by age</span><span class="tag">what changes at each stage</span></span>
+          <span class="chev">+</span>
+        </button>
+        <div class="guide-body"><div class="guide-body-inner"><ul>
+          <li>20s: let EPF run automatically, lean into NPS's equity allocation for the extra 80CCD(1B) deduction.</li>
+          <li>30s–40s: balance PPF and NPS roughly evenly alongside EPF, building both guaranteed and growth exposure.</li>
+          <li>50s: shift NPS allocation toward debt, lean more on PPF/EPF's guaranteed returns as the horizon shortens.</li>
+          <li>Full breakdown in our <a href="blogs/nps-vs-ppf-vs-epf.html">NPS vs PPF vs EPF blog</a>.</li>
+        </ul></div></div>
+      </div>
+
+      <div class="guide" data-open="false">
+        <button class="guide-head">
+          <span class="guide-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 9V7a5 5 0 0 0-10 0v2"/><rect x="5" y="9" width="14" height="12" rx="2"/></svg></span>
+          <span class="titles"><span class="t">Salary structuring for tax efficiency</span><span class="tag">what's actually adjustable</span></span>
+          <span class="chev">+</span>
+        </button>
+        <div class="guide-body"><div class="guide-body-inner"><ul>
+          <li>Basic salary affects PF, gratuity, and HRA cap simultaneously — it's not just "a number," it's a lever.</li>
+          <li>Some components (meal cards, LTA, telephone reimbursement) can be more tax-efficient than an equivalent cash allowance.</li>
+          <li>This is worth discussing with HR at senior levels or smaller companies where CTC structure has more flexibility.</li>
+          <li>Always run both regimes with your actual structure using the free Income Tax calculator above.</li>
+        </ul></div></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="block alt" id="ebooks">
+  <div class="wrap">
+    <div class="kicker"><span class="seg">Ebooks</span> — ₹50 each</div>
+    <div class="block-head">
+      <h2>Skip the 300-page finance book. Get the 10-page version.</h2>
+      <p>Ten short, practical playbooks — no theory, no "gyaan," just the steps. Each one is a quick read you can act on the same day.</p>
+    </div>
+    <div class="ebook-grid">
+
+      <div class="ebook-card">
+        <div class="ebook-cover c-amber"><span class="cat">Personal Finance</span><span class="num">01</span><span class="price">₹50</span></div>
+        <div class="ebook-body">
+          <h3>The First Payslip Playbook</h3>
+          <p>What to actually do with your salary the day it lands — accounts, autopay, and a simple 3-bucket split.</p>
+          <a class="ebook-buy" data-wa-msg="Hi, I want to buy the 'The First Payslip Playbook' ebook for ₹50." href="#">Get this ebook →</a>
+        </div>
+      </div>
+
+      <div class="ebook-card">
+        <div class="ebook-cover c-teal"><span class="cat">Taxation</span><span class="num">02</span><span class="price">₹50</span></div>
+        <div class="ebook-body">
+          <h3>Old vs New Regime, Decided</h3>
+          <p>A 10-minute worksheet to pick your tax regime for this year — no CA required.</p>
+          <a class="ebook-buy" data-wa-msg="Hi, I want to buy the 'Old vs New Regime, Decided' ebook for ₹50." href="#">Get this ebook →</a>
+        </div>
+      </div>
+
+      <div class="ebook-card">
+        <div class="ebook-cover c-rose"><span class="cat">Savings vs Investing</span><span class="num">03</span><span class="price">₹50</span></div>
+        <div class="ebook-body">
+          <h3>Where Every Rupee Should Go</h3>
+          <p>A simple flowchart for save-vs-invest decisions — from emergency fund to your first equity SIP.</p>
+          <a class="ebook-buy" data-wa-msg="Hi, I want to buy the 'Where Every Rupee Should Go' ebook for ₹50." href="#">Get this ebook →</a>
+        </div>
+      </div>
+
+      <div class="ebook-card">
+        <div class="ebook-cover c-ink"><span class="cat">Business Ideas</span><span class="num">04</span><span class="price">₹50</span></div>
+        <div class="ebook-body">
+          <h3>10 Businesses Under ₹50,000</h3>
+          <p>Real ideas with real budgets you can start on weekends, without quitting your job.</p>
+          <a class="ebook-buy" data-wa-msg="Hi, I want to buy the '10 Businesses Under ₹50,000' ebook for ₹50." href="#">Get this ebook →</a>
+        </div>
+      </div>
+
+      <div class="ebook-card">
+        <div class="ebook-cover c-amber"><span class="cat">Communication</span><span class="num">05</span><span class="price">₹50</span></div>
+        <div class="ebook-body">
+          <h3>Emails That Get Replies</h3>
+          <p>Copy-paste templates for asking, following up, negotiating, and saying no at work.</p>
+          <a class="ebook-buy" data-wa-msg="Hi, I want to buy the 'Emails That Get Replies' ebook for ₹50." href="#">Get this ebook →</a>
+        </div>
+      </div>
+
+      <div class="ebook-card">
+        <div class="ebook-cover c-teal"><span class="cat">Productivity</span><span class="num">06</span><span class="price">₹50</span></div>
+        <div class="ebook-body">
+          <h3>50 Excel Shortcuts Worth Learning</h3>
+          <p>The shortcuts that actually save time — no macros, no VBA, just keys.</p>
+          <a class="ebook-buy" data-wa-msg="Hi, I want to buy the '50 Excel Shortcuts Worth Learning' ebook for ₹50." href="#">Get this ebook →</a>
+        </div>
+      </div>
+
+      <div class="ebook-card">
+        <div class="ebook-cover c-rose"><span class="cat">Tax Saving</span><span class="num">07</span><span class="price">₹50</span></div>
+        <div class="ebook-body">
+          <h3>Legal Ways to Pay Less Tax</h3>
+          <p>The deductions most salaried people forget to claim, and exactly how to claim them.</p>
+          <a class="ebook-buy" data-wa-msg="Hi, I want to buy the 'Legal Ways to Pay Less Tax' ebook for ₹50." href="#">Get this ebook →</a>
+        </div>
+      </div>
+
+      <div class="ebook-card">
+        <div class="ebook-cover c-ink"><span class="cat">Career Money</span><span class="num">08</span><span class="price">₹50</span></div>
+        <div class="ebook-body">
+          <h3>Your First Month at a New Job</h3>
+          <p>A money checklist for job switches — PF transfer, insurance, full-and-final, all of it.</p>
+          <a class="ebook-buy" data-wa-msg="Hi, I want to buy the 'Your First Month at a New Job' ebook for ₹50." href="#">Get this ebook →</a>
+        </div>
+      </div>
+
+      <div class="ebook-card">
+        <div class="ebook-cover c-amber"><span class="cat">Negotiation</span><span class="num">09</span><span class="price">₹50</span></div>
+        <div class="ebook-body">
+          <h3>Salary Negotiation, Script Included</h3>
+          <p>Word-for-word scripts for negotiating CTC, raises, and counter-offers.</p>
+          <a class="ebook-buy" data-wa-msg="Hi, I want to buy the 'Salary Negotiation, Script Included' ebook for ₹50." href="#">Get this ebook →</a>
+        </div>
+      </div>
+
+      <div class="ebook-card">
+        <div class="ebook-cover c-teal"><span class="cat">Property</span><span class="num">10</span><span class="price">₹50</span></div>
+        <div class="ebook-body">
+          <h3>Buying Your First Property</h3>
+          <p>The paperwork playbook — TDS, loan sanction, registration — all in the right order.</p>
+          <a class="ebook-buy" data-wa-msg="Hi, I want to buy the 'Buying Your First Property' ebook for ₹50." href="#">Get this ebook →</a>
+        </div>
+      </div>
+
+    </div>
+    <p class="ebook-note">Tap "Get this ebook" to message us on WhatsApp — we'll confirm payment and send the PDF straight there.</p>
+  </div>
+</section>
+
+<section class="block" id="services">
+  <div class="wrap">
+    <div class="kicker"><span class="seg">Services</span> — done for you, over WhatsApp</div>
+    <div class="block-head">
+      <h2>Paid help for the paperwork you'd rather hand off</h2>
+      <p>These aren't DIY tools — they're filings we handle for you. Tap any card to start the conversation.</p>
+    </div>
+    <div class="service-grid">
+
+      <div class="service-card">
+        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M9 13h6M9 17h6M9 9h1"/></svg></div>
+        <h3>ITR Filing</h3>
+        <p>Salaried, freelance, or both — we prepare and file your income tax return for you.</p>
+        <a class="wa-btn" data-wa-msg="Hi, I want to file my ITR. Can you help?">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21h.01c5.46 0 9.9-4.45 9.9-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2m0 1.67a8.2 8.2 0 0 1 5.83 2.41 8.19 8.19 0 0 1 2.41 5.83c0 4.55-3.7 8.24-8.25 8.24a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.17 8.17 0 0 1-1.26-4.38c0-4.55 3.7-8.24 8.25-8.24m-4.55 4.72c-.16 0-.42.06-.64.3-.22.24-.84.82-.84 2s.86 2.32.98 2.48c.12.16 1.67 2.7 4.15 3.66 2.06.8 2.48.64 2.93.6.45-.04 1.45-.59 1.65-1.16.2-.57.2-1.06.14-1.16-.06-.1-.22-.16-.46-.28-.24-.12-1.45-.72-1.67-.8-.22-.08-.39-.12-.55.12-.16.24-.63.8-.77.96-.14.16-.28.18-.52.06-.24-.12-1.02-.38-1.94-1.2-.72-.64-1.2-1.43-1.34-1.67-.14-.24-.02-.37.1-.49.11-.11.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.55-1.36-.76-1.86-.2-.48-.4-.42-.55-.42h-.32Z"/></svg>
+          Chat on WhatsApp
+        </a>
+        <p class="service-note">Pricing depends on your case — shared on WhatsApp.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"/><circle cx="8" cy="12" r="2.2"/><path d="M14 10h5M14 14h3"/></svg></div>
+        <h3>Apply New PAN / Update PAN</h3>
+        <p>New PAN application, or corrections to your existing one — name, address, date of birth, and more.</p>
+        <a class="wa-btn" data-wa-msg="Hi, I need help applying for a new PAN, or updating my existing PAN details.">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21h.01c5.46 0 9.9-4.45 9.9-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2m0 1.67a8.2 8.2 0 0 1 5.83 2.41 8.19 8.19 0 0 1 2.41 5.83c0 4.55-3.7 8.24-8.25 8.24a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.17 8.17 0 0 1-1.26-4.38c0-4.55 3.7-8.24 8.25-8.24m-4.55 4.72c-.16 0-.42.06-.64.3-.22.24-.84.82-.84 2s.86 2.32.98 2.48c.12.16 1.67 2.7 4.15 3.66 2.06.8 2.48.64 2.93.6.45-.04 1.45-.59 1.65-1.16.2-.57.2-1.06.14-1.16-.06-.1-.22-.16-.46-.28-.24-.12-1.45-.72-1.67-.8-.22-.08-.39-.12-.55.12-.16.24-.63.8-.77.96-.14.16-.28.18-.52.06-.24-.12-1.02-.38-1.94-1.2-.72-.64-1.2-1.43-1.34-1.67-.14-.24-.02-.37.1-.49.11-.11.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.55-1.36-.76-1.86-.2-.48-.4-.42-.55-.42h-.32Z"/></svg>
+          Chat on WhatsApp
+        </a>
+        <p class="service-note">Pricing depends on your case — shared on WhatsApp.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19V6a2 2 0 0 1 2-2h8l6 6v9a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2Z"/><path d="M14 4v6h6"/><path d="M8 15h8M8 11h4"/></svg></div>
+        <h3>TDS Return Filing</h3>
+        <p>Quarterly TDS returns for individuals or small businesses, filed correctly and on time.</p>
+        <a class="wa-btn" data-wa-msg="Hi, I need help with TDS return filing.">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21h.01c5.46 0 9.9-4.45 9.9-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2m0 1.67a8.2 8.2 0 0 1 5.83 2.41 8.19 8.19 0 0 1 2.41 5.83c0 4.55-3.7 8.24-8.25 8.24a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.17 8.17 0 0 1-1.26-4.38c0-4.55 3.7-8.24 8.25-8.24m-4.55 4.72c-.16 0-.42.06-.64.3-.22.24-.84.82-.84 2s.86 2.32.98 2.48c.12.16 1.67 2.7 4.15 3.66 2.06.8 2.48.64 2.93.6.45-.04 1.45-.59 1.65-1.16.2-.57.2-1.06.14-1.16-.06-.1-.22-.16-.46-.28-.24-.12-1.45-.72-1.67-.8-.22-.08-.39-.12-.55.12-.16.24-.63.8-.77.96-.14.16-.28.18-.52.06-.24-.12-1.02-.38-1.94-1.2-.72-.64-1.2-1.43-1.34-1.67-.14-.24-.02-.37.1-.49.11-.11.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.55-1.36-.76-1.86-.2-.48-.4-.42-.55-.42h-.32Z"/></svg>
+          Chat on WhatsApp
+        </a>
+        <p class="service-note">Pricing depends on your case — shared on WhatsApp.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h14V10"/><path d="M10 20v-6h4v6"/></svg></div>
+        <h3>Consultancy on TDS for Property Purchase</h3>
+        <p>Buying property above ₹50 lakh? We'll walk you through the deduction, Form 26QB, and timelines.</p>
+        <a class="wa-btn" data-wa-msg="Hi, I need consultancy on TDS for a property purchase.">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21h.01c5.46 0 9.9-4.45 9.9-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2m0 1.67a8.2 8.2 0 0 1 5.83 2.41 8.19 8.19 0 0 1 2.41 5.83c0 4.55-3.7 8.24-8.25 8.24a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.17 8.17 0 0 1-1.26-4.38c0-4.55 3.7-8.24 8.25-8.24m-4.55 4.72c-.16 0-.42.06-.64.3-.22.24-.84.82-.84 2s.86 2.32.98 2.48c.12.16 1.67 2.7 4.15 3.66 2.06.8 2.48.64 2.93.6.45-.04 1.45-.59 1.65-1.16.2-.57.2-1.06.14-1.16-.06-.1-.22-.16-.46-.28-.24-.12-1.45-.72-1.67-.8-.22-.08-.39-.12-.55.12-.16.24-.63.8-.77.96-.14.16-.28.18-.52.06-.24-.12-1.02-.38-1.94-1.2-.72-.64-1.2-1.43-1.34-1.67-.14-.24-.02-.37.1-.49.11-.11.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.55-1.36-.76-1.86-.2-.48-.4-.42-.55-.42h-.32Z"/></svg>
+          Chat on WhatsApp
+        </a>
+        <p class="service-note">Pricing depends on your case — shared on WhatsApp.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="block alt">
+  <div class="wrap">
+    <div class="kicker"><span class="seg">What people say</span></div>
+    <div class="block-head">
+      <h2>Real feedback from real users</h2>
+      <p>A few words from people we've actually worked with.</p>
+    </div>
+
+    <div class="testimonial-grid">
+      <div class="testimonial-card">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-quote">"I've been working with Paisa Stack for my income tax filing and investment planning for the last few years. My financial profile includes salary, RSUs, foreign assets, and investments, and every return has been handled with great attention to detail. What I appreciate most is the prompt communication and the ability to explain complex tax matters in a simple way. It's reassuring to know that my finances are being looked after by someone who genuinely cares about accuracy and long-term wealth creation."</p>
+        <div class="testimonial-person">
+          <div class="testimonial-name">Pankaj Soni</div>
+          <div class="testimonial-role">Senior Scientist, Adobe Inc.</div>
+        </div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-quote">"I wanted a tax advisor who could go beyond just filing my ITR, and that's exactly what I found with Paisa Stack. From tax planning to investment guidance, every discussion has been practical and personalized. The process is smooth, documents are handled professionally, and every query is answered patiently. I highly recommend their services to anyone looking for reliable financial and tax advice."</p>
+        <div class="testimonial-person">
+          <div class="testimonial-name">Yukta Arora</div>
+          <div class="testimonial-role">Manager, NatWest Bank</div>
+        </div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-quote">"Managing personal finances becomes difficult with a busy schedule, but Paisa Stack has made it completely hassle-free. They have been handling my tax compliance and advising me on investments with a long-term perspective. Their knowledge, responsiveness, and transparent approach have given me confidence that my financial matters are in safe hands. It's been a great experience working with them."</p>
+        <div class="testimonial-person">
+          <div class="testimonial-name">Vipin Basia</div>
+          <div class="testimonial-role">Director, Porter</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="review-invite">
+      <div class="review-invite-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+      </div>
+      <h3>Used a calculator, an ebook, or a service?</h3>
+      <p>Tell us what you thought — the good and the honest. A few lines is enough. We'll add real reviews here as they come in, with your name and permission.</p>
+      <a class="wa-btn" style="width:auto; padding:11px 24px;" data-wa-msg="Hi, I used Paisa Stack and wanted to share some feedback:">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21h.01c5.46 0 9.9-4.45 9.9-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2m0 1.67a8.2 8.2 0 0 1 5.83 2.41 8.19 8.19 0 0 1 2.41 5.83c0 4.55-3.7 8.24-8.25 8.24a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.17 8.17 0 0 1-1.26-4.38c0-4.55 3.7-8.24 8.25-8.24m-4.55 4.72c-.16 0-.42.06-.64.3-.22.24-.84.82-.84 2s.86 2.32.98 2.48c.12.16 1.67 2.7 4.15 3.66 2.06.8 2.48.64 2.93.6.45-.04 1.45-.59 1.65-1.16.2-.57.2-1.06.14-1.16-.06-.1-.22-.16-.46-.28-.24-.12-1.45-.72-1.67-.8-.22-.08-.39-.12-.55.12-.16.24-.63.8-.77.96-.14.16-.28.18-.52.06-.24-.12-1.02-.38-1.94-1.2-.72-.64-1.2-1.43-1.34-1.67-.14-.24-.02-.37.1-.49.11-.11.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.55-1.36-.76-1.86-.2-.48-.4-.42-.55-.42h-.32Z"/></svg>
+        Share your feedback on WhatsApp
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="book-expert">
+  <div class="wrap">
+    <div class="kicker"><span class="seg">Book a Finance Expert</span> — one-on-one, over a call</div>
+    <div class="block-head">
+      <h2>Get a straight answer to your specific situation</h2>
+      <p>Not everything fits a calculator. Bring your real numbers to a 40-minute call and leave with an actual plan — not a sales pitch.</p>
+    </div>
+    <div class="expert-card">
+      <div>
+        <div class="expert-price">₹500 <span class="small">/ 40-minute call</span></div>
+        <ul class="expert-list">
+          <li>Choosing a tax regime for your exact numbers, not a generic example</li>
+          <li>Deciding when to sell vested RSUs or ESOPs</li>
+          <li>Structuring a home loan, or checking if you're overpaying on EMI</li>
+          <li>A general review — "just tell me where I'm going wrong"</li>
+        </ul>
+        <a class="wa-btn" style="width:auto; padding:12px 22px;" data-wa-msg="Hi, I want to book a 40-minute Finance Expert call (₹500). My topic is: ">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21h.01c5.46 0 9.9-4.45 9.9-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2m0 1.67a8.2 8.2 0 0 1 5.83 2.41 8.19 8.19 0 0 1 2.41 5.83c0 4.55-3.7 8.24-8.25 8.24a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.17 8.17 0 0 1-1.26-4.38c0-4.55 3.7-8.24 8.25-8.24m-4.55 4.72c-.16 0-.42.06-.64.3-.22.24-.84.82-.84 2s.86 2.32.98 2.48c.12.16 1.67 2.7 4.15 3.66 2.06.8 2.48.64 2.93.6.45-.04 1.45-.59 1.65-1.16.2-.57.2-1.06.14-1.16-.06-.1-.22-.16-.46-.28-.24-.12-1.45-.72-1.67-.8-.22-.08-.39-.12-.55.12-.16.24-.63.8-.77.96-.14.16-.28.18-.52.06-.24-.12-1.02-.38-1.94-1.2-.72-.64-1.2-1.43-1.34-1.67-.14-.24-.02-.37.1-.49.11-.11.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.55-1.36-.76-1.86-.2-.48-.4-.42-.55-.42h-.32Z"/></svg>
+          Book on WhatsApp
+        </a>
+      </div>
+      <div>
+        <ol class="steps">
+          <li><b>Message us your topic</b> on WhatsApp so we can match you with the right expert.</li>
+          <li><b>Pay ₹500</b> to confirm your slot — we'll share a time that works.</li>
+          <li><b>Get on a 40-minute call</b> and walk away with a clear, specific action plan.</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block alt" id="about">
+  <div class="wrap">
+    <div class="kicker"><span class="seg">About</span></div>
+    <div class="about-grid">
+      <div>
+        <h2 style="font-size:1.5rem; margin-bottom:14px;">Why this exists</h2>
+        <p>Most personal finance content assumes either total ignorance or a finance background — neither fits someone who's sharp and simply never had a reason to learn tax law or loan math. Paisa Stack is built for that gap: real calculators for the moments that actually confuse people — a property purchase, a tax regime choice, a loan, a SIP — and guides written the way a knowledgeable friend would explain it. Direct, specific, no filler.</p>
+        <div class="disclaimer">
+          <b>A quick disclaimer:</b> this site is a planning aid, not financial or tax advice. Figures reflect FY 2026-27 rules as commonly published and can change with future budgets. Confirm anything that affects a real filing or transaction with a chartered accountant or the Income Tax Department before acting on it.
+        </div>
+      </div>
+      <div class="about-art" aria-hidden="true">
+        <svg viewBox="0 0 420 300" xmlns="http://www.w3.org/2000/svg">
+          <rect x="0" y="0" width="420" height="300" rx="14" fill="#fff"/>
+          <circle cx="120" cy="110" r="46" fill="#12203D"/>
+          <path d="M60 240 Q60 160 120 160 Q180 160 180 240 Z" fill="#12203D"/>
+          <circle cx="300" cy="130" r="40" fill="#EFEAD9"/>
+          <path d="M248 244 Q248 176 300 176 Q352 176 352 244 Z" fill="#EFEAD9" stroke="#DCD2BC" stroke-width="2"/>
+          <rect x="150" y="60" width="90" height="60" rx="8" fill="#EAD9AE" stroke="#A8781E" stroke-width="2"/>
+          <text x="195" y="100" font-family="'JetBrains Mono', monospace" font-size="30" text-anchor="middle" fill="#A8781E" font-weight="700">₹</text>
+          <path d="M40 60 L60 40 M60 60 L40 40" stroke="#1F8F73" stroke-width="3" stroke-linecap="round" opacity="0.6"/>
+          <circle cx="380" cy="50" r="5" fill="#1F8F73" opacity="0.6"/>
+          <circle cx="30" cy="200" r="7" fill="#A8781E" opacity="0.4"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<footer class="site">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <div class="footer-brand"><span class="mark">₹</span>Paisa Stack</div>
+        <p class="footer-blurb">Plain-language money help for everyday people — free calculators, practical guides, and real tax help from practising Chartered Accountants.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Site</h4>
+        <a href="#tools">Tools</a>
+        <a href="#ebooks">Ebooks</a>
+        <a href="blogs/blogs.html">Blogs</a>
+        <a href="#services">Services</a>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <a href="terms-of-use.html">Terms of Use</a>
+        <a href="disclaimer.html">Disclaimer</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© Paisa Stack — plain-language money help for everyday people</span>
+      <span>No logins · no tracking · numbers stay in your browser</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  "use strict";
+
+  function toINR(n){
+    n = Math.round(n);
+    var neg = n < 0;
+    n = Math.abs(n);
+    var str = n.toLocaleString('en-IN', {maximumFractionDigits:0});
+    return (neg? "-" : "") + "₹" + str;
+  }
+  function pct(n, digits){
+    if(digits===undefined) digits=1;
+    return (Math.round(n*Math.pow(10,digits))/Math.pow(10,digits)) + "%";
+  }
+  function bindRange(numId, rangeId, onChange){
+    var numEl = document.getElementById(numId);
+    var rangeEl = document.getElementById(rangeId);
+    function sync(from){
+      if(from==='num'){ rangeEl.value = numEl.value; } else { numEl.value = rangeEl.value; }
+      onChange();
+    }
+    numEl.addEventListener('input', function(){ sync('num'); });
+    rangeEl.addEventListener('input', function(){ sync('range'); });
+  }
+  function bindSeg(containerId, cb){
+    var container = document.getElementById(containerId);
+    var buttons = container.querySelectorAll('button');
+    buttons.forEach(function(btn){
+      btn.addEventListener('click', function(){
+        buttons.forEach(function(b){ b.setAttribute('aria-pressed','false'); });
+        btn.setAttribute('aria-pressed','true');
+        cb(btn.getAttribute('data-val'));
+      });
+    });
+  }
+
+  // ---------------- WhatsApp CTAs ----------------
+  var WA_NUMBER = '919717927667';
+  document.querySelectorAll('[data-wa-msg]').forEach(function(el){
+    var msg = el.getAttribute('data-wa-msg');
+    el.setAttribute('href', 'https://wa.me/' + WA_NUMBER + '?text=' + encodeURIComponent(msg));
+    el.setAttribute('target', '_blank');
+    el.setAttribute('rel', 'noopener');
+  });
+
+  // ---------------- Hamburger (mobile) ----------------
+  var hamburgerBtn = document.getElementById('hamburgerBtn');
+  var mainNav = document.getElementById('mainNav');
+  hamburgerBtn.addEventListener('click', function(e){
+    e.stopPropagation();
+    var isOpen = mainNav.classList.toggle('mobile-open');
+    hamburgerBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  });
+  // Close the mobile menu after tapping a plain link (not a dropdown trigger)
+  mainNav.querySelectorAll('a').forEach(function(link){
+    link.addEventListener('click', function(){
+      if(window.innerWidth <= 980){
+        mainNav.classList.remove('mobile-open');
+        hamburgerBtn.setAttribute('aria-expanded', 'false');
+      }
+    });
+  });
+  document.addEventListener('click', function(e){
+    if(window.innerWidth <= 980 && mainNav.classList.contains('mobile-open') && !mainNav.contains(e.target) && e.target !== hamburgerBtn){
+      mainNav.classList.remove('mobile-open');
+      hamburgerBtn.setAttribute('aria-expanded', 'false');
+    }
+  });
+
+  // ---------------- Dropdown nav ----------------
+  var navItems = document.querySelectorAll('#mainNav .nav-item');
+  navItems.forEach(function(item){
+    var trigger = item.querySelector('.nav-trigger');
+    trigger.addEventListener('click', function(e){
+      e.stopPropagation();
+      var isOpen = item.classList.contains('open');
+      navItems.forEach(function(i){ i.classList.remove('open'); });
+      if(!isOpen){ item.classList.add('open'); }
+    });
+  });
+  document.addEventListener('click', function(){
+    navItems.forEach(function(i){ i.classList.remove('open'); });
+  });
+
+  // Tools dropdown links also activate the matching tab, not just scroll to it
+  document.querySelectorAll('.dd-link[data-tool-panel]').forEach(function(link){
+    link.addEventListener('click', function(){
+      var panelId = link.getAttribute('data-tool-panel');
+      var btn = document.querySelector('.tool-tab[data-panel="' + panelId + '"]');
+      if(btn){ btn.click(); }
+      navItems.forEach(function(i){ i.classList.remove('open'); });
+    });
+  });
+
+  var toolTabs = document.querySelectorAll('.tool-tab');
+  var toolPanels = document.querySelectorAll('.tool-panel');
+  function activateTool(panelId){
+    var btn = document.querySelector('.tool-tab[data-panel="' + panelId + '"]');
+    if(!btn) return false;
+    toolTabs.forEach(function(t){ t.setAttribute('aria-selected','false'); });
+    btn.setAttribute('aria-selected','true');
+    toolPanels.forEach(function(p){ p.classList.remove('active'); });
+    document.getElementById(panelId).classList.add('active');
+    return true;
+  }
+  toolTabs.forEach(function(tab){
+    tab.addEventListener('click', function(){
+      activateTool(tab.getAttribute('data-panel'));
+    });
+  });
+  // Arriving from an external link like blog.html#t-emi should activate that
+  // specific calculator, not just scroll near a hidden panel.
+  function activateFromHash(){
+    var hash = window.location.hash.replace('#','');
+    if(hash && document.getElementById(hash) && document.querySelector('.tool-tab[data-panel="'+hash+'"]')){
+      activateTool(hash);
+      setTimeout(function(){
+        var el = document.getElementById(hash);
+        if(el){ el.scrollIntoView({behavior:'smooth', block:'start'}); }
+      }, 50);
+    }
+  }
+  window.addEventListener('DOMContentLoaded', activateFromHash);
+  window.addEventListener('hashchange', activateFromHash);
+  activateFromHash();
+
+  document.querySelectorAll('.guide-head').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var guide = btn.closest('.guide');
+      var isOpen = guide.getAttribute('data-open') === 'true';
+      guide.setAttribute('data-open', isOpen ? 'false' : 'true');
+    });
+  });
+
+  // ================= TDS =================
+  var tdsPanState = 'yes';
+  function calcTDS(){
+    var price = parseFloat(document.getElementById('tds-price').value) || 0;
+    var stamp = parseFloat(document.getElementById('tds-stamp').value) || 0;
+    document.getElementById('tds-price-val').textContent = toINR(price);
+    document.getElementById('tds-stamp-val').textContent = toINR(stamp);
+
+    var base = Math.max(price, stamp);
+    var threshold = 5000000;
+    var rate = tdsPanState === 'yes' ? 0.01 : 0.20;
+    var applicable = base >= threshold;
+    var tdsAmt = applicable ? base * rate : 0;
+    var net = price - tdsAmt;
+
+    document.getElementById('tds-base').textContent = toINR(base);
+    document.getElementById('tds-rate').textContent = applicable ? pct(rate*100,0) : '—';
+    document.getElementById('tds-amt').textContent = toINR(tdsAmt);
+    document.getElementById('tds-net').textContent = toINR(net);
+    document.getElementById('tds-rv').textContent = toINR(tdsAmt);
+
+    var heroEl = document.getElementById('tds-hero');
+    var rnEl = document.getElementById('tds-rn');
+    if(!applicable){
+      heroEl.classList.add('calm');
+      document.querySelector('#tds-hero .rl').textContent = 'No TDS required';
+      rnEl.textContent = 'Both figures are under ₹50 lakh, so this rule doesn\u2019t apply here.';
+    } else {
+      heroEl.classList.remove('calm');
+      document.querySelector('#tds-hero .rl').textContent = 'TDS to deduct';
+      rnEl.textContent = tdsPanState === 'yes'
+        ? 'Deduct this before paying the seller, then deposit it with the tax department.'
+        : 'No PAN on record pushes the rate to 20% — get the seller\u2019s PAN to bring it down to 1%.';
+    }
+  }
+  bindRange('tds-price','tds-price-range', calcTDS);
+  bindRange('tds-stamp','tds-stamp-range', calcTDS);
+  bindSeg('tds-pan', function(val){ tdsPanState = val; calcTDS(); });
+  calcTDS();
+
+  // ================= TAX =================
+  function newRegimeTax(taxable){
+    var slabs = [
+      [0,400000,0],[400000,800000,0.05],[800000,1200000,0.10],
+      [1200000,1600000,0.15],[1600000,2000000,0.20],[2000000,2400000,0.25],[2400000,Infinity,0.30]
+    ];
+    var tax = 0;
+    slabs.forEach(function(s){ if(taxable > s[0]){ tax += (Math.min(taxable, s[1]) - s[0]) * s[2]; } });
+    if(taxable <= 1200000){ tax = 0; }
+    return tax;
+  }
+  function oldRegimeTax(taxable){
+    var slabs = [[0,250000,0],[250000,500000,0.05],[500000,1000000,0.20],[1000000,Infinity,0.30]];
+    var tax = 0;
+    slabs.forEach(function(s){ if(taxable > s[0]){ tax += (Math.min(taxable, s[1]) - s[0]) * s[2]; } });
+    if(taxable <= 500000){ tax = 0; }
+    return tax;
+  }
+  function calcTax(){
+    var income = parseFloat(document.getElementById('tax-income').value) || 0;
+    var salaried = document.getElementById('tax-salaried').checked;
+    var otherDed = parseFloat(document.getElementById('tax-ded').value) || 0;
+
+    document.getElementById('tax-income-val').textContent = toINR(income);
+    document.getElementById('tax-ded-val').textContent = toINR(otherDed);
+
+    var stdDedNew = salaried ? 75000 : 0;
+    var stdDedOld = salaried ? 50000 : 0;
+    var taxableNew = Math.max(0, income - stdDedNew);
+    var taxableOld = Math.max(0, income - stdDedOld - Math.min(otherDed,400000));
+
+    var taxNew = Math.round(newRegimeTax(taxableNew) * 1.04);
+    var taxOld = Math.round(oldRegimeTax(taxableOld) * 1.04);
+
+    document.getElementById('tax-taxable-new').textContent = toINR(taxableNew);
+    document.getElementById('tax-taxable-old').textContent = toINR(taxableOld);
+    document.getElementById('tax-new-amt').textContent = toINR(taxNew);
+    document.getElementById('tax-old-amt').textContent = toINR(taxOld);
+
+    var maxAmt = Math.max(taxNew, taxOld, 1);
+    document.getElementById('tax-new-bar').style.width = (taxNew/maxAmt*100)+'%';
+    document.getElementById('tax-old-bar').style.width = (taxOld/maxAmt*100)+'%';
+    document.getElementById('tax-new-bar').className = 'bar-fill' + (taxNew<=taxOld? ' win':' warn');
+    document.getElementById('tax-old-bar').className = 'bar-fill' + (taxOld<taxNew? ' win':' warn');
+
+    var lower = Math.min(taxNew, taxOld);
+    var diff = Math.abs(taxNew - taxOld);
+    var better = taxNew <= taxOld ? 'new' : 'old';
+
+    document.getElementById('tax-rv').textContent = toINR(diff);
+    document.getElementById('tax-rn').textContent = 'by picking the ' + better + ' regime.';
+    document.getElementById('tax-final').textContent = toINR(lower) + '/yr';
+
+    var flag = document.getElementById('tax-flag');
+    if(taxableNew <= 1200000){
+      flag.textContent = 'Your new-regime taxable income is at or under ₹12,00,000, so the Section 87A rebate brings that tax to zero.';
+    } else if(otherDed >= 150000){
+      flag.textContent = 'With ₹1,50,000+ in 80C-type deductions, the old regime narrows the gap — worth checking both every year.';
+    } else {
+      flag.textContent = 'The new regime is the default from FY 2023-24 onward — you\u2019d need to actively opt for the old one.';
+    }
+  }
+  bindRange('tax-income','tax-income-range', calcTax);
+  bindRange('tax-ded','tax-ded-range', calcTax);
+  document.getElementById('tax-salaried').addEventListener('change', calcTax);
+  calcTax();
+
+  // ================= EMI =================
+  function calcEMI(){
+    var P = parseFloat(document.getElementById('emi-amt').value) || 0;
+    var annualRate = parseFloat(document.getElementById('emi-rate').value) || 0;
+    var years = parseFloat(document.getElementById('emi-years').value) || 0;
+
+    document.getElementById('emi-amt-val').textContent = toINR(P);
+    document.getElementById('emi-rate-val').textContent = pct(annualRate,2);
+    document.getElementById('emi-years-val').textContent = years + ' yrs';
+
+    var r = (annualRate/12)/100;
+    var n = years*12;
+    var emi = 0;
+    if(r === 0 && n>0){ emi = P/n; }
+    else if(n>0){ emi = P * r * Math.pow(1+r,n) / (Math.pow(1+r,n)-1); }
+    var totalPayment = emi*n;
+    var totalInterest = totalPayment - P;
+
+    document.getElementById('emi-rv').textContent = toINR(emi);
+    document.getElementById('emi-total-interest').textContent = toINR(totalInterest);
+    document.getElementById('emi-total-payment').textContent = toINR(totalPayment);
+    document.getElementById('emi-principal-amt').textContent = toINR(P);
+    document.getElementById('emi-interest-amt').textContent = toINR(totalInterest);
+
+    var maxV = Math.max(P, totalInterest, 1);
+    document.getElementById('emi-principal-bar').style.width = (P/maxV*100)+'%';
+    document.getElementById('emi-interest-bar').style.width = (totalInterest/maxV*100)+'%';
+  }
+  bindRange('emi-amt','emi-amt-range', calcEMI);
+  bindRange('emi-rate','emi-rate-range', calcEMI);
+  bindRange('emi-years','emi-years-range', calcEMI);
+  calcEMI();
+
+  // ================= INVESTMENT =================
+  var invMode = 'sip';
+  function calcInv(){
+    var amt = parseFloat(document.getElementById('inv-amt').value) || 0;
+    var annualRate = parseFloat(document.getElementById('inv-rate').value) || 0;
+    var years = parseFloat(document.getElementById('inv-years').value) || 0;
+
+    document.getElementById('inv-amt-val').textContent = toINR(amt);
+    document.getElementById('inv-rate-val').textContent = pct(annualRate,1);
+    document.getElementById('inv-years-val').textContent = years + ' yrs';
+
+    var invested, maturity;
+    if(invMode === 'sip'){
+      var rMonthly = (annualRate/12)/100;
+      var nMonths = years*12;
+      invested = amt*nMonths;
+      maturity = rMonthly===0 ? invested : amt * ((Math.pow(1+rMonthly,nMonths)-1)/rMonthly) * (1+rMonthly);
+      document.getElementById('inv-rn').textContent = 'projected value of your monthly SIP at the end of the term.';
+    } else {
+      invested = amt;
+      maturity = amt * Math.pow(1+annualRate/100, years);
+      document.getElementById('inv-rn').textContent = 'projected value of your lump sum at the end of the term.';
+    }
+    var growth = maturity - invested;
+
+    document.getElementById('inv-rv').textContent = toINR(maturity);
+    document.getElementById('inv-total-invested').textContent = toINR(invested);
+    document.getElementById('inv-total-value').textContent = toINR(maturity);
+    document.getElementById('inv-invested-amt').textContent = toINR(invested);
+    document.getElementById('inv-growth-amt').textContent = toINR(growth);
+
+    var maxV = Math.max(invested, growth, 1);
+    document.getElementById('inv-invested-bar').style.width = (invested/maxV*100)+'%';
+    document.getElementById('inv-growth-bar').style.width = (growth/maxV*100)+'%';
+  }
+  bindRange('inv-amt','inv-amt-range', calcInv);
+  bindRange('inv-rate','inv-rate-range', calcInv);
+  bindRange('inv-years','inv-years-range', calcInv);
+  bindSeg('inv-mode', function(val){
+    invMode = val;
+    var label = document.getElementById('inv-amt-label');
+    var amtEl = document.getElementById('inv-amt');
+    var rangeEl = document.getElementById('inv-amt-range');
+    if(val === 'sip'){
+      label.textContent = 'Monthly investment';
+      amtEl.value = 10000; rangeEl.value = 10000; rangeEl.max = 200000; rangeEl.step = 500;
+    } else {
+      label.textContent = 'Lump sum amount';
+      amtEl.value = 500000; rangeEl.value = 500000; rangeEl.max = 5000000; rangeEl.step = 10000;
+    }
+    calcInv();
+  });
+  calcInv();
+
+  // ================= HRA =================
+  var hraCity = 'metro';
+  function calcHRA(){
+    var basic = parseFloat(document.getElementById('hra-basic').value) || 0;
+    var received = parseFloat(document.getElementById('hra-received').value) || 0;
+    var rent = parseFloat(document.getElementById('hra-rent').value) || 0;
+    document.getElementById('hra-basic-val').textContent = toINR(basic);
+    document.getElementById('hra-received-val').textContent = toINR(received);
+    document.getElementById('hra-rent-val').textContent = toINR(rent);
+
+    var cityPct = hraCity === 'metro' ? 0.5 : 0.4;
+    var c1 = received;
+    var c2 = Math.max(0, rent - 0.1*basic);
+    var c3 = cityPct * basic;
+    var exempt = Math.max(0, Math.min(c1, c2, c3));
+    var taxable = Math.max(0, received - exempt);
+
+    document.getElementById('hra-rv').textContent = toINR(exempt);
+    document.getElementById('hra-c1').textContent = toINR(c1);
+    document.getElementById('hra-c2').textContent = toINR(c2);
+    document.getElementById('hra-c3').textContent = toINR(c3);
+    document.getElementById('hra-taxable').textContent = toINR(taxable);
+  }
+  bindRange('hra-basic','hra-basic-range', calcHRA);
+  bindRange('hra-received','hra-received-range', calcHRA);
+  bindRange('hra-rent','hra-rent-range', calcHRA);
+  bindSeg('hra-city', function(val){ hraCity = val; calcHRA(); });
+  calcHRA();
+
+  // ================= CAPITAL GAINS =================
+  var cgAsset = 'equity';
+  var cgOldProp = 'no';
+  function calcCG(){
+    var buy = parseFloat(document.getElementById('cg-buy').value) || 0;
+    var sell = parseFloat(document.getElementById('cg-sell').value) || 0;
+    var months = parseFloat(document.getElementById('cg-months').value) || 0;
+    document.getElementById('cg-buy-val').textContent = toINR(buy);
+    document.getElementById('cg-sell-val').textContent = toINR(sell);
+    document.getElementById('cg-months-val').textContent = months + ' mo';
+
+    var gain = sell - buy;
+    var isLT, rateLabel, tax, classLabel;
+
+    if(cgAsset === 'equity'){
+      isLT = months > 12;
+      if(isLT){
+        var taxableGain = Math.max(0, gain - 125000);
+        tax = taxableGain * 0.125;
+        rateLabel = '12.5% above ₹1.25L exemption';
+        classLabel = 'Long-term (equity)';
+      } else {
+        tax = Math.max(0, gain) * 0.20;
+        rateLabel = '20% flat';
+        classLabel = 'Short-term (equity)';
+      }
+    } else if(cgAsset === 'debt'){
+      isLT = false;
+      tax = null;
+      rateLabel = 'your income tax slab rate';
+      classLabel = 'Always taxed at slab rate (post-Apr 2023 rule)';
+    } else {
+      isLT = months > 24;
+      if(isLT){
+        tax = Math.max(0, gain) * 0.125;
+        rateLabel = cgOldProp === 'yes' ? '12.5% (or 20% with indexation — check both)' : '12.5% flat, no indexation';
+        classLabel = 'Long-term (property/gold)';
+      } else {
+        tax = null;
+        rateLabel = 'your income tax slab rate';
+        classLabel = 'Short-term (property/gold) — taxed at slab rate';
+      }
+    }
+
+    document.getElementById('cg-gain').textContent = toINR(gain);
+    document.getElementById('cg-class').textContent = classLabel;
+    document.getElementById('cg-rate').textContent = rateLabel;
+    if(tax === null){
+      document.getElementById('cg-tax').textContent = 'depends on your slab';
+      document.getElementById('cg-rv').textContent = '—';
+      document.getElementById('cg-rn').textContent = 'taxed at your income slab rate, not a flat rate — check the Income Tax tool.';
+    } else {
+      document.getElementById('cg-tax').textContent = toINR(tax);
+      document.getElementById('cg-rv').textContent = toINR(tax);
+      document.getElementById('cg-rn').textContent = 'estimated capital gains tax.';
+    }
+
+    document.getElementById('cg-oldprop-field').style.display = (cgAsset === 'other') ? '' : 'none';
+    var flagEl = document.getElementById('cg-flag');
+    if(cgAsset === 'equity'){
+      flagEl.textContent = 'Equity: 12-month LT threshold, 12.5% above ₹1.25L exemption/year. Below 12 months: 20% flat.';
+    } else if(cgAsset === 'debt'){
+      flagEl.textContent = 'Debt mutual funds bought after April 2023 are always taxed at your income slab rate, regardless of holding period.';
+    } else {
+      flagEl.textContent = 'Property/gold: 24-month LT threshold. Bought after 23 Jul 2024: 12.5% flat, no indexation. Bought before: you can choose 12.5% (no indexation) or 20% (with indexation) — whichever is lower.';
+    }
+  }
+  bindRange('cg-buy','cg-buy-range', calcCG);
+  bindRange('cg-sell','cg-sell-range', calcCG);
+  bindRange('cg-months','cg-months-range', calcCG);
+  bindSeg('cg-asset', function(val){ cgAsset = val; calcCG(); });
+  bindSeg('cg-oldprop', function(val){ cgOldProp = val; calcCG(); });
+  calcCG();
+
+  // ================= RENT VS BUY =================
+  function calcRentBuy(){
+    var rent0 = parseFloat(document.getElementById('rb-rent').value) || 0;
+    var price = parseFloat(document.getElementById('rb-price').value) || 0;
+    var downPct = parseFloat(document.getElementById('rb-down').value) || 0;
+    var rate = parseFloat(document.getElementById('rb-rate').value) || 0;
+    var years = parseFloat(document.getElementById('rb-years').value) || 1;
+    var appr = parseFloat(document.getElementById('rb-appr').value) || 0;
+    var investRate = parseFloat(document.getElementById('rb-inv').value) || 0;
+
+    document.getElementById('rb-rent-val').textContent = toINR(rent0);
+    document.getElementById('rb-price-val').textContent = toINR(price);
+    document.getElementById('rb-down-val').textContent = downPct + '%';
+    document.getElementById('rb-rate-val').textContent = pct(rate,1);
+    document.getElementById('rb-years-val').textContent = years + ' yrs';
+    document.getElementById('rb-appr-val').textContent = appr + '%';
+    document.getElementById('rb-inv-val').textContent = investRate + '%';
+
+    var down = price * downPct/100;
+    var loanAmt = price - down;
+    var rMonthly = (rate/12)/100;
+    var nMonths = years*12; // loan tenure assumed = horizon for simplicity, capped at 30yr amort below
+    var amortMonths = 20*12;
+    var emi = rMonthly===0 ? loanAmt/amortMonths : loanAmt * rMonthly * Math.pow(1+rMonthly,amortMonths) / (Math.pow(1+rMonthly,amortMonths)-1);
+
+    var balance = loanAmt;
+    var totalInterestPaid = 0;
+    var rentMonthly = rent0;
+    var investCorpus = 0;
+    var investMonthlyRate = (investRate/100)/12;
+    var horizonMonths = years*12;
+
+    for(var m=1; m<=horizonMonths; m++){
+      // buying side
+      if(balance > 0){
+        var interestPortion = balance * rMonthly;
+        var principalPortion = Math.min(balance, emi - interestPortion);
+        balance -= principalPortion;
+        totalInterestPaid += interestPortion;
+      }
+      // renting side: invest the difference between (emi) and (rent), if positive
+      var diff = emi - rentMonthly;
+      if(diff > 0){ investCorpus = investCorpus*(1+investMonthlyRate) + diff; }
+      else { investCorpus = investCorpus*(1+investMonthlyRate); }
+      // annual rent escalation (assume same % as appreciation isn't linked; use a fixed 5% typical rent growth)
+      if(m % 12 === 0){ rentMonthly *= 1.05; }
+    }
+
+    var propertyValue = price * Math.pow(1+appr/100, years);
+    var buyNet = propertyValue - balance - down - totalInterestPaid + down; // net wealth = property value - remaining loan (down payment already spent, counted as sunk but recovered in property value)
+    // Simplify: net position if buying = property value - outstanding loan balance (equity you'd have if you sold)
+    var buyNetPosition = propertyValue - balance;
+    var rentNetPosition = investCorpus;
+
+    document.getElementById('rb-buy-amt').textContent = toINR(buyNetPosition);
+    document.getElementById('rb-rent-amt').textContent = toINR(rentNetPosition);
+    var maxV = Math.max(buyNetPosition, rentNetPosition, 1);
+    document.getElementById('rb-buy-bar').style.width = (Math.max(0,buyNetPosition)/maxV*100)+'%';
+    document.getElementById('rb-rent-bar').style.width = (Math.max(0,rentNetPosition)/maxV*100)+'%';
+
+    var diffFinal = buyNetPosition - rentNetPosition;
+    var heroEl = document.getElementById('rb-hero');
+    if(diffFinal > 0){
+      document.getElementById('rb-rv').textContent = 'Buying wins by ' + toINR(diffFinal);
+      heroEl.classList.remove('calm');
+    } else {
+      document.getElementById('rb-rv').textContent = 'Renting + investing wins by ' + toINR(-diffFinal);
+      heroEl.classList.add('calm');
+    }
+  }
+  bindRange('rb-rent','rb-rent-range', calcRentBuy);
+  bindRange('rb-price','rb-price-range', calcRentBuy);
+  bindRange('rb-down','rb-down-range', calcRentBuy);
+  bindRange('rb-rate','rb-rate-range', calcRentBuy);
+  bindRange('rb-years','rb-years-range', calcRentBuy);
+  bindRange('rb-appr','rb-appr-range', calcRentBuy);
+  bindRange('rb-inv','rb-inv-range', calcRentBuy);
+  calcRentBuy();
+
+  // ================= SALARY / IN-HAND =================
+  function calcSalary(){
+    var ctc = parseFloat(document.getElementById('sal-ctc').value) || 0;
+    var basicPct = parseFloat(document.getElementById('sal-basicpct').value) || 40;
+    var otherDed = parseFloat(document.getElementById('sal-ded').value) || 0;
+    document.getElementById('sal-ctc-val').textContent = toINR(ctc);
+    document.getElementById('sal-basic-val').textContent = basicPct + '%';
+    document.getElementById('sal-ded-val').textContent = toINR(otherDed);
+
+    var annualBasic = ctc * (basicPct/100);
+    var employerPF = annualBasic * 0.12;
+    var gratuityAccrual = annualBasic * 0.0481;
+    var grossAnnual = Math.max(0, ctc - employerPF - gratuityAccrual);
+    var employeePF = annualBasic * 0.12;
+    var taxableIncome = Math.max(0, grossAnnual - 75000 - otherDed);
+    var annualTax = newRegimeTax(taxableIncome) * 1.04;
+
+    var monthlyGross = grossAnnual / 12;
+    var monthlyPF = employeePF / 12;
+    var monthlyTDS = annualTax / 12;
+    var monthlyProfTax = 200;
+    var monthlyNet = monthlyGross - monthlyPF - monthlyTDS - monthlyProfTax;
+
+    document.getElementById('sal-rv').textContent = toINR(monthlyNet);
+    document.getElementById('sal-gross').textContent = toINR(monthlyGross);
+    document.getElementById('sal-pf').textContent = toINR(monthlyPF);
+    document.getElementById('sal-tds').textContent = toINR(monthlyTDS);
+    document.getElementById('sal-net').textContent = toINR(monthlyNet);
+  }
+  bindRange('sal-ctc','sal-ctc-range', calcSalary);
+  bindRange('sal-basicpct','sal-basicpct-range', calcSalary);
+  bindRange('sal-ded','sal-ded-range', calcSalary);
+  calcSalary();
+
+  // ================= GRATUITY =================
+  function calcGratuity(){
+    var basic = parseFloat(document.getElementById('gr-basic').value) || 0;
+    var years = parseFloat(document.getElementById('gr-years').value) || 0;
+    document.getElementById('gr-basic-val').textContent = toINR(basic);
+    document.getElementById('gr-years-val').textContent = years + ' yrs';
+
+    var raw = basic * (15/26) * years;
+    var ceiling = 2000000;
+    var payable = years >= 5 ? Math.min(raw, ceiling) : 0;
+    var taxable = Math.max(0, payable - Math.min(payable, ceiling));
+
+    document.getElementById('gr-rv').textContent = toINR(payable);
+    document.getElementById('gr-calc').textContent = toINR(raw);
+    document.getElementById('gr-taxable').textContent = toINR(taxable);
+
+    var flagEl = document.getElementById('gr-flag');
+    var rnEl = document.querySelector('#gr-hero .rn');
+    if(years < 5){
+      flagEl.textContent = 'Under 5 years of service — not eligible for gratuity under standard rules (exceptions apply for death or disability).';
+      rnEl.textContent = 'not eligible yet — needs 5+ years of service.';
+    } else {
+      flagEl.textContent = 'Eligible after 5+ years of continuous service (private sector). Exempt up to ₹20,00,000 — the lowest of actual gratuity, the ceiling, or the formula amount.';
+      rnEl.textContent = 'fully tax-exempt (under ₹20L ceiling).';
+    }
+  }
+  bindRange('gr-basic','gr-basic-range', calcGratuity);
+  bindRange('gr-years','gr-years-range', calcGratuity);
+  calcGratuity();
+
+  // ================= FREELANCE TAX (44ADA) =================
+  var flDigital = 'yes';
+  function calcFreelance(){
+    var gross = parseFloat(document.getElementById('fl-gross').value) || 0;
+    var actualExp = parseFloat(document.getElementById('fl-exp').value) || 0;
+    document.getElementById('fl-gross-val').textContent = toINR(gross);
+    document.getElementById('fl-exp-val').textContent = toINR(actualExp);
+
+    var limit = flDigital === 'yes' ? 7500000 : 5000000;
+    var eligible = gross <= limit;
+    var presumptiveIncome = gross * 0.5;
+    var taxable44 = Math.max(0, presumptiveIncome - 75000);
+    var tax44 = newRegimeTax(taxable44) * 1.04;
+
+    var actualProfit = Math.max(0, gross - actualExp);
+    var taxableActual = Math.max(0, actualProfit - 75000);
+    var taxActual = newRegimeTax(taxableActual) * 1.04;
+
+    document.getElementById('fl-rv').textContent = toINR(presumptiveIncome);
+    document.getElementById('fl-limit').textContent = toINR(limit);
+    document.getElementById('fl-eligible').textContent = eligible ? 'Yes' : 'No — exceeds limit';
+    document.getElementById('fl-tax-44ada').textContent = toINR(tax44);
+    document.getElementById('fl-tax-actual').textContent = actualExp > 0 ? toINR(taxActual) : '—';
+
+    var flagEl = document.getElementById('fl-flag');
+    if(!eligible){
+      flagEl.textContent = 'Your receipts exceed the 44ADA limit — regular books of account and possibly an audit may apply. Check with a CA.';
+    } else if(actualExp > 0 && taxActual < tax44){
+      flagEl.textContent = 'Based on what you entered, declaring actual profit looks cheaper than the 44ADA presumptive rate this year.';
+    } else {
+      flagEl.textContent = 'If your real expenses are under 50% of receipts, 44ADA usually wins — you\u2019re taxed on less than you\u2019d otherwise show as profit.';
+    }
+  }
+  bindRange('fl-gross','fl-gross-range', calcFreelance);
+  bindRange('fl-exp','fl-exp-range', calcFreelance);
+  bindSeg('fl-digital', function(val){ flDigital = val; calcFreelance(); });
+  calcFreelance();
+
+  // ================= LOAN PREPAYMENT =================
+  function calcPrepay(){
+    var P = parseFloat(document.getElementById('pp-amt').value) || 0;
+    var annualRate = parseFloat(document.getElementById('pp-rate').value) || 0;
+    var years = parseFloat(document.getElementById('pp-years').value) || 0;
+    var extra = parseFloat(document.getElementById('pp-extra').value) || 0;
+
+    document.getElementById('pp-amt-val').textContent = toINR(P);
+    document.getElementById('pp-rate-val').textContent = pct(annualRate,2);
+    document.getElementById('pp-years-val').textContent = years + ' yrs';
+    document.getElementById('pp-extra-val').textContent = toINR(extra);
+
+    var r = (annualRate/12)/100;
+    var n = years*12;
+    var emi = r===0 ? P/n : P * r * Math.pow(1+r,n) / (Math.pow(1+r,n)-1);
+    var originalTotalInterest = emi*n - P;
+
+    var balance = P;
+    var totalInterestNew = 0;
+    var months = 0;
+    while(balance > 0 && months < n){
+      months++;
+      var interestPortion = balance * r;
+      var principalPortion = Math.min(balance, (emi - interestPortion) + extra);
+      balance -= principalPortion;
+      totalInterestNew += interestPortion;
+      if(principalPortion <= 0) break;
+    }
+
+    var interestSaved = originalTotalInterest - totalInterestNew;
+    var monthsSaved = n - months;
+
+    document.getElementById('pp-rv').textContent = toINR(Math.max(0,interestSaved));
+    document.getElementById('pp-emi').textContent = toINR(emi);
+    document.getElementById('pp-newtenure').textContent = Math.floor(months/12) + ' yrs ' + (months%12) + ' mo';
+    document.getElementById('pp-timesaved').textContent = Math.floor(monthsSaved/12) + ' yrs ' + (monthsSaved%12) + ' mo';
+    document.getElementById('pp-interestcompare').textContent = toINR(originalTotalInterest) + ' \u2192 ' + toINR(totalInterestNew);
+  }
+  bindRange('pp-amt','pp-amt-range', calcPrepay);
+  bindRange('pp-rate','pp-rate-range', calcPrepay);
+  bindRange('pp-years','pp-years-range', calcPrepay);
+  bindRange('pp-extra','pp-extra-range', calcPrepay);
+  calcPrepay();
+
+  // ================= GOAL PLANNER =================
+  function calcGoal(){
+    var target = parseFloat(document.getElementById('gp-target').value) || 0;
+    var years = parseFloat(document.getElementById('gp-years').value) || 1;
+    var infl = parseFloat(document.getElementById('gp-infl').value) || 0;
+    var ret = parseFloat(document.getElementById('gp-return').value) || 0;
+
+    document.getElementById('gp-target-val').textContent = toINR(target);
+    document.getElementById('gp-years-val').textContent = years + ' yrs';
+    document.getElementById('gp-infl-val').textContent = infl + '%';
+    document.getElementById('gp-return-val').textContent = ret + '%';
+
+    var futureValue = target * Math.pow(1+infl/100, years);
+    var rMonthly = (ret/100)/12;
+    var nMonths = years*12;
+    var sip;
+    if(rMonthly === 0){
+      sip = futureValue / nMonths;
+    } else {
+      var factor = ((Math.pow(1+rMonthly,nMonths)-1)/rMonthly) * (1+rMonthly);
+      sip = futureValue / factor;
+    }
+    var totalInvested = sip * nMonths;
+
+    document.getElementById('gp-rv').textContent = toINR(sip);
+    document.getElementById('gp-today').textContent = toINR(target);
+    document.getElementById('gp-future').textContent = toINR(futureValue);
+    document.getElementById('gp-invested').textContent = toINR(totalInvested);
+  }
+  bindRange('gp-target','gp-target-range', calcGoal);
+  bindRange('gp-years','gp-years-range', calcGoal);
+  bindRange('gp-infl','gp-infl-range', calcGoal);
+  bindRange('gp-return','gp-return-range', calcGoal);
+  calcGoal();
+
+  // ================= PPF =================
+  var ppfYears = 15;
+  function calcPPF(){
+    var yearly = parseFloat(document.getElementById('ppf-amt').value) || 0;
+    var rate = parseFloat(document.getElementById('ppf-rate').value) || 0;
+    document.getElementById('ppf-amt-val').textContent = toINR(yearly);
+    document.getElementById('ppf-rate-val').textContent = pct(rate,1);
+    document.getElementById('ppf-years-val').textContent = ppfYears + ' yrs';
+
+    var balance = 0;
+    for(var y=1; y<=ppfYears; y++){
+      balance = (balance + yearly) * (1 + rate/100);
+    }
+    var invested = yearly * ppfYears;
+    var interest = balance - invested;
+
+    document.getElementById('ppf-rv').textContent = toINR(balance);
+    document.getElementById('ppf-invested').textContent = toINR(invested);
+    document.getElementById('ppf-interest').textContent = toINR(interest);
+  }
+  bindRange('ppf-amt','ppf-amt-range', calcPPF);
+  bindRange('ppf-rate','ppf-rate-range', calcPPF);
+  bindSeg('ppf-years-seg', function(val){ ppfYears = parseInt(val,10); calcPPF(); });
+  calcPPF();
+
+  // ================= EPF =================
+  function calcEPF(){
+    var age = parseFloat(document.getElementById('epf-age').value) || 18;
+    var basic = parseFloat(document.getElementById('epf-basic').value) || 0;
+    var growth = parseFloat(document.getElementById('epf-growth').value) || 0;
+    var rate = parseFloat(document.getElementById('epf-rate').value) || 0;
+
+    document.getElementById('epf-age-val').textContent = age;
+    document.getElementById('epf-basic-val').textContent = toINR(basic);
+    document.getElementById('epf-growth-val').textContent = growth + '%';
+    document.getElementById('epf-rate-val').textContent = pct(rate,2);
+
+    var yearsLeft = Math.max(0, 58 - age);
+    var monthlyRate = (rate/100)/12;
+    var balance = 0;
+    var totalContributed = 0;
+    var currentBasic = basic;
+    for(var y=0; y<yearsLeft; y++){
+      var monthlyContribution = currentBasic * 0.24;
+      for(var m=0; m<12; m++){
+        balance = balance*(1+monthlyRate) + monthlyContribution;
+        totalContributed += monthlyContribution;
+      }
+      currentBasic *= (1 + growth/100);
+    }
+
+    document.getElementById('epf-rv').textContent = toINR(balance);
+    document.getElementById('epf-yrsleft').textContent = yearsLeft;
+    document.getElementById('epf-contributed').textContent = toINR(totalContributed);
+  }
+  bindRange('epf-age','epf-age-range', calcEPF);
+  bindRange('epf-basic','epf-basic-range', calcEPF);
+  bindRange('epf-growth','epf-growth-range', calcEPF);
+  bindRange('epf-rate','epf-rate-range', calcEPF);
+  calcEPF();
+
+  // ================= NPS =================
+  function calcNPS(){
+    var age = parseFloat(document.getElementById('nps-age').value) || 18;
+    var contrib = parseFloat(document.getElementById('nps-contrib').value) || 0;
+    var ret = parseFloat(document.getElementById('nps-return').value) || 0;
+    var annPct = parseFloat(document.getElementById('nps-annpct').value) || 40;
+    var annRate = parseFloat(document.getElementById('nps-annrate').value) || 0;
+
+    document.getElementById('nps-age-val').textContent = age;
+    document.getElementById('nps-contrib-val').textContent = toINR(contrib);
+    document.getElementById('nps-return-val').textContent = ret + '%';
+    document.getElementById('nps-annpct-val').textContent = annPct + '%';
+    document.getElementById('nps-annrate-val').textContent = pct(annRate,2);
+
+    var yearsLeft = Math.max(0, 60 - age);
+    var nMonths = yearsLeft*12;
+    var rMonthly = (ret/100)/12;
+    var corpus = rMonthly===0 ? contrib*nMonths : contrib * ((Math.pow(1+rMonthly,nMonths)-1)/rMonthly) * (1+rMonthly);
+
+    var annuityCorpus = corpus * (annPct/100);
+    var lumpSum = corpus - annuityCorpus;
+    var monthlyPension = (annuityCorpus * (annRate/100)) / 12;
+
+    document.getElementById('nps-rv').textContent = toINR(corpus);
+    document.getElementById('nps-lumpsum').textContent = toINR(lumpSum);
+    document.getElementById('nps-anncorpus').textContent = toINR(annuityCorpus);
+    document.getElementById('nps-pension').textContent = toINR(monthlyPension);
+  }
+  bindRange('nps-age','nps-age-range', calcNPS);
+  bindRange('nps-contrib','nps-contrib-range', calcNPS);
+  bindRange('nps-return','nps-return-range', calcNPS);
+  bindRange('nps-annpct','nps-annpct-range', calcNPS);
+  bindRange('nps-annrate','nps-annrate-range', calcNPS);
+  calcNPS();
+
+})();
+</script>
+</body>
+</html>

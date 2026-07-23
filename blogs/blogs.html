@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blogs — Practical Personal Finance Guides | Paisa Stack</title>
+<meta name="description" content="Practical, jargon-free guides on credit scores, insurance, taxes, mutual funds, and more — written for people who've never had finance explained simply.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%231B2333'/%3E%3Ctext x='50' y='68' font-family='monospace' font-size='58' font-weight='700' text-anchor='middle' fill='%23F2B24E'%3E%E2%82%B9%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#FFFFFF; --bg-soft:#FBFAF7; --surface:#F5F4EF;
+    --border: rgba(27,35,51,0.12); --border-2: rgba(27,35,51,0.22);
+    --ink:#1B2333; --text-dim:#5B6472; --text-dimmer:#8891A0;
+    --amber:#C97A1A; --amber-soft: rgba(201,122,26,0.10);
+    --teal:#1F8F73; --teal-soft: rgba(31,143,115,0.10);
+    --mono: 'JetBrains Mono', monospace; --sans:'Inter',sans-serif; --display:'Space Grotesk',sans-serif;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0; background:var(--bg); color:var(--ink); font-family:var(--sans); line-height:1.6;}
+  h1,h2{font-family:var(--display); font-weight:600; color:var(--ink); margin:0;}
+  a{text-decoration:none; color:inherit;}
+  .wrap{max-width:960px; margin:0 auto; padding:0 22px;}
+  header{border-bottom:1px solid var(--border); padding:16px 0;}
+  .nav{display:flex; align-items:center; justify-content:space-between;}
+  .brand{font-family:var(--display); font-weight:700; font-size:1.05rem; display:flex; align-items:center; gap:8px;}
+  .brand .mark{width:26px;height:26px;border-radius:7px;background:var(--ink);color:#fff;display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:0.82rem;font-weight:700;}
+  .back{font-size:0.86rem; color:var(--text-dim);}
+
+  .hero{padding:52px 0 36px;}
+  .kicker{font-family:var(--mono); font-size:0.78rem; color:var(--teal); background:var(--teal-soft); display:inline-block; padding:6px 12px; border-radius:999px; margin-bottom:16px;}
+  .hero h1{font-size:clamp(1.9rem,4.4vw,2.5rem); line-height:1.15; max-width:18ch;}
+  .hero p{color:var(--text-dim); margin-top:14px; max-width:56ch; font-size:1.02rem;}
+
+  .grid{display:grid; grid-template-columns:repeat(auto-fill,minmax(270px,1fr)); gap:14px; padding-bottom:70px;}
+  .card{
+    background:#fff; border:1px solid var(--border); border-radius:12px; padding:20px;
+    display:flex; flex-direction:column; gap:10px; position:relative;
+  }
+  .card .n{font-family:var(--mono); font-size:0.76rem; color:var(--text-dimmer);}
+  .card h3{font-size:1rem; font-weight:600; line-height:1.35;}
+  .card p{font-size:0.84rem; color:var(--text-dim); margin:0; flex:1;}
+  .badge{
+    align-self:flex-start; font-family:var(--mono); font-size:0.72rem; font-weight:600;
+    padding:5px 10px; border-radius:999px;
+  }
+  .badge.live{background:var(--teal-soft); color:var(--teal);}
+  .badge.soon{background:var(--surface); color:var(--text-dimmer);}
+  .card.live{border-color:rgba(31,143,115,0.35);}
+  .card.live:hover{box-shadow:0 6px 20px rgba(27,35,51,0.08); transform:translateY(-2px);}
+  .card{transition:transform .15s ease, box-shadow .15s ease;}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a href="../index.html" class="brand"><span class="mark">₹</span>Paisa Stack</a>
+    <a href="../index.html" class="back">← Back to home</a>
+  </div>
+</header>
+
+<div class="wrap">
+  <section class="hero">
+    <span class="kicker">Blogs</span>
+    <h1>Practical guides, not theory</h1>
+    <p>Twenty short reads on the personal finance questions people actually search for — credit, insurance, tax, investing, and more. New ones are added regularly.</p>
+  </section>
+
+  <div class="grid">
+
+    <a class="card live" href="how-to-check-improve-cibil-score.html">
+      <span class="n">01</span>
+      <h3>How to Check and Improve Your CIBIL Score</h3>
+      <p>What actually moves the number, what's a myth, and a 90-day plan to raise it.</p>
+      <span class="badge live">Read now →</span>
+    </a>
+
+    <a class="card live" href="term-vs-life-insurance.html">
+      <span class="n">02</span>
+      <h3>Term Insurance vs Life Insurance: Which Do You Actually Need?</h3>
+      <p>The real difference, and which one is usually the wrong first purchase.</p>
+      <span class="badge live">Read now →</span>
+    </a>
+
+    <a class="card live" href="company-health-insurance-gaps.html">
+      <span class="n">03</span>
+      <h3>What Your Company Health Insurance Doesn't Cover</h3>
+      <p>The gaps in a typical group policy, and what to add yourself.</p>
+      <span class="badge live">Read now →</span>
+    </a>
+
+    <a class="card live" href="hra-exemption-explained.html">
+      <span class="n">04</span>
+      <h3>HRA Exemption Explained: How to Save Tax on Rent</h3>
+      <p>The calculation, the paperwork, and the limits most people miss.</p>
+      <span class="badge live">Read now →</span>
+    </a>
+
+    <a class="card live" href="form-16-explained.html">
+      <span class="n">05</span>
+      <h3>Form 16 Explained: How to Read Your Salary TDS Certificate</h3>
+      <p>Every section decoded, so tax season stops feeling like guesswork.</p>
+      <span class="badge live">Read now →</span>
+    </a>
+
+    <a class="card live" href="nps-vs-ppf-vs-epf.html">
+      <span class="n">06</span>
+      <h3>NPS vs PPF vs EPF: Where Should Your Retirement Money Go?</h3>
+      <p>A side-by-side on lock-in, returns, and tax treatment.</p>
+      <span class="badge live">Read now →</span>
+    </a>
+
+    <a class="card live" href="sip-taxation-explained.html">
+      <span class="n">07</span>
+      <h3>How Mutual Fund SIPs Are Actually Taxed</h3>
+      <p>LTCG vs STCG, explained with real numbers, not formulas.</p>
+      <span class="badge live">Read now →</span>
+    </a>
+
+    <a class="card live" href="credit-card-minimum-due-trap.html">
+      <span class="n">08</span>
+      <h3>The Credit Card Minimum-Due Trap, Explained With Numbers</h3>
+      <p>Why paying "just the minimum" quietly costs you lakhs.</p>
+      <span class="badge live">Read now →</span>
+    </a>
+
+    <a class="card live" href="freelancing-gst-invoicing.html">
+      <span class="n">09</span>
+      <h3>Freelancing on the Side? How GST and Invoicing Actually Work</h3>
+      <p>When you need to register, and how to bill without the confusion.</p>
+      <span class="badge live">Read now →</span>
+    </a>
+
+    <a class="card live" href="crypto-tax-india.html">
+      <span class="n">10</span>
+      <h3>How Crypto Gains Are Taxed in India</h3>
+      <p>The flat rate, the rules around losses, and what to report.</p>
+      <span class="badge live">Read now →</span>
+    </a>
+
+    <div class="card"><span class="n">11</span><h3>Index Funds vs Active Mutual Funds</h3><p>A no-nonsense comparison for people tired of vague answers.</p><span class="badge soon">Coming soon</span></div>
+
+    <div class="card"><span class="n">12</span><h3>How to Respond to an Income Tax Notice Without Panicking</h3><p>What the common notice types actually mean, step by step.</p><span class="badge soon">Coming soon</span></div>
+
+    <div class="card"><span class="n">13</span><h3>Prepay Your Home Loan or Invest the Extra? The Real Math</h3><p>A side-by-side comparison using actual numbers, not gut feel.</p><span class="badge soon">Coming soon</span></div>
+
+    <div class="card"><span class="n">14</span><h3>Does the 50-30-20 Rule Work on an Indian Salary?</h3><p>Where the rule holds up, and where it quietly falls apart.</p><span class="badge soon">Coming soon</span></div>
+
+    <div class="card"><span class="n">15</span><h3>Sovereign Gold Bonds vs Physical Gold vs Gold ETFs</h3><p>What's actually worth buying, and what's mostly tradition.</p><span class="badge soon">Coming soon</span></div>
+
+    <div class="card"><span class="n">16</span><h3>5 Common Mistakes People Make While E-Filing Their ITR</h3><p>The errors that trigger notices, and how to avoid them.</p><span class="badge soon">Coming soon</span></div>
+
+    <div class="card"><span class="n">17</span><h3>What Is TDS on Salary — Why Take-Home Is Less Than CTC</h3><p>The gap explained, line by line.</p><span class="badge soon">Coming soon</span></div>
+
+    <div class="card"><span class="n">18</span><h3>How Much Term Insurance Cover Do You Actually Need?</h3><p>A simple formula, not a sales pitch.</p><span class="badge soon">Coming soon</span></div>
+
+    <div class="card"><span class="n">19</span><h3>Retirement Planning in Your 20s: What ₹5,000/Month Becomes</h3><p>Real compounding numbers over 20, 30, and 40 years.</p><span class="badge soon">Coming soon</span></div>
+
+    <div class="card"><span class="n">20</span><h3>Moonlighting Income: How to Legally Declare Freelance Earnings</h3><p>Where it goes in your ITR, and what happens if you skip it.</p><span class="badge soon">Coming soon</span></div>
+
+  </div>
+</div>
+
+</body>
+</html>
