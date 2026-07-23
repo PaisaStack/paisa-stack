@@ -52,7 +52,7 @@ collections:
           - { name: "anchor", label: "Anchor (no # symbol, no spaces)", widget: "string" }
           - { name: "label", label: "Label shown in the list", widget: "string" }
 
-      - name: "content"
+      - name: "body"
         label: "Body Content"
         widget: "markdown"
         hint: "Write normally. For tables, tool-link cards, or callout boxes, switch to the code/HTML view in the toolbar and paste the matching snippet from the style guide."
