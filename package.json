@@ -1,0 +1,12 @@
+{
+  "name": "paisastack-site",
+  "version": "1.0.0",
+  "description": "Paisa Stack -- Eleventy build for blog templating + Decap CMS",
+  "scripts": {
+    "build": "eleventy",
+    "serve": "eleventy --serve"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^2.0.1"
+  }
+}

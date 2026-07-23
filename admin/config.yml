@@ -1,0 +1,86 @@
+backend:
+  name: git-gateway
+  branch: main
+
+# Where uploaded images land
+media_folder: "static/assets/blog-images"
+public_folder: "../assets/blog-images"
+
+publish_mode: editorial_workflow
+
+collections:
+  - name: "blogs"
+    label: "Blog Posts"
+    folder: "src/blogs"
+    create: true
+    slug: "{{slug}}"
+    extension: "md"
+    format: "frontmatter"
+    identifier_field: "title"
+    fields:
+      - { name: "layout", label: "Layout", widget: "hidden", default: "blog-layout.njk" }
+
+      - { name: "draft", label: "Draft (uncheck only when ready to publish)", widget: "boolean", default: true }
+
+      - { name: "title", label: "Title", widget: "string", hint: "The main headline — shown as the H1 and in search results." }
+
+      - { name: "description", label: "Meta Description", widget: "text", hint: "1-2 sentences. Shown in Google search results. Aim for under 160 characters." }
+
+      - { name: "keywords", label: "SEO Keywords", widget: "string", required: false, hint: "Comma-separated, for reference only." }
+
+      - name: "category"
+        label: "Category"
+        widget: "select"
+        options: ["Taxation", "Salary", "Personal Finance", "Investing", "Real Estate & Taxation", "Retirement", "Business & GST", "Credit & Borrowing", "Insurance", "Side Income"]
+
+      - name: "authors"
+        label: "Authors"
+        widget: "select"
+        multiple: true
+        options: ["pankaj", "tripti"]
+        default: ["pankaj", "tripti"]
+
+      - name: "updatedDate"
+        label: "Last Updated (e.g. '22 July 2026')"
+        widget: "string"
+
+      - name: "toc"
+        label: "Table of Contents"
+        widget: "list"
+        hint: "One entry per H2 section in your body. 'Anchor' must exactly match the id= you use on that H2 in the body (e.g. anchor 'why-it-happens' matches <h2 id=\"why-it-happens\">)."
+        fields:
+          - { name: "anchor", label: "Anchor (no # symbol, no spaces)", widget: "string" }
+          - { name: "label", label: "Label shown in the list", widget: "string" }
+
+      - name: "content"
+        label: "Body Content"
+        widget: "markdown"
+        hint: "Write normally. For tables, tool-link cards, or callout boxes, switch to the code/HTML view in the toolbar and paste the matching snippet from the style guide."
+
+      - name: "faqs"
+        label: "FAQ Section"
+        widget: "list"
+        hint: "These automatically generate both the visible FAQ section AND the structured data Google uses for 'People Also Ask' — no separate schema to maintain."
+        fields:
+          - { name: "question", label: "Question", widget: "string" }
+          - { name: "answer", label: "Answer", widget: "text" }
+
+      - name: "relatedPosts"
+        label: "Related Reading (pick 2 existing posts)"
+        widget: "list"
+        max: 3
+        fields:
+          - { name: "url", label: "URL (e.g. hra-exemption-explained.html)", widget: "string" }
+          - { name: "tag", label: "Category tag shown on the card", widget: "string" }
+          - { name: "title", label: "Post title shown on the card", widget: "string" }
+
+      - name: "ctaType"
+        label: "Bottom CTA button"
+        widget: "select"
+        options:
+          - { label: "Book a Finance Expert (₹500 call)", value: "expert" }
+          - { label: "See Our Services (WhatsApp)", value: "services" }
+        default: "expert"
+
+      - { name: "ctaHeadline", label: "CTA headline", widget: "string", required: false }
+      - { name: "ctaSubtext", label: "CTA subtext", widget: "string", required: false }

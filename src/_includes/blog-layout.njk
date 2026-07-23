@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{{ metaTitle or (title + " | Paisa Stack") }}</title>
+<meta name="description" content="{{ description }}">
+{% if keywords %}<meta name="keywords" content="{{ keywords }}">{% endif %}
+<link rel="canonical" href="https://paisastack.com/blogs/{{ page.fileSlug }}.html">
+<meta property="og:title" content="{{ title }}">
+<meta property="og:description" content="{{ description }}">
+<meta property="og:type" content="article">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%2312203D'/%3E%3Ctext x='50' y='68' font-family='monospace' font-size='58' font-weight='700' text-anchor='middle' fill='%23D4AF5A'%3E%E2%82%B9%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+{% if faqs and faqs.length %}
+<script type="application/ld+json">
+{{ faqs | faqSchema | safe }}
+</script>
+{% endif %}
+<style>
+  :root{
+    --bg:#FFFFFF; --bg-soft:#FBFAF7; --surface:#F5F4EF;
+    --border: rgba(18,32,61,0.12); --border-2: rgba(18,32,61,0.22);
+    --ink:#12203D; --text-dim:#5B6472; --text-dimmer:#8891A0;
+    --gold:#A8781E; --gold-soft: rgba(168,120,30,0.10);
+    --teal:#1F8F73; --teal-soft: rgba(31,143,115,0.10);
+    --rose:#C6432F; --rose-soft: rgba(198,67,47,0.10);
+    --mono: 'JetBrains Mono', monospace; --sans:'Inter',sans-serif; --display:'Fraunces',serif;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0; background:var(--bg); color:var(--ink); font-family:var(--sans); line-height:1.75;}
+  h1,h2,h3{font-family:var(--display); font-weight:600; color:var(--ink);}
+  a{color:var(--teal);}
+  .wrap{max-width:720px; margin:0 auto; padding:0 22px;}
+  header{border-bottom:1px solid var(--border); padding:16px 0;}
+  .nav{display:flex; align-items:center; justify-content:space-between; max-width:720px; margin:0 auto; padding:0 22px;}
+  .brand{font-family:var(--display); font-weight:700; font-size:1.05rem; display:flex; align-items:center; gap:8px; text-decoration:none; color:var(--ink);}
+  .brand .mark{width:26px;height:26px;border-radius:7px;background:var(--ink);color:#fff;display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:0.82rem;font-weight:700;}
+  .back{font-size:0.86rem; color:var(--text-dim); text-decoration:none;}
+  .breadcrumb{font-family:var(--mono); font-size:0.76rem; color:var(--text-dimmer); margin:24px 0 6px;}
+  .breadcrumb a{color:var(--text-dimmer);}
+  .kicker{font-family:var(--mono); font-size:0.78rem; color:var(--teal); margin:0 0 12px; font-weight:700; letter-spacing:0.03em; text-transform:uppercase;}
+  h1.title{font-size:clamp(1.6rem,4.5vw,2.2rem); line-height:1.25; margin:0 0 14px;}
+  .meta{font-size:0.84rem; color:var(--text-dimmer); margin-bottom:16px;}
+  .toc{background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:18px 22px; margin-bottom:34px;}
+  .toc h2{font-size:0.82rem; text-transform:uppercase; letter-spacing:0.04em; margin:0 0 10px; font-family:var(--sans); color:var(--text-dimmer);}
+  .toc ol{margin:0; padding-left:20px; columns:2; column-gap:20px;}
+  .toc li{font-size:0.86rem; margin-bottom:7px; break-inside:avoid;}
+  .toc a{color:var(--ink); text-decoration:none;}
+  .toc a:hover{color:var(--teal);}
+  article p{font-size:1.03rem; color:var(--ink); margin:0 0 18px;}
+  article h2{font-size:1.3rem; margin:44px 0 14px; scroll-margin-top:90px;}
+  article h3{font-size:1.05rem; margin:26px 0 10px;}
+  article ul, article ol{margin:0 0 18px; padding-left:22px;}
+  article li{font-size:1.02rem; color:var(--ink); margin-bottom:9px;}
+  .callout{background:var(--surface); border-left:3px solid var(--gold); border-radius:0 8px 8px 0; padding:16px 18px; font-size:0.96rem; color:var(--ink); margin:26px 0;}
+  .callout b{color:var(--gold);}
+  .callout.good{background:var(--teal-soft); border-left-color:var(--teal);}
+  .callout.good b{color:var(--teal);}
+  table{width:100%; border-collapse:collapse; margin:20px 0 26px; font-size:0.88rem;}
+  th{background:var(--ink); color:#fff; text-align:left; padding:10px 11px; font-weight:600;}
+  td{padding:10px 11px; border-bottom:1px solid var(--border); color:var(--text-dim);}
+  td:first-child, th:first-child{color:var(--ink); font-weight:600;}
+  .inline-tool-card{display:flex; align-items:center; gap:16px; background:var(--teal-soft); border:1px solid rgba(31,143,115,0.25); border-radius:12px; padding:18px 20px; margin:28px 0; text-decoration:none;}
+  .inline-tool-card .icon{width:40px; height:40px; border-radius:10px; background:#fff; display:flex; align-items:center; justify-content:center; flex:0 0 auto;}
+  .inline-tool-card .icon svg{width:20px; height:20px; color:var(--teal);}
+  .inline-tool-card .txt h4{margin:0 0 3px; font-size:0.96rem; color:var(--ink); font-family:var(--sans); font-weight:600;}
+  .inline-tool-card .txt p{margin:0; font-size:0.84rem; color:var(--text-dim);}
+  .checklist{list-style:none; margin:0 0 26px; padding:0;}
+  .checklist li{display:flex; gap:10px; align-items:flex-start; font-size:0.96rem; margin-bottom:10px;}
+  .checklist li::before{content:'☐'; color:var(--gold); font-size:1.1rem; flex:0 0 auto; line-height:1.3;}
+  .related-grid{display:grid; grid-template-columns:1fr 1fr; gap:14px; margin:20px 0 30px;}
+  @media (max-width:600px){ .related-grid{grid-template-columns:1fr;} }
+  .related-card{border:1px solid var(--border); border-radius:10px; padding:16px; text-decoration:none; display:block;}
+  .related-card .tag{font-family:var(--mono); font-size:0.7rem; color:var(--gold); text-transform:uppercase; letter-spacing:0.03em;}
+  .related-card h4{margin:6px 0 0; font-size:0.92rem; color:var(--ink); font-family:var(--sans); font-weight:600; line-height:1.4;}
+  .faq-item{border-bottom:1px solid var(--border); padding:18px 0;}
+  .faq-item h3{margin:0 0 8px; font-size:1rem;}
+  .faq-item p{margin:0; font-size:0.96rem; color:var(--text-dim);}
+  .author-box{display:flex; gap:16px; flex-wrap:wrap; margin:30px 0; padding:20px; background:var(--bg-soft); border:1px solid var(--border); border-radius:12px;}
+  .author-card{display:flex; align-items:center; gap:12px; flex:1; min-width:220px;}
+  .author-avatar{width:44px; height:44px; border-radius:50%; background:var(--ink); color:#fff; display:flex; align-items:center; justify-content:center; font-family:var(--mono); font-weight:700; font-size:0.85rem; flex:0 0 auto; overflow:hidden;}
+  .author-avatar img{width:100%; height:100%; object-fit:cover; display:block;}
+  .author-name{font-weight:600; font-size:0.92rem; color:var(--ink);}
+  .author-role{font-size:0.78rem; color:var(--text-dim); margin-top:2px;}
+  .updated-line{font-family:var(--mono); font-size:0.76rem; color:var(--text-dimmer); margin:-16px 0 30px;}
+  .cta-box{margin:44px 0 20px; background:var(--ink); color:#fff; border-radius:14px; padding:28px; display:flex; align-items:center; justify-content:space-between; gap:18px; flex-wrap:wrap;}
+  .cta-box h3{color:#fff; font-size:1.15rem; margin:0 0 6px;}
+  .cta-box p{color:#B7BECB; margin:0; font-size:0.9rem;}
+  .cta-btn{background:var(--gold); color:#1A1204; padding:12px 22px; border-radius:8px; font-weight:600; font-size:0.9rem; text-decoration:none; white-space:nowrap;}
+  footer{border-top:1px solid var(--border); padding:26px 0 50px; font-size:0.8rem; color:var(--text-dimmer); margin-top:20px;}
+  .disclaimer{background:var(--bg-soft); border:1px solid var(--border); border-radius:10px; padding:16px 18px; font-size:0.84rem; color:var(--text-dim); margin:36px 0;}
+  .draft-banner{background:var(--rose); color:#fff; text-align:center; padding:10px; font-size:0.86rem; font-weight:600;}
+</style>
+</head>
+<body>
+
+{% if draft %}
+<div class="draft-banner">⚠ DRAFT — not linked from the live site, but this URL is reachable if shared directly.</div>
+{% endif %}
+
+<header>
+  <div class="nav">
+    <a href="../index.html" class="brand"><span class="mark">₹</span>Paisa Stack</a>
+    <a href="blogs.html" class="back">← Back to all blogs</a>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="breadcrumb"><a href="../index.html">Home</a> / <a href="blogs.html">Blogs</a> / {{ category }}</div>
+  <div class="kicker">{{ category }}</div>
+  <h1 class="title">{{ title }}</h1>
+  <p class="meta">{{ content | readingTime }} · Updated for 2026 · Practical guide, no jargon</p>
+
+  {% if toc and toc.length %}
+  <div class="toc">
+    <h2>In this guide</h2>
+    <ol>
+      {% for item in toc %}<li><a href="#{{ item.anchor }}">{{ item.label }}</a></li>
+      {% endfor %}
+    </ol>
+  </div>
+  {% endif %}
+
+  <article>
+    {{ content | safe }}
+
+    {% if faqs and faqs.length %}
+    <h2 id="faq">Frequently asked questions</h2>
+    {% for f in faqs %}
+    <div class="faq-item">
+      <h3>{{ f.question }}</h3>
+      <p>{{ f.answer }}</p>
+    </div>
+    {% endfor %}
+    {% endif %}
+
+    <div class="disclaimer">This article is educational, not tax or financial advice. Rules and figures can change — confirm current provisions with a chartered accountant before acting on anything here.</div>
+
+    <div class="author-box">
+      {% if authors and "pankaj" in authors %}
+      <div class="author-card">
+        <div class="author-avatar"><img src="../assets/pankaj-chhabra.jpg" alt="CA Pankaj Chhabra" loading="lazy"></div>
+        <div>
+          <div class="author-name">CA Pankaj Chhabra</div>
+          <div class="author-role">Chartered Accountant &middot; Wealth Management &amp; Taxation</div>
+        </div>
+      </div>
+      {% endif %}
+      {% if authors and "tripti" in authors %}
+      <div class="author-card">
+        <div class="author-avatar"><img src="../assets/tripti-saini.jpg" alt="CA Tripti Saini" loading="lazy"></div>
+        <div>
+          <div class="author-name">CA Tripti Saini</div>
+          <div class="author-role">Chartered Accountant &middot; Taxation &amp; Finance Operations</div>
+        </div>
+      </div>
+      {% endif %}
+    </div>
+    <div class="updated-line">Reviewed by {% if "pankaj" in authors %}CA Pankaj Chhabra{% endif %}{% if authors.length > 1 %} &amp; {% endif %}{% if "tripti" in authors %}CA Tripti Saini{% endif %} &middot; Last updated {{ updatedDate or "2026" }}</div>
+
+    {% if relatedPosts and relatedPosts.length %}
+    <h2 style="margin-top:40px;">Related reading</h2>
+    <div class="related-grid">
+      {% for r in relatedPosts %}
+      <a class="related-card" href="{{ r.url }}"><span class="tag">{{ r.tag }}</span><h4>{{ r.title }}</h4></a>
+      {% endfor %}
+    </div>
+    {% endif %}
+
+    <div class="cta-box">
+      <div>
+        <h3>{{ ctaHeadline or "Need help with your specific situation?" }}</h3>
+        <p>{{ ctaSubtext or "Get a straight answer, not a generic template." }}</p>
+      </div>
+      {% if ctaType == "services" %}
+      <a class="cta-btn" href="../index.html#services">See Our Services →</a>
+      {% else %}
+      <a class="cta-btn" href="../index.html#book-expert">Book a Finance Expert →</a>
+      {% endif %}
+    </div>
+  </article>
+</div>
+
+<footer>
+  <div class="wrap">© Paisa Stack — plain-language money help for everyday people</div>
+</footer>
+
+</body>
+</html>
