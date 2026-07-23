@@ -1,0 +1,18 @@
+[build]
+  command = "npm install && npx eleventy"
+  publish = "_site"
+
+# --- Deploy contexts ---
+# "production" only runs for the main branch (your live paisastack.com).
+# Every other branch (like cms-test) gets its own preview URL automatically,
+# so we can verify this whole build actually works before it ever touches
+# the live site.
+
+[context.production]
+  command = "npm install && npx eleventy"
+
+[context.branch-deploy]
+  command = "npm install && npx eleventy"
+
+[context.deploy-preview]
+  command = "npm install && npx eleventy"
