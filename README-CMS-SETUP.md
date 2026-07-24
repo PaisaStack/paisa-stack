@@ -2,7 +2,6 @@
 
 ## What changed
 
-
 Your site now has two parts:
 
 1. **`static/`** — everything unchanged: homepage, calculators, ebooks, trackers, legal pages. Copied straight through, byte-for-byte the same as before.

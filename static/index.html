@@ -2,6 +2,15 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<!-- Google Analytics (GA4) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-F2349TVP3Y"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-F2349TVP3Y');
+</script>
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Paisa Stack — personal finance, explained without the jargon</title>
 <meta name="description" content="Free calculators for TDS on property, income tax, loan EMI, and investment returns — plus practical ebooks, expert consultations, and filing services for people who've never had finance explained simply.">
@@ -2286,6 +2295,21 @@
     el.setAttribute('href', 'https://wa.me/' + WA_NUMBER + '?text=' + encodeURIComponent(msg));
     el.setAttribute('target', '_blank');
     el.setAttribute('rel', 'noopener');
+    el.addEventListener('click', function(){
+      if (typeof gtag === 'function') {
+        gtag('event', 'whatsapp_click', { 'message_preview': msg.slice(0, 50) });
+      }
+    });
+  });
+
+  // ---------------- GA4: tracker download tracking ----------------
+  document.querySelectorAll('.tracker-dl').forEach(function(el){
+    el.addEventListener('click', function(){
+      if (typeof gtag === 'function') {
+        var trackerName = el.getAttribute('href').split('/').pop();
+        gtag('event', 'tracker_download', { 'tracker_name': trackerName });
+      }
+    });
   });
 
   // ---------------- Testimonial form (AJAX submit to Netlify Forms) ----------------
@@ -2306,6 +2330,9 @@
       .then(function(){
         testimonialForm.style.display = 'none';
         document.getElementById('tfSuccess').style.display = 'block';
+        if (typeof gtag === 'function') {
+          gtag('event', 'review_submitted', { 'source': 'homepage' });
+        }
       })
       .catch(function(){
         submitBtn.disabled = false;
@@ -2373,6 +2400,9 @@
     btn.setAttribute('aria-selected','true');
     toolPanels.forEach(function(p){ p.classList.remove('active'); });
     document.getElementById(panelId).classList.add('active');
+    if (typeof gtag === 'function') {
+      gtag('event', 'calculator_used', { 'calculator_name': panelId.replace('t-', '') });
+    }
     return true;
   }
   toolTabs.forEach(function(tab){

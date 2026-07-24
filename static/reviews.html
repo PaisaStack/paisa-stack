@@ -2,6 +2,15 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<!-- Google Analytics (GA4) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-F2349TVP3Y"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-F2349TVP3Y');
+</script>
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Share Your Experience | Paisa Stack</title>
 <meta name="description" content="Worked with Paisa Stack? Tell us about your experience — a few lines helps other people trust us with their taxes and investments too.">
@@ -161,6 +170,9 @@
     .then(function(){
       reviewForm.style.display = 'none';
       document.getElementById('rfSuccess').style.display = 'block';
+      if (typeof gtag === 'function') {
+        gtag('event', 'review_submitted', { 'source': 'reviews_page' });
+      }
     })
     .catch(function(){
       submitBtn.disabled = false;
