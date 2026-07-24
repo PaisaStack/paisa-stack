@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gratuity Calculator | Paisa Stack</title>
+<meta name="description" content="Free gratuity calculator. Find your exact gratuity payout based on last drawn basic salary and years of service, with the ₹20 lakh exemption applied.">
+<link rel="canonical" href="https://paisastack.com/calculators/gratuity-calculator.html">
+<meta property="og:title" content="Gratuity Calculator">
+<meta property="og:description" content="Free gratuity calculator. Find your exact gratuity payout based on last drawn basic salary and years of service, with the ₹20 lakh exemption applied.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%2312203D'/%3E%3Ctext x='50' y='68' font-family='monospace' font-size='58' font-weight='700' text-anchor='middle' fill='%23D4AF5A'%3E%E2%82%B9%3C/text%3E%3C/svg%3E">
+
+<!-- Google Analytics (GA4) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-F2349TVP3Y"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-F2349TVP3Y');
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/calculators.css">
+</head>
+<body>
+
+<header class="calc-header">
+  <div class="calc-nav">
+    <a href="../index.html" class="calc-brand"><span class="mark">₹</span>Paisa Stack</a>
+    <a href="index.html" class="calc-back">← All calculators</a>
+  </div>
+</header>
+
+<div class="calc-page-wrap">
+  <div class="calc-breadcrumb"><a href="../index.html">Home</a> / <a href="index.html">Calculators</a> / Salary</div>
+  <h1 class="calc-title">Gratuity Calculator</h1>
+  <p class="calc-lede">Gratuity follows one specific formula, with a ₹20 lakh tax-free ceiling. See exactly what you're owed before you resign.</p>
+
+  <div class="tool-window">
+<div class="tool-titlebar">
+<div class="dots"><span class="dot" style="background:#C6432F"></span><span class="dot" style="background:#A8781E"></span><span class="dot" style="background:#1F8F73"></span></div>
+<span class="name">Gratuity calculator</span>
+</div>
+<div class="tool-grid">
+<div class="tool-form">
+<div class="field">
+<div class="field-label"><span>Last drawn Basic + DA (monthly)</span><span class="val" id="gr-basic-val">₹50,000</span></div>
+<input id="gr-basic" min="0" step="1000" type="number" value="50000"/>
+<input id="gr-basic-range" max="300000" min="0" step="1000" type="range" value="50000"/>
+</div>
+<div class="field">
+<div class="field-label"><span>Years of service</span><span class="val" id="gr-years-val">7 yrs</span></div>
+<input id="gr-years" max="45" min="0" step="1" type="number" value="7"/>
+<input id="gr-years-range" max="40" min="0" step="1" type="range" value="7"/>
+</div>
+</div>
+<div class="tool-out">
+<div class="result-hero calm" id="gr-hero">
+<div class="rl">Gratuity payable</div>
+<div class="rv" id="gr-rv">₹0</div>
+<div class="rn" id="gr-rn">fully tax-exempt (under ₹20L ceiling).</div>
+</div>
+<div class="console">
+<div class="l"><span class="k">Formula: (Basic+DA) × 15/26 × years</span><span class="v" id="gr-calc">₹0</span></div>
+<div class="l"><span class="k">Statutory exemption ceiling</span><span class="v">₹20,00,000</span></div>
+<div class="l hl"><span class="k">Taxable portion</span><span class="v" id="gr-taxable">₹0</span></div>
+</div>
+<div class="note-flag" id="gr-flag">Eligible after 5+ years of continuous service (private sector). Not eligible below 5 years, except in case of death or disability.</div>
+</div>
+</div>
+</div>
+
+  <div class="calc-body-copy">
+    <h2>How this works</h2>
+    <p>Gratuity is calculated as (Basic + DA) × 15/26 × years of service, for anyone with 5 or more years of continuous service. It's tax-exempt up to ₹20 lakh — the lowest of the actual gratuity, this ceiling, or the formula amount.</p>
+  </div>
+
+  <div class="calc-related">
+    <a href="salary-in-hand-calculator.html">Salary / CTC to In-Hand Calculator</a>
+    <a href="epf-calculator.html">EPF Calculator</a>
+  </div>
+
+  <div class="calc-cta">
+    <div>
+      <h3 style="color:#fff; margin:0 0 4px; font-family:var(--display); font-size:1.05rem;">Want a straight answer on your specific numbers?</h3>
+      <p style="color:#B7BECB; margin:0; font-size:0.88rem;">Book a 40-minute call with a Chartered Accountant for ₹500.</p>
+    </div>
+    <a href="../index.html#book-expert">Book a Finance Expert →</a>
+  </div>
+</div>
+
+<footer class="calc-footer">
+  <div class="calc-page-wrap">© Paisa Stack — plain-language money help for everyday people</div>
+</footer>
+
+<script src="assets/calculators.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function(){
+    if (window.__paisaCalcInit && window.__paisaCalcInit['t-gratuity']) {
+      window.__paisaCalcInit['t-gratuity']();
+    }
+  });
+</script>
+
+</body>
+</html>

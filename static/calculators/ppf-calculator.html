@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PPF Calculator | Paisa Stack</title>
+<meta name="description" content="Free PPF calculator. Project your Public Provident Fund maturity value based on yearly investment, current interest rate, and tenure.">
+<link rel="canonical" href="https://paisastack.com/calculators/ppf-calculator.html">
+<meta property="og:title" content="PPF Calculator">
+<meta property="og:description" content="Free PPF calculator. Project your Public Provident Fund maturity value based on yearly investment, current interest rate, and tenure.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%2312203D'/%3E%3Ctext x='50' y='68' font-family='monospace' font-size='58' font-weight='700' text-anchor='middle' fill='%23D4AF5A'%3E%E2%82%B9%3C/text%3E%3C/svg%3E">
+
+<!-- Google Analytics (GA4) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-F2349TVP3Y"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-F2349TVP3Y');
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/calculators.css">
+</head>
+<body>
+
+<header class="calc-header">
+  <div class="calc-nav">
+    <a href="../index.html" class="calc-brand"><span class="mark">₹</span>Paisa Stack</a>
+    <a href="index.html" class="calc-back">← All calculators</a>
+  </div>
+</header>
+
+<div class="calc-page-wrap">
+  <div class="calc-breadcrumb"><a href="../index.html">Home</a> / <a href="index.html">Calculators</a> / Retirement</div>
+  <h1 class="calc-title">PPF Calculator</h1>
+  <p class="calc-lede">PPF is one of the few genuinely tax-free instruments in India — contribution, growth, and withdrawal all exempt.</p>
+
+  <div class="tool-window">
+<div class="tool-titlebar">
+<div class="dots"><span class="dot" style="background:#C6432F"></span><span class="dot" style="background:#A8781E"></span><span class="dot" style="background:#1F8F73"></span></div>
+<span class="name">PPF calculator</span>
+</div>
+<div class="tool-grid">
+<div class="tool-form">
+<div class="field">
+<div class="field-label"><span>Yearly investment</span><span class="val" id="ppf-amt-val">₹1,50,000</span></div>
+<input id="ppf-amt" max="150000" min="0" step="5000" type="number" value="150000"/>
+<input id="ppf-amt-range" max="150000" min="0" step="5000" type="range" value="150000"/>
+<div class="field-hint">₹1,50,000/year is the current maximum allowed in a PPF account.</div>
+</div>
+<div class="field">
+<div class="field-label"><span>Interest rate / year</span><span class="val" id="ppf-rate-val">7.1%</span></div>
+<input id="ppf-rate" max="12" min="0" step="0.1" type="number" value="7.1"/>
+<input id="ppf-rate-range" max="10" min="4" step="0.1" type="range" value="7.1"/>
+<div class="field-hint">PPF rate is set quarterly by the government — check the current rate before relying on this.</div>
+</div>
+<div class="field">
+<div class="field-label"><span>Tenure</span><span class="val" id="ppf-years-val">15 yrs</span></div>
+<div class="seg" id="ppf-years-seg">
+<button aria-pressed="true" data-val="15">15 yrs</button>
+<button aria-pressed="false" data-val="20">20 yrs</button>
+<button aria-pressed="false" data-val="25">25 yrs</button>
+</div>
+<div class="field-hint">PPF has a 15-year lock-in, extendable in blocks of 5 years.</div>
+</div>
+</div>
+<div class="tool-out">
+<div class="result-hero calm" id="ppf-hero">
+<div class="rl">Maturity value</div>
+<div class="rv" id="ppf-rv">₹0</div>
+<div class="rn">tax-free at maturity.</div>
+</div>
+<div class="console">
+<div class="l"><span class="k">Total invested</span><span class="v" id="ppf-invested">₹0</span></div>
+<div class="l hl"><span class="k">Total interest earned</span><span class="v" id="ppf-interest">₹0</span></div>
+</div>
+<div class="note-flag">Assumes the full yearly amount is deposited at the start of each year, and interest compounds annually — the standard PPF calculation method.</div>
+</div>
+</div>
+</div>
+
+  <div class="calc-body-copy">
+    <h2>How this works</h2>
+    <p>This projects your PPF maturity value assuming the standard method: the full yearly contribution deposited at the start of each year, compounding annually at the current rate, over your chosen 15, 20, or 25-year tenure.</p>
+  </div>
+
+  <div class="calc-related">
+    <a href="epf-calculator.html">EPF Calculator</a>
+    <a href="nps-calculator.html">NPS Calculator</a>
+  </div>
+
+  <div class="calc-cta">
+    <div>
+      <h3 style="color:#fff; margin:0 0 4px; font-family:var(--display); font-size:1.05rem;">Want a straight answer on your specific numbers?</h3>
+      <p style="color:#B7BECB; margin:0; font-size:0.88rem;">Book a 40-minute call with a Chartered Accountant for ₹500.</p>
+    </div>
+    <a href="../index.html#book-expert">Book a Finance Expert →</a>
+  </div>
+</div>
+
+<footer class="calc-footer">
+  <div class="calc-page-wrap">© Paisa Stack — plain-language money help for everyday people</div>
+</footer>
+
+<script src="assets/calculators.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function(){
+    if (window.__paisaCalcInit && window.__paisaCalcInit['t-ppf']) {
+      window.__paisaCalcInit['t-ppf']();
+    }
+  });
+</script>
+
+</body>
+</html>

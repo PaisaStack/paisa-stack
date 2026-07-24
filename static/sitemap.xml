@@ -18,4 +18,20 @@
   <url><loc>https://paisastack.com/privacy-policy.html</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
   <url><loc>https://paisastack.com/terms-of-use.html</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
   <url><loc>https://paisastack.com/disclaimer.html</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://paisastack.com/calculators/index.html</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://paisastack.com/calculators/tds-on-property-calculator.html</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://paisastack.com/calculators/income-tax-calculator.html</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://paisastack.com/calculators/loan-emi-calculator.html</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://paisastack.com/calculators/investment-return-calculator.html</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://paisastack.com/calculators/hra-exemption-calculator.html</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://paisastack.com/calculators/capital-gains-calculator.html</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://paisastack.com/calculators/rent-vs-buy-calculator.html</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://paisastack.com/calculators/salary-in-hand-calculator.html</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://paisastack.com/calculators/gratuity-calculator.html</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://paisastack.com/calculators/freelance-tax-44ada-calculator.html</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://paisastack.com/calculators/loan-prepayment-calculator.html</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://paisastack.com/calculators/goal-planner-calculator.html</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://paisastack.com/calculators/ppf-calculator.html</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://paisastack.com/calculators/epf-calculator.html</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://paisastack.com/calculators/nps-calculator.html</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
 </urlset>

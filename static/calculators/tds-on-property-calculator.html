@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TDS on Property Calculator (Section 194-IA) | Paisa Stack</title>
+<meta name="description" content="Free TDS on property calculator for FY 2026-27. Instantly find the 1% TDS due on your property purchase under Section 194-IA, whether or not the seller has a PAN.">
+<link rel="canonical" href="https://paisastack.com/calculators/tds-on-property-calculator.html">
+<meta property="og:title" content="TDS on Property Calculator (Section 194-IA)">
+<meta property="og:description" content="Free TDS on property calculator for FY 2026-27. Instantly find the 1% TDS due on your property purchase under Section 194-IA, whether or not the seller has a PAN.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%2312203D'/%3E%3Ctext x='50' y='68' font-family='monospace' font-size='58' font-weight='700' text-anchor='middle' fill='%23D4AF5A'%3E%E2%82%B9%3C/text%3E%3C/svg%3E">
+
+<!-- Google Analytics (GA4) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-F2349TVP3Y"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-F2349TVP3Y');
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/calculators.css">
+</head>
+<body>
+
+<header class="calc-header">
+  <div class="calc-nav">
+    <a href="../index.html" class="calc-brand"><span class="mark">₹</span>Paisa Stack</a>
+    <a href="index.html" class="calc-back">← All calculators</a>
+  </div>
+</header>
+
+<div class="calc-page-wrap">
+  <div class="calc-breadcrumb"><a href="../index.html">Home</a> / <a href="index.html">Calculators</a> / Real Estate</div>
+  <h1 class="calc-title">TDS on Property Calculator (Section 194-IA)</h1>
+  <p class="calc-lede">Buying a property above ₹50 lakh? You're required to deduct 1% TDS before paying the seller. This calculator gives you the exact amount in seconds.</p>
+
+  <div class="tool-window">
+<div class="tool-titlebar">
+<div class="dots"><span class="dot" style="background:#C6432F"></span><span class="dot" style="background:#A8781E"></span><span class="dot" style="background:#1F8F73"></span></div>
+<span class="name">TDS when buying property (Section 194-IA)</span>
+</div>
+<div class="tool-grid">
+<div class="tool-form">
+<div class="field">
+<div class="field-label"><span>Agreed sale price</span><span class="val" id="tds-price-val">₹75,00,000</span></div>
+<input id="tds-price" min="0" step="100000" type="number" value="7500000"/>
+<input id="tds-price-range" max="30000000" min="0" step="50000" type="range" value="7500000"/>
+</div>
+<div class="field">
+<div class="field-label"><span>Stamp duty value</span><span class="val" id="tds-stamp-val">₹75,00,000</span></div>
+<input id="tds-stamp" min="0" step="100000" type="number" value="7500000"/>
+<input id="tds-stamp-range" max="30000000" min="0" step="50000" type="range" value="7500000"/>
+<div class="field-hint">TDS uses whichever of these two is higher. If unsure, keep them equal.</div>
+</div>
+<div class="field">
+<div class="field-label"><span>Seller has PAN on record?</span></div>
+<div class="seg" id="tds-pan">
+<button aria-pressed="true" data-val="yes">Yes</button>
+<button aria-pressed="false" data-val="no">No PAN</button>
+</div>
+</div>
+</div>
+<div class="tool-out">
+<div class="result-hero" id="tds-hero">
+<div class="rl">TDS to deduct</div>
+<div class="rv" id="tds-rv">₹75,000</div>
+<div class="rn" id="tds-rn">Deduct this before paying the seller.</div>
+</div>
+<div class="console">
+<div class="l"><span class="k">Value used</span><span class="v" id="tds-base">₹75,00,000</span></div>
+<div class="l"><span class="k">Rate applied</span><span class="v" id="tds-rate">1%</span></div>
+<div class="l hl"><span class="k">TDS amount</span><span class="v" id="tds-amt">₹75,000</span></div>
+<div class="l good"><span class="k">Net to seller</span><span class="v" id="tds-net">₹74,25,000</span></div>
+</div>
+<div class="note-flag">File via <b>Form 26QB</b> within 30 days of month-end, then hand the seller <b>Form 16B</b>.</div>
+</div>
+</div>
+</div>
+
+  <div class="calc-body-copy">
+    <h2>How this works</h2>
+    <p>Under Section 194-IA, any property purchase (other than agricultural land) worth ₹50 lakh or more requires the buyer to deduct 1% TDS and deposit it via Form 26QB — before paying the seller, not after. If the seller doesn't have a valid PAN, the rate jumps to 20%. Get this wrong, and you can end up with a short-deduction notice months later.</p>
+  </div>
+
+  <div class="calc-related">
+    <a href="rent-vs-buy-calculator.html">Rent vs Buy Calculator</a>
+    <a href="capital-gains-calculator.html">Capital Gains Tax Calculator (LTCG / STCG)</a>
+  </div>
+
+  <div class="calc-cta">
+    <div>
+      <h3 style="color:#fff; margin:0 0 4px; font-family:var(--display); font-size:1.05rem;">Want a straight answer on your specific numbers?</h3>
+      <p style="color:#B7BECB; margin:0; font-size:0.88rem;">Book a 40-minute call with a Chartered Accountant for ₹500.</p>
+    </div>
+    <a href="../index.html#book-expert">Book a Finance Expert →</a>
+  </div>
+</div>
+
+<footer class="calc-footer">
+  <div class="calc-page-wrap">© Paisa Stack — plain-language money help for everyday people</div>
+</footer>
+
+<script src="assets/calculators.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function(){
+    if (window.__paisaCalcInit && window.__paisaCalcInit['t-tds']) {
+      window.__paisaCalcInit['t-tds']();
+    }
+  });
+</script>
+
+</body>
+</html>

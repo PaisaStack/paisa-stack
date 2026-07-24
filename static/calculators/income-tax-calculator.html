@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Income Tax Calculator FY 2026-27 (Old vs New Regime) | Paisa Stack</title>
+<meta name="description" content="Free income tax calculator for FY 2026-27. Compare old vs new tax regime side by side with your real salary and deductions — see exactly which one saves you more.">
+<link rel="canonical" href="https://paisastack.com/calculators/income-tax-calculator.html">
+<meta property="og:title" content="Income Tax Calculator FY 2026-27 (Old vs New Regime)">
+<meta property="og:description" content="Free income tax calculator for FY 2026-27. Compare old vs new tax regime side by side with your real salary and deductions — see exactly which one saves you more.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%2312203D'/%3E%3Ctext x='50' y='68' font-family='monospace' font-size='58' font-weight='700' text-anchor='middle' fill='%23D4AF5A'%3E%E2%82%B9%3C/text%3E%3C/svg%3E">
+
+<!-- Google Analytics (GA4) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-F2349TVP3Y"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-F2349TVP3Y');
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/calculators.css">
+</head>
+<body>
+
+<header class="calc-header">
+  <div class="calc-nav">
+    <a href="../index.html" class="calc-brand"><span class="mark">₹</span>Paisa Stack</a>
+    <a href="index.html" class="calc-back">← All calculators</a>
+  </div>
+</header>
+
+<div class="calc-page-wrap">
+  <div class="calc-breadcrumb"><a href="../index.html">Home</a> / <a href="index.html">Calculators</a> / Taxation</div>
+  <h1 class="calc-title">Income Tax Calculator FY 2026-27 (Old vs New Regime)</h1>
+  <p class="calc-lede">The new regime is the default now — but it isn't automatically cheaper. Run your real numbers through both regimes before assuming.</p>
+
+  <div class="tool-window">
+<div class="tool-titlebar">
+<div class="dots"><span class="dot" style="background:#C6432F"></span><span class="dot" style="background:#A8781E"></span><span class="dot" style="background:#1F8F73"></span></div>
+<span class="name">Income tax — FY 2026-27</span>
+</div>
+<div class="tool-grid">
+<div class="tool-form">
+<div class="field">
+<div class="field-label"><span>Gross annual income</span><span class="val" id="tax-income-val">₹12,00,000</span></div>
+<input id="tax-income" min="0" step="50000" type="number" value="1200000"/>
+<input id="tax-income-range" max="5000000" min="0" step="10000" type="range" value="1200000"/>
+</div>
+<div class="field">
+<div class="toggle-row">
+<span class="field-label" style="margin:0;">I'm a salaried employee</span>
+<label class="switch"><input checked="" id="tax-salaried" type="checkbox"/><span class="track"></span><span class="thumb"></span></label>
+</div>
+<div class="field-hint">Standard deduction: ₹75,000 (new regime) or ₹50,000 (old regime).</div>
+</div>
+<div class="field">
+<div class="field-label"><span>80C &amp; other old-regime deductions</span><span class="val" id="tax-ded-val">₹1,50,000</span></div>
+<input id="tax-ded" min="0" step="10000" type="number" value="150000"/>
+<input id="tax-ded-range" max="400000" min="0" step="5000" type="range" value="150000"/>
+<div class="field-hint">PPF, ELSS, home loan interest, 80D — these only count under the old regime.</div>
+</div>
+</div>
+<div class="tool-out">
+<div class="result-hero calm" id="tax-hero">
+<div class="rl">You save</div>
+<div class="rv" id="tax-rv">₹0</div>
+<div class="rn" id="tax-rn">by picking the cheaper regime.</div>
+</div>
+<div class="bar-wrap">
+<div class="bar-item">
+<div class="bar-top"><span class="nm">New regime</span><span class="amt" id="tax-new-amt">₹0</span></div>
+<div class="bar-track"><div class="bar-fill" id="tax-new-bar" style="width:0%"></div></div>
+</div>
+<div class="bar-item">
+<div class="bar-top"><span class="nm">Old regime</span><span class="amt" id="tax-old-amt">₹0</span></div>
+<div class="bar-track"><div class="bar-fill" id="tax-old-bar" style="width:0%"></div></div>
+</div>
+</div>
+<div class="console">
+<div class="l"><span class="k">Taxable (new)</span><span class="v" id="tax-taxable-new">₹0</span></div>
+<div class="l"><span class="k">Taxable (old)</span><span class="v" id="tax-taxable-old">₹0</span></div>
+<div class="l hl"><span class="k">Tax payable</span><span class="v" id="tax-final">₹0/yr</span></div>
+</div>
+<div class="note-flag" id="tax-flag">Income up to ₹12,00,000 is effectively tax-free under the new regime via the Section 87A rebate.</div>
+</div>
+</div>
+</div>
+
+  <div class="calc-body-copy">
+    <h2>How this works</h2>
+    <p>India's new tax regime offers lower slab rates but almost no exemptions. The old regime keeps HRA, 80C, 80D, and home loan interest deductions, but at higher rates. Which one wins depends entirely on your specific numbers — there's no universal answer, which is exactly why guessing costs people real money every year.</p>
+  </div>
+
+  <div class="calc-related">
+    <a href="hra-exemption-calculator.html">HRA Exemption Calculator</a>
+    <a href="salary-in-hand-calculator.html">Salary / CTC to In-Hand Calculator</a>
+  </div>
+
+  <div class="calc-cta">
+    <div>
+      <h3 style="color:#fff; margin:0 0 4px; font-family:var(--display); font-size:1.05rem;">Want a straight answer on your specific numbers?</h3>
+      <p style="color:#B7BECB; margin:0; font-size:0.88rem;">Book a 40-minute call with a Chartered Accountant for ₹500.</p>
+    </div>
+    <a href="../index.html#book-expert">Book a Finance Expert →</a>
+  </div>
+</div>
+
+<footer class="calc-footer">
+  <div class="calc-page-wrap">© Paisa Stack — plain-language money help for everyday people</div>
+</footer>
+
+<script src="assets/calculators.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function(){
+    if (window.__paisaCalcInit && window.__paisaCalcInit['t-tax']) {
+      window.__paisaCalcInit['t-tax']();
+    }
+  });
+</script>
+
+</body>
+</html>

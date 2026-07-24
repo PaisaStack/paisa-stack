@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Goal Planner Calculator (Reverse SIP) | Paisa Stack</title>
+<meta name="description" content="Free goal-based SIP calculator. Find the exact monthly investment needed to reach a specific financial goal, adjusted for inflation.">
+<link rel="canonical" href="https://paisastack.com/calculators/goal-planner-calculator.html">
+<meta property="og:title" content="Goal Planner Calculator (Reverse SIP)">
+<meta property="og:description" content="Free goal-based SIP calculator. Find the exact monthly investment needed to reach a specific financial goal, adjusted for inflation.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%2312203D'/%3E%3Ctext x='50' y='68' font-family='monospace' font-size='58' font-weight='700' text-anchor='middle' fill='%23D4AF5A'%3E%E2%82%B9%3C/text%3E%3C/svg%3E">
+
+<!-- Google Analytics (GA4) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-F2349TVP3Y"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-F2349TVP3Y');
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/calculators.css">
+</head>
+<body>
+
+<header class="calc-header">
+  <div class="calc-nav">
+    <a href="../index.html" class="calc-brand"><span class="mark">₹</span>Paisa Stack</a>
+    <a href="index.html" class="calc-back">← All calculators</a>
+  </div>
+</header>
+
+<div class="calc-page-wrap">
+  <div class="calc-breadcrumb"><a href="../index.html">Home</a> / <a href="index.html">Calculators</a> / Investing</div>
+  <h1 class="calc-title">Goal Planner Calculator (Reverse SIP)</h1>
+  <p class="calc-lede">Working backward from a goal — a down payment, a child's education — to the exact SIP you need, adjusted for inflation.</p>
+
+  <div class="tool-window">
+<div class="tool-titlebar">
+<div class="dots"><span class="dot" style="background:#C6432F"></span><span class="dot" style="background:#A8781E"></span><span class="dot" style="background:#1F8F73"></span></div>
+<span class="name">Goal planner (reverse SIP)</span>
+</div>
+<div class="tool-grid">
+<div class="tool-form">
+<div class="field">
+<div class="field-label"><span>Goal (in today's value)</span><span class="val" id="gp-target-val">₹20,00,000</span></div>
+<input id="gp-target" min="0" step="50000" type="number" value="2000000"/>
+<input id="gp-target-range" max="20000000" min="0" step="50000" type="range" value="2000000"/>
+</div>
+<div class="field">
+<div class="field-label"><span>Years to goal</span><span class="val" id="gp-years-val">5 yrs</span></div>
+<input id="gp-years" max="40" min="1" step="1" type="number" value="5"/>
+<input id="gp-years-range" max="40" min="1" step="1" type="range" value="5"/>
+</div>
+<div class="field">
+<div class="field-label"><span>Expected inflation / year</span><span class="val" id="gp-infl-val">6%</span></div>
+<input id="gp-infl" max="15" min="0" step="0.5" type="number" value="6"/>
+<input id="gp-infl-range" max="12" min="0" step="0.5" type="range" value="6"/>
+</div>
+<div class="field">
+<div class="field-label"><span>Expected annual return</span><span class="val" id="gp-return-val">12%</span></div>
+<input id="gp-return" max="25" min="0" step="0.5" type="number" value="12"/>
+<input id="gp-return-range" max="20" min="1" step="0.5" type="range" value="12"/>
+</div>
+</div>
+<div class="tool-out">
+<div class="result-hero calm" id="gp-hero">
+<div class="rl">Monthly SIP needed</div>
+<div class="rv" id="gp-rv">₹0</div>
+<div class="rn">to reach your goal, adjusted for inflation.</div>
+</div>
+<div class="console">
+<div class="l"><span class="k">Goal in today's value</span><span class="v" id="gp-today">₹0</span></div>
+<div class="l hl"><span class="k">Goal in future value</span><span class="v" id="gp-future">₹0</span></div>
+<div class="l"><span class="k">Total you'll invest</span><span class="v" id="gp-invested">₹0</span></div>
+</div>
+<div class="note-flag">Inflation grows your target; expected return determines how hard your monthly SIP has to work to get there.</div>
+</div>
+</div>
+</div>
+
+  <div class="calc-body-copy">
+    <h2>How this works</h2>
+    <p>This inflates your goal to its real future value, then works out the monthly SIP required to reach it at your expected rate of return — the same math used everywhere from wedding funds to retirement planning.</p>
+  </div>
+
+  <div class="calc-related">
+    <a href="investment-return-calculator.html">SIP & Lump Sum Investment Return Calculator</a>
+    <a href="ppf-calculator.html">PPF Calculator</a>
+  </div>
+
+  <div class="calc-cta">
+    <div>
+      <h3 style="color:#fff; margin:0 0 4px; font-family:var(--display); font-size:1.05rem;">Want a straight answer on your specific numbers?</h3>
+      <p style="color:#B7BECB; margin:0; font-size:0.88rem;">Book a 40-minute call with a Chartered Accountant for ₹500.</p>
+    </div>
+    <a href="../index.html#book-expert">Book a Finance Expert →</a>
+  </div>
+</div>
+
+<footer class="calc-footer">
+  <div class="calc-page-wrap">© Paisa Stack — plain-language money help for everyday people</div>
+</footer>
+
+<script src="assets/calculators.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function(){
+    if (window.__paisaCalcInit && window.__paisaCalcInit['t-goal']) {
+      window.__paisaCalcInit['t-goal']();
+    }
+  });
+</script>
+
+</body>
+</html>

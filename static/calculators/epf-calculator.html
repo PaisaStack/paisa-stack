@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EPF Calculator | Paisa Stack</title>
+<meta name="description" content="Free EPF calculator. Project your Employee Provident Fund retirement corpus based on current age, salary, and expected growth.">
+<link rel="canonical" href="https://paisastack.com/calculators/epf-calculator.html">
+<meta property="og:title" content="EPF Calculator">
+<meta property="og:description" content="Free EPF calculator. Project your Employee Provident Fund retirement corpus based on current age, salary, and expected growth.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%2312203D'/%3E%3Ctext x='50' y='68' font-family='monospace' font-size='58' font-weight='700' text-anchor='middle' fill='%23D4AF5A'%3E%E2%82%B9%3C/text%3E%3C/svg%3E">
+
+<!-- Google Analytics (GA4) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-F2349TVP3Y"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-F2349TVP3Y');
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/calculators.css">
+</head>
+<body>
+
+<header class="calc-header">
+  <div class="calc-nav">
+    <a href="../index.html" class="calc-brand"><span class="mark">₹</span>Paisa Stack</a>
+    <a href="index.html" class="calc-back">← All calculators</a>
+  </div>
+</header>
+
+<div class="calc-page-wrap">
+  <div class="calc-breadcrumb"><a href="../index.html">Home</a> / <a href="index.html">Calculators</a> / Retirement</div>
+  <h1 class="calc-title">EPF Calculator</h1>
+  <p class="calc-lede">See what your EPF could realistically grow to by retirement, accounting for salary growth over your career.</p>
+
+  <div class="tool-window">
+<div class="tool-titlebar">
+<div class="dots"><span class="dot" style="background:#C6432F"></span><span class="dot" style="background:#A8781E"></span><span class="dot" style="background:#1F8F73"></span></div>
+<span class="name">EPF calculator</span>
+</div>
+<div class="tool-grid">
+<div class="tool-form">
+<div class="field">
+<div class="field-label"><span>Current age</span><span class="val" id="epf-age-val">28</span></div>
+<input id="epf-age" max="59" min="18" step="1" type="number" value="28"/>
+<input id="epf-age-range" max="59" min="18" step="1" type="range" value="28"/>
+</div>
+<div class="field">
+<div class="field-label"><span>Current monthly basic + DA</span><span class="val" id="epf-basic-val">₹40,000</span></div>
+<input id="epf-basic" min="0" step="1000" type="number" value="40000"/>
+<input id="epf-basic-range" max="200000" min="0" step="1000" type="range" value="40000"/>
+</div>
+<div class="field">
+<div class="field-label"><span>Expected annual salary growth</span><span class="val" id="epf-growth-val">8%</span></div>
+<input id="epf-growth" max="20" min="0" step="0.5" type="number" value="8"/>
+<input id="epf-growth-range" max="15" min="0" step="0.5" type="range" value="8"/>
+</div>
+<div class="field">
+<div class="field-label"><span>EPF interest rate / year</span><span class="val" id="epf-rate-val">8.25%</span></div>
+<input id="epf-rate" max="12" min="0" step="0.05" type="number" value="8.25"/>
+<input id="epf-rate-range" max="10" min="5" step="0.05" type="range" value="8.25"/>
+</div>
+</div>
+<div class="tool-out">
+<div class="result-hero calm" id="epf-hero">
+<div class="rl">Projected corpus at 58</div>
+<div class="rv" id="epf-rv">₹0</div>
+<div class="rn">combined employee + employer contributions, compounded.</div>
+</div>
+<div class="console">
+<div class="l"><span class="k">Years to retirement</span><span class="v" id="epf-yrsleft">0</span></div>
+<div class="l"><span class="k">Combined contribution rate</span><span class="v">24% of basic</span></div>
+<div class="l hl"><span class="k">Total contributed</span><span class="v" id="epf-contributed">₹0</span></div>
+</div>
+<div class="note-flag">Simplified: assumes all 24% (12% employee + 12% employer) compounds at the EPF rate. In reality, part of the employer's share routes to the EPS pension scheme — actual EPF corpus may be somewhat lower.</div>
+</div>
+</div>
+</div>
+
+  <div class="calc-body-copy">
+    <h2>How this works</h2>
+    <p>This projects your combined employee and employer EPF contributions (24% of basic) compounding monthly until age 58, factoring in expected annual salary growth — with a clear note on where the simplification lies relative to the real EPS-linked structure.</p>
+  </div>
+
+  <div class="calc-related">
+    <a href="ppf-calculator.html">PPF Calculator</a>
+    <a href="nps-calculator.html">NPS Calculator</a>
+  </div>
+
+  <div class="calc-cta">
+    <div>
+      <h3 style="color:#fff; margin:0 0 4px; font-family:var(--display); font-size:1.05rem;">Want a straight answer on your specific numbers?</h3>
+      <p style="color:#B7BECB; margin:0; font-size:0.88rem;">Book a 40-minute call with a Chartered Accountant for ₹500.</p>
+    </div>
+    <a href="../index.html#book-expert">Book a Finance Expert →</a>
+  </div>
+</div>
+
+<footer class="calc-footer">
+  <div class="calc-page-wrap">© Paisa Stack — plain-language money help for everyday people</div>
+</footer>
+
+<script src="assets/calculators.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function(){
+    if (window.__paisaCalcInit && window.__paisaCalcInit['t-epf']) {
+      window.__paisaCalcInit['t-epf']();
+    }
+  });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Capital Gains Tax Calculator (LTCG / STCG) | Paisa Stack</title>
+<meta name="description" content="Free capital gains calculator for equity, debt funds, and property/gold. Get your exact LTCG or STCG tax liability for FY 2026-27.">
+<link rel="canonical" href="https://paisastack.com/calculators/capital-gains-calculator.html">
+<meta property="og:title" content="Capital Gains Tax Calculator (LTCG / STCG)">
+<meta property="og:description" content="Free capital gains calculator for equity, debt funds, and property/gold. Get your exact LTCG or STCG tax liability for FY 2026-27.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%2312203D'/%3E%3Ctext x='50' y='68' font-family='monospace' font-size='58' font-weight='700' text-anchor='middle' fill='%23D4AF5A'%3E%E2%82%B9%3C/text%3E%3C/svg%3E">
+
+<!-- Google Analytics (GA4) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-F2349TVP3Y"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-F2349TVP3Y');
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/calculators.css">
+</head>
+<body>
+
+<header class="calc-header">
+  <div class="calc-nav">
+    <a href="../index.html" class="calc-brand"><span class="mark">₹</span>Paisa Stack</a>
+    <a href="index.html" class="calc-back">← All calculators</a>
+  </div>
+</header>
+
+<div class="calc-page-wrap">
+  <div class="calc-breadcrumb"><a href="../index.html">Home</a> / <a href="index.html">Calculators</a> / Taxation</div>
+  <h1 class="calc-title">Capital Gains Tax Calculator (LTCG / STCG)</h1>
+  <p class="calc-lede">Equity, debt funds, and property are all taxed completely differently on sale. Pick your asset type and get the real number.</p>
+
+  <div class="tool-window">
+<div class="tool-titlebar">
+<div class="dots"><span class="dot" style="background:#C6432F"></span><span class="dot" style="background:#A8781E"></span><span class="dot" style="background:#1F8F73"></span></div>
+<span class="name">Capital gains (LTCG / STCG) calculator</span>
+</div>
+<div class="tool-grid">
+<div class="tool-form">
+<div class="field">
+<div class="field-label"><span>Asset type</span></div>
+<div class="seg" id="cg-asset">
+<button aria-pressed="true" data-val="equity">Equity / MF</button>
+<button aria-pressed="false" data-val="debt">Debt MF</button>
+<button aria-pressed="false" data-val="other">Property / Gold</button>
+</div>
+</div>
+<div class="field">
+<div class="field-label"><span>Purchase price</span><span class="val" id="cg-buy-val">₹5,00,000</span></div>
+<input id="cg-buy" min="0" step="10000" type="number" value="500000"/>
+<input id="cg-buy-range" max="10000000" min="0" step="10000" type="range" value="500000"/>
+</div>
+<div class="field">
+<div class="field-label"><span>Sale price</span><span class="val" id="cg-sell-val">₹8,00,000</span></div>
+<input id="cg-sell" min="0" step="10000" type="number" value="800000"/>
+<input id="cg-sell-range" max="10000000" min="0" step="10000" type="range" value="800000"/>
+</div>
+<div class="field">
+<div class="field-label"><span>Holding period (months)</span><span class="val" id="cg-months-val">18 mo</span></div>
+<input id="cg-months" max="480" min="0" step="1" type="number" value="18"/>
+<input id="cg-months-range" max="120" min="0" step="1" type="range" value="18"/>
+</div>
+<div class="field" id="cg-oldprop-field" style="display:none;">
+<div class="field-label"><span>Bought before 23 Jul 2024?</span></div>
+<div class="seg" id="cg-oldprop">
+<button aria-pressed="true" data-val="no">No</button>
+<button aria-pressed="false" data-val="yes">Yes</button>
+</div>
+<div class="field-hint">Pre-July 2024 property/gold purchases can choose 20% with indexation instead — check with a CA, since that needs the Cost Inflation Index.</div>
+</div>
+</div>
+<div class="tool-out">
+<div class="result-hero" id="cg-hero">
+<div class="rl">Tax on this gain</div>
+<div class="rv" id="cg-rv">₹0</div>
+<div class="rn" id="cg-rn">estimated capital gains tax.</div>
+</div>
+<div class="console">
+<div class="l"><span class="k">Capital gain</span><span class="v" id="cg-gain">₹0</span></div>
+<div class="l"><span class="k">Classification</span><span class="v" id="cg-class">—</span></div>
+<div class="l"><span class="k">Rate applied</span><span class="v" id="cg-rate">—</span></div>
+<div class="l hl"><span class="k">Tax payable</span><span class="v" id="cg-tax">₹0</span></div>
+</div>
+<div class="note-flag" id="cg-flag">Equity: 12-month LT threshold, 12.5% above ₹1.25L exemption/year. Below 12 months: 20% flat.</div>
+</div>
+</div>
+</div>
+
+  <div class="calc-body-copy">
+    <h2>How this works</h2>
+    <p>Capital gains tax rules vary sharply by asset type: equity has a 12-month long-term threshold and a ₹1.25 lakh annual exemption; debt funds are taxed at your slab rate regardless of holding period; property and gold have their own 24-month threshold and indexation rules that changed materially in 2024.</p>
+  </div>
+
+  <div class="calc-related">
+    <a href="tds-on-property-calculator.html">TDS on Property Calculator (Section 194-IA)</a>
+    <a href="income-tax-calculator.html">Income Tax Calculator FY 2026-27 (Old vs New Regime)</a>
+  </div>
+
+  <div class="calc-cta">
+    <div>
+      <h3 style="color:#fff; margin:0 0 4px; font-family:var(--display); font-size:1.05rem;">Want a straight answer on your specific numbers?</h3>
+      <p style="color:#B7BECB; margin:0; font-size:0.88rem;">Book a 40-minute call with a Chartered Accountant for ₹500.</p>
+    </div>
+    <a href="../index.html#book-expert">Book a Finance Expert →</a>
+  </div>
+</div>
+
+<footer class="calc-footer">
+  <div class="calc-page-wrap">© Paisa Stack — plain-language money help for everyday people</div>
+</footer>
+
+<script src="assets/calculators.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function(){
+    if (window.__paisaCalcInit && window.__paisaCalcInit['t-capgains']) {
+      window.__paisaCalcInit['t-capgains']();
+    }
+  });
+</script>
+
+</body>
+</html>

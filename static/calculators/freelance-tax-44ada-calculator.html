@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Freelance Tax Calculator (Section 44ADA) | Paisa Stack</title>
+<meta name="description" content="Free 44ADA presumptive tax calculator for freelancers and consultants. Compare presumptive taxation against your actual profit instantly.">
+<link rel="canonical" href="https://paisastack.com/calculators/freelance-tax-44ada-calculator.html">
+<meta property="og:title" content="Freelance Tax Calculator (Section 44ADA)">
+<meta property="og:description" content="Free 44ADA presumptive tax calculator for freelancers and consultants. Compare presumptive taxation against your actual profit instantly.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%2312203D'/%3E%3Ctext x='50' y='68' font-family='monospace' font-size='58' font-weight='700' text-anchor='middle' fill='%23D4AF5A'%3E%E2%82%B9%3C/text%3E%3C/svg%3E">
+
+<!-- Google Analytics (GA4) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-F2349TVP3Y"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-F2349TVP3Y');
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/calculators.css">
+</head>
+<body>
+
+<header class="calc-header">
+  <div class="calc-nav">
+    <a href="../index.html" class="calc-brand"><span class="mark">₹</span>Paisa Stack</a>
+    <a href="index.html" class="calc-back">← All calculators</a>
+  </div>
+</header>
+
+<div class="calc-page-wrap">
+  <div class="calc-breadcrumb"><a href="../index.html">Home</a> / <a href="index.html">Calculators</a> / Business & GST</div>
+  <h1 class="calc-title">Freelance Tax Calculator (Section 44ADA)</h1>
+  <p class="calc-lede">Section 44ADA lets eligible professionals declare 50% of receipts as taxable income — often far less than your actual profit margin.</p>
+
+  <div class="tool-window">
+<div class="tool-titlebar">
+<div class="dots"><span class="dot" style="background:#C6432F"></span><span class="dot" style="background:#A8781E"></span><span class="dot" style="background:#1F8F73"></span></div>
+<span class="name">Freelance tax — Section 44ADA</span>
+</div>
+<div class="tool-grid">
+<div class="tool-form">
+<div class="field">
+<div class="field-label"><span>Annual gross receipts</span><span class="val" id="fl-gross-val">₹15,00,000</span></div>
+<input id="fl-gross" min="0" step="50000" type="number" value="1500000"/>
+<input id="fl-gross-range" max="7500000" min="0" step="10000" type="range" value="1500000"/>
+</div>
+<div class="field">
+<div class="field-label"><span>≥95% receipts via digital/banking?</span></div>
+<div class="seg" id="fl-digital">
+<button aria-pressed="true" data-val="yes">Yes</button>
+<button aria-pressed="false" data-val="no">No</button>
+</div>
+<div class="field-hint">Raises your 44ADA eligibility limit from ₹50L to ₹75L.</div>
+</div>
+<div class="field">
+<div class="field-label"><span>Your actual expenses (optional)</span><span class="val" id="fl-exp-val">₹0</span></div>
+<input id="fl-exp" min="0" step="10000" type="number" value="0"/>
+<input id="fl-exp-range" max="1000000" min="0" step="10000" type="range" value="0"/>
+<div class="field-hint">Fill this in to compare against declaring actual profit instead of the 50% presumptive rate.</div>
+</div>
+</div>
+<div class="tool-out">
+<div class="result-hero calm" id="fl-hero">
+<div class="rl">Presumptive taxable income</div>
+<div class="rv" id="fl-rv">₹0</div>
+<div class="rn">50% of gross receipts under Section 44ADA.</div>
+</div>
+<div class="console">
+<div class="l"><span class="k">44ADA eligibility limit</span><span class="v" id="fl-limit">₹50,00,000</span></div>
+<div class="l"><span class="k">Eligible for 44ADA?</span><span class="v" id="fl-eligible">Yes</span></div>
+<div class="l"><span class="k">Est. tax under 44ADA (new regime)</span><span class="v" id="fl-tax-44ada">₹0</span></div>
+<div class="l hl" id="fl-compare-row"><span class="k">Est. tax on actual profit instead</span><span class="v" id="fl-tax-actual">₹0</span></div>
+</div>
+<div class="note-flag" id="fl-flag">If your real expenses are under 50% of receipts, 44ADA usually wins — you're taxed on less than you'd otherwise show as profit.</div>
+</div>
+</div>
+</div>
+
+  <div class="calc-body-copy">
+    <h2>How this works</h2>
+    <p>If your real expenses are well under 50% of your receipts, 44ADA usually results in lower tax than declaring actual profit — and skips the need for full books of account. This calculator compares both paths using your real numbers.</p>
+  </div>
+
+  <div class="calc-related">
+    <a href="income-tax-calculator.html">Income Tax Calculator FY 2026-27 (Old vs New Regime)</a>
+    <a href="goal-planner-calculator.html">Goal Planner Calculator (Reverse SIP)</a>
+  </div>
+
+  <div class="calc-cta">
+    <div>
+      <h3 style="color:#fff; margin:0 0 4px; font-family:var(--display); font-size:1.05rem;">Want a straight answer on your specific numbers?</h3>
+      <p style="color:#B7BECB; margin:0; font-size:0.88rem;">Book a 40-minute call with a Chartered Accountant for ₹500.</p>
+    </div>
+    <a href="../index.html#book-expert">Book a Finance Expert →</a>
+  </div>
+</div>
+
+<footer class="calc-footer">
+  <div class="calc-page-wrap">© Paisa Stack — plain-language money help for everyday people</div>
+</footer>
+
+<script src="assets/calculators.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function(){
+    if (window.__paisaCalcInit && window.__paisaCalcInit['t-freelance']) {
+      window.__paisaCalcInit['t-freelance']();
+    }
+  });
+</script>
+
+</body>
+</html>
