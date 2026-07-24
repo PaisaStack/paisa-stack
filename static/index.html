@@ -401,6 +401,25 @@
   .review-invite h3{font-size:1.1rem; margin:0 0 10px;}
   .review-invite p{font-size:0.92rem; color:var(--text-dim); margin:0 0 22px; line-height:1.6;}
 
+  .testimonial-form{display:flex; flex-direction:column; gap:12px; text-align:left; max-width:480px; margin:0 auto 18px;}
+  .tf-row{display:grid; grid-template-columns:1fr 1fr; gap:12px;}
+  @media (max-width:520px){ .tf-row{grid-template-columns:1fr;} }
+  .testimonial-form input, .testimonial-form select, .testimonial-form textarea{
+    width:100%; padding:11px 13px; border:1px solid var(--border-2, var(--border)); border-radius:8px;
+    font-family:inherit; font-size:0.9rem; color:var(--ink); background:#fff;
+  }
+  .testimonial-form textarea{resize:vertical;}
+  .tf-submit{
+    background:var(--ink); color:#fff; border:none; border-radius:8px; padding:12px 20px;
+    font-weight:600; font-size:0.92rem; cursor:pointer;
+  }
+  .tf-submit:hover{opacity:0.9;}
+  .tf-or{font-size:0.8rem; color:var(--text-dimmer); margin:4px 0 14px;}
+  .tf-success{
+    background:var(--teal-soft, #DCF3EA); border:1px solid var(--teal, #1F8F73); border-radius:10px;
+    padding:16px; font-size:0.92rem; color:var(--ink); max-width:480px; margin:0 auto 18px; display:none;
+  }
+
   .testimonial-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-bottom:26px;}
   @media (max-width:860px){ .testimonial-grid{grid-template-columns:1fr;} }
   .testimonial-card{
@@ -2069,13 +2088,44 @@
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
       </div>
       <h3>Used a calculator, an ebook, or a service?</h3>
-      <p>Tell us what you thought — the good and the honest. A few lines is enough. We'll add real reviews here as they come in, with your name and permission.</p>
+      <p>Tell us what you thought — the good and the honest. A few lines is enough. We review every submission and add real ones here with your name and permission.</p>
+
+      <form name="testimonial" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="testimonial-form" id="testimonialForm">
+        <input type="hidden" name="form-name" value="testimonial">
+        <p style="display:none;"><label>Don't fill this out if you're human: <input name="bot-field"></label></p>
+
+        <div class="tf-row">
+          <input type="text" name="name" placeholder="Your name" required>
+          <input type="text" name="role" placeholder="Role & company (e.g. Manager, Infosys)" required>
+        </div>
+        <select name="rating" required>
+          <option value="">How would you rate the experience?</option>
+          <option value="5 stars">★★★★★ Excellent</option>
+          <option value="4 stars">★★★★☆ Good</option>
+          <option value="3 stars">★★★☆☆ Okay</option>
+        </select>
+        <textarea name="testimonial" rows="4" placeholder="What did you use, and what was your experience like?" required></textarea>
+        <input type="email" name="email" placeholder="Your email (not published, just in case we have a follow-up question)">
+        <button type="submit" class="tf-submit">Submit your feedback</button>
+      </form>
+      <div class="tf-success" id="tfSuccess">✓ Thank you — your feedback has been received. We review every submission before it goes live.</div>
+      <p class="tf-or">— or —</p>
       <a class="wa-btn" style="width:auto; padding:11px 24px;" data-wa-msg="Hi, I used Paisa Stack and wanted to share some feedback:">
         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21h.01c5.46 0 9.9-4.45 9.9-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2m0 1.67a8.2 8.2 0 0 1 5.83 2.41 8.19 8.19 0 0 1 2.41 5.83c0 4.55-3.7 8.24-8.25 8.24a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.17 8.17 0 0 1-1.26-4.38c0-4.55 3.7-8.24 8.25-8.24m-4.55 4.72c-.16 0-.42.06-.64.3-.22.24-.84.82-.84 2s.86 2.32.98 2.48c.12.16 1.67 2.7 4.15 3.66 2.06.8 2.48.64 2.93.6.45-.04 1.45-.59 1.65-1.16.2-.57.2-1.06.14-1.16-.06-.1-.22-.16-.46-.28-.24-.12-1.45-.72-1.67-.8-.22-.08-.39-.12-.55.12-.16.24-.63.8-.77.96-.14.16-.28.18-.52.06-.24-.12-1.02-.38-1.94-1.2-.72-.64-1.2-1.43-1.34-1.67-.14-.24-.02-.37.1-.49.11-.11.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.55-1.36-.76-1.86-.2-.48-.4-.42-.55-.42h-.32Z"/></svg>
-        Share your feedback on WhatsApp
+        Message us on WhatsApp instead
       </a>
     </div>
   </div>
+
+  <!-- Hidden static replica so Netlify's build-time form scanner reliably
+       detects this form even though the visible one is inside a dynamic page. -->
+  <form name="testimonial" data-netlify="true" netlify-honeypot="bot-field" hidden>
+    <input type="text" name="name">
+    <input type="text" name="role">
+    <select name="rating"><option value="5 stars"></option></select>
+    <textarea name="testimonial"></textarea>
+    <input type="email" name="email">
+  </form>
 </section>
 
 <section class="block" id="book-expert">
@@ -2218,6 +2268,33 @@
     el.setAttribute('target', '_blank');
     el.setAttribute('rel', 'noopener');
   });
+
+  // ---------------- Testimonial form (AJAX submit to Netlify Forms) ----------------
+  var testimonialForm = document.getElementById('testimonialForm');
+  if (testimonialForm) {
+    testimonialForm.addEventListener('submit', function(e){
+      e.preventDefault();
+      var formData = new FormData(testimonialForm);
+      var encoded = new URLSearchParams(formData).toString();
+      var submitBtn = testimonialForm.querySelector('.tf-submit');
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Submitting…';
+      fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: encoded
+      })
+      .then(function(){
+        testimonialForm.style.display = 'none';
+        document.getElementById('tfSuccess').style.display = 'block';
+      })
+      .catch(function(){
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Submit your feedback';
+        alert('Something went wrong — please try again, or message us on WhatsApp instead.');
+      });
+    });
+  }
 
   // ---------------- Hamburger (mobile) ----------------
   var hamburgerBtn = document.getElementById('hamburgerBtn');
