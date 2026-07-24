@@ -42,6 +42,15 @@ module.exports = function(eleventyConfig) {
     return mins + " min read";
   });
 
+  // ---- Force every blog post to a consistent flat URL ----
+  // Without this, a post's URL depends on whatever the CMS happens to name
+  // the file, which can produce inconsistent folder-style URLs (and stray
+  // "-1" suffixes on a title collision). This guarantees every post lands
+  // at /blogs/{filename}.html, matching the rest of the site, every time.
+  eleventyConfig.addGlobalData("eleventyComputed", {
+    permalink: (data) => `blogs/${data.page.fileSlug}.html`,
+  });
+
   return {
     dir: {
       input: "src",
