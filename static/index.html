@@ -107,6 +107,44 @@
   .navlinks a{color:var(--text-dim); padding:8px 12px; border-radius:7px; font-weight:500; white-space:nowrap;}
   .navlinks a:hover{color:var(--ink); background:var(--surface);}
 
+  /* ---- announcement bar ---- */
+  .announce-bar{
+    position:relative; overflow:hidden;
+    background:linear-gradient(100deg, #12203D, #1F8F73 45%, #A8781E 90%);
+    background-size:220% 220%;
+    color:#fff; font-family:var(--sans, 'Inter', sans-serif);
+    padding:11px 20px; text-align:center; font-size:0.88rem; font-weight:600;
+    animation:announceGradient 6s ease infinite, announcePulse 0.9s ease-out 3;
+  }
+  .announce-bar a{
+    color:#fff; text-decoration:underline; text-underline-offset:3px; text-decoration-color:rgba(255,255,255,0.6);
+  }
+  .announce-bar a:hover{ text-decoration-color:#fff; }
+  .announce-bar .flag{
+    display:inline-block; margin-right:6px; animation:announceWiggle 2.4s ease-in-out infinite;
+  }
+  .announce-close{
+    position:absolute; right:14px; top:50%; transform:translateY(-50%);
+    background:rgba(255,255,255,0.18); border:none; color:#fff; width:22px; height:22px;
+    border-radius:50%; cursor:pointer; font-size:0.8rem; line-height:1; display:flex;
+    align-items:center; justify-content:center;
+  }
+  .announce-close:hover{ background:rgba(255,255,255,0.32); }
+  @keyframes announceGradient{
+    0%{background-position:0% 50%;} 50%{background-position:100% 50%;} 100%{background-position:0% 50%;}
+  }
+  @keyframes announcePulse{
+    0%,100%{box-shadow:0 0 0 0 rgba(31,143,115,0);}
+    50%{box-shadow:0 0 0 6px rgba(31,143,115,0.25);}
+  }
+  @keyframes announceWiggle{
+    0%,100%{transform:rotate(0deg);} 25%{transform:rotate(-8deg);} 75%{transform:rotate(8deg);}
+  }
+  @media (prefers-reduced-motion: reduce){
+    .announce-bar, .announce-bar .flag{ animation:none !important; }
+  }
+  @media (max-width:600px){ .announce-bar{ font-size:0.8rem; padding:10px 40px 10px 14px; } }
+
   /* ---- hamburger (mobile only) ---- */
   .hamburger{
     display:none; background:none; border:1px solid var(--border-2); border-radius:8px;
@@ -573,6 +611,12 @@
 </head>
 <body>
 
+<div class="announce-bar" id="announceBar">
+  <span class="flag">🚨</span>
+  Korea's stock market just crashed 27% — <a href="blogs/korea-stock-market-crash-lessons-for-india.html">see what Indian investors need to know →</a>
+  <button class="announce-close" id="announceClose" aria-label="Dismiss announcement">✕</button>
+</div>
+
 <header>
   <div class="wrap nav">
     <div class="brand"><span class="mark">₹</span>Paisa Stack</div>
@@ -648,7 +692,8 @@
           <a class="dd-link" href="blogs/property-tds-short-deduction-notice.html">Property TDS Short Deduction Notice: The Fix</a>
           <a class="dd-link" href="blogs/10-common-mistakes-people-make-while-e-filing-their-itr-ay-2026-27-1.html">Common Mistakes While E-Filing Your ITR</a>
           <a class="dd-link" href="blogs/prepay-home-loan-or-invest.html">Prepay Home Loan or Invest? The Real Math</a>
-          <a class="dd-link dd-viewall" href="blogs/blogs.html">View all 22 blogs →</a>
+          <a class="dd-link" href="blogs/korea-stock-market-crash-lessons-for-india.html">Korea's Stock Crash: Lessons for Indian Investors</a>
+          <a class="dd-link dd-viewall" href="blogs/blogs.html">View all 23 blogs →</a>
         </div>
       </div>
 
@@ -2313,6 +2358,22 @@
       }
     });
   });
+
+  // ---------------- Announcement bar ----------------
+  (function(){
+    var bar = document.getElementById('announceBar');
+    var closeBtn = document.getElementById('announceClose');
+    if (!bar || !closeBtn) return;
+    try {
+      if (sessionStorage.getItem('announceDismissed') === '1') {
+        bar.style.display = 'none';
+      }
+    } catch(e) {}
+    closeBtn.addEventListener('click', function(){
+      bar.style.display = 'none';
+      try { sessionStorage.setItem('announceDismissed', '1'); } catch(e) {}
+    });
+  })();
 
   // ---------------- Testimonial form (AJAX submit to Netlify Forms) ----------------
   var testimonialForm = document.getElementById('testimonialForm');
