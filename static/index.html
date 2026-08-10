@@ -242,6 +242,29 @@
     color:var(--amber); font-weight:600; font-size:0.83rem;
   }
   .dd-viewall:hover{background:var(--amber-soft); color:var(--amber);}
+
+  /* ---- categorized blog dropdown ---- */
+  .blog-dropdown{
+    display:grid; grid-template-columns:repeat(3, 1fr); gap:4px 18px;
+    min-width:600px; padding:14px 16px;
+    left:50%; transform:translateX(-50%) translateY(6px);
+  }
+  .nav-item:hover .blog-dropdown, .nav-item.open .blog-dropdown{
+    transform:translateX(-50%) translateY(0);
+  }
+  .dd-category{ display:flex; flex-direction:column; }
+  .dd-cat-title{
+    font-family:var(--mono); font-size:0.7rem; font-weight:700; color:var(--teal);
+    text-transform:uppercase; letter-spacing:0.03em; padding:4px 12px 8px;
+    border-bottom:1px solid var(--border); margin-bottom:6px;
+  }
+  .blog-dropdown-viewall{
+    grid-column:1 / -1; margin-top:8px; text-align:center;
+  }
+  @media (max-width:980px){
+    .blog-dropdown{ grid-template-columns:1fr; min-width:0; padding:8px; gap:14px; }
+  }
+
   @media (max-width: 980px){
     .dropdown-panel{position:static; opacity:1; visibility:visible; transform:none; box-shadow:none; border:none; display:none; margin:4px 0 4px 10px;}
     .nav-item.open .dropdown-panel{display:block;}
@@ -345,6 +368,54 @@
   .block-head h2{font-size:1.65rem;}
   .block-head p{color:var(--text-dim); margin-top:10px; max-width:60ch;}
   .block-head{margin-bottom:36px;}
+
+  /* ---- spin the wheel ---- */
+  .wheel-container{
+    display:flex; flex-direction:column; align-items:center; gap:0; margin:20px 0 10px; position:relative;
+  }
+  .wheel-outer{ position:relative; width:340px; max-width:88vw; margin:0 auto; }
+  .wheel-svg{
+    width:100%; height:auto; display:block; filter:drop-shadow(0 10px 30px rgba(18,32,61,0.18));
+  }
+  #wheelGroup{
+    transform-origin:170px 170px; transform:rotate(0deg);
+    transition:transform 4.5s cubic-bezier(0.17, 0.85, 0.28, 1);
+  }
+  .wheel-pointer{
+    position:absolute; top:-8px; left:50%; transform:translateX(-50%);
+    font-size:2rem; color:var(--rose); z-index:5; line-height:1;
+    filter:drop-shadow(0 2px 4px rgba(0,0,0,0.25));
+  }
+  .wheel-spin-btn{
+    position:absolute; top:50%; left:50%; transform:translate(-50%,-50%);
+    width:60px; height:60px; border-radius:50%; z-index:6;
+    background:var(--ink); color:#fff; border:3px solid #fff; cursor:pointer;
+    font-family:var(--mono); font-weight:700; font-size:0.78rem; letter-spacing:0.03em;
+    box-shadow:0 4px 14px rgba(18,32,61,0.35);
+  }
+  .wheel-spin-btn:hover{ background:var(--teal); }
+  .wheel-spin-btn:disabled{ opacity:0.6; cursor:default; }
+  .wheel-result{
+    max-width:420px; margin:26px auto 0; text-align:center;
+    max-height:0; overflow:hidden; opacity:0;
+    transition:max-height 0.5s ease, opacity 0.4s ease;
+  }
+  .wheel-result.show{ max-height:220px; opacity:1; }
+  .wheel-result-inner{
+    background:var(--teal-soft); border:1px solid rgba(31,143,115,0.3); border-radius:14px; padding:22px;
+  }
+  .wheel-result-label{
+    font-family:var(--mono); font-size:0.74rem; color:var(--teal); text-transform:uppercase; letter-spacing:0.04em; font-weight:700;
+  }
+  .wheel-result-inner h3{ font-family:var(--display); font-size:1.3rem; margin:8px 0 16px; color:var(--ink); }
+  .wheel-result-btn{
+    display:inline-block; background:var(--ink); color:#fff; padding:11px 24px; border-radius:8px;
+    font-weight:600; font-size:0.9rem; text-decoration:none;
+  }
+  .wheel-result-btn:hover{ background:var(--teal); }
+  @media (max-width:480px){
+    .wheel-spin-btn{ width:50px; height:50px; font-size:0.68rem; }
+  }
 
   /* ---------------- CHECKLIST ---------------- */
   .checklist{display:grid; grid-template-columns:repeat(2,1fr); gap:14px;}
@@ -717,23 +788,32 @@
 
       <div class="nav-item">
         <button class="nav-trigger" type="button">Blogs<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg></button>
-        <div class="dropdown-panel wide">
-          <a class="dd-link" href="blogs/how-to-check-improve-cibil-score.html">How to Check &amp; Improve Your CIBIL Score</a>
-          <a class="dd-link" href="blogs/term-vs-life-insurance.html">Term Insurance vs Life Insurance</a>
-          <a class="dd-link" href="blogs/company-health-insurance-gaps.html">What Company Health Insurance Doesn't Cover</a>
-          <a class="dd-link" href="blogs/hra-exemption-explained.html">HRA Exemption Explained</a>
-          <a class="dd-link" href="blogs/form-16-explained.html">Form 16 Explained</a>
-          <a class="dd-link" href="blogs/nps-vs-ppf-vs-epf.html">NPS vs PPF vs EPF</a>
-          <a class="dd-link" href="blogs/sip-taxation-explained.html">How Mutual Fund SIPs Are Taxed</a>
-          <a class="dd-link" href="blogs/credit-card-minimum-due-trap.html">The Credit Card Minimum-Due Trap</a>
-          <a class="dd-link" href="blogs/freelancing-gst-invoicing.html">Freelancing? How GST &amp; Invoicing Work</a>
-          <a class="dd-link" href="blogs/crypto-tax-india.html">How Crypto Gains Are Taxed in India</a>
-          <a class="dd-link" href="blogs/property-tds-short-deduction-notice.html">Property TDS Short Deduction Notice: The Fix</a>
-          <a class="dd-link" href="blogs/10-common-mistakes-people-make-while-e-filing-their-itr-ay-2026-27-1.html">Common Mistakes While E-Filing Your ITR</a>
-          <a class="dd-link" href="blogs/prepay-home-loan-or-invest.html">Prepay Home Loan or Invest? The Real Math</a>
-          <a class="dd-link" href="blogs/korea-stock-market-crash-lessons-for-india.html">Korea's Stock Crash: Lessons for Indian Investors</a>
-          <a class="dd-link" href="blogs/sebi-closing-auction-session-cas-explained.html">SEBI's Closing Auction Session (CAS) Explained</a>
-          <a class="dd-link dd-viewall" href="blogs/blogs.html">View all 24 blogs →</a>
+        <div class="dropdown-panel wide blog-dropdown">
+          <div class="dd-category">
+            <div class="dd-cat-title">Taxation</div>
+            <a class="dd-link" href="blogs/hra-exemption-explained.html">HRA Exemption Explained</a>
+            <a class="dd-link" href="blogs/form-16-explained.html">Form 16 Explained</a>
+            <a class="dd-link" href="blogs/freelancing-gst-invoicing.html">Freelancing? GST &amp; Invoicing</a>
+            <a class="dd-link" href="blogs/crypto-tax-india.html">How Crypto Gains Are Taxed</a>
+            <a class="dd-link" href="blogs/property-tds-short-deduction-notice.html">Property TDS Notice: The Fix</a>
+            <a class="dd-link" href="blogs/10-common-mistakes-people-make-while-e-filing-their-itr-ay-2026-27-1.html">Common ITR Filing Mistakes</a>
+          </div>
+          <div class="dd-category">
+            <div class="dd-cat-title">Investing &amp; Markets</div>
+            <a class="dd-link" href="blogs/sip-taxation-explained.html">How SIPs Are Actually Taxed</a>
+            <a class="dd-link" href="blogs/nps-vs-ppf-vs-epf.html">NPS vs PPF vs EPF</a>
+            <a class="dd-link" href="blogs/prepay-home-loan-or-invest.html">Prepay Home Loan or Invest?</a>
+            <a class="dd-link" href="blogs/korea-stock-market-crash-lessons-for-india.html">Korea's Stock Crash: Lessons for India</a>
+            <a class="dd-link" href="blogs/sebi-closing-auction-session-cas-explained.html">SEBI's Closing Auction Session (CAS)</a>
+          </div>
+          <div class="dd-category">
+            <div class="dd-cat-title">Personal Finance &amp; Protection</div>
+            <a class="dd-link" href="blogs/how-to-check-improve-cibil-score.html">Check &amp; Improve Your CIBIL Score</a>
+            <a class="dd-link" href="blogs/term-vs-life-insurance.html">Term vs Life Insurance</a>
+            <a class="dd-link" href="blogs/company-health-insurance-gaps.html">Company Health Insurance Gaps</a>
+            <a class="dd-link" href="blogs/credit-card-minimum-due-trap.html">Credit Card Minimum-Due Trap</a>
+          </div>
+          <a class="dd-link dd-viewall blog-dropdown-viewall" href="blogs/blogs.html">View all 24 blogs →</a>
         </div>
       </div>
 
@@ -1994,6 +2074,49 @@
   </div>
 </section>
 
+
+<section class="block" id="spin-wheel">
+  <div class="wrap">
+    <div class="kicker"><span class="seg">Feeling lucky?</span></div>
+    <div class="block-head">
+      <h2>Spin the wheel, get a free answer</h2>
+      <p>Not sure where to start? Spin it — you'll land on a calculator, a guide, or a chance to talk to a CA, free either way.</p>
+    </div>
+
+    <div class="wheel-container">
+      <div class="wheel-pointer">▼</div>
+      <div class="wheel-outer">
+        <svg class="wheel-svg" id="spinWheelSvg" viewBox="0 0 340 340" xmlns="http://www.w3.org/2000/svg">
+          <g id="wheelGroup">
+    <path d="M170,170 L170.0,10.0 A160,160 0 0 1 308.6,90.0 Z" fill="#12203D" stroke="#fff" stroke-width="2"/>
+    <path d="M170,170 L308.6,90.0 A160,160 0 0 1 308.6,250.0 Z" fill="#1F8F73" stroke="#fff" stroke-width="2"/>
+    <path d="M170,170 L308.6,250.0 A160,160 0 0 1 170.0,330.0 Z" fill="#A8781E" stroke="#fff" stroke-width="2"/>
+    <path d="M170,170 L170.0,330.0 A160,160 0 0 1 31.4,250.0 Z" fill="#12203D" stroke="#fff" stroke-width="2"/>
+    <path d="M170,170 L31.4,250.0 A160,160 0 0 1 31.4,90.0 Z" fill="#1F8F73" stroke="#fff" stroke-width="2"/>
+    <path d="M170,170 L31.4,90.0 A160,160 0 0 1 170.0,10.0 Z" fill="#C6432F" stroke="#fff" stroke-width="2"/>
+    <text x="219.6" y="84.1" fill="#fff" font-family="Inter, sans-serif" font-size="12.5" font-weight="700" text-anchor="middle" transform="rotate(30.0 219.6 84.1)">HRA Calculator</text>
+    <text x="269.2" y="170.0" fill="#fff" font-family="Inter, sans-serif" font-size="12.5" font-weight="700" text-anchor="middle" transform="rotate(90.0 269.2 170.0)">Income Tax Calc</text>
+    <text x="219.6" y="255.9" fill="#fff" font-family="Inter, sans-serif" font-size="12.5" font-weight="700" text-anchor="middle" transform="rotate(330.0 219.6 255.9)">Prepay or Invest?</text>
+    <text x="120.4" y="255.9" fill="#fff" font-family="Inter, sans-serif" font-size="12.5" font-weight="700" text-anchor="middle" transform="rotate(390.0 120.4 255.9)">Loan EMI Calc</text>
+    <text x="70.8" y="170.0" fill="#fff" font-family="Inter, sans-serif" font-size="12.5" font-weight="700" text-anchor="middle" transform="rotate(270.0 70.8 170.0)">Property TDS Calc</text>
+    <text x="120.4" y="84.1" fill="#fff" font-family="Inter, sans-serif" font-size="12.5" font-weight="700" text-anchor="middle" transform="rotate(330.0 120.4 84.1)">Talk to a CA</text>
+          </g>
+          <circle cx="170" cy="170" r="34" fill="#fff" stroke="var(--border-2)" stroke-width="2"/>
+        </svg>
+        <button class="wheel-spin-btn" id="wheelSpinBtn">SPIN</button>
+      </div>
+    </div>
+
+    <div class="wheel-result" id="wheelResult">
+      <div class="wheel-result-inner">
+        <span class="wheel-result-label">You got</span>
+        <h3 id="wheelResultTitle">—</h3>
+        <a class="wheel-result-btn" id="wheelResultBtn" href="#">Open it →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="block alt" id="ebooks">
   <div class="wrap">
     <div class="kicker"><span class="seg">Ebooks</span> — ₹50 each</div>
@@ -2438,6 +2561,62 @@
       }
     });
   });
+
+  // ---------------- Spin the wheel ----------------
+  (function(){
+    var spinBtn = document.getElementById('wheelSpinBtn');
+    var wheelGroup = document.getElementById('wheelGroup');
+    var resultBox = document.getElementById('wheelResult');
+    var resultTitle = document.getElementById('wheelResultTitle');
+    var resultBtn = document.getElementById('wheelResultBtn');
+    if (!spinBtn || !wheelGroup) return;
+
+    var segments = [
+      { label: "HRA Calculator", url: "calculators/hra-exemption-calculator.html", centerAngle: 30 },
+      { label: "Income Tax Calculator", url: "calculators/income-tax-calculator.html", centerAngle: 90 },
+      { label: "Prepay or Invest Guide", url: "blogs/prepay-home-loan-or-invest.html", centerAngle: 150 },
+      { label: "Loan EMI Calculator", url: "calculators/loan-emi-calculator.html", centerAngle: 210 },
+      { label: "Property TDS Calculator", url: "calculators/tds-on-property-calculator.html", centerAngle: 270 },
+      { label: "Talk to a CA (₹500 call)", url: "#book-expert", centerAngle: 330 }
+    ];
+
+    var currentRotation = 0;
+    var spinning = false;
+
+    spinBtn.addEventListener('click', function(){
+      if (spinning) return;
+      spinning = true;
+      spinBtn.disabled = true;
+      resultBox.classList.remove('show');
+
+      var chosenIndex = Math.floor(Math.random() * segments.length);
+      var chosen = segments[chosenIndex];
+
+      // We need the chosen segment's center to end up at the top (0deg, where the pointer is).
+      // A point originally at angle A ends up at (A + rotation) mod 360 after rotating by `rotation`.
+      // We want (chosen.centerAngle + rotation) mod 360 == 0, so rotation mod 360 == (360 - chosen.centerAngle) mod 360.
+      var desiredMod = (360 - chosen.centerAngle) % 360;
+      var currentMod = ((currentRotation % 360) + 360) % 360;
+      var forwardDelta = (desiredMod - currentMod + 360) % 360;
+      var extraFullSpins = 6; // purely visual, makes the spin feel substantial
+      var newRotation = currentRotation + extraFullSpins * 360 + forwardDelta;
+
+      currentRotation = newRotation;
+      wheelGroup.style.transform = 'rotate(' + currentRotation + 'deg)';
+
+      if (typeof gtag === 'function') {
+        gtag('event', 'spin_wheel_used', { 'result': chosen.label });
+      }
+
+      setTimeout(function(){
+        resultTitle.textContent = chosen.label;
+        resultBtn.setAttribute('href', chosen.url);
+        resultBox.classList.add('show');
+        spinBtn.disabled = false;
+        spinning = false;
+      }, 4600); // slightly longer than the 4.5s CSS transition, so it lands before we reveal the result
+    });
+  })();
 
   // ---------------- Bulletin strip: auto-rotate latest posts ----------------
   (function(){
