@@ -10,6 +10,9 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy({ "static/terms-of-use.html": "terms-of-use.html" });
   eleventyConfig.addPassthroughCopy({ "static/disclaimer.html": "disclaimer.html" });
   eleventyConfig.addPassthroughCopy({ "static/reviews.html": "reviews.html" });
+  eleventyConfig.addPassthroughCopy({ "static/ebooks.html": "ebooks.html" });
+  eleventyConfig.addPassthroughCopy({ "static/trackers.html": "trackers.html" });
+  eleventyConfig.addPassthroughCopy({ "static/services.html": "services.html" });
   eleventyConfig.addPassthroughCopy({ "static/robots.txt": "robots.txt" });
   eleventyConfig.addPassthroughCopy({ "static/sitemap.xml": "sitemap.xml" });
   eleventyConfig.addPassthroughCopy({ "static/blogs/blogs.html": "blogs/blogs.html" });

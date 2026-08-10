@@ -717,16 +717,34 @@
   }
   .wa-btn:hover{background:#1fb956;}
   .wa-btn svg{width:16px; height:16px; flex:0 0 auto;}
+
+  /* ---- category cards (calculators / blogs / guides) ---- */
+  .cat-grid{
+    display:grid; grid-template-columns:repeat(auto-fit, minmax(240px, 1fr)); gap:18px; margin-top:8px;
+  }
+  .cat-card{
+    background:#fff; border:1px solid var(--border); border-radius:14px; padding:20px;
+    display:flex; flex-direction:column;
+  }
+  .cat-card-head{ display:flex; align-items:center; gap:10px; margin-bottom:14px; }
+  .cat-icon{
+    width:36px; height:36px; border-radius:10px; display:flex; align-items:center; justify-content:center; flex:0 0 auto;
+  }
+  .cat-icon svg{ width:18px; height:18px; }
+  .cat-card h3{ font-family:var(--display); font-size:1.02rem; margin:0; color:var(--ink); }
+  .cat-link{
+    display:block; padding:8px 4px; font-size:0.88rem; color:var(--text-dim);
+    border-top:1px solid var(--border); text-decoration:none;
+  }
+  .cat-link:first-of-type{ border-top:none; }
+  .cat-link:hover{ color:var(--teal); }
+  .cat-viewall{
+    display:inline-block; font-weight:600; font-size:0.88rem; color:var(--gold);
+    text-decoration:none; padding:8px 18px; border:1px solid var(--gold); border-radius:999px;
+  }
+  .cat-viewall:hover{ background:var(--gold-soft); }
+
 </style>
-</head>
-<body>
-
-<div class="announce-bar" id="announceBar">
-  <span class="flag">🚨</span>
-  Korea's stock market just crashed 27% — <a href="blogs/korea-stock-market-crash-lessons-for-india.html">see what Indian investors need to know →</a>
-  <button class="announce-close" id="announceClose" aria-label="Dismiss announcement">✕</button>
-</div>
-
 <header>
   <div class="wrap nav">
     <div class="brand"><span class="mark">₹</span>Paisa Stack</div>
@@ -762,27 +780,27 @@
       <div class="nav-item">
         <button class="nav-trigger" type="button">Ebooks<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg></button>
         <div class="dropdown-panel wide">
-          <a class="dd-link" href="#ebooks">01. The First Payslip Playbook</a>
-          <a class="dd-link" href="#ebooks">02. Old vs New Regime, Decided</a>
-          <a class="dd-link" href="#ebooks">03. Where Every Rupee Should Go</a>
-          <a class="dd-link" href="#ebooks">04. 10 Businesses Under ₹50,000</a>
-          <a class="dd-link" href="#ebooks">05. Emails That Get Replies</a>
-          <a class="dd-link" href="#ebooks">06. 50 Excel Shortcuts</a>
-          <a class="dd-link" href="#ebooks">07. Legal Ways to Pay Less Tax</a>
-          <a class="dd-link" href="#ebooks">08. Your First Month at a New Job</a>
-          <a class="dd-link" href="#ebooks">09. Salary Negotiation, Script Included</a>
-          <a class="dd-link" href="#ebooks">10. Buying Your First Property</a>
+          <a class="dd-link" href="ebooks.html">01. The First Payslip Playbook</a>
+          <a class="dd-link" href="ebooks.html">02. Old vs New Regime, Decided</a>
+          <a class="dd-link" href="ebooks.html">03. Where Every Rupee Should Go</a>
+          <a class="dd-link" href="ebooks.html">04. 10 Businesses Under ₹50,000</a>
+          <a class="dd-link" href="ebooks.html">05. Emails That Get Replies</a>
+          <a class="dd-link" href="ebooks.html">06. 50 Excel Shortcuts</a>
+          <a class="dd-link" href="ebooks.html">07. Legal Ways to Pay Less Tax</a>
+          <a class="dd-link" href="ebooks.html">08. Your First Month at a New Job</a>
+          <a class="dd-link" href="ebooks.html">09. Salary Negotiation, Script Included</a>
+          <a class="dd-link" href="ebooks.html">10. Buying Your First Property</a>
         </div>
       </div>
 
       <div class="nav-item">
         <button class="nav-trigger" type="button">Trackers<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg></button>
         <div class="dropdown-panel">
-          <a class="dd-link" href="#trackers">Monthly Budget Tracker <span style="color:var(--teal); font-weight:600;">· Free</span></a>
-          <a class="dd-link" href="#trackers">Wedding Planner Tracker <span style="color:var(--teal); font-weight:600;">· Free</span></a>
-          <a class="dd-link" href="#trackers">Travel &amp; Vacation Tracker <span style="color:var(--teal); font-weight:600;">· Free</span></a>
-          <a class="dd-link" href="#trackers">Debt &amp; EMI Payoff Tracker <span style="color:var(--teal); font-weight:600;">· Free</span></a>
-          <a class="dd-link" href="#trackers">Festival &amp; Gifting Tracker <span style="color:var(--teal); font-weight:600;">· Free</span></a>
+          <a class="dd-link" href="trackers.html">Monthly Budget Tracker <span style="color:var(--teal); font-weight:600;">· Free</span></a>
+          <a class="dd-link" href="trackers.html">Wedding Planner Tracker <span style="color:var(--teal); font-weight:600;">· Free</span></a>
+          <a class="dd-link" href="trackers.html">Travel &amp; Vacation Tracker <span style="color:var(--teal); font-weight:600;">· Free</span></a>
+          <a class="dd-link" href="trackers.html">Debt &amp; EMI Payoff Tracker <span style="color:var(--teal); font-weight:600;">· Free</span></a>
+          <a class="dd-link" href="trackers.html">Festival &amp; Gifting Tracker <span style="color:var(--teal); font-weight:600;">· Free</span></a>
         </div>
       </div>
 
@@ -833,16 +851,16 @@
         <button class="nav-trigger" type="button">Services<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg></button>
         <div class="dropdown-panel">
           <a class="dd-link" href="#book-expert">Book a Finance Expert (₹500 call)</a>
-          <a class="dd-link" href="#services">ITR Filing</a>
-          <a class="dd-link" href="#services">Apply New PAN / Update PAN</a>
-          <a class="dd-link" href="#services">TDS Return Filing</a>
-          <a class="dd-link" href="#services">TDS on Property Consultancy</a>
+          <a class="dd-link" href="services.html">ITR Filing</a>
+          <a class="dd-link" href="services.html">Apply New PAN / Update PAN</a>
+          <a class="dd-link" href="services.html">TDS Return Filing</a>
+          <a class="dd-link" href="services.html">TDS on Property Consultancy</a>
         </div>
       </div>
 
       <a href="reviews.html">Review</a>
     </nav>
-    <a href="#tools" class="nav-cta">Try the tools</a>
+    <a href="calculators/index.html" class="nav-cta">Try the tools</a>
   </div>
 </header>
 
@@ -867,7 +885,7 @@
       <h1>Master your money with <span class="hl">free calculators, guides, and real tax help.</span></h1>
       <p class="lede">Everything you need to handle tax, salary, loans, property, and investing — in one place, explained without the jargon.</p>
       <div class="hero-ctas">
-        <a href="#tools" class="btn primary">Try the calculators</a>
+        <a href="calculators/index.html" class="btn primary">Try the calculators</a>
         <a href="#guides" class="btn ghost">Read the guides</a>
       </div>
     </div>
@@ -903,12 +921,12 @@
   <div class="start-here">
     <span class="start-here-label">Start here</span>
     <div class="start-here-steps">
-      <a href="#tools" class="start-step">
+      <a href="calculators/index.html" class="start-step">
         <span class="step-num">1</span>
         <span class="step-text">Free Tax Calculator</span>
       </a>
       <span class="step-arrow">→</span>
-      <a href="#ebooks" class="start-step">
+      <a href="ebooks.html" class="start-step">
         <span class="step-num">2</span>
         <span class="step-text">Download an Ebook</span>
       </a>
@@ -922,886 +940,236 @@
 </div>
 </div>
 
-<section class="block alt">
+<section class="block" id="spin-wheel">
   <div class="wrap">
-    <div class="kicker"><span class="seg">Start here</span> — does this sound like you?</div>
+    <div class="kicker"><span class="seg">Feeling lucky?</span></div>
     <div class="block-head">
-      <h2>You're not bad with money. Nobody just explained it to you.</h2>
-      <p>If two or more of these are true, you're exactly who this is built for.</p>
+      <h2>Spin the wheel, get a free answer</h2>
+      <p>Not sure where to start? Spin it — you'll land on a calculator, a guide, or a chance to talk to a CA, free either way.</p>
     </div>
-    <div class="checklist">
-      <div class="check-item"><span class="box">✓</span><p>You got your first payslip and still don't fully know what <span>every deduction line actually means.</span></p></div>
-      <div class="check-item"><span class="box">✓</span><p>You've switched jobs a couple of times and now have <span>provident fund sitting in accounts you've lost track of.</span></p></div>
-      <div class="check-item"><span class="box">✓</span><p>You have stock options or RSUs vesting and <span>genuinely don't know when or how they get taxed.</span></p></div>
-      <div class="check-item"><span class="box">✓</span><p>You started a SIP because a friend said to, <span>with no real number behind why or how much.</span></p></div>
-      <div class="check-item"><span class="box">✓</span><p>You're buying a home soon and someone mentioned <span>a tax deduction you need to handle at registration.</span></p></div>
-      <div class="check-item"><span class="box">✓</span><p>Every year you scramble in the last week for <span>tax-saving proofs you should've planned months earlier.</span></p></div>
+
+    <div class="wheel-container">
+      <div class="wheel-pointer">▼</div>
+      <div class="wheel-outer">
+        <svg class="wheel-svg" id="spinWheelSvg" viewBox="0 0 340 340" xmlns="http://www.w3.org/2000/svg">
+          <g id="wheelGroup">
+    <path d="M170,170 L170.0,10.0 A160,160 0 0 1 308.6,90.0 Z" fill="#12203D" stroke="#fff" stroke-width="2"/>
+    <path d="M170,170 L308.6,90.0 A160,160 0 0 1 308.6,250.0 Z" fill="#1F8F73" stroke="#fff" stroke-width="2"/>
+    <path d="M170,170 L308.6,250.0 A160,160 0 0 1 170.0,330.0 Z" fill="#A8781E" stroke="#fff" stroke-width="2"/>
+    <path d="M170,170 L170.0,330.0 A160,160 0 0 1 31.4,250.0 Z" fill="#12203D" stroke="#fff" stroke-width="2"/>
+    <path d="M170,170 L31.4,250.0 A160,160 0 0 1 31.4,90.0 Z" fill="#1F8F73" stroke="#fff" stroke-width="2"/>
+    <path d="M170,170 L31.4,90.0 A160,160 0 0 1 170.0,10.0 Z" fill="#C6432F" stroke="#fff" stroke-width="2"/>
+    <text x="218.0" y="86.9" fill="#fff" font-family="Inter, sans-serif" font-size="12" font-weight="700" text-anchor="middle" transform="rotate(30.0 218.0 86.9)"><tspan x="218.0" dy="-4">HRA</tspan><tspan x="218.0" dy="14">Calculator</tspan></text>
+    <text x="266.0" y="170.0" fill="#fff" font-family="Inter, sans-serif" font-size="12" font-weight="700" text-anchor="middle" transform="rotate(90.0 266.0 170.0)"><tspan x="266.0" dy="-4">Income Tax</tspan><tspan x="266.0" dy="14">Calculator</tspan></text>
+    <text x="218.0" y="253.1" fill="#fff" font-family="Inter, sans-serif" font-size="12" font-weight="700" text-anchor="middle" transform="rotate(330.0 218.0 253.1)"><tspan x="218.0" dy="-4">Prepay or</tspan><tspan x="218.0" dy="14">Invest?</tspan></text>
+    <text x="122.0" y="253.1" fill="#fff" font-family="Inter, sans-serif" font-size="12" font-weight="700" text-anchor="middle" transform="rotate(390.0 122.0 253.1)"><tspan x="122.0" dy="-4">Loan EMI</tspan><tspan x="122.0" dy="14">Calculator</tspan></text>
+    <text x="74.0" y="170.0" fill="#fff" font-family="Inter, sans-serif" font-size="12" font-weight="700" text-anchor="middle" transform="rotate(270.0 74.0 170.0)"><tspan x="74.0" dy="-4">Property TDS</tspan><tspan x="74.0" dy="14">Calculator</tspan></text>
+    <text x="122.0" y="86.9" fill="#fff" font-family="Inter, sans-serif" font-size="12" font-weight="700" text-anchor="middle" transform="rotate(330.0 122.0 86.9)"><tspan x="122.0" dy="-4">Talk to</tspan><tspan x="122.0" dy="14">a CA</tspan></text>
+          </g>
+          <circle cx="170" cy="170" r="34" fill="#fff" stroke="var(--border-2)" stroke-width="2"/>
+        </svg>
+        <button class="wheel-spin-btn" id="wheelSpinBtn">SPIN</button>
+      </div>
+    </div>
+
+    <div class="wheel-result" id="wheelResult">
+      <div class="wheel-result-inner">
+        <span class="wheel-result-label">You got</span>
+        <h3 id="wheelResultTitle">—</h3>
+        <a class="wheel-result-btn" id="wheelResultBtn" href="#">Open it →</a>
+      </div>
     </div>
   </div>
 </section>
 
-<section class="block" id="tools">
+<section class="block" id="calc-categories">
   <div class="wrap">
-    <div class="kicker"><span class="seg">Tools</span> — no sign-up, nothing saved</div>
+    <div class="kicker"><span class="seg">15 Free Calculators</span></div>
     <div class="block-head">
-      <h2>15 calculators for the moments that actually confuse people</h2>
-      <p>Tax, salary, property, loans, and savings schemes — type in your own numbers and get a straight answer. Everything runs right here in your browser — nothing is sent anywhere.</p>
+      <h2>Find the calculator you actually need</h2>
+      <p>Grouped by what you're trying to figure out — click straight through to the tool.</p>
     </div>
+    <div class="cat-grid">
 
-    <div class="tool-tabs" role="tablist" aria-label="Calculators">
-      <button class="tool-tab" role="tab" data-panel="t-tds" aria-selected="true">TDS on property</button>
-      <button class="tool-tab" role="tab" data-panel="t-tax" aria-selected="false">Income tax</button>
-      <button class="tool-tab" role="tab" data-panel="t-hra" aria-selected="false">HRA exemption</button>
-      <button class="tool-tab" role="tab" data-panel="t-capgains" aria-selected="false">Capital gains</button>
-      <button class="tool-tab" role="tab" data-panel="t-rentbuy" aria-selected="false">Rent vs buy</button>
-      <button class="tool-tab" role="tab" data-panel="t-salary" aria-selected="false">Salary / in-hand</button>
-      <button class="tool-tab" role="tab" data-panel="t-gratuity" aria-selected="false">Gratuity</button>
-      <button class="tool-tab" role="tab" data-panel="t-freelance" aria-selected="false">Freelance tax (44ADA)</button>
-      <button class="tool-tab" role="tab" data-panel="t-emi" aria-selected="false">Loan EMI</button>
-      <button class="tool-tab" role="tab" data-panel="t-prepay" aria-selected="false">Loan prepayment</button>
-      <button class="tool-tab" role="tab" data-panel="t-inv" aria-selected="false">Investment returns</button>
-      <button class="tool-tab" role="tab" data-panel="t-goal" aria-selected="false">Goal planner</button>
-      <button class="tool-tab" role="tab" data-panel="t-ppf" aria-selected="false">PPF</button>
-      <button class="tool-tab" role="tab" data-panel="t-epf" aria-selected="false">EPF</button>
-      <button class="tool-tab" role="tab" data-panel="t-nps" aria-selected="false">NPS</button>
-    </div>
-
-    <!-- TDS -->
-    <div class="tool-panel active" id="t-tds">
-      <div class="tool-window">
-        <div class="tool-titlebar">
-          <div class="dots"><span class="dot" style="background:#C6432F"></span><span class="dot" style="background:#A8781E"></span><span class="dot" style="background:#1F8F73"></span></div>
-          <span class="name">TDS when buying property (Section 194-IA)</span>
+      <div class="cat-card">
+        <div class="cat-card-head">
+          <span class="cat-icon" style="background:var(--teal-soft); color:var(--teal);">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 9h6M9 13h6M9 17h4"/></svg>
+          </span>
+          <h3>Taxation</h3>
         </div>
-        <div class="tool-grid">
-          <div class="tool-form">
-            <div class="field">
-              <div class="field-label"><span>Agreed sale price</span><span class="val" id="tds-price-val">₹75,00,000</span></div>
-              <input type="number" id="tds-price" value="7500000" step="100000" min="0">
-              <input type="range" id="tds-price-range" value="7500000" step="50000" min="0" max="50000000">
-            </div>
-            <div class="field">
-              <div class="field-label"><span>Stamp duty value</span><span class="val" id="tds-stamp-val">₹75,00,000</span></div>
-              <input type="number" id="tds-stamp" value="7500000" step="100000" min="0">
-              <input type="range" id="tds-stamp-range" value="7500000" step="50000" min="0" max="50000000">
-              <div class="field-hint">TDS uses whichever of these two is higher. If unsure, keep them equal.</div>
-            </div>
-            <div class="field">
-              <div class="field-label"><span>Seller has PAN on record?</span></div>
-              <div class="seg" id="tds-pan">
-                <button data-val="yes" aria-pressed="true">Yes</button>
-                <button data-val="no" aria-pressed="false">No PAN</button>
-              </div>
-            </div>
-          </div>
-          <div class="tool-out">
-            <div class="result-hero" id="tds-hero">
-              <div class="rl">TDS to deduct</div>
-              <div class="rv" id="tds-rv">₹75,000</div>
-              <div class="rn" id="tds-rn">Deduct this before paying the seller.</div>
-            </div>
-            <div class="console">
-              <div class="l"><span class="k">Value used</span><span class="v" id="tds-base">₹75,00,000</span></div>
-              <div class="l"><span class="k">Rate applied</span><span class="v" id="tds-rate">1%</span></div>
-              <div class="l hl"><span class="k">TDS amount</span><span class="v" id="tds-amt">₹75,000</span></div>
-              <div class="l good"><span class="k">Net to seller</span><span class="v" id="tds-net">₹74,25,000</span></div>
-            </div>
-            <div class="note-flag">File via <b>Form 26QB</b> within 30 days of month-end, then hand the seller <b>Form 16B</b>.</div>
-          </div>
-        </div>
+        <a class="cat-link" href="calculators/income-tax-calculator.html">Income Tax Calculator</a>
+        <a class="cat-link" href="calculators/hra-exemption-calculator.html">HRA Exemption Calculator</a>
+        <a class="cat-link" href="calculators/capital-gains-calculator.html">Capital Gains Calculator</a>
+        <a class="cat-link" href="calculators/tds-on-property-calculator.html">TDS on Property Calculator</a>
+        <a class="cat-link" href="calculators/freelance-tax-44ada-calculator.html">Freelance Tax (44ADA) Calculator</a>
       </div>
-    </div>
 
-    <!-- TAX -->
-    <div class="tool-panel" id="t-tax">
-      <div class="tool-window">
-        <div class="tool-titlebar">
-          <div class="dots"><span class="dot" style="background:#C6432F"></span><span class="dot" style="background:#A8781E"></span><span class="dot" style="background:#1F8F73"></span></div>
-          <span class="name">Income tax — FY 2026-27</span>
+      <div class="cat-card">
+        <div class="cat-card-head">
+          <span class="cat-icon" style="background:var(--gold-soft); color:var(--gold);">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V7l7-4 7 4v14M9 9h1M9 13h1M14 9h1M14 13h1"/></svg>
+          </span>
+          <h3>Loans &amp; Property</h3>
         </div>
-        <div class="tool-grid">
-          <div class="tool-form">
-            <div class="field">
-              <div class="field-label"><span>Gross annual income</span><span class="val" id="tax-income-val">₹12,00,000</span></div>
-              <input type="number" id="tax-income" value="1200000" step="50000" min="0">
-              <input type="range" id="tax-income-range" value="1200000" step="10000" min="0" max="50000000">
-            </div>
-            <div class="field">
-              <div class="toggle-row">
-                <span class="field-label" style="margin:0;">I'm a salaried employee</span>
-                <label class="switch"><input type="checkbox" id="tax-salaried" checked><span class="track"></span><span class="thumb"></span></label>
-              </div>
-              <div class="field-hint">Standard deduction: ₹75,000 (new regime) or ₹50,000 (old regime).</div>
-            </div>
-            <div class="field">
-              <div class="field-label"><span>80C &amp; other old-regime deductions</span><span class="val" id="tax-ded-val">₹1,50,000</span></div>
-              <input type="number" id="tax-ded" value="150000" step="10000" min="0">
-              <input type="range" id="tax-ded-range" value="150000" step="5000" min="0" max="50000000">
-              <div class="field-hint">PPF, ELSS, home loan interest, 80D — these only count under the old regime.</div>
-            </div>
-          </div>
-          <div class="tool-out">
-            <div class="result-hero calm" id="tax-hero">
-              <div class="rl">You save</div>
-              <div class="rv" id="tax-rv">₹0</div>
-              <div class="rn" id="tax-rn">by picking the cheaper regime.</div>
-            </div>
-            <div class="bar-wrap">
-              <div class="bar-item">
-                <div class="bar-top"><span class="nm">New regime</span><span class="amt" id="tax-new-amt">₹0</span></div>
-                <div class="bar-track"><div class="bar-fill" id="tax-new-bar" style="width:0%"></div></div>
-              </div>
-              <div class="bar-item">
-                <div class="bar-top"><span class="nm">Old regime</span><span class="amt" id="tax-old-amt">₹0</span></div>
-                <div class="bar-track"><div class="bar-fill" id="tax-old-bar" style="width:0%"></div></div>
-              </div>
-            </div>
-            <div class="console">
-              <div class="l"><span class="k">Taxable (new)</span><span class="v" id="tax-taxable-new">₹0</span></div>
-              <div class="l"><span class="k">Taxable (old)</span><span class="v" id="tax-taxable-old">₹0</span></div>
-              <div class="l hl"><span class="k">Tax payable</span><span class="v" id="tax-final">₹0/yr</span></div>
-            </div>
-            <div class="note-flag" id="tax-flag">Income up to ₹12,00,000 is effectively tax-free under the new regime via the Section 87A rebate.</div>
-          </div>
-        </div>
+        <a class="cat-link" href="calculators/loan-emi-calculator.html">Loan EMI Calculator</a>
+        <a class="cat-link" href="calculators/loan-prepayment-calculator.html">Loan Prepayment Calculator</a>
+        <a class="cat-link" href="calculators/rent-vs-buy-calculator.html">Rent vs Buy Calculator</a>
       </div>
-    </div>
 
-    <!-- EMI -->
-    <div class="tool-panel" id="t-emi">
-      <div class="tool-window">
-        <div class="tool-titlebar">
-          <div class="dots"><span class="dot" style="background:#C6432F"></span><span class="dot" style="background:#A8781E"></span><span class="dot" style="background:#1F8F73"></span></div>
-          <span class="name">Loan EMI calculator</span>
+      <div class="cat-card">
+        <div class="cat-card-head">
+          <span class="cat-icon" style="background:var(--teal-soft); color:var(--teal);">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 9V7a5 5 0 0 0-10 0v2"/><rect x="5" y="9" width="14" height="12" rx="2"/></svg>
+          </span>
+          <h3>Salary &amp; Retirement</h3>
         </div>
-        <div class="tool-grid">
-          <div class="tool-form">
-            <div class="field">
-              <div class="field-label"><span>Loan amount</span><span class="val" id="emi-amt-val">₹40,00,000</span></div>
-              <input type="number" id="emi-amt" value="4000000" step="100000" min="0">
-              <input type="range" id="emi-amt-range" value="4000000" step="50000" min="0" max="50000000">
-            </div>
-            <div class="field">
-              <div class="field-label"><span>Interest rate / year</span><span class="val" id="emi-rate-val">8.5%</span></div>
-              <input type="number" id="emi-rate" value="8.5" step="0.05" min="0" max="30">
-              <input type="range" id="emi-rate-range" value="8.5" step="0.05" min="1" max="20">
-            </div>
-            <div class="field">
-              <div class="field-label"><span>Tenure</span><span class="val" id="emi-years-val">20 yrs</span></div>
-              <input type="number" id="emi-years" value="20" step="1" min="1" max="35">
-              <input type="range" id="emi-years-range" value="20" step="1" min="1" max="35">
-            </div>
-          </div>
-          <div class="tool-out">
-            <div class="result-hero" id="emi-hero">
-              <div class="rl">Monthly EMI</div>
-              <div class="rv" id="emi-rv">₹34,714</div>
-              <div class="rn">Same amount every month, for the whole tenure.</div>
-            </div>
-            <div class="bar-wrap">
-              <div class="bar-item">
-                <div class="bar-top"><span class="nm">Principal</span><span class="amt" id="emi-principal-amt">₹0</span></div>
-                <div class="bar-track"><div class="bar-fill win" id="emi-principal-bar" style="width:0%"></div></div>
-              </div>
-              <div class="bar-item">
-                <div class="bar-top"><span class="nm">Interest</span><span class="amt" id="emi-interest-amt">₹0</span></div>
-                <div class="bar-track"><div class="bar-fill warn" id="emi-interest-bar" style="width:0%"></div></div>
-              </div>
-            </div>
-            <div class="console">
-              <div class="l"><span class="k">Total interest</span><span class="v" id="emi-total-interest">₹0</span></div>
-              <div class="l hl"><span class="k">Total payback</span><span class="v" id="emi-total-payment">₹0</span></div>
-            </div>
-            <div class="note-flag">A 1% higher rate or 5 extra years can swing total interest by lakhs — worth shopping around.</div>
-          </div>
-        </div>
+        <a class="cat-link" href="calculators/salary-in-hand-calculator.html">Salary / In-Hand Calculator</a>
+        <a class="cat-link" href="calculators/gratuity-calculator.html">Gratuity Calculator</a>
+        <a class="cat-link" href="calculators/ppf-calculator.html">PPF Calculator</a>
+        <a class="cat-link" href="calculators/epf-calculator.html">EPF Calculator</a>
+        <a class="cat-link" href="calculators/nps-calculator.html">NPS Calculator</a>
       </div>
-    </div>
 
-    <!-- INVESTMENT -->
-    <div class="tool-panel" id="t-inv">
-      <div class="tool-window">
-        <div class="tool-titlebar">
-          <div class="dots"><span class="dot" style="background:#C6432F"></span><span class="dot" style="background:#A8781E"></span><span class="dot" style="background:#1F8F73"></span></div>
-          <span class="name">Investment return projector</span>
+      <div class="cat-card">
+        <div class="cat-card-head">
+          <span class="cat-icon" style="background:var(--gold-soft); color:var(--gold);">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l4 2"/></svg>
+          </span>
+          <h3>Investing &amp; Goals</h3>
         </div>
-        <div class="tool-grid">
-          <div class="tool-form">
-            <div class="field">
-              <div class="seg" id="inv-mode">
-                <button data-val="sip" aria-pressed="true">Monthly SIP</button>
-                <button data-val="lump" aria-pressed="false">Lump sum</button>
-              </div>
-            </div>
-            <div class="field">
-              <div class="field-label"><span id="inv-amt-label">Monthly investment</span><span class="val" id="inv-amt-val">₹10,000</span></div>
-              <input type="number" id="inv-amt" value="10000" step="500" min="0">
-              <input type="range" id="inv-amt-range" value="10000" step="500" min="0" max="50000000">
-            </div>
-            <div class="field">
-              <div class="field-label"><span>Expected annual return</span><span class="val" id="inv-rate-val">12%</span></div>
-              <input type="number" id="inv-rate" value="12" step="0.5" min="0" max="30">
-              <input type="range" id="inv-rate-range" value="12" step="0.5" min="1" max="25">
-            </div>
-            <div class="field">
-              <div class="field-label"><span>Time horizon</span><span class="val" id="inv-years-val">15 yrs</span></div>
-              <input type="number" id="inv-years" value="15" step="1" min="1" max="40">
-              <input type="range" id="inv-years-range" value="15" step="1" min="1" max="40">
-            </div>
-          </div>
-          <div class="tool-out">
-            <div class="result-hero calm" id="inv-hero">
-              <div class="rl">Maturity value</div>
-              <div class="rv" id="inv-rv">₹0</div>
-              <div class="rn" id="inv-rn">projected value at the end of the term.</div>
-            </div>
-            <div class="bar-wrap">
-              <div class="bar-item">
-                <div class="bar-top"><span class="nm">Invested</span><span class="amt" id="inv-invested-amt">₹0</span></div>
-                <div class="bar-track"><div class="bar-fill" id="inv-invested-bar" style="width:0%"></div></div>
-              </div>
-              <div class="bar-item">
-                <div class="bar-top"><span class="nm">Growth</span><span class="amt" id="inv-growth-amt">₹0</span></div>
-                <div class="bar-track"><div class="bar-fill win" id="inv-growth-bar" style="width:0%"></div></div>
-              </div>
-            </div>
-            <div class="console">
-              <div class="l"><span class="k">Total invested</span><span class="v" id="inv-total-invested">₹0</span></div>
-              <div class="l hl"><span class="k">Estimated maturity</span><span class="v" id="inv-total-value">₹0</span></div>
-            </div>
-            <div class="note-flag">Ignores tax on gains and assumes a flat annual return — real markets are bumpier than this.</div>
-          </div>
-        </div>
+        <a class="cat-link" href="calculators/investment-return-calculator.html">Investment Return Calculator</a>
+        <a class="cat-link" href="calculators/goal-planner-calculator.html">Goal Planner Calculator</a>
       </div>
-    </div>
 
-    <!-- HRA -->
-    <div class="tool-panel" id="t-hra">
-      <div class="tool-window">
-        <div class="tool-titlebar">
-          <div class="dots"><span class="dot" style="background:#C6432F"></span><span class="dot" style="background:#A8781E"></span><span class="dot" style="background:#1F8F73"></span></div>
-          <span class="name">HRA exemption calculator</span>
-        </div>
-        <div class="tool-grid">
-          <div class="tool-form">
-            <div class="field">
-              <div class="field-label"><span>Basic salary (monthly)</span><span class="val" id="hra-basic-val">₹40,000</span></div>
-              <input type="number" id="hra-basic" value="40000" step="1000" min="0">
-              <input type="range" id="hra-basic-range" value="40000" step="1000" min="0" max="50000000">
-            </div>
-            <div class="field">
-              <div class="field-label"><span>HRA received (monthly)</span><span class="val" id="hra-received-val">₹20,000</span></div>
-              <input type="number" id="hra-received" value="20000" step="1000" min="0">
-              <input type="range" id="hra-received-range" value="20000" step="1000" min="0" max="50000000">
-            </div>
-            <div class="field">
-              <div class="field-label"><span>Rent paid (monthly)</span><span class="val" id="hra-rent-val">₹22,000</span></div>
-              <input type="number" id="hra-rent" value="22000" step="1000" min="0">
-              <input type="range" id="hra-rent-range" value="22000" step="1000" min="0" max="50000000">
-            </div>
-            <div class="field">
-              <div class="field-label"><span>City type</span></div>
-              <div class="seg" id="hra-city">
-                <button data-val="metro" aria-pressed="true">Metro</button>
-                <button data-val="nonmetro" aria-pressed="false">Non-metro</button>
-              </div>
-              <div class="field-hint">Metro = Delhi, Mumbai, Kolkata, Chennai (50% of basic). Others = 40% of basic.</div>
-            </div>
-          </div>
-          <div class="tool-out">
-            <div class="result-hero calm" id="hra-hero">
-              <div class="rl">Exempt HRA</div>
-              <div class="rv" id="hra-rv">₹0</div>
-              <div class="rn">per month — the tax-free portion of your HRA.</div>
-            </div>
-            <div class="console">
-              <div class="l"><span class="k">Actual HRA received</span><span class="v" id="hra-c1">₹0</span></div>
-              <div class="l"><span class="k">Rent − 10% of basic</span><span class="v" id="hra-c2">₹0</span></div>
-              <div class="l"><span class="k">% of basic (city limit)</span><span class="v" id="hra-c3">₹0</span></div>
-              <div class="l hl"><span class="k">Taxable HRA</span><span class="v" id="hra-taxable">₹0</span></div>
-            </div>
-            <div class="note-flag">HRA exemption only applies under the old tax regime, and only if you're actually paying rent with proof (receipts, rent agreement).</div>
-          </div>
-        </div>
-      </div>
     </div>
-
-    <!-- CAPITAL GAINS -->
-    <div class="tool-panel" id="t-capgains">
-      <div class="tool-window">
-        <div class="tool-titlebar">
-          <div class="dots"><span class="dot" style="background:#C6432F"></span><span class="dot" style="background:#A8781E"></span><span class="dot" style="background:#1F8F73"></span></div>
-          <span class="name">Capital gains (LTCG / STCG) calculator</span>
-        </div>
-        <div class="tool-grid">
-          <div class="tool-form">
-            <div class="field">
-              <div class="field-label"><span>Asset type</span></div>
-              <div class="seg" id="cg-asset">
-                <button data-val="equity" aria-pressed="true">Equity / MF</button>
-                <button data-val="debt" aria-pressed="false">Debt MF</button>
-                <button data-val="other" aria-pressed="false">Property / Gold</button>
-              </div>
-            </div>
-            <div class="field">
-              <div class="field-label"><span>Purchase price</span><span class="val" id="cg-buy-val">₹5,00,000</span></div>
-              <input type="number" id="cg-buy" value="500000" step="10000" min="0">
-              <input type="range" id="cg-buy-range" value="500000" step="10000" min="0" max="50000000">
-            </div>
-            <div class="field">
-              <div class="field-label"><span>Sale price</span><span class="val" id="cg-sell-val">₹8,00,000</span></div>
-              <input type="number" id="cg-sell" value="800000" step="10000" min="0">
-              <input type="range" id="cg-sell-range" value="800000" step="10000" min="0" max="50000000">
-            </div>
-            <div class="field">
-              <div class="field-label"><span>Holding period (months)</span><span class="val" id="cg-months-val">18 mo</span></div>
-              <input type="number" id="cg-months" value="18" step="1" min="0" max="480">
-              <input type="range" id="cg-months-range" value="18" step="1" min="0" max="120">
-            </div>
-            <div class="field" id="cg-oldprop-field" style="display:none;">
-              <div class="field-label"><span>Bought before 23 Jul 2024?</span></div>
-              <div class="seg" id="cg-oldprop">
-                <button data-val="no" aria-pressed="true">No</button>
-                <button data-val="yes" aria-pressed="false">Yes</button>
-              </div>
-              <div class="field-hint">Pre-July 2024 property/gold purchases can choose 20% with indexation instead — check with a CA, since that needs the Cost Inflation Index.</div>
-            </div>
-          </div>
-          <div class="tool-out">
-            <div class="result-hero" id="cg-hero">
-              <div class="rl">Tax on this gain</div>
-              <div class="rv" id="cg-rv">₹0</div>
-              <div class="rn" id="cg-rn">estimated capital gains tax.</div>
-            </div>
-            <div class="console">
-              <div class="l"><span class="k">Capital gain</span><span class="v" id="cg-gain">₹0</span></div>
-              <div class="l"><span class="k">Classification</span><span class="v" id="cg-class">—</span></div>
-              <div class="l"><span class="k">Rate applied</span><span class="v" id="cg-rate">—</span></div>
-              <div class="l hl"><span class="k">Tax payable</span><span class="v" id="cg-tax">₹0</span></div>
-            </div>
-            <div class="note-flag" id="cg-flag">Equity: 12-month LT threshold, 12.5% above ₹1.25L exemption/year. Below 12 months: 20% flat.</div>
-          </div>
-        </div>
-      </div>
+    <div style="text-align:center; margin-top:20px;">
+      <a href="calculators/index.html" class="cat-viewall">View all 15 calculators →</a>
     </div>
-
-    <!-- RENT VS BUY -->
-    <div class="tool-panel" id="t-rentbuy">
-      <div class="tool-window">
-        <div class="tool-titlebar">
-          <div class="dots"><span class="dot" style="background:#C6432F"></span><span class="dot" style="background:#A8781E"></span><span class="dot" style="background:#1F8F73"></span></div>
-          <span class="name">Rent vs buy calculator</span>
-        </div>
-        <div class="tool-grid">
-          <div class="tool-form">
-            <div class="field">
-              <div class="field-label"><span>Monthly rent (today)</span><span class="val" id="rb-rent-val">₹30,000</span></div>
-              <input type="number" id="rb-rent" value="30000" step="1000" min="0">
-              <input type="range" id="rb-rent-range" value="30000" step="1000" min="0" max="50000000">
-            </div>
-            <div class="field">
-              <div class="field-label"><span>Property price</span><span class="val" id="rb-price-val">₹75,00,000</span></div>
-              <input type="number" id="rb-price" value="7500000" step="100000" min="0">
-              <input type="range" id="rb-price-range" value="7500000" step="100000" min="0" max="50000000">
-            </div>
-            <div class="field">
-              <div class="field-label"><span>Down payment</span><span class="val" id="rb-down-val">20%</span></div>
-              <input type="number" id="rb-down" value="20" step="1" min="0" max="100">
-              <input type="range" id="rb-down-range" value="20" step="1" min="0" max="100">
-            </div>
-            <div class="field">
-              <div class="field-label"><span>Home loan rate</span><span class="val" id="rb-rate-val">8.5%</span></div>
-              <input type="number" id="rb-rate" value="8.5" step="0.1" min="0" max="20">
-              <input type="range" id="rb-rate-range" value="8.5" step="0.1" min="1" max="15">
-            </div>
-            <div class="field">
-              <div class="field-label"><span>Time horizon</span><span class="val" id="rb-years-val">10 yrs</span></div>
-              <input type="number" id="rb-years" value="10" step="1" min="1" max="30">
-              <input type="range" id="rb-years-range" value="10" step="1" min="1" max="30">
-            </div>
-            <div class="field">
-              <div class="field-label"><span>Expected property growth / yr</span><span class="val" id="rb-appr-val">5%</span></div>
-              <input type="number" id="rb-appr" value="5" step="0.5" min="0" max="20">
-              <input type="range" id="rb-appr-range" value="5" step="0.5" min="0" max="15">
-            </div>
-            <div class="field">
-              <div class="field-label"><span>If renting, invest the difference at</span><span class="val" id="rb-inv-val">10%</span></div>
-              <input type="number" id="rb-inv" value="10" step="0.5" min="0" max="20">
-              <input type="range" id="rb-inv-range" value="10" step="0.5" min="0" max="18">
-            </div>
-          </div>
-          <div class="tool-out">
-            <div class="result-hero calm" id="rb-hero">
-              <div class="rl">Over this horizon</div>
-              <div class="rv" id="rb-rv">—</div>
-              <div class="rn" id="rb-rn">which option builds more wealth.</div>
-            </div>
-            <div class="bar-wrap">
-              <div class="bar-item">
-                <div class="bar-top"><span class="nm">Net position if you buy</span><span class="amt" id="rb-buy-amt">₹0</span></div>
-                <div class="bar-track"><div class="bar-fill" id="rb-buy-bar" style="width:0%"></div></div>
-              </div>
-              <div class="bar-item">
-                <div class="bar-top"><span class="nm">Net position if you rent + invest</span><span class="amt" id="rb-rent-amt">₹0</span></div>
-                <div class="bar-track"><div class="bar-fill win" id="rb-rent-bar" style="width:0%"></div></div>
-              </div>
-            </div>
-            <div class="note-flag">Buying's net position = property value − remaining loan − total interest paid. Renting's = investment corpus from investing the monthly savings. Ignores maintenance, taxes, and transaction costs on both sides.</div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- SALARY / IN-HAND -->
-    <div class="tool-panel" id="t-salary">
-      <div class="tool-window">
-        <div class="tool-titlebar">
-          <div class="dots"><span class="dot" style="background:#C6432F"></span><span class="dot" style="background:#A8781E"></span><span class="dot" style="background:#1F8F73"></span></div>
-          <span class="name">Salary / in-hand calculator</span>
-        </div>
-        <div class="tool-grid">
-          <div class="tool-form">
-            <div class="field">
-              <div class="field-label"><span>Annual CTC</span><span class="val" id="sal-ctc-val">₹12,00,000</span></div>
-              <input type="number" id="sal-ctc" value="1200000" step="50000" min="0">
-              <input type="range" id="sal-ctc-range" value="1200000" step="10000" min="0" max="50000000">
-            </div>
-            <div class="field">
-              <div class="field-label"><span>Basic salary (% of CTC)</span><span class="val" id="sal-basic-val">40%</span></div>
-              <input type="number" id="sal-basicpct" value="40" step="1" min="20" max="60">
-              <input type="range" id="sal-basicpct-range" value="40" step="1" min="20" max="60">
-            </div>
-            <div class="field">
-              <div class="field-label"><span>Other annual deductions (80C etc.)</span><span class="val" id="sal-ded-val">₹0</span></div>
-              <input type="number" id="sal-ded" value="0" step="10000" min="0">
-              <input type="range" id="sal-ded-range" value="0" step="5000" min="0" max="50000000">
-            </div>
-          </div>
-          <div class="tool-out">
-            <div class="result-hero calm" id="sal-hero">
-              <div class="rl">Monthly in-hand</div>
-              <div class="rv" id="sal-rv">₹0</div>
-              <div class="rn">estimated take-home, after PF and TDS.</div>
-            </div>
-            <div class="console">
-              <div class="l"><span class="k">Monthly gross (approx.)</span><span class="v" id="sal-gross">₹0</span></div>
-              <div class="l"><span class="k">Employee PF (12% of basic)</span><span class="v" id="sal-pf">₹0</span></div>
-              <div class="l"><span class="k">Estimated monthly TDS</span><span class="v" id="sal-tds">₹0</span></div>
-              <div class="l hl"><span class="k">Net monthly in-hand</span><span class="v" id="sal-net">₹0</span></div>
-            </div>
-            <div class="note-flag">Assumes new tax regime, a flat ₹200/month professional tax, and employer PF/gratuity carved out of CTC — actual payslip structures vary by company.</div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- GRATUITY -->
-    <div class="tool-panel" id="t-gratuity">
-      <div class="tool-window">
-        <div class="tool-titlebar">
-          <div class="dots"><span class="dot" style="background:#C6432F"></span><span class="dot" style="background:#A8781E"></span><span class="dot" style="background:#1F8F73"></span></div>
-          <span class="name">Gratuity calculator</span>
-        </div>
-        <div class="tool-grid">
-          <div class="tool-form">
-            <div class="field">
-              <div class="field-label"><span>Last drawn Basic + DA (monthly)</span><span class="val" id="gr-basic-val">₹50,000</span></div>
-              <input type="number" id="gr-basic" value="50000" step="1000" min="0">
-              <input type="range" id="gr-basic-range" value="50000" step="1000" min="0" max="50000000">
-            </div>
-            <div class="field">
-              <div class="field-label"><span>Years of service</span><span class="val" id="gr-years-val">7 yrs</span></div>
-              <input type="number" id="gr-years" value="7" step="1" min="0" max="45">
-              <input type="range" id="gr-years-range" value="7" step="1" min="0" max="40">
-            </div>
-          </div>
-          <div class="tool-out">
-            <div class="result-hero calm" id="gr-hero">
-              <div class="rl">Gratuity payable</div>
-              <div class="rv" id="gr-rv">₹0</div>
-              <div class="rn" id="gr-rn">fully tax-exempt (under ₹20L ceiling).</div>
-            </div>
-            <div class="console">
-              <div class="l"><span class="k">Formula: (Basic+DA) × 15/26 × years</span><span class="v" id="gr-calc">₹0</span></div>
-              <div class="l"><span class="k">Statutory exemption ceiling</span><span class="v">₹20,00,000</span></div>
-              <div class="l hl"><span class="k">Taxable portion</span><span class="v" id="gr-taxable">₹0</span></div>
-            </div>
-            <div class="note-flag" id="gr-flag">Eligible after 5+ years of continuous service (private sector). Not eligible below 5 years, except in case of death or disability.</div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- FREELANCE TAX -->
-    <div class="tool-panel" id="t-freelance">
-      <div class="tool-window">
-        <div class="tool-titlebar">
-          <div class="dots"><span class="dot" style="background:#C6432F"></span><span class="dot" style="background:#A8781E"></span><span class="dot" style="background:#1F8F73"></span></div>
-          <span class="name">Freelance tax — Section 44ADA</span>
-        </div>
-        <div class="tool-grid">
-          <div class="tool-form">
-            <div class="field">
-              <div class="field-label"><span>Annual gross receipts</span><span class="val" id="fl-gross-val">₹15,00,000</span></div>
-              <input type="number" id="fl-gross" value="1500000" step="50000" min="0">
-              <input type="range" id="fl-gross-range" value="1500000" step="10000" min="0" max="50000000">
-            </div>
-            <div class="field">
-              <div class="field-label"><span>≥95% receipts via digital/banking?</span></div>
-              <div class="seg" id="fl-digital">
-                <button data-val="yes" aria-pressed="true">Yes</button>
-                <button data-val="no" aria-pressed="false">No</button>
-              </div>
-              <div class="field-hint">Raises your 44ADA eligibility limit from ₹50L to ₹75L.</div>
-            </div>
-            <div class="field">
-              <div class="field-label"><span>Your actual expenses (optional)</span><span class="val" id="fl-exp-val">₹0</span></div>
-              <input type="number" id="fl-exp" value="0" step="10000" min="0">
-              <input type="range" id="fl-exp-range" value="0" step="10000" min="0" max="50000000">
-              <div class="field-hint">Fill this in to compare against declaring actual profit instead of the 50% presumptive rate.</div>
-            </div>
-          </div>
-          <div class="tool-out">
-            <div class="result-hero calm" id="fl-hero">
-              <div class="rl">Presumptive taxable income</div>
-              <div class="rv" id="fl-rv">₹0</div>
-              <div class="rn">50% of gross receipts under Section 44ADA.</div>
-            </div>
-            <div class="console">
-              <div class="l"><span class="k">44ADA eligibility limit</span><span class="v" id="fl-limit">₹50,00,000</span></div>
-              <div class="l"><span class="k">Eligible for 44ADA?</span><span class="v" id="fl-eligible">Yes</span></div>
-              <div class="l"><span class="k">Est. tax under 44ADA (new regime)</span><span class="v" id="fl-tax-44ada">₹0</span></div>
-              <div class="l hl" id="fl-compare-row"><span class="k">Est. tax on actual profit instead</span><span class="v" id="fl-tax-actual">₹0</span></div>
-            </div>
-            <div class="note-flag" id="fl-flag">If your real expenses are under 50% of receipts, 44ADA usually wins — you're taxed on less than you'd otherwise show as profit.</div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- LOAN PREPAYMENT -->
-    <div class="tool-panel" id="t-prepay">
-      <div class="tool-window">
-        <div class="tool-titlebar">
-          <div class="dots"><span class="dot" style="background:#C6432F"></span><span class="dot" style="background:#A8781E"></span><span class="dot" style="background:#1F8F73"></span></div>
-          <span class="name">Loan prepayment calculator</span>
-        </div>
-        <div class="tool-grid">
-          <div class="tool-form">
-            <div class="field">
-              <div class="field-label"><span>Loan amount</span><span class="val" id="pp-amt-val">₹40,00,000</span></div>
-              <input type="number" id="pp-amt" value="4000000" step="100000" min="0">
-              <input type="range" id="pp-amt-range" value="4000000" step="50000" min="0" max="50000000">
-            </div>
-            <div class="field">
-              <div class="field-label"><span>Interest rate / year</span><span class="val" id="pp-rate-val">8.5%</span></div>
-              <input type="number" id="pp-rate" value="8.5" step="0.05" min="0" max="30">
-              <input type="range" id="pp-rate-range" value="8.5" step="0.05" min="1" max="20">
-            </div>
-            <div class="field">
-              <div class="field-label"><span>Original tenure</span><span class="val" id="pp-years-val">20 yrs</span></div>
-              <input type="number" id="pp-years" value="20" step="1" min="1" max="35">
-              <input type="range" id="pp-years-range" value="20" step="1" min="1" max="35">
-            </div>
-            <div class="field">
-              <div class="field-label"><span>Extra payment every month</span><span class="val" id="pp-extra-val">₹5,000</span></div>
-              <input type="number" id="pp-extra" value="5000" step="500" min="0">
-              <input type="range" id="pp-extra-range" value="5000" step="500" min="0" max="50000000">
-            </div>
-          </div>
-          <div class="tool-out">
-            <div class="result-hero calm" id="pp-hero">
-              <div class="rl">Interest saved</div>
-              <div class="rv" id="pp-rv">₹0</div>
-              <div class="rn" id="pp-rn">by paying extra every month.</div>
-            </div>
-            <div class="console">
-              <div class="l"><span class="k">Original EMI</span><span class="v" id="pp-emi">₹0</span></div>
-              <div class="l"><span class="k">New tenure</span><span class="v" id="pp-newtenure">—</span></div>
-              <div class="l"><span class="k">Time saved</span><span class="v" id="pp-timesaved">—</span></div>
-              <div class="l hl"><span class="k">Total interest (original vs new)</span><span class="v" id="pp-interestcompare">₹0</span></div>
-            </div>
-            <div class="note-flag">Extra payments go straight toward principal — even a modest amount saved consistently can cut years off a home loan.</div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- GOAL PLANNER -->
-    <div class="tool-panel" id="t-goal">
-      <div class="tool-window">
-        <div class="tool-titlebar">
-          <div class="dots"><span class="dot" style="background:#C6432F"></span><span class="dot" style="background:#A8781E"></span><span class="dot" style="background:#1F8F73"></span></div>
-          <span class="name">Goal planner (reverse SIP)</span>
-        </div>
-        <div class="tool-grid">
-          <div class="tool-form">
-            <div class="field">
-              <div class="field-label"><span>Goal (in today's value)</span><span class="val" id="gp-target-val">₹20,00,000</span></div>
-              <input type="number" id="gp-target" value="2000000" step="50000" min="0">
-              <input type="range" id="gp-target-range" value="2000000" step="50000" min="0" max="50000000">
-            </div>
-            <div class="field">
-              <div class="field-label"><span>Years to goal</span><span class="val" id="gp-years-val">5 yrs</span></div>
-              <input type="number" id="gp-years" value="5" step="1" min="1" max="40">
-              <input type="range" id="gp-years-range" value="5" step="1" min="1" max="40">
-            </div>
-            <div class="field">
-              <div class="field-label"><span>Expected inflation / year</span><span class="val" id="gp-infl-val">6%</span></div>
-              <input type="number" id="gp-infl" value="6" step="0.5" min="0" max="15">
-              <input type="range" id="gp-infl-range" value="6" step="0.5" min="0" max="12">
-            </div>
-            <div class="field">
-              <div class="field-label"><span>Expected annual return</span><span class="val" id="gp-return-val">12%</span></div>
-              <input type="number" id="gp-return" value="12" step="0.5" min="0" max="25">
-              <input type="range" id="gp-return-range" value="12" step="0.5" min="1" max="20">
-            </div>
-          </div>
-          <div class="tool-out">
-            <div class="result-hero calm" id="gp-hero">
-              <div class="rl">Monthly SIP needed</div>
-              <div class="rv" id="gp-rv">₹0</div>
-              <div class="rn">to reach your goal, adjusted for inflation.</div>
-            </div>
-            <div class="console">
-              <div class="l"><span class="k">Goal in today's value</span><span class="v" id="gp-today">₹0</span></div>
-              <div class="l hl"><span class="k">Goal in future value</span><span class="v" id="gp-future">₹0</span></div>
-              <div class="l"><span class="k">Total you'll invest</span><span class="v" id="gp-invested">₹0</span></div>
-            </div>
-            <div class="note-flag">Inflation grows your target; expected return determines how hard your monthly SIP has to work to get there.</div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- PPF -->
-    <div class="tool-panel" id="t-ppf">
-      <div class="tool-window">
-        <div class="tool-titlebar">
-          <div class="dots"><span class="dot" style="background:#C6432F"></span><span class="dot" style="background:#A8781E"></span><span class="dot" style="background:#1F8F73"></span></div>
-          <span class="name">PPF calculator</span>
-        </div>
-        <div class="tool-grid">
-          <div class="tool-form">
-            <div class="field">
-              <div class="field-label"><span>Yearly investment</span><span class="val" id="ppf-amt-val">₹1,50,000</span></div>
-              <input type="number" id="ppf-amt" value="150000" step="5000" min="0" max="150000">
-              <input type="range" id="ppf-amt-range" value="150000" step="5000" min="0" max="150000">
-              <div class="field-hint">₹1,50,000/year is the current maximum allowed in a PPF account.</div>
-            </div>
-            <div class="field">
-              <div class="field-label"><span>Interest rate / year</span><span class="val" id="ppf-rate-val">7.1%</span></div>
-              <input type="number" id="ppf-rate" value="7.1" step="0.1" min="0" max="12">
-              <input type="range" id="ppf-rate-range" value="7.1" step="0.1" min="4" max="10">
-              <div class="field-hint">PPF rate is set quarterly by the government — check the current rate before relying on this.</div>
-            </div>
-            <div class="field">
-              <div class="field-label"><span>Tenure</span><span class="val" id="ppf-years-val">15 yrs</span></div>
-              <div class="seg" id="ppf-years-seg">
-                <button data-val="15" aria-pressed="true">15 yrs</button>
-                <button data-val="20" aria-pressed="false">20 yrs</button>
-                <button data-val="25" aria-pressed="false">25 yrs</button>
-              </div>
-              <div class="field-hint">PPF has a 15-year lock-in, extendable in blocks of 5 years.</div>
-            </div>
-          </div>
-          <div class="tool-out">
-            <div class="result-hero calm" id="ppf-hero">
-              <div class="rl">Maturity value</div>
-              <div class="rv" id="ppf-rv">₹0</div>
-              <div class="rn">tax-free at maturity.</div>
-            </div>
-            <div class="console">
-              <div class="l"><span class="k">Total invested</span><span class="v" id="ppf-invested">₹0</span></div>
-              <div class="l hl"><span class="k">Total interest earned</span><span class="v" id="ppf-interest">₹0</span></div>
-            </div>
-            <div class="note-flag">Assumes the full yearly amount is deposited at the start of each year, and interest compounds annually — the standard PPF calculation method.</div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- EPF -->
-    <div class="tool-panel" id="t-epf">
-      <div class="tool-window">
-        <div class="tool-titlebar">
-          <div class="dots"><span class="dot" style="background:#C6432F"></span><span class="dot" style="background:#A8781E"></span><span class="dot" style="background:#1F8F73"></span></div>
-          <span class="name">EPF calculator</span>
-        </div>
-        <div class="tool-grid">
-          <div class="tool-form">
-            <div class="field">
-              <div class="field-label"><span>Current age</span><span class="val" id="epf-age-val">28</span></div>
-              <input type="number" id="epf-age" value="28" step="1" min="18" max="59">
-              <input type="range" id="epf-age-range" value="28" step="1" min="18" max="59">
-            </div>
-            <div class="field">
-              <div class="field-label"><span>Current monthly basic + DA</span><span class="val" id="epf-basic-val">₹40,000</span></div>
-              <input type="number" id="epf-basic" value="40000" step="1000" min="0">
-              <input type="range" id="epf-basic-range" value="40000" step="1000" min="0" max="50000000">
-            </div>
-            <div class="field">
-              <div class="field-label"><span>Expected annual salary growth</span><span class="val" id="epf-growth-val">8%</span></div>
-              <input type="number" id="epf-growth" value="8" step="0.5" min="0" max="20">
-              <input type="range" id="epf-growth-range" value="8" step="0.5" min="0" max="15">
-            </div>
-            <div class="field">
-              <div class="field-label"><span>EPF interest rate / year</span><span class="val" id="epf-rate-val">8.25%</span></div>
-              <input type="number" id="epf-rate" value="8.25" step="0.05" min="0" max="12">
-              <input type="range" id="epf-rate-range" value="8.25" step="0.05" min="5" max="10">
-            </div>
-          </div>
-          <div class="tool-out">
-            <div class="result-hero calm" id="epf-hero">
-              <div class="rl">Projected corpus at 58</div>
-              <div class="rv" id="epf-rv">₹0</div>
-              <div class="rn">combined employee + employer contributions, compounded.</div>
-            </div>
-            <div class="console">
-              <div class="l"><span class="k">Years to retirement</span><span class="v" id="epf-yrsleft">0</span></div>
-              <div class="l"><span class="k">Combined contribution rate</span><span class="v">24% of basic</span></div>
-              <div class="l hl"><span class="k">Total contributed</span><span class="v" id="epf-contributed">₹0</span></div>
-            </div>
-            <div class="note-flag">Simplified: assumes all 24% (12% employee + 12% employer) compounds at the EPF rate. In reality, part of the employer's share routes to the EPS pension scheme — actual EPF corpus may be somewhat lower.</div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- NPS -->
-    <div class="tool-panel" id="t-nps">
-      <div class="tool-window">
-        <div class="tool-titlebar">
-          <div class="dots"><span class="dot" style="background:#C6432F"></span><span class="dot" style="background:#A8781E"></span><span class="dot" style="background:#1F8F73"></span></div>
-          <span class="name">NPS calculator</span>
-        </div>
-        <div class="tool-grid">
-          <div class="tool-form">
-            <div class="field">
-              <div class="field-label"><span>Current age</span><span class="val" id="nps-age-val">28</span></div>
-              <input type="number" id="nps-age" value="28" step="1" min="18" max="59">
-              <input type="range" id="nps-age-range" value="28" step="1" min="18" max="59">
-            </div>
-            <div class="field">
-              <div class="field-label"><span>Monthly contribution</span><span class="val" id="nps-contrib-val">₹5,000</span></div>
-              <input type="number" id="nps-contrib" value="5000" step="500" min="0">
-              <input type="range" id="nps-contrib-range" value="5000" step="500" min="0" max="50000000">
-            </div>
-            <div class="field">
-              <div class="field-label"><span>Expected annual return</span><span class="val" id="nps-return-val">10%</span></div>
-              <input type="number" id="nps-return" value="10" step="0.5" min="0" max="20">
-              <input type="range" id="nps-return-range" value="10" step="0.5" min="1" max="16">
-            </div>
-            <div class="field">
-              <div class="field-label"><span>Annuity purchase (min. 40%)</span><span class="val" id="nps-annpct-val">40%</span></div>
-              <input type="number" id="nps-annpct" value="40" step="5" min="40" max="100">
-              <input type="range" id="nps-annpct-range" value="40" step="5" min="40" max="100">
-            </div>
-            <div class="field">
-              <div class="field-label"><span>Expected annuity rate</span><span class="val" id="nps-annrate-val">6%</span></div>
-              <input type="number" id="nps-annrate" value="6" step="0.25" min="0" max="12">
-              <input type="range" id="nps-annrate-range" value="6" step="0.25" min="3" max="10">
-            </div>
-          </div>
-          <div class="tool-out">
-            <div class="result-hero calm" id="nps-hero">
-              <div class="rl">Corpus at 60</div>
-              <div class="rv" id="nps-rv">₹0</div>
-              <div class="rn">projected total NPS corpus.</div>
-            </div>
-            <div class="console">
-              <div class="l"><span class="k">Lump sum withdrawal</span><span class="v" id="nps-lumpsum">₹0</span></div>
-              <div class="l"><span class="k">Annuity corpus</span><span class="v" id="nps-anncorpus">₹0</span></div>
-              <div class="l hl"><span class="k">Est. monthly pension</span><span class="v" id="nps-pension">₹0</span></div>
-            </div>
-            <div class="note-flag">Returns are market-linked, not guaranteed. Up to 60% of the corpus can usually be withdrawn tax-free; the rest must buy an annuity for a monthly pension.</div>
-          </div>
-        </div>
-      </div>
-    </div>
-
   </div>
 </section>
 
-<section class="block alt" id="trackers">
+<section class="block alt" id="blog-categories">
   <div class="wrap">
-    <div class="kicker"><span class="seg">Trackers</span> — completely free, no WhatsApp needed</div>
+    <div class="kicker"><span class="seg">24 Blogs</span></div>
     <div class="block-head">
-      <h2>Five spreadsheets worth actually keeping</h2>
-      <p>Real Excel files with working formulas — not templates you have to fix yourself. Download, make a copy, and start filling it in.</p>
+      <h2>Read up, by category</h2>
+      <p>Real, verified guides — not generic content.</p>
     </div>
-    <div class="tracker-grid">
+    <div class="cat-grid">
 
-      <div class="tracker-card">
-        <div class="tracker-cover">
-          <span class="free-badge">FREE</span>
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M9 4v16"/></svg>
+      <div class="cat-card">
+        <div class="cat-card-head">
+          <span class="cat-icon" style="background:var(--teal-soft); color:var(--teal);">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 9h6M9 13h6M9 17h4"/></svg>
+          </span>
+          <h3>Taxation</h3>
         </div>
-        <div class="tracker-body">
-          <h3>Monthly Budget Tracker</h3>
-          <p>Budgeted vs. actual by category, with your savings rate calculated automatically.</p>
-          <a class="tracker-dl" href="trackers/01-monthly-budget-tracker.xlsx" download>Download .xlsx →</a>
-        </div>
+        <a class="cat-link" href="blogs/hra-exemption-explained.html">HRA Exemption Explained</a>
+        <a class="cat-link" href="blogs/form-16-explained.html">Form 16 Explained</a>
+        <a class="cat-link" href="blogs/freelancing-gst-invoicing.html">Freelancing? GST &amp; Invoicing</a>
+        <a class="cat-link" href="blogs/crypto-tax-india.html">How Crypto Gains Are Taxed</a>
+        <a class="cat-link" href="blogs/property-tds-short-deduction-notice.html">Property TDS Notice: The Fix</a>
+        <a class="cat-link" href="blogs/10-common-mistakes-people-make-while-e-filing-their-itr-ay-2026-27-1.html">Common ITR Filing Mistakes</a>
       </div>
 
-      <div class="tracker-card">
-        <div class="tracker-cover">
-          <span class="free-badge">FREE</span>
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21c-4-3-8-6.5-8-11a5 5 0 0 1 9-3 5 5 0 0 1 9 3c0 4.5-4 8-8 11"/><path d="M12 7v7M9 10h6"/></svg>
+      <div class="cat-card">
+        <div class="cat-card-head">
+          <span class="cat-icon" style="background:var(--gold-soft); color:var(--gold);">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l4 2"/></svg>
+          </span>
+          <h3>Investing &amp; Markets</h3>
         </div>
-        <div class="tracker-body">
-          <h3>Wedding Planner Tracker</h3>
-          <p>Estimated vs. actual vs. paid-so-far, by vendor — keeps you inside one total budget.</p>
-          <a class="tracker-dl" href="trackers/02-wedding-planner-tracker.xlsx" download>Download .xlsx →</a>
-        </div>
+        <a class="cat-link" href="blogs/sip-taxation-explained.html">How SIPs Are Actually Taxed</a>
+        <a class="cat-link" href="blogs/nps-vs-ppf-vs-epf.html">NPS vs PPF vs EPF</a>
+        <a class="cat-link" href="blogs/prepay-home-loan-or-invest.html">Prepay Home Loan or Invest?</a>
+        <a class="cat-link" href="blogs/korea-stock-market-crash-lessons-for-india.html">Korea's Stock Crash: Lessons for India</a>
+        <a class="cat-link" href="blogs/sebi-closing-auction-session-cas-explained.html">SEBI's Closing Auction Session (CAS)</a>
       </div>
 
-      <div class="tracker-card">
-        <div class="tracker-cover">
-          <span class="free-badge">FREE</span>
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12h20M12 2c2.5 2.5 4 6 4 10s-1.5 7.5-4 10c-2.5-2.5-4-6-4-10s1.5-7.5 4-10Z"/></svg>
+      <div class="cat-card">
+        <div class="cat-card-head">
+          <span class="cat-icon" style="background:var(--teal-soft); color:var(--teal);">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6l8-4z"/><path d="M9 12l2 2 4-4"/></svg>
+          </span>
+          <h3>Personal Finance &amp; Protection</h3>
         </div>
-        <div class="tracker-body">
-          <h3>Travel &amp; Vacation Tracker</h3>
-          <p>Budget a trip, track spend by category, and split the actual cost per traveler.</p>
-          <a class="tracker-dl" href="trackers/03-travel-budget-tracker.xlsx" download>Download .xlsx →</a>
-        </div>
-      </div>
-
-      <div class="tracker-card">
-        <div class="tracker-cover">
-          <span class="free-badge">FREE</span>
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
-        </div>
-        <div class="tracker-body">
-          <h3>Debt &amp; EMI Payoff Tracker</h3>
-          <p>Every loan and card in one place, auto-ranked by interest rate so you know what to attack first.</p>
-          <a class="tracker-dl" href="trackers/04-debt-emi-payoff-tracker.xlsx" download>Download .xlsx →</a>
-        </div>
-      </div>
-
-      <div class="tracker-card">
-        <div class="tracker-cover">
-          <span class="free-badge">FREE</span>
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12v8a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-8M2 7h20v5H2zM12 7v14M12 7c-1.5-3-5-4-6-2s1 3.5 6 2ZM12 7c1.5-3 5-4 6-2s-1 3.5-6 2Z"/></svg>
-        </div>
-        <div class="tracker-body">
-          <h3>Festival &amp; Gifting Tracker</h3>
-          <p>Diwali, wedding season, birthdays — keep every gift and its cost inside one seasonal budget.</p>
-          <a class="tracker-dl" href="trackers/05-festival-gifting-tracker.xlsx" download>Download .xlsx →</a>
-        </div>
+        <a class="cat-link" href="blogs/how-to-check-improve-cibil-score.html">Check &amp; Improve Your CIBIL Score</a>
+        <a class="cat-link" href="blogs/term-vs-life-insurance.html">Term vs Life Insurance</a>
+        <a class="cat-link" href="blogs/company-health-insurance-gaps.html">Company Health Insurance Gaps</a>
+        <a class="cat-link" href="blogs/credit-card-minimum-due-trap.html">Credit Card Minimum-Due Trap</a>
       </div>
 
     </div>
-    <p class="ebook-note">These are yours to keep — no email required, no WhatsApp message needed. Just click and download.</p>
+    <div style="text-align:center; margin-top:20px;">
+      <a href="blogs/blogs.html" class="cat-viewall">View all 24 blogs →</a>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="guide-categories">
+  <div class="wrap">
+    <div class="kicker"><span class="seg">19 Quick Guides</span></div>
+    <div class="block-head">
+      <h2>Short answers, by category</h2>
+      <p>Two minutes each, no fluff.</p>
+    </div>
+    <div class="cat-grid">
+
+      <div class="cat-card">
+        <div class="cat-card-head">
+          <span class="cat-icon" style="background:var(--teal-soft); color:var(--teal);">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 9h6M9 13h6M9 17h4"/></svg>
+          </span>
+          <h3>Tax &amp; Filing</h3>
+        </div>
+        <a class="cat-link" href="#guides">New vs Old Tax Regime</a>
+        <a class="cat-link" href="#guides">RSUs &amp; ESOPs, Taxed Twice</a>
+        <a class="cat-link" href="#guides">TDS at Property Registration</a>
+        <a class="cat-link" href="#guides">GST Basics for Freelancers</a>
+        <a class="cat-link" href="#guides">Common ITR Filing Mistakes</a>
+        <a class="cat-link" href="#guides">Got an Income Tax Notice?</a>
+      </div>
+
+      <div class="cat-card">
+        <div class="cat-card-head">
+          <span class="cat-icon" style="background:var(--gold-soft); color:var(--gold);">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 9V7a5 5 0 0 0-10 0v2"/><rect x="5" y="9" width="14" height="12" rx="2"/></svg>
+          </span>
+          <h3>Salary &amp; Career</h3>
+        </div>
+        <a class="cat-link" href="#guides">Notice Period &amp; Final Settlement</a>
+        <a class="cat-link" href="#guides">Understanding Your Payslip</a>
+        <a class="cat-link" href="#guides">Salary Negotiation, Quick Version</a>
+        <a class="cat-link" href="#guides">Salary Structuring for Tax Efficiency</a>
+      </div>
+
+      <div class="cat-card">
+        <div class="cat-card-head">
+          <span class="cat-icon" style="background:var(--teal-soft); color:var(--teal);">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l4 2"/></svg>
+          </span>
+          <h3>Money &amp; Retirement Planning</h3>
+        </div>
+        <a class="cat-link" href="#guides">Building an Emergency Fund</a>
+        <a class="cat-link" href="#guides">Home Loan: Prepay or Invest?</a>
+        <a class="cat-link" href="#guides">Goal-Based Investing Basics</a>
+        <a class="cat-link" href="#guides">NPS Tier I vs Tier II</a>
+        <a class="cat-link" href="#guides">Retirement Planning, by Age</a>
+      </div>
+
+    </div>
+    <div style="text-align:center; margin-top:20px;">
+      <a href="#guides" class="cat-viewall">View all 19 guides →</a>
+    </div>
   </div>
 </section>
 
 <section class="block" id="guides">
   <div class="wrap">
-    <div class="kicker"><span class="seg">Guides</span> — two minutes each, no fluff</div>
+    <div class="kicker"><span class="seg">All 19 Guides</span></div>
     <div class="block-head">
-      <h2>Short answers to the questions you've been meaning to google</h2>
+      <h2>Or browse the complete list</h2>
       <p>Tap any card to expand it.</p>
     </div>
     <div class="guide-grid" id="guide-grid">
@@ -2075,209 +1443,6 @@
 </section>
 
 
-<section class="block" id="spin-wheel">
-  <div class="wrap">
-    <div class="kicker"><span class="seg">Feeling lucky?</span></div>
-    <div class="block-head">
-      <h2>Spin the wheel, get a free answer</h2>
-      <p>Not sure where to start? Spin it — you'll land on a calculator, a guide, or a chance to talk to a CA, free either way.</p>
-    </div>
-
-    <div class="wheel-container">
-      <div class="wheel-pointer">▼</div>
-      <div class="wheel-outer">
-        <svg class="wheel-svg" id="spinWheelSvg" viewBox="0 0 340 340" xmlns="http://www.w3.org/2000/svg">
-          <g id="wheelGroup">
-    <path d="M170,170 L170.0,10.0 A160,160 0 0 1 308.6,90.0 Z" fill="#12203D" stroke="#fff" stroke-width="2"/>
-    <path d="M170,170 L308.6,90.0 A160,160 0 0 1 308.6,250.0 Z" fill="#1F8F73" stroke="#fff" stroke-width="2"/>
-    <path d="M170,170 L308.6,250.0 A160,160 0 0 1 170.0,330.0 Z" fill="#A8781E" stroke="#fff" stroke-width="2"/>
-    <path d="M170,170 L170.0,330.0 A160,160 0 0 1 31.4,250.0 Z" fill="#12203D" stroke="#fff" stroke-width="2"/>
-    <path d="M170,170 L31.4,250.0 A160,160 0 0 1 31.4,90.0 Z" fill="#1F8F73" stroke="#fff" stroke-width="2"/>
-    <path d="M170,170 L31.4,90.0 A160,160 0 0 1 170.0,10.0 Z" fill="#C6432F" stroke="#fff" stroke-width="2"/>
-    <text x="219.6" y="84.1" fill="#fff" font-family="Inter, sans-serif" font-size="12.5" font-weight="700" text-anchor="middle" transform="rotate(30.0 219.6 84.1)">HRA Calculator</text>
-    <text x="269.2" y="170.0" fill="#fff" font-family="Inter, sans-serif" font-size="12.5" font-weight="700" text-anchor="middle" transform="rotate(90.0 269.2 170.0)">Income Tax Calc</text>
-    <text x="219.6" y="255.9" fill="#fff" font-family="Inter, sans-serif" font-size="12.5" font-weight="700" text-anchor="middle" transform="rotate(330.0 219.6 255.9)">Prepay or Invest?</text>
-    <text x="120.4" y="255.9" fill="#fff" font-family="Inter, sans-serif" font-size="12.5" font-weight="700" text-anchor="middle" transform="rotate(390.0 120.4 255.9)">Loan EMI Calc</text>
-    <text x="70.8" y="170.0" fill="#fff" font-family="Inter, sans-serif" font-size="12.5" font-weight="700" text-anchor="middle" transform="rotate(270.0 70.8 170.0)">Property TDS Calc</text>
-    <text x="120.4" y="84.1" fill="#fff" font-family="Inter, sans-serif" font-size="12.5" font-weight="700" text-anchor="middle" transform="rotate(330.0 120.4 84.1)">Talk to a CA</text>
-          </g>
-          <circle cx="170" cy="170" r="34" fill="#fff" stroke="var(--border-2)" stroke-width="2"/>
-        </svg>
-        <button class="wheel-spin-btn" id="wheelSpinBtn">SPIN</button>
-      </div>
-    </div>
-
-    <div class="wheel-result" id="wheelResult">
-      <div class="wheel-result-inner">
-        <span class="wheel-result-label">You got</span>
-        <h3 id="wheelResultTitle">—</h3>
-        <a class="wheel-result-btn" id="wheelResultBtn" href="#">Open it →</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="block alt" id="ebooks">
-  <div class="wrap">
-    <div class="kicker"><span class="seg">Ebooks</span> — ₹50 each</div>
-    <div class="block-head">
-      <h2>Skip the 300-page finance book. Get the 10-page version.</h2>
-      <p>Ten short, practical playbooks — no theory, no "gyaan," just the steps. Each one is a quick read you can act on the same day.</p>
-    </div>
-    <div class="ebook-grid">
-
-      <div class="ebook-card">
-        <div class="ebook-cover c-amber"><span class="cat">Personal Finance</span><span class="num">01</span><span class="price">₹50</span></div>
-        <div class="ebook-body">
-          <h3>The First Payslip Playbook</h3>
-          <p>What to actually do with your salary the day it lands — accounts, autopay, and a simple 3-bucket split.</p>
-          <a class="ebook-buy" data-wa-msg="Hi, I want to buy the 'The First Payslip Playbook' ebook for ₹50." href="#">Get this ebook →</a>
-        </div>
-      </div>
-
-      <div class="ebook-card">
-        <div class="ebook-cover c-teal"><span class="cat">Taxation</span><span class="num">02</span><span class="price">₹50</span></div>
-        <div class="ebook-body">
-          <h3>Old vs New Regime, Decided</h3>
-          <p>A 10-minute worksheet to pick your tax regime for this year — no CA required.</p>
-          <a class="ebook-buy" data-wa-msg="Hi, I want to buy the 'Old vs New Regime, Decided' ebook for ₹50." href="#">Get this ebook →</a>
-        </div>
-      </div>
-
-      <div class="ebook-card">
-        <div class="ebook-cover c-rose"><span class="cat">Savings vs Investing</span><span class="num">03</span><span class="price">₹50</span></div>
-        <div class="ebook-body">
-          <h3>Where Every Rupee Should Go</h3>
-          <p>A simple flowchart for save-vs-invest decisions — from emergency fund to your first equity SIP.</p>
-          <a class="ebook-buy" data-wa-msg="Hi, I want to buy the 'Where Every Rupee Should Go' ebook for ₹50." href="#">Get this ebook →</a>
-        </div>
-      </div>
-
-      <div class="ebook-card">
-        <div class="ebook-cover c-ink"><span class="cat">Business Ideas</span><span class="num">04</span><span class="price">₹50</span></div>
-        <div class="ebook-body">
-          <h3>10 Businesses Under ₹50,000</h3>
-          <p>Real ideas with real budgets you can start on weekends, without quitting your job.</p>
-          <a class="ebook-buy" data-wa-msg="Hi, I want to buy the '10 Businesses Under ₹50,000' ebook for ₹50." href="#">Get this ebook →</a>
-        </div>
-      </div>
-
-      <div class="ebook-card">
-        <div class="ebook-cover c-amber"><span class="cat">Communication</span><span class="num">05</span><span class="price">₹50</span></div>
-        <div class="ebook-body">
-          <h3>Emails That Get Replies</h3>
-          <p>Copy-paste templates for asking, following up, negotiating, and saying no at work.</p>
-          <a class="ebook-buy" data-wa-msg="Hi, I want to buy the 'Emails That Get Replies' ebook for ₹50." href="#">Get this ebook →</a>
-        </div>
-      </div>
-
-      <div class="ebook-card">
-        <div class="ebook-cover c-teal"><span class="cat">Productivity</span><span class="num">06</span><span class="price">₹50</span></div>
-        <div class="ebook-body">
-          <h3>50 Excel Shortcuts Worth Learning</h3>
-          <p>The shortcuts that actually save time — no macros, no VBA, just keys.</p>
-          <a class="ebook-buy" data-wa-msg="Hi, I want to buy the '50 Excel Shortcuts Worth Learning' ebook for ₹50." href="#">Get this ebook →</a>
-        </div>
-      </div>
-
-      <div class="ebook-card">
-        <div class="ebook-cover c-rose"><span class="cat">Tax Saving</span><span class="num">07</span><span class="price">₹50</span></div>
-        <div class="ebook-body">
-          <h3>Legal Ways to Pay Less Tax</h3>
-          <p>The deductions most salaried people forget to claim, and exactly how to claim them.</p>
-          <a class="ebook-buy" data-wa-msg="Hi, I want to buy the 'Legal Ways to Pay Less Tax' ebook for ₹50." href="#">Get this ebook →</a>
-        </div>
-      </div>
-
-      <div class="ebook-card">
-        <div class="ebook-cover c-ink"><span class="cat">Career Money</span><span class="num">08</span><span class="price">₹50</span></div>
-        <div class="ebook-body">
-          <h3>Your First Month at a New Job</h3>
-          <p>A money checklist for job switches — PF transfer, insurance, full-and-final, all of it.</p>
-          <a class="ebook-buy" data-wa-msg="Hi, I want to buy the 'Your First Month at a New Job' ebook for ₹50." href="#">Get this ebook →</a>
-        </div>
-      </div>
-
-      <div class="ebook-card">
-        <div class="ebook-cover c-amber"><span class="cat">Negotiation</span><span class="num">09</span><span class="price">₹50</span></div>
-        <div class="ebook-body">
-          <h3>Salary Negotiation, Script Included</h3>
-          <p>Word-for-word scripts for negotiating CTC, raises, and counter-offers.</p>
-          <a class="ebook-buy" data-wa-msg="Hi, I want to buy the 'Salary Negotiation, Script Included' ebook for ₹50." href="#">Get this ebook →</a>
-        </div>
-      </div>
-
-      <div class="ebook-card">
-        <div class="ebook-cover c-teal"><span class="cat">Property</span><span class="num">10</span><span class="price">₹50</span></div>
-        <div class="ebook-body">
-          <h3>Buying Your First Property</h3>
-          <p>The paperwork playbook — TDS, loan sanction, registration — all in the right order.</p>
-          <a class="ebook-buy" data-wa-msg="Hi, I want to buy the 'Buying Your First Property' ebook for ₹50." href="#">Get this ebook →</a>
-        </div>
-      </div>
-
-    </div>
-    <p class="ebook-note">Tap "Get this ebook" to message us on WhatsApp — we'll confirm payment and send the PDF straight there.</p>
-  </div>
-</section>
-
-<section class="block" id="services">
-  <div class="wrap">
-    <div class="kicker"><span class="seg">Services</span> — done for you, over WhatsApp</div>
-    <div class="block-head">
-      <h2>Paid help for the paperwork you'd rather hand off</h2>
-      <p>These aren't DIY tools — they're filings we handle for you. Tap any card to start the conversation.</p>
-    </div>
-    <div class="service-grid">
-
-      <div class="service-card">
-        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M9 13h6M9 17h6M9 9h1"/></svg></div>
-        <h3>ITR Filing</h3>
-        <p>Salaried, freelance, or both — we prepare and file your income tax return for you.</p>
-        <a class="wa-btn" data-wa-msg="Hi, I want to file my ITR. Can you help?">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21h.01c5.46 0 9.9-4.45 9.9-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2m0 1.67a8.2 8.2 0 0 1 5.83 2.41 8.19 8.19 0 0 1 2.41 5.83c0 4.55-3.7 8.24-8.25 8.24a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.17 8.17 0 0 1-1.26-4.38c0-4.55 3.7-8.24 8.25-8.24m-4.55 4.72c-.16 0-.42.06-.64.3-.22.24-.84.82-.84 2s.86 2.32.98 2.48c.12.16 1.67 2.7 4.15 3.66 2.06.8 2.48.64 2.93.6.45-.04 1.45-.59 1.65-1.16.2-.57.2-1.06.14-1.16-.06-.1-.22-.16-.46-.28-.24-.12-1.45-.72-1.67-.8-.22-.08-.39-.12-.55.12-.16.24-.63.8-.77.96-.14.16-.28.18-.52.06-.24-.12-1.02-.38-1.94-1.2-.72-.64-1.2-1.43-1.34-1.67-.14-.24-.02-.37.1-.49.11-.11.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.55-1.36-.76-1.86-.2-.48-.4-.42-.55-.42h-.32Z"/></svg>
-          Chat on WhatsApp
-        </a>
-        <p class="service-note">Pricing depends on your case — shared on WhatsApp.</p>
-      </div>
-
-      <div class="service-card">
-        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"/><circle cx="8" cy="12" r="2.2"/><path d="M14 10h5M14 14h3"/></svg></div>
-        <h3>Apply New PAN / Update PAN</h3>
-        <p>New PAN application, or corrections to your existing one — name, address, date of birth, and more.</p>
-        <a class="wa-btn" data-wa-msg="Hi, I need help applying for a new PAN, or updating my existing PAN details.">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21h.01c5.46 0 9.9-4.45 9.9-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2m0 1.67a8.2 8.2 0 0 1 5.83 2.41 8.19 8.19 0 0 1 2.41 5.83c0 4.55-3.7 8.24-8.25 8.24a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.17 8.17 0 0 1-1.26-4.38c0-4.55 3.7-8.24 8.25-8.24m-4.55 4.72c-.16 0-.42.06-.64.3-.22.24-.84.82-.84 2s.86 2.32.98 2.48c.12.16 1.67 2.7 4.15 3.66 2.06.8 2.48.64 2.93.6.45-.04 1.45-.59 1.65-1.16.2-.57.2-1.06.14-1.16-.06-.1-.22-.16-.46-.28-.24-.12-1.45-.72-1.67-.8-.22-.08-.39-.12-.55.12-.16.24-.63.8-.77.96-.14.16-.28.18-.52.06-.24-.12-1.02-.38-1.94-1.2-.72-.64-1.2-1.43-1.34-1.67-.14-.24-.02-.37.1-.49.11-.11.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.55-1.36-.76-1.86-.2-.48-.4-.42-.55-.42h-.32Z"/></svg>
-          Chat on WhatsApp
-        </a>
-        <p class="service-note">Pricing depends on your case — shared on WhatsApp.</p>
-      </div>
-
-      <div class="service-card">
-        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19V6a2 2 0 0 1 2-2h8l6 6v9a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2Z"/><path d="M14 4v6h6"/><path d="M8 15h8M8 11h4"/></svg></div>
-        <h3>TDS Return Filing</h3>
-        <p>Quarterly TDS returns for individuals or small businesses, filed correctly and on time.</p>
-        <a class="wa-btn" data-wa-msg="Hi, I need help with TDS return filing.">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21h.01c5.46 0 9.9-4.45 9.9-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2m0 1.67a8.2 8.2 0 0 1 5.83 2.41 8.19 8.19 0 0 1 2.41 5.83c0 4.55-3.7 8.24-8.25 8.24a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.17 8.17 0 0 1-1.26-4.38c0-4.55 3.7-8.24 8.25-8.24m-4.55 4.72c-.16 0-.42.06-.64.3-.22.24-.84.82-.84 2s.86 2.32.98 2.48c.12.16 1.67 2.7 4.15 3.66 2.06.8 2.48.64 2.93.6.45-.04 1.45-.59 1.65-1.16.2-.57.2-1.06.14-1.16-.06-.1-.22-.16-.46-.28-.24-.12-1.45-.72-1.67-.8-.22-.08-.39-.12-.55.12-.16.24-.63.8-.77.96-.14.16-.28.18-.52.06-.24-.12-1.02-.38-1.94-1.2-.72-.64-1.2-1.43-1.34-1.67-.14-.24-.02-.37.1-.49.11-.11.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.55-1.36-.76-1.86-.2-.48-.4-.42-.55-.42h-.32Z"/></svg>
-          Chat on WhatsApp
-        </a>
-        <p class="service-note">Pricing depends on your case — shared on WhatsApp.</p>
-      </div>
-
-      <div class="service-card">
-        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h14V10"/><path d="M10 20v-6h4v6"/></svg></div>
-        <h3>Consultancy on TDS for Property Purchase</h3>
-        <p>Buying property above ₹50 lakh? We'll walk you through the deduction, Form 26QB, and timelines.</p>
-        <a class="wa-btn" data-wa-msg="Hi, I need consultancy on TDS for a property purchase.">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21h.01c5.46 0 9.9-4.45 9.9-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2m0 1.67a8.2 8.2 0 0 1 5.83 2.41 8.19 8.19 0 0 1 2.41 5.83c0 4.55-3.7 8.24-8.25 8.24a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.17 8.17 0 0 1-1.26-4.38c0-4.55 3.7-8.24 8.25-8.24m-4.55 4.72c-.16 0-.42.06-.64.3-.22.24-.84.82-.84 2s.86 2.32.98 2.48c.12.16 1.67 2.7 4.15 3.66 2.06.8 2.48.64 2.93.6.45-.04 1.45-.59 1.65-1.16.2-.57.2-1.06.14-1.16-.06-.1-.22-.16-.46-.28-.24-.12-1.45-.72-1.67-.8-.22-.08-.39-.12-.55.12-.16.24-.63.8-.77.96-.14.16-.28.18-.52.06-.24-.12-1.02-.38-1.94-1.2-.72-.64-1.2-1.43-1.34-1.67-.14-.24-.02-.37.1-.49.11-.11.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.55-1.36-.76-1.86-.2-.48-.4-.42-.55-.42h-.32Z"/></svg>
-          Chat on WhatsApp
-        </a>
-        <p class="service-note">Pricing depends on your case — shared on WhatsApp.</p>
-      </div>
-
-    </div>
-  </div>
-</section>
-
 <section class="block alt">
   <div class="wrap">
     <div class="kicker"><span class="seg">What people say</span></div>
@@ -2476,10 +1641,11 @@
       </div>
       <div class="footer-col">
         <h4>Site</h4>
-        <a href="#tools">Tools</a>
-        <a href="#ebooks">Ebooks</a>
+        <a href="calculators/index.html">Tools</a>
+        <a href="ebooks.html">Ebooks</a>
+        <a href="trackers.html">Trackers</a>
         <a href="blogs/blogs.html">Blogs</a>
-        <a href="#services">Services</a>
+        <a href="services.html">Services</a>
       </div>
       <div class="footer-col">
         <h4>Company</h4>
@@ -2519,6 +1685,7 @@
   function bindRange(numId, rangeId, onChange){
     var numEl = document.getElementById(numId);
     var rangeEl = document.getElementById(rangeId);
+    if(!numEl || !rangeEl) return;
     function sync(from){
       if(from==='num'){ rangeEl.value = numEl.value; } else { numEl.value = rangeEl.value; }
       onChange();
@@ -2528,6 +1695,7 @@
   }
   function bindSeg(containerId, cb){
     var container = document.getElementById(containerId);
+    if(!container) return;
     var buttons = container.querySelectorAll('button');
     buttons.forEach(function(btn){
       btn.addEventListener('click', function(){
@@ -2775,658 +1943,660 @@
     });
   });
 
-  // ================= TDS =================
-  var tdsPanState = 'yes';
-  function calcTDS(){
-    var price = parseFloat(document.getElementById('tds-price').value) || 0;
-    var stamp = parseFloat(document.getElementById('tds-stamp').value) || 0;
-    document.getElementById('tds-price-val').textContent = toINR(price);
-    document.getElementById('tds-stamp-val').textContent = toINR(stamp);
-
-    var base = Math.max(price, stamp);
-    var threshold = 5000000;
-    var rate = tdsPanState === 'yes' ? 0.01 : 0.20;
-    var applicable = base >= threshold;
-    var tdsAmt = applicable ? base * rate : 0;
-    var net = price - tdsAmt;
-
-    document.getElementById('tds-base').textContent = toINR(base);
-    document.getElementById('tds-rate').textContent = applicable ? pct(rate*100,0) : '—';
-    document.getElementById('tds-amt').textContent = toINR(tdsAmt);
-    document.getElementById('tds-net').textContent = toINR(net);
-    document.getElementById('tds-rv').textContent = toINR(tdsAmt);
-
-    var heroEl = document.getElementById('tds-hero');
-    var rnEl = document.getElementById('tds-rn');
-    if(!applicable){
-      heroEl.classList.add('calm');
-      document.querySelector('#tds-hero .rl').textContent = 'No TDS required';
-      rnEl.textContent = 'Both figures are under ₹50 lakh, so this rule doesn\u2019t apply here.';
-    } else {
-      heroEl.classList.remove('calm');
-      document.querySelector('#tds-hero .rl').textContent = 'TDS to deduct';
-      rnEl.textContent = tdsPanState === 'yes'
-        ? 'Deduct this before paying the seller, then deposit it with the tax department.'
-        : 'No PAN on record pushes the rate to 20% — get the seller\u2019s PAN to bring it down to 1%.';
-    }
-  }
-  bindRange('tds-price','tds-price-range', calcTDS);
-  bindRange('tds-stamp','tds-stamp-range', calcTDS);
-  bindSeg('tds-pan', function(val){ tdsPanState = val; calcTDS(); });
-  calcTDS();
-
-  // ================= TAX =================
-  function newRegimeTax(taxable){
-    var slabs = [
-      [0,400000,0],[400000,800000,0.05],[800000,1200000,0.10],
-      [1200000,1600000,0.15],[1600000,2000000,0.20],[2000000,2400000,0.25],[2400000,Infinity,0.30]
-    ];
-    var tax = 0;
-    slabs.forEach(function(s){ if(taxable > s[0]){ tax += (Math.min(taxable, s[1]) - s[0]) * s[2]; } });
-    if(taxable <= 1200000){ tax = 0; }
-    return tax;
-  }
-  function oldRegimeTax(taxable){
-    var slabs = [[0,250000,0],[250000,500000,0.05],[500000,1000000,0.20],[1000000,Infinity,0.30]];
-    var tax = 0;
-    slabs.forEach(function(s){ if(taxable > s[0]){ tax += (Math.min(taxable, s[1]) - s[0]) * s[2]; } });
-    if(taxable <= 500000){ tax = 0; }
-    return tax;
-  }
-  function calcTax(){
-    var income = parseFloat(document.getElementById('tax-income').value) || 0;
-    var salaried = document.getElementById('tax-salaried').checked;
-    var otherDed = parseFloat(document.getElementById('tax-ded').value) || 0;
-
-    document.getElementById('tax-income-val').textContent = toINR(income);
-    document.getElementById('tax-ded-val').textContent = toINR(otherDed);
-
-    var stdDedNew = salaried ? 75000 : 0;
-    var stdDedOld = salaried ? 50000 : 0;
-    var taxableNew = Math.max(0, income - stdDedNew);
-    var taxableOld = Math.max(0, income - stdDedOld - Math.min(otherDed,400000));
-
-    var taxNew = Math.round(newRegimeTax(taxableNew) * 1.04);
-    var taxOld = Math.round(oldRegimeTax(taxableOld) * 1.04);
-
-    document.getElementById('tax-taxable-new').textContent = toINR(taxableNew);
-    document.getElementById('tax-taxable-old').textContent = toINR(taxableOld);
-    document.getElementById('tax-new-amt').textContent = toINR(taxNew);
-    document.getElementById('tax-old-amt').textContent = toINR(taxOld);
-
-    var maxAmt = Math.max(taxNew, taxOld, 1);
-    document.getElementById('tax-new-bar').style.width = (taxNew/maxAmt*100)+'%';
-    document.getElementById('tax-old-bar').style.width = (taxOld/maxAmt*100)+'%';
-    document.getElementById('tax-new-bar').className = 'bar-fill' + (taxNew<=taxOld? ' win':' warn');
-    document.getElementById('tax-old-bar').className = 'bar-fill' + (taxOld<taxNew? ' win':' warn');
-
-    var lower = Math.min(taxNew, taxOld);
-    var diff = Math.abs(taxNew - taxOld);
-    var better = taxNew <= taxOld ? 'new' : 'old';
-
-    document.getElementById('tax-rv').textContent = toINR(diff);
-    document.getElementById('tax-rn').textContent = 'by picking the ' + better + ' regime.';
-    document.getElementById('tax-final').textContent = toINR(lower) + '/yr';
-
-    var flag = document.getElementById('tax-flag');
-    if(taxableNew <= 1200000){
-      flag.textContent = 'Your new-regime taxable income is at or under ₹12,00,000, so the Section 87A rebate brings that tax to zero.';
-    } else if(otherDed >= 150000){
-      flag.textContent = 'With ₹1,50,000+ in 80C-type deductions, the old regime narrows the gap — worth checking both every year.';
-    } else {
-      flag.textContent = 'The new regime is the default from FY 2023-24 onward — you\u2019d need to actively opt for the old one.';
-    }
-  }
-  bindRange('tax-income','tax-income-range', calcTax);
-  bindRange('tax-ded','tax-ded-range', calcTax);
-  document.getElementById('tax-salaried').addEventListener('change', calcTax);
-  calcTax();
-
-  // ================= EMI =================
-  function calcEMI(){
-    var P = parseFloat(document.getElementById('emi-amt').value) || 0;
-    var annualRate = parseFloat(document.getElementById('emi-rate').value) || 0;
-    var years = parseFloat(document.getElementById('emi-years').value) || 0;
-
-    document.getElementById('emi-amt-val').textContent = toINR(P);
-    document.getElementById('emi-rate-val').textContent = pct(annualRate,2);
-    document.getElementById('emi-years-val').textContent = years + ' yrs';
-
-    var r = (annualRate/12)/100;
-    var n = years*12;
-    var emi = 0;
-    if(r === 0 && n>0){ emi = P/n; }
-    else if(n>0){ emi = P * r * Math.pow(1+r,n) / (Math.pow(1+r,n)-1); }
-    var totalPayment = emi*n;
-    var totalInterest = totalPayment - P;
-
-    document.getElementById('emi-rv').textContent = toINR(emi);
-    document.getElementById('emi-total-interest').textContent = toINR(totalInterest);
-    document.getElementById('emi-total-payment').textContent = toINR(totalPayment);
-    document.getElementById('emi-principal-amt').textContent = toINR(P);
-    document.getElementById('emi-interest-amt').textContent = toINR(totalInterest);
-
-    var maxV = Math.max(P, totalInterest, 1);
-    document.getElementById('emi-principal-bar').style.width = (P/maxV*100)+'%';
-    document.getElementById('emi-interest-bar').style.width = (totalInterest/maxV*100)+'%';
-  }
-  bindRange('emi-amt','emi-amt-range', calcEMI);
-  bindRange('emi-rate','emi-rate-range', calcEMI);
-  bindRange('emi-years','emi-years-range', calcEMI);
-  calcEMI();
-
-  // ================= INVESTMENT =================
-  var invMode = 'sip';
-  function calcInv(){
-    var amt = parseFloat(document.getElementById('inv-amt').value) || 0;
-    var annualRate = parseFloat(document.getElementById('inv-rate').value) || 0;
-    var years = parseFloat(document.getElementById('inv-years').value) || 0;
-
-    document.getElementById('inv-amt-val').textContent = toINR(amt);
-    document.getElementById('inv-rate-val').textContent = pct(annualRate,1);
-    document.getElementById('inv-years-val').textContent = years + ' yrs';
-
-    var invested, maturity;
-    if(invMode === 'sip'){
-      var rMonthly = (annualRate/12)/100;
-      var nMonths = years*12;
-      invested = amt*nMonths;
-      maturity = rMonthly===0 ? invested : amt * ((Math.pow(1+rMonthly,nMonths)-1)/rMonthly) * (1+rMonthly);
-      document.getElementById('inv-rn').textContent = 'projected value of your monthly SIP at the end of the term.';
-    } else {
-      invested = amt;
-      maturity = amt * Math.pow(1+annualRate/100, years);
-      document.getElementById('inv-rn').textContent = 'projected value of your lump sum at the end of the term.';
-    }
-    var growth = maturity - invested;
-
-    document.getElementById('inv-rv').textContent = toINR(maturity);
-    document.getElementById('inv-total-invested').textContent = toINR(invested);
-    document.getElementById('inv-total-value').textContent = toINR(maturity);
-    document.getElementById('inv-invested-amt').textContent = toINR(invested);
-    document.getElementById('inv-growth-amt').textContent = toINR(growth);
-
-    var maxV = Math.max(invested, growth, 1);
-    document.getElementById('inv-invested-bar').style.width = (invested/maxV*100)+'%';
-    document.getElementById('inv-growth-bar').style.width = (growth/maxV*100)+'%';
-  }
-  bindRange('inv-amt','inv-amt-range', calcInv);
-  bindRange('inv-rate','inv-rate-range', calcInv);
-  bindRange('inv-years','inv-years-range', calcInv);
-  bindSeg('inv-mode', function(val){
-    invMode = val;
-    var label = document.getElementById('inv-amt-label');
-    var amtEl = document.getElementById('inv-amt');
-    var rangeEl = document.getElementById('inv-amt-range');
-    if(val === 'sip'){
-      label.textContent = 'Monthly investment';
-      amtEl.value = 10000; rangeEl.value = 10000; rangeEl.max = 200000; rangeEl.step = 500;
-    } else {
-      label.textContent = 'Lump sum amount';
-      amtEl.value = 500000; rangeEl.value = 500000; rangeEl.max = 5000000; rangeEl.step = 10000;
-    }
-    calcInv();
-  });
-  calcInv();
-
-  // ================= HRA =================
-  var hraCity = 'metro';
-  function calcHRA(){
-    var basic = parseFloat(document.getElementById('hra-basic').value) || 0;
-    var received = parseFloat(document.getElementById('hra-received').value) || 0;
-    var rent = parseFloat(document.getElementById('hra-rent').value) || 0;
-    document.getElementById('hra-basic-val').textContent = toINR(basic);
-    document.getElementById('hra-received-val').textContent = toINR(received);
-    document.getElementById('hra-rent-val').textContent = toINR(rent);
-
-    var cityPct = hraCity === 'metro' ? 0.5 : 0.4;
-    var c1 = received;
-    var c2 = Math.max(0, rent - 0.1*basic);
-    var c3 = cityPct * basic;
-    var exempt = Math.max(0, Math.min(c1, c2, c3));
-    var taxable = Math.max(0, received - exempt);
-
-    document.getElementById('hra-rv').textContent = toINR(exempt);
-    document.getElementById('hra-c1').textContent = toINR(c1);
-    document.getElementById('hra-c2').textContent = toINR(c2);
-    document.getElementById('hra-c3').textContent = toINR(c3);
-    document.getElementById('hra-taxable').textContent = toINR(taxable);
-  }
-  bindRange('hra-basic','hra-basic-range', calcHRA);
-  bindRange('hra-received','hra-received-range', calcHRA);
-  bindRange('hra-rent','hra-rent-range', calcHRA);
-  bindSeg('hra-city', function(val){ hraCity = val; calcHRA(); });
-  calcHRA();
-
-  // ================= CAPITAL GAINS =================
-  var cgAsset = 'equity';
-  var cgOldProp = 'no';
-  function calcCG(){
-    var buy = parseFloat(document.getElementById('cg-buy').value) || 0;
-    var sell = parseFloat(document.getElementById('cg-sell').value) || 0;
-    var months = parseFloat(document.getElementById('cg-months').value) || 0;
-    document.getElementById('cg-buy-val').textContent = toINR(buy);
-    document.getElementById('cg-sell-val').textContent = toINR(sell);
-    document.getElementById('cg-months-val').textContent = months + ' mo';
-
-    var gain = sell - buy;
-    var isLT, rateLabel, tax, classLabel;
-
-    if(cgAsset === 'equity'){
-      isLT = months > 12;
-      if(isLT){
-        var taxableGain = Math.max(0, gain - 125000);
-        tax = taxableGain * 0.125;
-        rateLabel = '12.5% above ₹1.25L exemption';
-        classLabel = 'Long-term (equity)';
+  if (document.getElementById("tools")) {
+    // ================= TDS =================
+    var tdsPanState = 'yes';
+    function calcTDS(){
+      var price = parseFloat(document.getElementById('tds-price').value) || 0;
+      var stamp = parseFloat(document.getElementById('tds-stamp').value) || 0;
+      document.getElementById('tds-price-val').textContent = toINR(price);
+      document.getElementById('tds-stamp-val').textContent = toINR(stamp);
+  
+      var base = Math.max(price, stamp);
+      var threshold = 5000000;
+      var rate = tdsPanState === 'yes' ? 0.01 : 0.20;
+      var applicable = base >= threshold;
+      var tdsAmt = applicable ? base * rate : 0;
+      var net = price - tdsAmt;
+  
+      document.getElementById('tds-base').textContent = toINR(base);
+      document.getElementById('tds-rate').textContent = applicable ? pct(rate*100,0) : '—';
+      document.getElementById('tds-amt').textContent = toINR(tdsAmt);
+      document.getElementById('tds-net').textContent = toINR(net);
+      document.getElementById('tds-rv').textContent = toINR(tdsAmt);
+  
+      var heroEl = document.getElementById('tds-hero');
+      var rnEl = document.getElementById('tds-rn');
+      if(!applicable){
+        heroEl.classList.add('calm');
+        document.querySelector('#tds-hero .rl').textContent = 'No TDS required';
+        rnEl.textContent = 'Both figures are under ₹50 lakh, so this rule doesn\u2019t apply here.';
       } else {
-        tax = Math.max(0, gain) * 0.20;
-        rateLabel = '20% flat';
-        classLabel = 'Short-term (equity)';
+        heroEl.classList.remove('calm');
+        document.querySelector('#tds-hero .rl').textContent = 'TDS to deduct';
+        rnEl.textContent = tdsPanState === 'yes'
+          ? 'Deduct this before paying the seller, then deposit it with the tax department.'
+          : 'No PAN on record pushes the rate to 20% — get the seller\u2019s PAN to bring it down to 1%.';
       }
-    } else if(cgAsset === 'debt'){
-      isLT = false;
-      tax = null;
-      rateLabel = 'your income tax slab rate';
-      classLabel = 'Always taxed at slab rate (post-Apr 2023 rule)';
-    } else {
-      isLT = months > 24;
-      if(isLT){
-        tax = Math.max(0, gain) * 0.125;
-        rateLabel = cgOldProp === 'yes' ? '12.5% (or 20% with indexation — check both)' : '12.5% flat, no indexation';
-        classLabel = 'Long-term (property/gold)';
+    }
+    bindRange('tds-price','tds-price-range', calcTDS);
+    bindRange('tds-stamp','tds-stamp-range', calcTDS);
+    bindSeg('tds-pan', function(val){ tdsPanState = val; calcTDS(); });
+    calcTDS();
+  
+    // ================= TAX =================
+    function newRegimeTax(taxable){
+      var slabs = [
+        [0,400000,0],[400000,800000,0.05],[800000,1200000,0.10],
+        [1200000,1600000,0.15],[1600000,2000000,0.20],[2000000,2400000,0.25],[2400000,Infinity,0.30]
+      ];
+      var tax = 0;
+      slabs.forEach(function(s){ if(taxable > s[0]){ tax += (Math.min(taxable, s[1]) - s[0]) * s[2]; } });
+      if(taxable <= 1200000){ tax = 0; }
+      return tax;
+    }
+    function oldRegimeTax(taxable){
+      var slabs = [[0,250000,0],[250000,500000,0.05],[500000,1000000,0.20],[1000000,Infinity,0.30]];
+      var tax = 0;
+      slabs.forEach(function(s){ if(taxable > s[0]){ tax += (Math.min(taxable, s[1]) - s[0]) * s[2]; } });
+      if(taxable <= 500000){ tax = 0; }
+      return tax;
+    }
+    function calcTax(){
+      var income = parseFloat(document.getElementById('tax-income').value) || 0;
+      var salaried = document.getElementById('tax-salaried').checked;
+      var otherDed = parseFloat(document.getElementById('tax-ded').value) || 0;
+  
+      document.getElementById('tax-income-val').textContent = toINR(income);
+      document.getElementById('tax-ded-val').textContent = toINR(otherDed);
+  
+      var stdDedNew = salaried ? 75000 : 0;
+      var stdDedOld = salaried ? 50000 : 0;
+      var taxableNew = Math.max(0, income - stdDedNew);
+      var taxableOld = Math.max(0, income - stdDedOld - Math.min(otherDed,400000));
+  
+      var taxNew = Math.round(newRegimeTax(taxableNew) * 1.04);
+      var taxOld = Math.round(oldRegimeTax(taxableOld) * 1.04);
+  
+      document.getElementById('tax-taxable-new').textContent = toINR(taxableNew);
+      document.getElementById('tax-taxable-old').textContent = toINR(taxableOld);
+      document.getElementById('tax-new-amt').textContent = toINR(taxNew);
+      document.getElementById('tax-old-amt').textContent = toINR(taxOld);
+  
+      var maxAmt = Math.max(taxNew, taxOld, 1);
+      document.getElementById('tax-new-bar').style.width = (taxNew/maxAmt*100)+'%';
+      document.getElementById('tax-old-bar').style.width = (taxOld/maxAmt*100)+'%';
+      document.getElementById('tax-new-bar').className = 'bar-fill' + (taxNew<=taxOld? ' win':' warn');
+      document.getElementById('tax-old-bar').className = 'bar-fill' + (taxOld<taxNew? ' win':' warn');
+  
+      var lower = Math.min(taxNew, taxOld);
+      var diff = Math.abs(taxNew - taxOld);
+      var better = taxNew <= taxOld ? 'new' : 'old';
+  
+      document.getElementById('tax-rv').textContent = toINR(diff);
+      document.getElementById('tax-rn').textContent = 'by picking the ' + better + ' regime.';
+      document.getElementById('tax-final').textContent = toINR(lower) + '/yr';
+  
+      var flag = document.getElementById('tax-flag');
+      if(taxableNew <= 1200000){
+        flag.textContent = 'Your new-regime taxable income is at or under ₹12,00,000, so the Section 87A rebate brings that tax to zero.';
+      } else if(otherDed >= 150000){
+        flag.textContent = 'With ₹1,50,000+ in 80C-type deductions, the old regime narrows the gap — worth checking both every year.';
       } else {
+        flag.textContent = 'The new regime is the default from FY 2023-24 onward — you\u2019d need to actively opt for the old one.';
+      }
+    }
+    bindRange('tax-income','tax-income-range', calcTax);
+    bindRange('tax-ded','tax-ded-range', calcTax);
+    document.getElementById('tax-salaried').addEventListener('change', calcTax);
+    calcTax();
+  
+    // ================= EMI =================
+    function calcEMI(){
+      var P = parseFloat(document.getElementById('emi-amt').value) || 0;
+      var annualRate = parseFloat(document.getElementById('emi-rate').value) || 0;
+      var years = parseFloat(document.getElementById('emi-years').value) || 0;
+  
+      document.getElementById('emi-amt-val').textContent = toINR(P);
+      document.getElementById('emi-rate-val').textContent = pct(annualRate,2);
+      document.getElementById('emi-years-val').textContent = years + ' yrs';
+  
+      var r = (annualRate/12)/100;
+      var n = years*12;
+      var emi = 0;
+      if(r === 0 && n>0){ emi = P/n; }
+      else if(n>0){ emi = P * r * Math.pow(1+r,n) / (Math.pow(1+r,n)-1); }
+      var totalPayment = emi*n;
+      var totalInterest = totalPayment - P;
+  
+      document.getElementById('emi-rv').textContent = toINR(emi);
+      document.getElementById('emi-total-interest').textContent = toINR(totalInterest);
+      document.getElementById('emi-total-payment').textContent = toINR(totalPayment);
+      document.getElementById('emi-principal-amt').textContent = toINR(P);
+      document.getElementById('emi-interest-amt').textContent = toINR(totalInterest);
+  
+      var maxV = Math.max(P, totalInterest, 1);
+      document.getElementById('emi-principal-bar').style.width = (P/maxV*100)+'%';
+      document.getElementById('emi-interest-bar').style.width = (totalInterest/maxV*100)+'%';
+    }
+    bindRange('emi-amt','emi-amt-range', calcEMI);
+    bindRange('emi-rate','emi-rate-range', calcEMI);
+    bindRange('emi-years','emi-years-range', calcEMI);
+    calcEMI();
+  
+    // ================= INVESTMENT =================
+    var invMode = 'sip';
+    function calcInv(){
+      var amt = parseFloat(document.getElementById('inv-amt').value) || 0;
+      var annualRate = parseFloat(document.getElementById('inv-rate').value) || 0;
+      var years = parseFloat(document.getElementById('inv-years').value) || 0;
+  
+      document.getElementById('inv-amt-val').textContent = toINR(amt);
+      document.getElementById('inv-rate-val').textContent = pct(annualRate,1);
+      document.getElementById('inv-years-val').textContent = years + ' yrs';
+  
+      var invested, maturity;
+      if(invMode === 'sip'){
+        var rMonthly = (annualRate/12)/100;
+        var nMonths = years*12;
+        invested = amt*nMonths;
+        maturity = rMonthly===0 ? invested : amt * ((Math.pow(1+rMonthly,nMonths)-1)/rMonthly) * (1+rMonthly);
+        document.getElementById('inv-rn').textContent = 'projected value of your monthly SIP at the end of the term.';
+      } else {
+        invested = amt;
+        maturity = amt * Math.pow(1+annualRate/100, years);
+        document.getElementById('inv-rn').textContent = 'projected value of your lump sum at the end of the term.';
+      }
+      var growth = maturity - invested;
+  
+      document.getElementById('inv-rv').textContent = toINR(maturity);
+      document.getElementById('inv-total-invested').textContent = toINR(invested);
+      document.getElementById('inv-total-value').textContent = toINR(maturity);
+      document.getElementById('inv-invested-amt').textContent = toINR(invested);
+      document.getElementById('inv-growth-amt').textContent = toINR(growth);
+  
+      var maxV = Math.max(invested, growth, 1);
+      document.getElementById('inv-invested-bar').style.width = (invested/maxV*100)+'%';
+      document.getElementById('inv-growth-bar').style.width = (growth/maxV*100)+'%';
+    }
+    bindRange('inv-amt','inv-amt-range', calcInv);
+    bindRange('inv-rate','inv-rate-range', calcInv);
+    bindRange('inv-years','inv-years-range', calcInv);
+    bindSeg('inv-mode', function(val){
+      invMode = val;
+      var label = document.getElementById('inv-amt-label');
+      var amtEl = document.getElementById('inv-amt');
+      var rangeEl = document.getElementById('inv-amt-range');
+      if(val === 'sip'){
+        label.textContent = 'Monthly investment';
+        amtEl.value = 10000; rangeEl.value = 10000; rangeEl.max = 200000; rangeEl.step = 500;
+      } else {
+        label.textContent = 'Lump sum amount';
+        amtEl.value = 500000; rangeEl.value = 500000; rangeEl.max = 5000000; rangeEl.step = 10000;
+      }
+      calcInv();
+    });
+    calcInv();
+  
+    // ================= HRA =================
+    var hraCity = 'metro';
+    function calcHRA(){
+      var basic = parseFloat(document.getElementById('hra-basic').value) || 0;
+      var received = parseFloat(document.getElementById('hra-received').value) || 0;
+      var rent = parseFloat(document.getElementById('hra-rent').value) || 0;
+      document.getElementById('hra-basic-val').textContent = toINR(basic);
+      document.getElementById('hra-received-val').textContent = toINR(received);
+      document.getElementById('hra-rent-val').textContent = toINR(rent);
+  
+      var cityPct = hraCity === 'metro' ? 0.5 : 0.4;
+      var c1 = received;
+      var c2 = Math.max(0, rent - 0.1*basic);
+      var c3 = cityPct * basic;
+      var exempt = Math.max(0, Math.min(c1, c2, c3));
+      var taxable = Math.max(0, received - exempt);
+  
+      document.getElementById('hra-rv').textContent = toINR(exempt);
+      document.getElementById('hra-c1').textContent = toINR(c1);
+      document.getElementById('hra-c2').textContent = toINR(c2);
+      document.getElementById('hra-c3').textContent = toINR(c3);
+      document.getElementById('hra-taxable').textContent = toINR(taxable);
+    }
+    bindRange('hra-basic','hra-basic-range', calcHRA);
+    bindRange('hra-received','hra-received-range', calcHRA);
+    bindRange('hra-rent','hra-rent-range', calcHRA);
+    bindSeg('hra-city', function(val){ hraCity = val; calcHRA(); });
+    calcHRA();
+  
+    // ================= CAPITAL GAINS =================
+    var cgAsset = 'equity';
+    var cgOldProp = 'no';
+    function calcCG(){
+      var buy = parseFloat(document.getElementById('cg-buy').value) || 0;
+      var sell = parseFloat(document.getElementById('cg-sell').value) || 0;
+      var months = parseFloat(document.getElementById('cg-months').value) || 0;
+      document.getElementById('cg-buy-val').textContent = toINR(buy);
+      document.getElementById('cg-sell-val').textContent = toINR(sell);
+      document.getElementById('cg-months-val').textContent = months + ' mo';
+  
+      var gain = sell - buy;
+      var isLT, rateLabel, tax, classLabel;
+  
+      if(cgAsset === 'equity'){
+        isLT = months > 12;
+        if(isLT){
+          var taxableGain = Math.max(0, gain - 125000);
+          tax = taxableGain * 0.125;
+          rateLabel = '12.5% above ₹1.25L exemption';
+          classLabel = 'Long-term (equity)';
+        } else {
+          tax = Math.max(0, gain) * 0.20;
+          rateLabel = '20% flat';
+          classLabel = 'Short-term (equity)';
+        }
+      } else if(cgAsset === 'debt'){
+        isLT = false;
         tax = null;
         rateLabel = 'your income tax slab rate';
-        classLabel = 'Short-term (property/gold) — taxed at slab rate';
+        classLabel = 'Always taxed at slab rate (post-Apr 2023 rule)';
+      } else {
+        isLT = months > 24;
+        if(isLT){
+          tax = Math.max(0, gain) * 0.125;
+          rateLabel = cgOldProp === 'yes' ? '12.5% (or 20% with indexation — check both)' : '12.5% flat, no indexation';
+          classLabel = 'Long-term (property/gold)';
+        } else {
+          tax = null;
+          rateLabel = 'your income tax slab rate';
+          classLabel = 'Short-term (property/gold) — taxed at slab rate';
+        }
+      }
+  
+      document.getElementById('cg-gain').textContent = toINR(gain);
+      document.getElementById('cg-class').textContent = classLabel;
+      document.getElementById('cg-rate').textContent = rateLabel;
+      if(tax === null){
+        document.getElementById('cg-tax').textContent = 'depends on your slab';
+        document.getElementById('cg-rv').textContent = '—';
+        document.getElementById('cg-rn').textContent = 'taxed at your income slab rate, not a flat rate — check the Income Tax tool.';
+      } else {
+        document.getElementById('cg-tax').textContent = toINR(tax);
+        document.getElementById('cg-rv').textContent = toINR(tax);
+        document.getElementById('cg-rn').textContent = 'estimated capital gains tax.';
+      }
+  
+      document.getElementById('cg-oldprop-field').style.display = (cgAsset === 'other') ? '' : 'none';
+      var flagEl = document.getElementById('cg-flag');
+      if(cgAsset === 'equity'){
+        flagEl.textContent = 'Equity: 12-month LT threshold, 12.5% above ₹1.25L exemption/year. Below 12 months: 20% flat.';
+      } else if(cgAsset === 'debt'){
+        flagEl.textContent = 'Debt mutual funds bought after April 2023 are always taxed at your income slab rate, regardless of holding period.';
+      } else {
+        flagEl.textContent = 'Property/gold: 24-month LT threshold. Bought after 23 Jul 2024: 12.5% flat, no indexation. Bought before: you can choose 12.5% (no indexation) or 20% (with indexation) — whichever is lower.';
       }
     }
-
-    document.getElementById('cg-gain').textContent = toINR(gain);
-    document.getElementById('cg-class').textContent = classLabel;
-    document.getElementById('cg-rate').textContent = rateLabel;
-    if(tax === null){
-      document.getElementById('cg-tax').textContent = 'depends on your slab';
-      document.getElementById('cg-rv').textContent = '—';
-      document.getElementById('cg-rn').textContent = 'taxed at your income slab rate, not a flat rate — check the Income Tax tool.';
-    } else {
-      document.getElementById('cg-tax').textContent = toINR(tax);
-      document.getElementById('cg-rv').textContent = toINR(tax);
-      document.getElementById('cg-rn').textContent = 'estimated capital gains tax.';
+    bindRange('cg-buy','cg-buy-range', calcCG);
+    bindRange('cg-sell','cg-sell-range', calcCG);
+    bindRange('cg-months','cg-months-range', calcCG);
+    bindSeg('cg-asset', function(val){ cgAsset = val; calcCG(); });
+    bindSeg('cg-oldprop', function(val){ cgOldProp = val; calcCG(); });
+    calcCG();
+  
+    // ================= RENT VS BUY =================
+    function calcRentBuy(){
+      var rent0 = parseFloat(document.getElementById('rb-rent').value) || 0;
+      var price = parseFloat(document.getElementById('rb-price').value) || 0;
+      var downPct = parseFloat(document.getElementById('rb-down').value) || 0;
+      var rate = parseFloat(document.getElementById('rb-rate').value) || 0;
+      var years = parseFloat(document.getElementById('rb-years').value) || 1;
+      var appr = parseFloat(document.getElementById('rb-appr').value) || 0;
+      var investRate = parseFloat(document.getElementById('rb-inv').value) || 0;
+  
+      document.getElementById('rb-rent-val').textContent = toINR(rent0);
+      document.getElementById('rb-price-val').textContent = toINR(price);
+      document.getElementById('rb-down-val').textContent = downPct + '%';
+      document.getElementById('rb-rate-val').textContent = pct(rate,1);
+      document.getElementById('rb-years-val').textContent = years + ' yrs';
+      document.getElementById('rb-appr-val').textContent = appr + '%';
+      document.getElementById('rb-inv-val').textContent = investRate + '%';
+  
+      var down = price * downPct/100;
+      var loanAmt = price - down;
+      var rMonthly = (rate/12)/100;
+      var nMonths = years*12; // loan tenure assumed = horizon for simplicity, capped at 30yr amort below
+      var amortMonths = 20*12;
+      var emi = rMonthly===0 ? loanAmt/amortMonths : loanAmt * rMonthly * Math.pow(1+rMonthly,amortMonths) / (Math.pow(1+rMonthly,amortMonths)-1);
+  
+      var balance = loanAmt;
+      var totalInterestPaid = 0;
+      var rentMonthly = rent0;
+      var investCorpus = 0;
+      var investMonthlyRate = (investRate/100)/12;
+      var horizonMonths = years*12;
+  
+      for(var m=1; m<=horizonMonths; m++){
+        // buying side
+        if(balance > 0){
+          var interestPortion = balance * rMonthly;
+          var principalPortion = Math.min(balance, emi - interestPortion);
+          balance -= principalPortion;
+          totalInterestPaid += interestPortion;
+        }
+        // renting side: invest the difference between (emi) and (rent), if positive
+        var diff = emi - rentMonthly;
+        if(diff > 0){ investCorpus = investCorpus*(1+investMonthlyRate) + diff; }
+        else { investCorpus = investCorpus*(1+investMonthlyRate); }
+        // annual rent escalation (assume same % as appreciation isn't linked; use a fixed 5% typical rent growth)
+        if(m % 12 === 0){ rentMonthly *= 1.05; }
+      }
+  
+      var propertyValue = price * Math.pow(1+appr/100, years);
+      var buyNet = propertyValue - balance - down - totalInterestPaid + down; // net wealth = property value - remaining loan (down payment already spent, counted as sunk but recovered in property value)
+      // Simplify: net position if buying = property value - outstanding loan balance (equity you'd have if you sold)
+      var buyNetPosition = propertyValue - balance;
+      var rentNetPosition = investCorpus;
+  
+      document.getElementById('rb-buy-amt').textContent = toINR(buyNetPosition);
+      document.getElementById('rb-rent-amt').textContent = toINR(rentNetPosition);
+      var maxV = Math.max(buyNetPosition, rentNetPosition, 1);
+      document.getElementById('rb-buy-bar').style.width = (Math.max(0,buyNetPosition)/maxV*100)+'%';
+      document.getElementById('rb-rent-bar').style.width = (Math.max(0,rentNetPosition)/maxV*100)+'%';
+  
+      var diffFinal = buyNetPosition - rentNetPosition;
+      var heroEl = document.getElementById('rb-hero');
+      if(diffFinal > 0){
+        document.getElementById('rb-rv').textContent = 'Buying wins by ' + toINR(diffFinal);
+        heroEl.classList.remove('calm');
+      } else {
+        document.getElementById('rb-rv').textContent = 'Renting + investing wins by ' + toINR(-diffFinal);
+        heroEl.classList.add('calm');
+      }
     }
-
-    document.getElementById('cg-oldprop-field').style.display = (cgAsset === 'other') ? '' : 'none';
-    var flagEl = document.getElementById('cg-flag');
-    if(cgAsset === 'equity'){
-      flagEl.textContent = 'Equity: 12-month LT threshold, 12.5% above ₹1.25L exemption/year. Below 12 months: 20% flat.';
-    } else if(cgAsset === 'debt'){
-      flagEl.textContent = 'Debt mutual funds bought after April 2023 are always taxed at your income slab rate, regardless of holding period.';
-    } else {
-      flagEl.textContent = 'Property/gold: 24-month LT threshold. Bought after 23 Jul 2024: 12.5% flat, no indexation. Bought before: you can choose 12.5% (no indexation) or 20% (with indexation) — whichever is lower.';
+    bindRange('rb-rent','rb-rent-range', calcRentBuy);
+    bindRange('rb-price','rb-price-range', calcRentBuy);
+    bindRange('rb-down','rb-down-range', calcRentBuy);
+    bindRange('rb-rate','rb-rate-range', calcRentBuy);
+    bindRange('rb-years','rb-years-range', calcRentBuy);
+    bindRange('rb-appr','rb-appr-range', calcRentBuy);
+    bindRange('rb-inv','rb-inv-range', calcRentBuy);
+    calcRentBuy();
+  
+    // ================= SALARY / IN-HAND =================
+    function calcSalary(){
+      var ctc = parseFloat(document.getElementById('sal-ctc').value) || 0;
+      var basicPct = parseFloat(document.getElementById('sal-basicpct').value) || 40;
+      var otherDed = parseFloat(document.getElementById('sal-ded').value) || 0;
+      document.getElementById('sal-ctc-val').textContent = toINR(ctc);
+      document.getElementById('sal-basic-val').textContent = basicPct + '%';
+      document.getElementById('sal-ded-val').textContent = toINR(otherDed);
+  
+      var annualBasic = ctc * (basicPct/100);
+      var employerPF = annualBasic * 0.12;
+      var gratuityAccrual = annualBasic * 0.0481;
+      var grossAnnual = Math.max(0, ctc - employerPF - gratuityAccrual);
+      var employeePF = annualBasic * 0.12;
+      var taxableIncome = Math.max(0, grossAnnual - 75000 - otherDed);
+      var annualTax = newRegimeTax(taxableIncome) * 1.04;
+  
+      var monthlyGross = grossAnnual / 12;
+      var monthlyPF = employeePF / 12;
+      var monthlyTDS = annualTax / 12;
+      var monthlyProfTax = 200;
+      var monthlyNet = monthlyGross - monthlyPF - monthlyTDS - monthlyProfTax;
+  
+      document.getElementById('sal-rv').textContent = toINR(monthlyNet);
+      document.getElementById('sal-gross').textContent = toINR(monthlyGross);
+      document.getElementById('sal-pf').textContent = toINR(monthlyPF);
+      document.getElementById('sal-tds').textContent = toINR(monthlyTDS);
+      document.getElementById('sal-net').textContent = toINR(monthlyNet);
     }
-  }
-  bindRange('cg-buy','cg-buy-range', calcCG);
-  bindRange('cg-sell','cg-sell-range', calcCG);
-  bindRange('cg-months','cg-months-range', calcCG);
-  bindSeg('cg-asset', function(val){ cgAsset = val; calcCG(); });
-  bindSeg('cg-oldprop', function(val){ cgOldProp = val; calcCG(); });
-  calcCG();
-
-  // ================= RENT VS BUY =================
-  function calcRentBuy(){
-    var rent0 = parseFloat(document.getElementById('rb-rent').value) || 0;
-    var price = parseFloat(document.getElementById('rb-price').value) || 0;
-    var downPct = parseFloat(document.getElementById('rb-down').value) || 0;
-    var rate = parseFloat(document.getElementById('rb-rate').value) || 0;
-    var years = parseFloat(document.getElementById('rb-years').value) || 1;
-    var appr = parseFloat(document.getElementById('rb-appr').value) || 0;
-    var investRate = parseFloat(document.getElementById('rb-inv').value) || 0;
-
-    document.getElementById('rb-rent-val').textContent = toINR(rent0);
-    document.getElementById('rb-price-val').textContent = toINR(price);
-    document.getElementById('rb-down-val').textContent = downPct + '%';
-    document.getElementById('rb-rate-val').textContent = pct(rate,1);
-    document.getElementById('rb-years-val').textContent = years + ' yrs';
-    document.getElementById('rb-appr-val').textContent = appr + '%';
-    document.getElementById('rb-inv-val').textContent = investRate + '%';
-
-    var down = price * downPct/100;
-    var loanAmt = price - down;
-    var rMonthly = (rate/12)/100;
-    var nMonths = years*12; // loan tenure assumed = horizon for simplicity, capped at 30yr amort below
-    var amortMonths = 20*12;
-    var emi = rMonthly===0 ? loanAmt/amortMonths : loanAmt * rMonthly * Math.pow(1+rMonthly,amortMonths) / (Math.pow(1+rMonthly,amortMonths)-1);
-
-    var balance = loanAmt;
-    var totalInterestPaid = 0;
-    var rentMonthly = rent0;
-    var investCorpus = 0;
-    var investMonthlyRate = (investRate/100)/12;
-    var horizonMonths = years*12;
-
-    for(var m=1; m<=horizonMonths; m++){
-      // buying side
-      if(balance > 0){
-        var interestPortion = balance * rMonthly;
-        var principalPortion = Math.min(balance, emi - interestPortion);
+    bindRange('sal-ctc','sal-ctc-range', calcSalary);
+    bindRange('sal-basicpct','sal-basicpct-range', calcSalary);
+    bindRange('sal-ded','sal-ded-range', calcSalary);
+    calcSalary();
+  
+    // ================= GRATUITY =================
+    function calcGratuity(){
+      var basic = parseFloat(document.getElementById('gr-basic').value) || 0;
+      var years = parseFloat(document.getElementById('gr-years').value) || 0;
+      document.getElementById('gr-basic-val').textContent = toINR(basic);
+      document.getElementById('gr-years-val').textContent = years + ' yrs';
+  
+      var raw = basic * (15/26) * years;
+      var ceiling = 2000000;
+      var payable = years >= 5 ? Math.min(raw, ceiling) : 0;
+      var taxable = Math.max(0, payable - Math.min(payable, ceiling));
+  
+      document.getElementById('gr-rv').textContent = toINR(payable);
+      document.getElementById('gr-calc').textContent = toINR(raw);
+      document.getElementById('gr-taxable').textContent = toINR(taxable);
+  
+      var flagEl = document.getElementById('gr-flag');
+      var rnEl = document.querySelector('#gr-hero .rn');
+      if(years < 5){
+        flagEl.textContent = 'Under 5 years of service — not eligible for gratuity under standard rules (exceptions apply for death or disability).';
+        rnEl.textContent = 'not eligible yet — needs 5+ years of service.';
+      } else {
+        flagEl.textContent = 'Eligible after 5+ years of continuous service (private sector). Exempt up to ₹20,00,000 — the lowest of actual gratuity, the ceiling, or the formula amount.';
+        rnEl.textContent = 'fully tax-exempt (under ₹20L ceiling).';
+      }
+    }
+    bindRange('gr-basic','gr-basic-range', calcGratuity);
+    bindRange('gr-years','gr-years-range', calcGratuity);
+    calcGratuity();
+  
+    // ================= FREELANCE TAX (44ADA) =================
+    var flDigital = 'yes';
+    function calcFreelance(){
+      var gross = parseFloat(document.getElementById('fl-gross').value) || 0;
+      var actualExp = parseFloat(document.getElementById('fl-exp').value) || 0;
+      document.getElementById('fl-gross-val').textContent = toINR(gross);
+      document.getElementById('fl-exp-val').textContent = toINR(actualExp);
+  
+      var limit = flDigital === 'yes' ? 7500000 : 5000000;
+      var eligible = gross <= limit;
+      var presumptiveIncome = gross * 0.5;
+      var taxable44 = Math.max(0, presumptiveIncome - 75000);
+      var tax44 = newRegimeTax(taxable44) * 1.04;
+  
+      var actualProfit = Math.max(0, gross - actualExp);
+      var taxableActual = Math.max(0, actualProfit - 75000);
+      var taxActual = newRegimeTax(taxableActual) * 1.04;
+  
+      document.getElementById('fl-rv').textContent = toINR(presumptiveIncome);
+      document.getElementById('fl-limit').textContent = toINR(limit);
+      document.getElementById('fl-eligible').textContent = eligible ? 'Yes' : 'No — exceeds limit';
+      document.getElementById('fl-tax-44ada').textContent = toINR(tax44);
+      document.getElementById('fl-tax-actual').textContent = actualExp > 0 ? toINR(taxActual) : '—';
+  
+      var flagEl = document.getElementById('fl-flag');
+      if(!eligible){
+        flagEl.textContent = 'Your receipts exceed the 44ADA limit — regular books of account and possibly an audit may apply. Check with a CA.';
+      } else if(actualExp > 0 && taxActual < tax44){
+        flagEl.textContent = 'Based on what you entered, declaring actual profit looks cheaper than the 44ADA presumptive rate this year.';
+      } else {
+        flagEl.textContent = 'If your real expenses are under 50% of receipts, 44ADA usually wins — you\u2019re taxed on less than you\u2019d otherwise show as profit.';
+      }
+    }
+    bindRange('fl-gross','fl-gross-range', calcFreelance);
+    bindRange('fl-exp','fl-exp-range', calcFreelance);
+    bindSeg('fl-digital', function(val){ flDigital = val; calcFreelance(); });
+    calcFreelance();
+  
+    // ================= LOAN PREPAYMENT =================
+    function calcPrepay(){
+      var P = parseFloat(document.getElementById('pp-amt').value) || 0;
+      var annualRate = parseFloat(document.getElementById('pp-rate').value) || 0;
+      var years = parseFloat(document.getElementById('pp-years').value) || 0;
+      var extra = parseFloat(document.getElementById('pp-extra').value) || 0;
+  
+      document.getElementById('pp-amt-val').textContent = toINR(P);
+      document.getElementById('pp-rate-val').textContent = pct(annualRate,2);
+      document.getElementById('pp-years-val').textContent = years + ' yrs';
+      document.getElementById('pp-extra-val').textContent = toINR(extra);
+  
+      var r = (annualRate/12)/100;
+      var n = years*12;
+      var emi = r===0 ? P/n : P * r * Math.pow(1+r,n) / (Math.pow(1+r,n)-1);
+      var originalTotalInterest = emi*n - P;
+  
+      var balance = P;
+      var totalInterestNew = 0;
+      var months = 0;
+      while(balance > 0 && months < n){
+        months++;
+        var interestPortion = balance * r;
+        var principalPortion = Math.min(balance, (emi - interestPortion) + extra);
         balance -= principalPortion;
-        totalInterestPaid += interestPortion;
+        totalInterestNew += interestPortion;
+        if(principalPortion <= 0) break;
       }
-      // renting side: invest the difference between (emi) and (rent), if positive
-      var diff = emi - rentMonthly;
-      if(diff > 0){ investCorpus = investCorpus*(1+investMonthlyRate) + diff; }
-      else { investCorpus = investCorpus*(1+investMonthlyRate); }
-      // annual rent escalation (assume same % as appreciation isn't linked; use a fixed 5% typical rent growth)
-      if(m % 12 === 0){ rentMonthly *= 1.05; }
+  
+      var interestSaved = originalTotalInterest - totalInterestNew;
+      var monthsSaved = n - months;
+  
+      document.getElementById('pp-rv').textContent = toINR(Math.max(0,interestSaved));
+      document.getElementById('pp-emi').textContent = toINR(emi);
+      document.getElementById('pp-newtenure').textContent = Math.floor(months/12) + ' yrs ' + (months%12) + ' mo';
+      document.getElementById('pp-timesaved').textContent = Math.floor(monthsSaved/12) + ' yrs ' + (monthsSaved%12) + ' mo';
+      document.getElementById('pp-interestcompare').textContent = toINR(originalTotalInterest) + ' \u2192 ' + toINR(totalInterestNew);
     }
-
-    var propertyValue = price * Math.pow(1+appr/100, years);
-    var buyNet = propertyValue - balance - down - totalInterestPaid + down; // net wealth = property value - remaining loan (down payment already spent, counted as sunk but recovered in property value)
-    // Simplify: net position if buying = property value - outstanding loan balance (equity you'd have if you sold)
-    var buyNetPosition = propertyValue - balance;
-    var rentNetPosition = investCorpus;
-
-    document.getElementById('rb-buy-amt').textContent = toINR(buyNetPosition);
-    document.getElementById('rb-rent-amt').textContent = toINR(rentNetPosition);
-    var maxV = Math.max(buyNetPosition, rentNetPosition, 1);
-    document.getElementById('rb-buy-bar').style.width = (Math.max(0,buyNetPosition)/maxV*100)+'%';
-    document.getElementById('rb-rent-bar').style.width = (Math.max(0,rentNetPosition)/maxV*100)+'%';
-
-    var diffFinal = buyNetPosition - rentNetPosition;
-    var heroEl = document.getElementById('rb-hero');
-    if(diffFinal > 0){
-      document.getElementById('rb-rv').textContent = 'Buying wins by ' + toINR(diffFinal);
-      heroEl.classList.remove('calm');
-    } else {
-      document.getElementById('rb-rv').textContent = 'Renting + investing wins by ' + toINR(-diffFinal);
-      heroEl.classList.add('calm');
-    }
-  }
-  bindRange('rb-rent','rb-rent-range', calcRentBuy);
-  bindRange('rb-price','rb-price-range', calcRentBuy);
-  bindRange('rb-down','rb-down-range', calcRentBuy);
-  bindRange('rb-rate','rb-rate-range', calcRentBuy);
-  bindRange('rb-years','rb-years-range', calcRentBuy);
-  bindRange('rb-appr','rb-appr-range', calcRentBuy);
-  bindRange('rb-inv','rb-inv-range', calcRentBuy);
-  calcRentBuy();
-
-  // ================= SALARY / IN-HAND =================
-  function calcSalary(){
-    var ctc = parseFloat(document.getElementById('sal-ctc').value) || 0;
-    var basicPct = parseFloat(document.getElementById('sal-basicpct').value) || 40;
-    var otherDed = parseFloat(document.getElementById('sal-ded').value) || 0;
-    document.getElementById('sal-ctc-val').textContent = toINR(ctc);
-    document.getElementById('sal-basic-val').textContent = basicPct + '%';
-    document.getElementById('sal-ded-val').textContent = toINR(otherDed);
-
-    var annualBasic = ctc * (basicPct/100);
-    var employerPF = annualBasic * 0.12;
-    var gratuityAccrual = annualBasic * 0.0481;
-    var grossAnnual = Math.max(0, ctc - employerPF - gratuityAccrual);
-    var employeePF = annualBasic * 0.12;
-    var taxableIncome = Math.max(0, grossAnnual - 75000 - otherDed);
-    var annualTax = newRegimeTax(taxableIncome) * 1.04;
-
-    var monthlyGross = grossAnnual / 12;
-    var monthlyPF = employeePF / 12;
-    var monthlyTDS = annualTax / 12;
-    var monthlyProfTax = 200;
-    var monthlyNet = monthlyGross - monthlyPF - monthlyTDS - monthlyProfTax;
-
-    document.getElementById('sal-rv').textContent = toINR(monthlyNet);
-    document.getElementById('sal-gross').textContent = toINR(monthlyGross);
-    document.getElementById('sal-pf').textContent = toINR(monthlyPF);
-    document.getElementById('sal-tds').textContent = toINR(monthlyTDS);
-    document.getElementById('sal-net').textContent = toINR(monthlyNet);
-  }
-  bindRange('sal-ctc','sal-ctc-range', calcSalary);
-  bindRange('sal-basicpct','sal-basicpct-range', calcSalary);
-  bindRange('sal-ded','sal-ded-range', calcSalary);
-  calcSalary();
-
-  // ================= GRATUITY =================
-  function calcGratuity(){
-    var basic = parseFloat(document.getElementById('gr-basic').value) || 0;
-    var years = parseFloat(document.getElementById('gr-years').value) || 0;
-    document.getElementById('gr-basic-val').textContent = toINR(basic);
-    document.getElementById('gr-years-val').textContent = years + ' yrs';
-
-    var raw = basic * (15/26) * years;
-    var ceiling = 2000000;
-    var payable = years >= 5 ? Math.min(raw, ceiling) : 0;
-    var taxable = Math.max(0, payable - Math.min(payable, ceiling));
-
-    document.getElementById('gr-rv').textContent = toINR(payable);
-    document.getElementById('gr-calc').textContent = toINR(raw);
-    document.getElementById('gr-taxable').textContent = toINR(taxable);
-
-    var flagEl = document.getElementById('gr-flag');
-    var rnEl = document.querySelector('#gr-hero .rn');
-    if(years < 5){
-      flagEl.textContent = 'Under 5 years of service — not eligible for gratuity under standard rules (exceptions apply for death or disability).';
-      rnEl.textContent = 'not eligible yet — needs 5+ years of service.';
-    } else {
-      flagEl.textContent = 'Eligible after 5+ years of continuous service (private sector). Exempt up to ₹20,00,000 — the lowest of actual gratuity, the ceiling, or the formula amount.';
-      rnEl.textContent = 'fully tax-exempt (under ₹20L ceiling).';
-    }
-  }
-  bindRange('gr-basic','gr-basic-range', calcGratuity);
-  bindRange('gr-years','gr-years-range', calcGratuity);
-  calcGratuity();
-
-  // ================= FREELANCE TAX (44ADA) =================
-  var flDigital = 'yes';
-  function calcFreelance(){
-    var gross = parseFloat(document.getElementById('fl-gross').value) || 0;
-    var actualExp = parseFloat(document.getElementById('fl-exp').value) || 0;
-    document.getElementById('fl-gross-val').textContent = toINR(gross);
-    document.getElementById('fl-exp-val').textContent = toINR(actualExp);
-
-    var limit = flDigital === 'yes' ? 7500000 : 5000000;
-    var eligible = gross <= limit;
-    var presumptiveIncome = gross * 0.5;
-    var taxable44 = Math.max(0, presumptiveIncome - 75000);
-    var tax44 = newRegimeTax(taxable44) * 1.04;
-
-    var actualProfit = Math.max(0, gross - actualExp);
-    var taxableActual = Math.max(0, actualProfit - 75000);
-    var taxActual = newRegimeTax(taxableActual) * 1.04;
-
-    document.getElementById('fl-rv').textContent = toINR(presumptiveIncome);
-    document.getElementById('fl-limit').textContent = toINR(limit);
-    document.getElementById('fl-eligible').textContent = eligible ? 'Yes' : 'No — exceeds limit';
-    document.getElementById('fl-tax-44ada').textContent = toINR(tax44);
-    document.getElementById('fl-tax-actual').textContent = actualExp > 0 ? toINR(taxActual) : '—';
-
-    var flagEl = document.getElementById('fl-flag');
-    if(!eligible){
-      flagEl.textContent = 'Your receipts exceed the 44ADA limit — regular books of account and possibly an audit may apply. Check with a CA.';
-    } else if(actualExp > 0 && taxActual < tax44){
-      flagEl.textContent = 'Based on what you entered, declaring actual profit looks cheaper than the 44ADA presumptive rate this year.';
-    } else {
-      flagEl.textContent = 'If your real expenses are under 50% of receipts, 44ADA usually wins — you\u2019re taxed on less than you\u2019d otherwise show as profit.';
-    }
-  }
-  bindRange('fl-gross','fl-gross-range', calcFreelance);
-  bindRange('fl-exp','fl-exp-range', calcFreelance);
-  bindSeg('fl-digital', function(val){ flDigital = val; calcFreelance(); });
-  calcFreelance();
-
-  // ================= LOAN PREPAYMENT =================
-  function calcPrepay(){
-    var P = parseFloat(document.getElementById('pp-amt').value) || 0;
-    var annualRate = parseFloat(document.getElementById('pp-rate').value) || 0;
-    var years = parseFloat(document.getElementById('pp-years').value) || 0;
-    var extra = parseFloat(document.getElementById('pp-extra').value) || 0;
-
-    document.getElementById('pp-amt-val').textContent = toINR(P);
-    document.getElementById('pp-rate-val').textContent = pct(annualRate,2);
-    document.getElementById('pp-years-val').textContent = years + ' yrs';
-    document.getElementById('pp-extra-val').textContent = toINR(extra);
-
-    var r = (annualRate/12)/100;
-    var n = years*12;
-    var emi = r===0 ? P/n : P * r * Math.pow(1+r,n) / (Math.pow(1+r,n)-1);
-    var originalTotalInterest = emi*n - P;
-
-    var balance = P;
-    var totalInterestNew = 0;
-    var months = 0;
-    while(balance > 0 && months < n){
-      months++;
-      var interestPortion = balance * r;
-      var principalPortion = Math.min(balance, (emi - interestPortion) + extra);
-      balance -= principalPortion;
-      totalInterestNew += interestPortion;
-      if(principalPortion <= 0) break;
-    }
-
-    var interestSaved = originalTotalInterest - totalInterestNew;
-    var monthsSaved = n - months;
-
-    document.getElementById('pp-rv').textContent = toINR(Math.max(0,interestSaved));
-    document.getElementById('pp-emi').textContent = toINR(emi);
-    document.getElementById('pp-newtenure').textContent = Math.floor(months/12) + ' yrs ' + (months%12) + ' mo';
-    document.getElementById('pp-timesaved').textContent = Math.floor(monthsSaved/12) + ' yrs ' + (monthsSaved%12) + ' mo';
-    document.getElementById('pp-interestcompare').textContent = toINR(originalTotalInterest) + ' \u2192 ' + toINR(totalInterestNew);
-  }
-  bindRange('pp-amt','pp-amt-range', calcPrepay);
-  bindRange('pp-rate','pp-rate-range', calcPrepay);
-  bindRange('pp-years','pp-years-range', calcPrepay);
-  bindRange('pp-extra','pp-extra-range', calcPrepay);
-  calcPrepay();
-
-  // ================= GOAL PLANNER =================
-  function calcGoal(){
-    var target = parseFloat(document.getElementById('gp-target').value) || 0;
-    var years = parseFloat(document.getElementById('gp-years').value) || 1;
-    var infl = parseFloat(document.getElementById('gp-infl').value) || 0;
-    var ret = parseFloat(document.getElementById('gp-return').value) || 0;
-
-    document.getElementById('gp-target-val').textContent = toINR(target);
-    document.getElementById('gp-years-val').textContent = years + ' yrs';
-    document.getElementById('gp-infl-val').textContent = infl + '%';
-    document.getElementById('gp-return-val').textContent = ret + '%';
-
-    var futureValue = target * Math.pow(1+infl/100, years);
-    var rMonthly = (ret/100)/12;
-    var nMonths = years*12;
-    var sip;
-    if(rMonthly === 0){
-      sip = futureValue / nMonths;
-    } else {
-      var factor = ((Math.pow(1+rMonthly,nMonths)-1)/rMonthly) * (1+rMonthly);
-      sip = futureValue / factor;
-    }
-    var totalInvested = sip * nMonths;
-
-    document.getElementById('gp-rv').textContent = toINR(sip);
-    document.getElementById('gp-today').textContent = toINR(target);
-    document.getElementById('gp-future').textContent = toINR(futureValue);
-    document.getElementById('gp-invested').textContent = toINR(totalInvested);
-  }
-  bindRange('gp-target','gp-target-range', calcGoal);
-  bindRange('gp-years','gp-years-range', calcGoal);
-  bindRange('gp-infl','gp-infl-range', calcGoal);
-  bindRange('gp-return','gp-return-range', calcGoal);
-  calcGoal();
-
-  // ================= PPF =================
-  var ppfYears = 15;
-  function calcPPF(){
-    var yearly = parseFloat(document.getElementById('ppf-amt').value) || 0;
-    var rate = parseFloat(document.getElementById('ppf-rate').value) || 0;
-    document.getElementById('ppf-amt-val').textContent = toINR(yearly);
-    document.getElementById('ppf-rate-val').textContent = pct(rate,1);
-    document.getElementById('ppf-years-val').textContent = ppfYears + ' yrs';
-
-    var balance = 0;
-    for(var y=1; y<=ppfYears; y++){
-      balance = (balance + yearly) * (1 + rate/100);
-    }
-    var invested = yearly * ppfYears;
-    var interest = balance - invested;
-
-    document.getElementById('ppf-rv').textContent = toINR(balance);
-    document.getElementById('ppf-invested').textContent = toINR(invested);
-    document.getElementById('ppf-interest').textContent = toINR(interest);
-  }
-  bindRange('ppf-amt','ppf-amt-range', calcPPF);
-  bindRange('ppf-rate','ppf-rate-range', calcPPF);
-  bindSeg('ppf-years-seg', function(val){ ppfYears = parseInt(val,10); calcPPF(); });
-  calcPPF();
-
-  // ================= EPF =================
-  function calcEPF(){
-    var age = parseFloat(document.getElementById('epf-age').value) || 18;
-    var basic = parseFloat(document.getElementById('epf-basic').value) || 0;
-    var growth = parseFloat(document.getElementById('epf-growth').value) || 0;
-    var rate = parseFloat(document.getElementById('epf-rate').value) || 0;
-
-    document.getElementById('epf-age-val').textContent = age;
-    document.getElementById('epf-basic-val').textContent = toINR(basic);
-    document.getElementById('epf-growth-val').textContent = growth + '%';
-    document.getElementById('epf-rate-val').textContent = pct(rate,2);
-
-    var yearsLeft = Math.max(0, 58 - age);
-    var monthlyRate = (rate/100)/12;
-    var balance = 0;
-    var totalContributed = 0;
-    var currentBasic = basic;
-    for(var y=0; y<yearsLeft; y++){
-      var monthlyContribution = currentBasic * 0.24;
-      for(var m=0; m<12; m++){
-        balance = balance*(1+monthlyRate) + monthlyContribution;
-        totalContributed += monthlyContribution;
+    bindRange('pp-amt','pp-amt-range', calcPrepay);
+    bindRange('pp-rate','pp-rate-range', calcPrepay);
+    bindRange('pp-years','pp-years-range', calcPrepay);
+    bindRange('pp-extra','pp-extra-range', calcPrepay);
+    calcPrepay();
+  
+    // ================= GOAL PLANNER =================
+    function calcGoal(){
+      var target = parseFloat(document.getElementById('gp-target').value) || 0;
+      var years = parseFloat(document.getElementById('gp-years').value) || 1;
+      var infl = parseFloat(document.getElementById('gp-infl').value) || 0;
+      var ret = parseFloat(document.getElementById('gp-return').value) || 0;
+  
+      document.getElementById('gp-target-val').textContent = toINR(target);
+      document.getElementById('gp-years-val').textContent = years + ' yrs';
+      document.getElementById('gp-infl-val').textContent = infl + '%';
+      document.getElementById('gp-return-val').textContent = ret + '%';
+  
+      var futureValue = target * Math.pow(1+infl/100, years);
+      var rMonthly = (ret/100)/12;
+      var nMonths = years*12;
+      var sip;
+      if(rMonthly === 0){
+        sip = futureValue / nMonths;
+      } else {
+        var factor = ((Math.pow(1+rMonthly,nMonths)-1)/rMonthly) * (1+rMonthly);
+        sip = futureValue / factor;
       }
-      currentBasic *= (1 + growth/100);
+      var totalInvested = sip * nMonths;
+  
+      document.getElementById('gp-rv').textContent = toINR(sip);
+      document.getElementById('gp-today').textContent = toINR(target);
+      document.getElementById('gp-future').textContent = toINR(futureValue);
+      document.getElementById('gp-invested').textContent = toINR(totalInvested);
     }
-
-    document.getElementById('epf-rv').textContent = toINR(balance);
-    document.getElementById('epf-yrsleft').textContent = yearsLeft;
-    document.getElementById('epf-contributed').textContent = toINR(totalContributed);
+    bindRange('gp-target','gp-target-range', calcGoal);
+    bindRange('gp-years','gp-years-range', calcGoal);
+    bindRange('gp-infl','gp-infl-range', calcGoal);
+    bindRange('gp-return','gp-return-range', calcGoal);
+    calcGoal();
+  
+    // ================= PPF =================
+    var ppfYears = 15;
+    function calcPPF(){
+      var yearly = parseFloat(document.getElementById('ppf-amt').value) || 0;
+      var rate = parseFloat(document.getElementById('ppf-rate').value) || 0;
+      document.getElementById('ppf-amt-val').textContent = toINR(yearly);
+      document.getElementById('ppf-rate-val').textContent = pct(rate,1);
+      document.getElementById('ppf-years-val').textContent = ppfYears + ' yrs';
+  
+      var balance = 0;
+      for(var y=1; y<=ppfYears; y++){
+        balance = (balance + yearly) * (1 + rate/100);
+      }
+      var invested = yearly * ppfYears;
+      var interest = balance - invested;
+  
+      document.getElementById('ppf-rv').textContent = toINR(balance);
+      document.getElementById('ppf-invested').textContent = toINR(invested);
+      document.getElementById('ppf-interest').textContent = toINR(interest);
+    }
+    bindRange('ppf-amt','ppf-amt-range', calcPPF);
+    bindRange('ppf-rate','ppf-rate-range', calcPPF);
+    bindSeg('ppf-years-seg', function(val){ ppfYears = parseInt(val,10); calcPPF(); });
+    calcPPF();
+  
+    // ================= EPF =================
+    function calcEPF(){
+      var age = parseFloat(document.getElementById('epf-age').value) || 18;
+      var basic = parseFloat(document.getElementById('epf-basic').value) || 0;
+      var growth = parseFloat(document.getElementById('epf-growth').value) || 0;
+      var rate = parseFloat(document.getElementById('epf-rate').value) || 0;
+  
+      document.getElementById('epf-age-val').textContent = age;
+      document.getElementById('epf-basic-val').textContent = toINR(basic);
+      document.getElementById('epf-growth-val').textContent = growth + '%';
+      document.getElementById('epf-rate-val').textContent = pct(rate,2);
+  
+      var yearsLeft = Math.max(0, 58 - age);
+      var monthlyRate = (rate/100)/12;
+      var balance = 0;
+      var totalContributed = 0;
+      var currentBasic = basic;
+      for(var y=0; y<yearsLeft; y++){
+        var monthlyContribution = currentBasic * 0.24;
+        for(var m=0; m<12; m++){
+          balance = balance*(1+monthlyRate) + monthlyContribution;
+          totalContributed += monthlyContribution;
+        }
+        currentBasic *= (1 + growth/100);
+      }
+  
+      document.getElementById('epf-rv').textContent = toINR(balance);
+      document.getElementById('epf-yrsleft').textContent = yearsLeft;
+      document.getElementById('epf-contributed').textContent = toINR(totalContributed);
+    }
+    bindRange('epf-age','epf-age-range', calcEPF);
+    bindRange('epf-basic','epf-basic-range', calcEPF);
+    bindRange('epf-growth','epf-growth-range', calcEPF);
+    bindRange('epf-rate','epf-rate-range', calcEPF);
+    calcEPF();
+  
+    // ================= NPS =================
+    function calcNPS(){
+      var age = parseFloat(document.getElementById('nps-age').value) || 18;
+      var contrib = parseFloat(document.getElementById('nps-contrib').value) || 0;
+      var ret = parseFloat(document.getElementById('nps-return').value) || 0;
+      var annPct = parseFloat(document.getElementById('nps-annpct').value) || 40;
+      var annRate = parseFloat(document.getElementById('nps-annrate').value) || 0;
+  
+      document.getElementById('nps-age-val').textContent = age;
+      document.getElementById('nps-contrib-val').textContent = toINR(contrib);
+      document.getElementById('nps-return-val').textContent = ret + '%';
+      document.getElementById('nps-annpct-val').textContent = annPct + '%';
+      document.getElementById('nps-annrate-val').textContent = pct(annRate,2);
+  
+      var yearsLeft = Math.max(0, 60 - age);
+      var nMonths = yearsLeft*12;
+      var rMonthly = (ret/100)/12;
+      var corpus = rMonthly===0 ? contrib*nMonths : contrib * ((Math.pow(1+rMonthly,nMonths)-1)/rMonthly) * (1+rMonthly);
+  
+      var annuityCorpus = corpus * (annPct/100);
+      var lumpSum = corpus - annuityCorpus;
+      var monthlyPension = (annuityCorpus * (annRate/100)) / 12;
+  
+      document.getElementById('nps-rv').textContent = toINR(corpus);
+      document.getElementById('nps-lumpsum').textContent = toINR(lumpSum);
+      document.getElementById('nps-anncorpus').textContent = toINR(annuityCorpus);
+      document.getElementById('nps-pension').textContent = toINR(monthlyPension);
+    }
+    bindRange('nps-age','nps-age-range', calcNPS);
+    bindRange('nps-contrib','nps-contrib-range', calcNPS);
+    bindRange('nps-return','nps-return-range', calcNPS);
+    bindRange('nps-annpct','nps-annpct-range', calcNPS);
+    bindRange('nps-annrate','nps-annrate-range', calcNPS);
+    calcNPS();
   }
-  bindRange('epf-age','epf-age-range', calcEPF);
-  bindRange('epf-basic','epf-basic-range', calcEPF);
-  bindRange('epf-growth','epf-growth-range', calcEPF);
-  bindRange('epf-rate','epf-rate-range', calcEPF);
-  calcEPF();
-
-  // ================= NPS =================
-  function calcNPS(){
-    var age = parseFloat(document.getElementById('nps-age').value) || 18;
-    var contrib = parseFloat(document.getElementById('nps-contrib').value) || 0;
-    var ret = parseFloat(document.getElementById('nps-return').value) || 0;
-    var annPct = parseFloat(document.getElementById('nps-annpct').value) || 40;
-    var annRate = parseFloat(document.getElementById('nps-annrate').value) || 0;
-
-    document.getElementById('nps-age-val').textContent = age;
-    document.getElementById('nps-contrib-val').textContent = toINR(contrib);
-    document.getElementById('nps-return-val').textContent = ret + '%';
-    document.getElementById('nps-annpct-val').textContent = annPct + '%';
-    document.getElementById('nps-annrate-val').textContent = pct(annRate,2);
-
-    var yearsLeft = Math.max(0, 60 - age);
-    var nMonths = yearsLeft*12;
-    var rMonthly = (ret/100)/12;
-    var corpus = rMonthly===0 ? contrib*nMonths : contrib * ((Math.pow(1+rMonthly,nMonths)-1)/rMonthly) * (1+rMonthly);
-
-    var annuityCorpus = corpus * (annPct/100);
-    var lumpSum = corpus - annuityCorpus;
-    var monthlyPension = (annuityCorpus * (annRate/100)) / 12;
-
-    document.getElementById('nps-rv').textContent = toINR(corpus);
-    document.getElementById('nps-lumpsum').textContent = toINR(lumpSum);
-    document.getElementById('nps-anncorpus').textContent = toINR(annuityCorpus);
-    document.getElementById('nps-pension').textContent = toINR(monthlyPension);
-  }
-  bindRange('nps-age','nps-age-range', calcNPS);
-  bindRange('nps-contrib','nps-contrib-range', calcNPS);
-  bindRange('nps-return','nps-return-range', calcNPS);
-  bindRange('nps-annpct','nps-annpct-range', calcNPS);
-  bindRange('nps-annrate','nps-annrate-range', calcNPS);
-  calcNPS();
 
 })();
 </script>
