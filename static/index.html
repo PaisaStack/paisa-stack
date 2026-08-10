@@ -145,6 +145,45 @@
   }
   @media (max-width:600px){ .announce-bar{ font-size:0.8rem; padding:10px 40px 10px 14px; } }
 
+  /* ---- bulletin strip: rotating latest posts ---- */
+  .bulletin{
+    background:var(--surface); border-bottom:1px solid var(--border);
+    overflow:hidden;
+  }
+  .bulletin-inner{
+    max-width:1180px; margin:0 auto; padding:8px 22px;
+    display:flex; align-items:center; gap:12px; font-size:0.84rem;
+  }
+  .bulletin-label{
+    flex:0 0 auto; font-family:var(--mono); font-weight:700; font-size:0.72rem;
+    color:var(--teal); text-transform:uppercase; letter-spacing:0.03em;
+    display:flex; align-items:center; gap:5px;
+  }
+  .bulletin-dot{
+    width:6px; height:6px; border-radius:50%; background:var(--teal);
+    animation:bulletinBlink 1.8s ease-in-out infinite;
+  }
+  @keyframes bulletinBlink{ 0%,100%{opacity:1;} 50%{opacity:0.3;} }
+  .bulletin-track{
+    flex:1; position:relative; height:20px; overflow:hidden;
+  }
+  .bulletin-item{
+    position:absolute; top:0; left:0; width:100%;
+    color:var(--text-dim); text-decoration:none;
+    opacity:0; transform:translateY(8px);
+    transition:opacity 0.5s ease, transform 0.5s ease;
+    white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
+  }
+  .bulletin-item.active{ opacity:1; transform:translateY(0); }
+  .bulletin-item:hover{ color:var(--ink); text-decoration:underline; }
+  .bulletin-item .tag{ color:var(--gold); font-weight:600; margin-right:6px; }
+  @media (prefers-reduced-motion: reduce){
+    .bulletin-item{ transition:none; } .bulletin-dot{ animation:none; }
+  }
+  @media (max-width:600px){
+    .bulletin-label span.text{ display:none; }
+  }
+
   /* ---- hamburger (mobile only) ---- */
   .hamburger{
     display:none; background:none; border:1px solid var(--border-2); border-radius:8px;
@@ -726,6 +765,19 @@
     <a href="#tools" class="nav-cta">Try the tools</a>
   </div>
 </header>
+
+<div class="bulletin">
+  <div class="bulletin-inner">
+    <span class="bulletin-label"><span class="bulletin-dot"></span><span class="text">Latest</span></span>
+    <div class="bulletin-track" id="bulletinTrack">
+      <a class="bulletin-item" href="blogs/sebi-closing-auction-session-cas-explained.html"><span class="tag">New</span>SEBI's Closing Auction Session (CAS) — why your stop-loss might vanish at 3:15 PM</a>
+      <a class="bulletin-item" href="blogs/korea-stock-market-crash-lessons-for-india.html"><span class="tag">New</span>What Korea's leveraged ETF crash means for Indian retail investors</a>
+      <a class="bulletin-item" href="blogs/prepay-home-loan-or-invest.html"><span class="tag">Guide</span>Prepay your home loan or invest the extra? The real math</a>
+      <a class="bulletin-item" href="blogs/property-tds-short-deduction-notice.html"><span class="tag">Guide</span>Got a Property TDS Short Deduction Notice? Here's the fix</a>
+      <a class="bulletin-item" href="blogs/10-common-mistakes-people-make-while-e-filing-their-itr-ay-2026-27-1.html"><span class="tag">Guide</span>10 common mistakes people make while e-filing their ITR</a>
+    </div>
+  </div>
+</div>
 
 <div class="hero-band">
 <div class="wrap">
@@ -2386,6 +2438,25 @@
       }
     });
   });
+
+  // ---------------- Bulletin strip: auto-rotate latest posts ----------------
+  (function(){
+    var track = document.getElementById('bulletinTrack');
+    if (!track) return;
+    var items = Array.prototype.slice.call(track.querySelectorAll('.bulletin-item'));
+    if (!items.length) return;
+    var current = 0;
+    items[0].classList.add('active');
+    var timer = setInterval(advance, 4000);
+    function advance(){
+      items[current].classList.remove('active');
+      current = (current + 1) % items.length;
+      items[current].classList.add('active');
+    }
+    // pause rotation while the user is actually reading/hovering
+    track.addEventListener('mouseenter', function(){ clearInterval(timer); });
+    track.addEventListener('mouseleave', function(){ timer = setInterval(advance, 4000); });
+  })();
 
   // ---------------- Announcement bar ----------------
   (function(){
