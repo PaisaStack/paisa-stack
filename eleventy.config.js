@@ -20,6 +20,7 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy({ "static/trackers": "trackers" });
   eleventyConfig.addPassthroughCopy({ "static/assets": "assets" });
   eleventyConfig.addPassthroughCopy({ "static/calculators": "calculators" });
+  eleventyConfig.addPassthroughCopy({ "static/business-guides": "business-guides" });
 
   // ---- Decap CMS admin panel (static files, no templating needed) ----
   eleventyConfig.addPassthroughCopy({ "admin": "admin" });
