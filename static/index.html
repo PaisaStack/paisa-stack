@@ -271,6 +271,9 @@
     .nav-item:hover .dropdown-panel{display:none;}
     .nav-item.open:hover .dropdown-panel{display:block;}
   }
+  @media (min-width: 981px){ .brand, .nav-cta{white-space:nowrap;} .navlinks a, .nav-trigger{padding-left:9px; padding-right:9px;} }
+  @media (min-width: 981px) and (max-width: 1200px){ .navlinks a, .nav-trigger{font-size:0.82rem; padding-left:6px; padding-right:6px;} .nav-cta{padding:8px 12px; font-size:0.8rem;} }
+  @media (min-width: 981px) and (max-width: 1100px){ .navlinks a, .nav-trigger{font-size:0.78rem; padding-left:5px; padding-right:5px;} .nav-trigger{gap:3px;} .brand{font-size:1rem;} }
   .nav-cta{
     background:var(--ink); color:#fff; font-weight:600;
     padding:9px 16px; border-radius:7px; font-size:0.86rem;
@@ -794,13 +797,10 @@
       </div>
 
       <div class="nav-item">
-        <button class="nav-trigger" type="button">Trackers<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg></button>
+        <button class="nav-trigger" type="button">Business Guides<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg></button>
         <div class="dropdown-panel">
-          <a class="dd-link" href="trackers.html">Monthly Budget Tracker <span style="color:var(--teal); font-weight:600;">· Free</span></a>
-          <a class="dd-link" href="trackers.html">Wedding Planner Tracker <span style="color:var(--teal); font-weight:600;">· Free</span></a>
-          <a class="dd-link" href="trackers.html">Travel &amp; Vacation Tracker <span style="color:var(--teal); font-weight:600;">· Free</span></a>
-          <a class="dd-link" href="trackers.html">Debt &amp; EMI Payoff Tracker <span style="color:var(--teal); font-weight:600;">· Free</span></a>
-          <a class="dd-link" href="trackers.html">Festival &amp; Gifting Tracker <span style="color:var(--teal); font-weight:600;">· Free</span></a>
+          <a class="dd-link" href="/business-guides/black-garlic-making.html">01. Black Garlic Making <span style="color:var(--teal); font-weight:600;">· Free</span></a>
+          <a class="dd-link dd-viewall" href="/business-guides/">View all free guides →</a>
         </div>
       </div>
 
@@ -1643,7 +1643,6 @@
         <h4>Site</h4>
         <a href="calculators/index.html">Tools</a>
         <a href="ebooks.html">Ebooks</a>
-        <a href="trackers.html">Trackers</a>
         <a href="business-guides/">Free Business Guides</a>
         <a href="blogs/blogs.html">Blogs</a>
         <a href="services.html">Services</a>
