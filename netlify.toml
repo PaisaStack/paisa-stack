@@ -16,3 +16,9 @@
 
 [context.deploy-preview]
   command = "npm install && npx eleventy"
+
+# --- Short links for freebies shared in YouTube Shorts ---
+[[redirects]]
+  from = "/freebies"
+  to = "/business-guides/"
+  status = 301
