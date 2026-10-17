@@ -14,7 +14,6 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy({ "static/trackers.html": "trackers.html" });
   eleventyConfig.addPassthroughCopy({ "static/services.html": "services.html" });
   eleventyConfig.addPassthroughCopy({ "static/robots.txt": "robots.txt" });
-  eleventyConfig.addPassthroughCopy({ "static/sitemap.xml": "sitemap.xml" });
   eleventyConfig.addPassthroughCopy({ "static/blogs/blogs.html": "blogs/blogs.html" });
   eleventyConfig.addPassthroughCopy({ "static/ebooks": "ebooks" });
   eleventyConfig.addPassthroughCopy({ "static/trackers": "trackers" });
@@ -38,6 +37,42 @@ module.exports = function(eleventyConfig) {
       }))
     };
     return JSON.stringify(schema, null, 2);
+  });
+
+  // ---- Nunjucks filter: Article + Breadcrumb JSON-LD for a blog post ----
+  eleventyConfig.addFilter("articleSchema", function(post) {
+    const people = {
+      pankaj: { "@type": "Person", "name": "CA Pankaj Chhabra", "url": "https://paisastack.com/about.html" },
+      tripti: { "@type": "Person", "name": "CA Tripti Saini", "url": "https://paisastack.com/about.html" },
+    };
+    const url = `https://paisastack.com/blogs/${post.slug}.html`;
+    const article = {
+      "@type": "Article",
+      "headline": post.title,
+      "description": post.description,
+      "url": url,
+      "mainEntityOfPage": url,
+      "inLanguage": "en-IN",
+      "author": (post.authors || ["pankaj", "tripti"]).map(a => people[a]).filter(Boolean),
+      "publisher": { "@type": "Organization", "name": "Paisa Stack", "url": "https://paisastack.com/" },
+    };
+    if (post.category) article.articleSection = post.category;
+    // updatedDate is free text like "22 July 2026"; only emit it when it parses.
+    const d = new Date(post.updatedDate);
+    if (post.updatedDate && !isNaN(d)) {
+      const pad = n => String(n).padStart(2, "0");
+      article.dateModified = `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}`;
+    }
+    const breadcrumb = {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://paisastack.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Blogs", "item": "https://paisastack.com/blogs/blogs.html" },
+        { "@type": "ListItem", "position": 3, "name": post.title, "item": url },
+      ],
+    };
+    const schema = { "@context": "https://schema.org", "@graph": [article, breadcrumb] };
+    return JSON.stringify(schema, null, 2).replace(/</g, "\\u003c");
   });
 
   // ---- Nunjucks filter: rough reading-time estimate ----
