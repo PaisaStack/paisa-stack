@@ -43,7 +43,7 @@ toc:
     label: A pre-submission checklist
   - anchor: already-mistake
     label: Already filed and found a mistake?
-content: >-
+body: >-
   <p>This filing season is different from every one before it — for the first
   time, ITR deadlines are staggered by which form you file, not one common date
   for everyone. That single change alone is behind a fresh wave of missed
