@@ -43,6 +43,8 @@
     var tax = 0;
     slabs.forEach(function(s){ if(taxable > s[0]){ tax += (Math.min(taxable, s[1]) - s[0]) * s[2]; } });
     if(taxable <= 1200000){ tax = 0; }
+    // Marginal relief: just above ₹12L, tax can't exceed the income above ₹12L.
+    else { tax = Math.min(tax, taxable - 1200000); }
     return tax;
   }
   function oldRegimeTax(taxable){
@@ -110,7 +112,7 @@
       var stdDedNew = salaried ? 75000 : 0;
       var stdDedOld = salaried ? 50000 : 0;
       var taxableNew = Math.max(0, income - stdDedNew);
-      var taxableOld = Math.max(0, income - stdDedOld - Math.min(otherDed,400000));
+      var taxableOld = Math.max(0, income - stdDedOld - otherDed);
 
       var taxNew = Math.round(newRegimeTax(taxableNew) * 1.04);
       var taxOld = Math.round(oldRegimeTax(taxableOld) * 1.04);

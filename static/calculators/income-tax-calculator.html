@@ -4,10 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Income Tax Calculator FY 2026-27 (Old vs New Regime) | Paisa Stack</title>
-<meta name="description" content="Free income tax calculator for FY 2026-27. Compare old vs new tax regime side by side with your real salary and deductions — see exactly which one saves you more.">
+<meta name="description" content="Free income tax calculator FY 2026-27: zero tax up to ₹12.75L salary in the new regime. Compare old vs new with your deductions, plus 4 worked examples.">
 <link rel="canonical" href="https://paisastack.com/calculators/income-tax-calculator.html">
 <meta property="og:title" content="Income Tax Calculator FY 2026-27 (Old vs New Regime)">
-<meta property="og:description" content="Free income tax calculator for FY 2026-27. Compare old vs new tax regime side by side with your real salary and deductions — see exactly which one saves you more.">
+<meta property="og:description" content="Free income tax calculator FY 2026-27: zero tax up to ₹12.75L salary in the new regime. Compare old vs new with your deductions, plus 4 worked examples.">
 <meta property="og:type" content="website">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%2312203D'/%3E%3Ctext x='50' y='68' font-family='monospace' font-size='58' font-weight='700' text-anchor='middle' fill='%23D4AF5A'%3E%E2%82%B9%3C/text%3E%3C/svg%3E">
 
@@ -23,6 +23,62 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/calculators.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is income up to ₹12 lakh tax-free in FY 2026-27?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, under the new regime. Taxable income up to ₹12,00,000 gets a full rebate. For salaried people, the ₹75,000 standard deduction stretches that to a ₹12,75,000 salary."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which is better for me, old or new regime?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "For most people earning under ₹12.75 lakh, or anyone without a home loan and high rent, the new regime. If your old-regime deductions add up to ₹7.5 lakh or more and your income is above ₹20 lakh, the old regime can win."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What should I enter in the deductions box?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The total of: 80C investments (max ₹1,50,000), 80D health insurance (₹25,000 for yourself, up to ₹50,000 more for senior citizen parents), home loan interest on a self-occupied house (max ₹2,00,000), NPS under 80CCD(1B) (max ₹50,000), and your HRA exemption."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I switch between regimes every year?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Salaried individuals with no business income can choose each year at the time of filing the return, as long as it is filed by the due date. People with business income can switch back to the new regime only once."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does the new Income-tax Act 2025 change my tax?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Not the rates. The new Act renamed and renumbered sections and replaced assessment year with tax year, but slabs, the ₹75,000 standard deduction and the ₹12 lakh rebate carry over for FY 2026-27."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is cess included in the result?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. The tax shown includes the 4% health and education cess."
+      }
+    }
+  ]
+}
+</script>
 </head>
 <body>
 
@@ -61,7 +117,7 @@
 <div class="field-label"><span>80C &amp; other old-regime deductions</span><span class="val" id="tax-ded-val">₹1,50,000</span></div>
 <input id="tax-ded" min="0" step="10000" type="number" value="150000"/>
 <input id="tax-ded-range" max="50000000" min="0" step="5000" type="range" value="150000"/>
-<div class="field-hint">PPF, ELSS, home loan interest, 80D — these only count under the old regime.</div>
+<div class="field-hint">Total of 80C, 80D, home loan interest, NPS 80CCD(1B) and your HRA exemption. These only count under the old regime.</div>
 </div>
 </div>
 <div class="tool-out">
@@ -91,14 +147,85 @@
 </div>
 
   <div class="calc-body-copy">
-    <h2>How this works</h2>
-    <p>India's new tax regime offers lower slab rates but almost no exemptions. The old regime keeps HRA, 80C, 80D, and home loan interest deductions, but at higher rates. Which one wins depends entirely on your specific numbers — there's no universal answer, which is exactly why guessing costs people real money every year.</p>
+    <h2>How this calculator works</h2>
+    <p>India's new tax regime offers lower slab rates but almost no exemptions. The old regime keeps HRA, 80C, 80D and home loan interest deductions, but at higher rates. Which one wins depends entirely on your numbers. There's no universal answer, which is exactly why guessing costs people real money every year.</p>
+    <p>Enter three things and the calculator does the rest:</p>
+    <ul>
+      <li><b>Gross annual income:</b> your total salary or income for the year, before any deductions.</li>
+      <li><b>Salaried toggle:</b> switches on the standard deduction, ₹75,000 under the new regime and ₹50,000 under the old one.</li>
+      <li><b>Old-regime deductions:</b> the total of everything only the old regime allows, such as 80C, 80D, home loan interest, NPS 80CCD(1B) and your HRA exemption.</li>
+    </ul>
+    <p>It then works out taxable income and tax under both regimes, adds 4% health and education cess, and shows which regime is cheaper and by how much.</p>
+
+    <h2 id="slabs">Income tax slabs for FY 2026-27</h2>
+    <p>From 1 April 2026 the Income-tax Act, 2025 replaced the 1961 Act, and the "previous year" and "assessment year" became a single <b>tax year</b>. The rates themselves did not change from last year.</p>
+    <table>
+      <tr><th>New regime (default)</th><th>Rate</th></tr>
+      <tr><td>Up to ₹4,00,000</td><td>Nil</td></tr>
+      <tr><td>₹4,00,001 – ₹8,00,000</td><td>5%</td></tr>
+      <tr><td>₹8,00,001 – ₹12,00,000</td><td>10%</td></tr>
+      <tr><td>₹12,00,001 – ₹16,00,000</td><td>15%</td></tr>
+      <tr><td>₹16,00,001 – ₹20,00,000</td><td>20%</td></tr>
+      <tr><td>₹20,00,001 – ₹24,00,000</td><td>25%</td></tr>
+      <tr><td>Above ₹24,00,000</td><td>30%</td></tr>
+    </table>
+    <table>
+      <tr><th>Old regime (below 60)</th><th>Rate</th></tr>
+      <tr><td>Up to ₹2,50,000</td><td>Nil</td></tr>
+      <tr><td>₹2,50,001 – ₹5,00,000</td><td>5%</td></tr>
+      <tr><td>₹5,00,001 – ₹10,00,000</td><td>20%</td></tr>
+      <tr><td>Above ₹10,00,000</td><td>30%</td></tr>
+    </table>
+    <p><b>Rebate:</b> under the new regime, taxable income up to ₹12,00,000 pays zero tax (rebate up to ₹60,000). For a salaried person that means a salary of up to <b>₹12,75,000</b> is tax-free after the standard deduction. Under the old regime the rebate covers taxable income up to ₹5,00,000.</p>
+    <p><b>Marginal relief:</b> if your new-regime taxable income is just above ₹12,00,000, your tax can't be more than the amount by which you crossed ₹12 lakh. At ₹12,25,000 taxable, slab tax would be ₹63,750, but you pay only ₹25,000 plus cess. The calculator applies this automatically.</p>
+
+    <h2 id="examples">4 worked examples</h2>
+    <h3>1. ₹12 lakh salary, ₹1.5 lakh in 80C</h3>
+    <p>New regime: ₹12,00,000 − ₹75,000 = ₹11,25,000 taxable, fully covered by the rebate, so <b>₹0 tax</b>. Old regime: ₹12,00,000 − ₹50,000 − ₹1,50,000 = ₹10,00,000 taxable, so <b>₹1,17,000</b> with cess. The new regime saves ₹1,17,000. Your PPF or ELSS investment is still worth making for its own sake, but it doesn't save tax here.</p>
+    <h3>2. ₹18 lakh salary with a home loan</h3>
+    <p>Deductions: 80C ₹1,50,000, home loan interest ₹2,00,000, 80D ₹25,000, a total of ₹3,75,000. Old regime: ₹13,75,000 taxable, so <b>₹2,34,000</b> tax. New regime: ₹17,25,000 taxable, so <b>₹1,50,800</b>. The new regime is still ₹83,200 cheaper.</p>
+    <h3>3. ₹25 lakh salary, rent in a metro, home loan, parents' insurance</h3>
+    <p>Deductions: HRA exemption ₹3,00,000, 80C ₹1,50,000, home loan interest ₹2,00,000, 80D ₹75,000 (₹25,000 self plus ₹50,000 for senior citizen parents), NPS 80CCD(1B) ₹50,000, a total of ₹8,75,000. Old regime: ₹15,75,000 taxable, so <b>₹2,96,400</b>. New regime: ₹24,25,000 taxable, so <b>₹3,19,800</b>. Here the <b>old regime wins by ₹23,400</b>. This is the profile where checking both regimes really pays.</p>
+    <h3>4. ₹13 lakh salary, just over the line</h3>
+    <p>New regime taxable income is ₹12,25,000. Without marginal relief the tax would be ₹66,300 with cess. With it, you pay <b>₹26,000</b>. Many simple calculators miss this.</p>
+    <p>Want the monthly picture? The <a href="salary-in-hand-calculator.html">salary in-hand calculator</a> turns these annual numbers into your take-home pay, and the <a href="hra-exemption-calculator.html">HRA calculator</a> tells you what to enter as your HRA exemption.</p>
+
+    <h2 id="old-vs-new">Old vs new regime: a quick rule of thumb</h2>
+    <ul>
+      <li><b>Salary up to ₹12.75 lakh:</b> the new regime is almost always better, because tax is zero.</li>
+      <li><b>No home loan and modest rent:</b> the new regime usually wins at every income level.</li>
+      <li><b>High rent in a metro, a home loan, 80C and 80D all used:</b> run both. Once your old-regime deductions cross about ₹7.5 to 8 lakh, the old regime often starts to win at incomes above ₹20 lakh.</li>
+    </ul>
+    <p>Salaried people can switch regimes every year when filing the return. But the old regime has to be chosen in a return filed by the due date. File late and you are taxed under the new regime, as our <a href="../blogs/belated-itr-last-date-penalty.html">belated ITR guide</a> explains.</p>
+
+    <h2 id="limits">What this calculator doesn't cover</h2>
+    <ul>
+      <li>Surcharge on income above ₹50 lakh.</li>
+      <li>Higher old-regime exemption limits for senior citizens (₹3 lakh at 60+, ₹5 lakh at 80+).</li>
+      <li>Special-rate income like capital gains on shares. Use the <a href="capital-gains-calculator.html">capital gains calculator</a> for that.</li>
+      <li>Business or freelance income. Use the <a href="freelance-tax-44ada-calculator.html">44ADA calculator</a>.</li>
+    </ul>
+
+    <h2 id="faq">Frequently asked questions</h2>
+    <h3>Is income up to ₹12 lakh tax-free in FY 2026-27?</h3>
+    <p>Yes, under the new regime. Taxable income up to ₹12,00,000 gets a full rebate. For salaried people, the ₹75,000 standard deduction stretches that to a ₹12,75,000 salary.</p>
+    <h3>Which is better for me, old or new regime?</h3>
+    <p>For most people earning under ₹12.75 lakh, or anyone without a home loan and high rent, the new regime. If your old-regime deductions add up to ₹7.5 lakh or more and your income is above ₹20 lakh, the old regime can win. Enter your real numbers above to see.</p>
+    <h3>What should I enter in the deductions box?</h3>
+    <p>The total of: 80C investments (max ₹1,50,000), 80D health insurance (₹25,000 for yourself, up to ₹50,000 more for senior citizen parents), home loan interest on a self-occupied house (max ₹2,00,000), NPS under 80CCD(1B) (max ₹50,000), and your HRA exemption.</p>
+    <h3>Can I switch between regimes every year?</h3>
+    <p>Salaried individuals with no business income can choose each year at the time of filing the return, as long as it is filed by the due date. People with business income can switch back to the new regime only once.</p>
+    <h3>Does the new Income-tax Act 2025 change my tax?</h3>
+    <p>Not the rates. The new Act renamed and renumbered sections and replaced "assessment year" with "tax year", but slabs, the ₹75,000 standard deduction and the ₹12 lakh rebate carry over for FY 2026-27.</p>
+    <h3>Is cess included in the result?</h3>
+    <p>Yes. The tax shown includes the 4% health and education cess.</p>
   </div>
 
   <div class="calc-related">
     <a href="hra-exemption-calculator.html">HRA Exemption Calculator</a>
     <a href="salary-in-hand-calculator.html">Salary / CTC to In-Hand Calculator</a>
     <a href="../blogs/belated-itr-last-date-penalty.html">Missed 31 July? Belated ITR guide</a>
+    <a href="../blogs/income-tax-act-2025-changes.html">New Income Tax Act 2025: what changed</a>
   </div>
 
   <div class="calc-cta">
@@ -111,7 +238,30 @@
 </div>
 
 <footer class="calc-footer">
-  <div class="calc-page-wrap">© Paisa Stack — plain-language money help for everyday people</div>
+  <div class="calc-page-wrap">
+  <nav class="footer-calcs" aria-label="Free calculators">
+    <div class="footer-calcs-title">Free calculators</div>
+    <div class="footer-calcs-links">
+      <a href="income-tax-calculator.html">Income Tax</a>
+      <a href="salary-in-hand-calculator.html">Salary In-Hand</a>
+      <a href="hra-exemption-calculator.html">HRA Exemption</a>
+      <a href="freelance-tax-44ada-calculator.html">Freelance Tax (44ADA)</a>
+      <a href="capital-gains-calculator.html">Capital Gains</a>
+      <a href="tds-on-property-calculator.html">TDS on Property</a>
+      <a href="gratuity-calculator.html">Gratuity</a>
+      <a href="loan-emi-calculator.html">Loan EMI</a>
+      <a href="loan-prepayment-calculator.html">Loan Prepayment</a>
+      <a href="rent-vs-buy-calculator.html">Rent vs Buy</a>
+      <a href="investment-return-calculator.html">SIP &amp; Lump Sum</a>
+      <a href="goal-planner-calculator.html">Goal Planner</a>
+      <a href="ppf-calculator.html">PPF</a>
+      <a href="epf-calculator.html">EPF</a>
+      <a href="nps-calculator.html">NPS</a>
+      <a href="index.html">All calculators →</a>
+    </div>
+  </nav>
+  © Paisa Stack — plain-language money help for everyday people
+  </div>
 </footer>
 
 <script src="assets/calculators.js"></script>
