@@ -440,7 +440,7 @@
   // ================= SALARY / IN-HAND =================
     function calcSalary(){
       var ctc = parseFloat(document.getElementById('sal-ctc').value) || 0;
-      var basicPct = parseFloat(document.getElementById('sal-basicpct').value) || 40;
+      var basicPct = parseFloat(document.getElementById('sal-basicpct').value) || 50;
       var otherDed = parseFloat(document.getElementById('sal-ded').value) || 0;
       document.getElementById('sal-ctc-val').textContent = toINR(ctc);
       document.getElementById('sal-basic-val').textContent = basicPct + '%';
