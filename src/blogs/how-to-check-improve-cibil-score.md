@@ -1,7 +1,8 @@
 ---
 layout: blog-layout.njk
 title: How to Check and Improve Your CIBIL Score in India
-description: A complete, practical guide to checking your CIBIL score for free, understanding what actually moves it, and raising it — with real numbers on how your score affects loan interest rates.
+metaTitle: 'CIBIL Score 2026: Check Free & Improve It (90-Day Plan)'
+description: Check your CIBIL score free and see what really moves it. Why 750+ gets the best loan rates, myths that don't help, and a 90-day plan to raise your score.
 keywords: cibil score, check cibil score free, improve credit score india, cibil score kaise badhaye, credit score factors, cibil score for home loan
 category: Credit & Borrowing
 toc:

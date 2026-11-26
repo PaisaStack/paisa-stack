@@ -1,7 +1,8 @@
 ---
 layout: blog-layout.njk
 title: How Crypto Gains Are Taxed in India
-description: The flat 30% crypto tax, the 1% TDS rule, why losses can't offset gains, Schedule VDA reporting, and how airdrops, staking, and gifting are treated — updated for 2026.
+metaTitle: 'Crypto Tax India 2026: 30% Tax + 1% TDS (With Examples)'
+description: Crypto gains are taxed at a flat 30% with 1% TDS, and losses can't be set off. Schedule VDA, airdrops, staking, gifts and a full-year worked example for 2026.
 keywords: crypto tax india 2026, vda tax 30 percent, crypto tds 194s, schedule vda itr, bitcoin tax india, crypto airdrop tax
 category: Taxation
 toc:

@@ -1,7 +1,8 @@
 ---
 layout: blog-layout.njk
 title: Freelancing on the Side? How GST and Invoicing Actually Work
-description: When freelance income actually requires GST registration, how to invoice correctly, presumptive taxation under 44ADA, and TDS on freelance payments — a complete practical guide.
+metaTitle: 'GST for Freelancers: ₹20 Lakh Limit, Invoice & 44ADA Guide'
+description: Freelancers need GST only above ₹20 lakh turnover (₹10 lakh in some states). Invoice format, 44ADA vs actual books example, TDS and foreign clients explained.
 keywords: gst registration freelancer india, freelance invoicing india, side income tax india, gst threshold services 2026, 44ada presumptive taxation, tds on freelance income
 category: Side Income
 toc:

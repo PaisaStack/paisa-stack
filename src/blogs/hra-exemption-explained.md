@@ -1,7 +1,8 @@
 ---
 layout: blog-layout.njk
 title: 'HRA Exemption Explained: How to Save Tax on Rent'
-description: A complete guide to HRA exemption — the exact calculation, required proof, paying rent to parents, common mistakes, and why it doesn't work under the new tax regime.
+metaTitle: 'HRA Exemption 2026: 50% Rule Now in 8 Cities (Calculator)'
+description: HRA exemption is the least of 3 limits. From April 2026, Bengaluru, Pune, Hyderabad and Ahmedabad also get the 50% limit. Examples, proof rules, free calculator.
 keywords: hra exemption calculation, hra tax exemption india, how to save tax on rent, hra rules salaried employees, hra exemption formula, hra rent to parents
 category: Taxation
 toc:
@@ -59,7 +60,7 @@ authors:
 ctaType: expert
 ctaHeadline: Not sure which regime wins for you?
 ctaSubtext: Book a 40-minute call with a Chartered Accountant for Rs. 500.
-updatedDate: 22 July 2026
+updatedDate: 26 November 2026
 draft: false
 permalink: blogs/hra-exemption-explained.html
 ---
@@ -72,10 +73,10 @@ permalink: blogs/hra-exemption-explained.html
 <ol>
 <li>Actual HRA received from your employer</li>
 <li>Rent paid minus 10% of basic salary</li>
-<li>50% of basic salary (metro cities) or 40% of basic salary (non-metro cities)</li>
+<li>50% of basic salary (Delhi, Mumbai, Kolkata, Chennai, Bengaluru, Hyderabad, Pune, Ahmedabad) or 40% of basic salary (other cities)</li>
 </ol>
 <div class="callout">Whichever of these three numbers is smallest is your actual exempt amount. The other two simply don't matter once you've identified the minimum — a common mistake is assuming the highest of the three applies, which overstates the exemption and can trigger a mismatch during processing.</div>
-<p>The metro classification for this specific calculation includes <b>Delhi, Mumbai, Kolkata, and Chennai</b> — living in Bengaluru, Pune, Hyderabad, or any other city, even a large one, puts you in the 40% "non-metro" bracket for this formula specifically, which is a common point of confusion since those cities have genuinely metro-level rents.</p>
+<p><b>From Tax Year 2026-27 (1 April 2026), the 50% limit applies in eight cities:</b> Delhi, Mumbai, Kolkata, Chennai, and now also <b>Bengaluru, Hyderabad, Pune and Ahmedabad</b> (Rule 279 of the Income-tax Rules 2026). Every other city stays at 40%. For your FY 2025-26 return, filed in 2026, the old list of only Delhi, Mumbai, Kolkata and Chennai still applies, so a Bengaluru or Pune renter uses 40% for that year and 50% from April 2026.</p>
 <a class="inline-tool-card" href="../index.html#t-hra">
 <div class="icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewBox="0 0 24 24"><path d="M3 11l9-8 9 8"></path><path d="M5 10v10h14V10"></path></svg></div>
 <div class="txt"><h4>Calculate your exact exemption</h4><p>Use the free HRA calculator — enter your basic, HRA, and rent to see your real exempt amount.</p></div>

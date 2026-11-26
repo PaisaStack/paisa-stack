@@ -1,7 +1,8 @@
 ---
 layout: blog-layout.njk
 title: How Mutual Fund SIPs Are Actually Taxed
-description: How SIP capital gains are taxed unit by unit, current LTCG and STCG rates for FY 2026-27, debt fund rules post-2023, and a worked example showing FIFO in action.
+metaTitle: 'SIP Taxation 2026: 12.5% LTCG, 20% STCG, FIFO Example'
+description: Equity SIP gains are taxed at 20% if sold within 12 months, then 12.5% above ₹1.25 lakh a year. Each instalment is taxed separately (FIFO). Worked example inside.
 keywords: sip taxation india, ltcg stcg mutual funds 2026, equity mutual fund tax rate, how are sips taxed, debt fund taxation 2026, mutual fund capital gains fifo
 category: Investing
 toc:
