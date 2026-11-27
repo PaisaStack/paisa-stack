@@ -440,7 +440,7 @@
   // ================= SALARY / IN-HAND =================
     function calcSalary(){
       var ctc = parseFloat(document.getElementById('sal-ctc').value) || 0;
-      var basicPct = parseFloat(document.getElementById('sal-basicpct').value) || 40;
+      var basicPct = parseFloat(document.getElementById('sal-basicpct').value) || 50;
       var otherDed = parseFloat(document.getElementById('sal-ded').value) || 0;
       document.getElementById('sal-ctc-val').textContent = toINR(ctc);
       document.getElementById('sal-basic-val').textContent = basicPct + '%';
@@ -518,11 +518,11 @@
       var limit = flDigital === 'yes' ? 7500000 : 5000000;
       var eligible = gross <= limit;
       var presumptiveIncome = gross * 0.5;
-      var taxable44 = Math.max(0, presumptiveIncome - 75000);
+      var taxable44 = presumptiveIncome;
       var tax44 = newRegimeTax(taxable44) * 1.04;
 
       var actualProfit = Math.max(0, gross - actualExp);
-      var taxableActual = Math.max(0, actualProfit - 75000);
+      var taxableActual = actualProfit;
       var taxActual = newRegimeTax(taxableActual) * 1.04;
 
       document.getElementById('fl-rv').textContent = toINR(presumptiveIncome);

@@ -1,7 +1,8 @@
 ---
 layout: blog-layout.njk
 title: 'Form 16 Explained: How to Read Your Salary TDS Certificate'
-description: A complete walkthrough of Form 16 — Part A vs Part B, every field explained, how it feeds into your ITR, and what to do if it's missing or doesn't match Form 26AS.
+metaTitle: 'Form 16 Explained: Part A vs Part B, Line by Line (2026)'
+description: How to read Form 16 - what to check in Part A and Part B, a line-by-line example, how it should match Form 26AS and AIS, and what to do if it's missing.
 keywords: form 16 explained, how to read form 16, form 16 part a part b, form 16 for itr filing, form 16 vs form 26as, form 16 download
 category: Taxation
 toc:

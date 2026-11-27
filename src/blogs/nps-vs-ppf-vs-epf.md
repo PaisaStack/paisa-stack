@@ -1,7 +1,8 @@
 ---
 layout: blog-layout.njk
 title: 'NPS vs PPF vs EPF: Where Should Your Retirement Money Go?'
-description: A complete comparison of NPS, PPF, and EPF — contribution limits, lock-in, returns, tax treatment, and a practical framework for splitting your retirement savings across them.
+metaTitle: 'NPS vs PPF vs EPF 2026: Returns, Tax & Which to Pick'
+description: NPS vs PPF vs EPF compared on limits, lock-in, returns and tax at each stage. The extra ₹50,000 NPS deduction, a worked example and how to split your savings.
 keywords: nps vs ppf vs epf, retirement planning india, best retirement account india, nps tax benefit 80ccd, ppf vs nps returns, epf transfer
 category: Retirement
 toc:
